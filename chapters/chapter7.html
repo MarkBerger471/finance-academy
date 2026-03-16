@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 7: Risiko & Diversifikation - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-indigo-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-violet-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="chapter7.html" class="nav-link active">Kapitel</a>
+                    <a href="../tests/scoreboard.html" class="nav-link">Ergebnisse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">⚖️</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-indigo-400 mb-4">Kapitel 7 von 10</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Risiko & Diversifikation</h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span>⏱ 1-1,5 Stunden</span>
+                    <span>|</span>
+                    <span>📝 10 Testfragen</span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2">70% des Kurses</p>
+            </div>
+
+            <!-- Section 1: What is Financial Risk? -->
+            <div class="content-section animate-on-scroll">
+                <h3>🎲 Was ist finanzielles Risiko?</h3>
+                <p>Risiko bedeutet in der Finanzwelt ganz einfach: <strong>Die Möglichkeit, dass etwas anders läuft als geplant</strong> - und zwar meistens, dass du Geld verlierst oder weniger bekommst als erwartet. Jede Geldanlage hat ein gewisses Risiko. Sogar das Sparbuch - denn wenn die Inflation höher ist als der Zinssatz, verlierst du real an Kaufkraft.</p>
+
+                <div class="info-box">
+                    <p><strong>💡 Wichtig zu verstehen:</strong> Risiko ist nicht grundsätzlich schlecht! Ohne Risiko gibt es auch keine Chance auf höhere Rendite. Der Schlüssel ist, Risiken zu <em>verstehen</em> und <em>bewusst einzugehen</em>, statt sie zu ignorieren oder blind zu akzeptieren.</p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3">Die wichtigsten Risikoarten:</h4>
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-indigo-400 mb-2">📉 Marktrisiko</h4>
+                        <p class="text-sm text-gray-400">Der gesamte Aktienmarkt kann fallen - z.B. in einer Wirtschaftskrise. Das betrifft dann fast alle Aktien gleichzeitig. Beispiel: Im Corona-Crash 2020 fielen die Märkte um ca. 35% in nur wenigen Wochen.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-2">💸 Inflationsrisiko</h4>
+                        <p class="text-sm text-gray-400">Wenn die Inflation höher ist als deine Rendite, verlierst du real Kaufkraft. Bei 5% Inflation und nur 1% Zinsen auf dem Sparbuch verlierst du effektiv 4% pro Jahr.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-yellow-400 mb-2">🏢 Unternehmensrisiko</h4>
+                        <p class="text-sm text-gray-400">Ein einzelnes Unternehmen kann in Schwierigkeiten geraten oder sogar pleitegehen. Dann kann die Aktie wertlos werden. Beispiel: Wirecard 2020 - Aktionäre verloren fast alles.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-2">🌍 Währungsrisiko</h4>
+                        <p class="text-sm text-gray-400">Wenn du in US-Dollar investierst und der Dollar gegenüber dem Euro fällt, verlierst du beim Umtausch. Das betrifft z.B. Investitionen in US-Aktien.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5">
+                    <h4 class="font-bold text-purple-400 mb-2">🏦 Zinsänderungsrisiko</h4>
+                    <p class="text-sm text-gray-400">Wenn die Zinsen steigen, fallen die Kurse von bestehenden Anleihen. Das haben viele 2022 schmerzhaft erfahren, als die EZB die Zinsen stark erhöhte und Anleihekurse einbrachen.</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Risk vs. Return -->
+            <div class="content-section animate-on-scroll">
+                <h3>📊 Risiko und Rendite - Die Grundregel</h3>
+                <p>Es gibt eine der wichtigsten Regeln in der Finanzwelt, die du dir unbedingt merken solltest:</p>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Die goldene Regel:</strong> <em>Höheres Risiko = potenziell höhere Rendite.</em> Wer mehr Rendite möchte, muss bereit sein, mehr Risiko einzugehen. Umgekehrt: Wer absolut kein Risiko will, bekommt sehr wenig Rendite.</p>
+                </div>
+
+                <p>Hier siehst du, wie verschiedene Anlageformen sich im Durchschnitt verhalten:</p>
+                <div class="glass-card rounded-2xl p-5 my-6">
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-green-400">Tagesgeld / Sparbuch</span>
+                                <span class="text-sm text-gray-400">~1-3% Rendite | Niedriges Risiko</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-green-400 h-3 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-blue-400">Staatsanleihen</span>
+                                <span class="text-sm text-gray-400">~2-4% Rendite | Niedrig-Mittel</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-blue-400 h-3 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-indigo-400">Unternehmensanleihen</span>
+                                <span class="text-sm text-gray-400">~3-6% Rendite | Mittleres Risiko</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-indigo-400 h-3 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-purple-400">Breit gestreuter ETF</span>
+                                <span class="text-sm text-gray-400">~7-9% Rendite | Mittel-Hoch</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-purple-400 h-3 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-pink-400">Einzelaktien</span>
+                                <span class="text-sm text-gray-400">Sehr variabel | Hohes Risiko</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-pink-400 h-3 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-bold text-red-400">Kryptowährungen</span>
+                                <span class="text-sm text-gray-400">Extrem variabel | Sehr hohes Risiko</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-red-400 h-3 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Merke:</strong> Wenn dir jemand eine Geldanlage mit "hoher Rendite und null Risiko" anbietet, ist das fast immer Betrug! Rendite ohne Risiko gibt es nicht.</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Magic Triangle -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔺 Das magische Dreieck der Geldanlage</h3>
+                <p>Jede Geldanlage lässt sich anhand von drei Eigenschaften bewerten. Diese drei Ziele stehen aber in einem Spannungsverhältnis - du kannst nie alle drei gleichzeitig maximieren:</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">💰</div>
+                        <h4 class="font-bold text-green-400 mb-2">Rendite</h4>
+                        <p class="text-sm text-gray-400">Wie viel Gewinn bringt die Anlage? Hohe Rendite ist das Ziel jedes Investors - aber sie hat ihren Preis.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🛡️</div>
+                        <h4 class="font-bold text-blue-400 mb-2">Sicherheit</h4>
+                        <p class="text-sm text-gray-400">Wie sicher ist dein Geld? Bekommst du es garantiert zurück? Sicherheit bedeutet niedriges Risiko.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">💧</div>
+                        <h4 class="font-bold text-cyan-400 mb-2">Liquidität</h4>
+                        <p class="text-sm text-gray-400">Wie schnell kommst du an dein Geld ran? Tagesgeld sofort, eine Immobilie erst nach Monaten des Verkaufs.</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiele:</strong></p>
+                    <ul>
+                        <li><strong>Tagesgeld:</strong> Hohe Sicherheit + Hohe Liquidität, aber niedrige Rendite</li>
+                        <li><strong>Aktien-ETF:</strong> Höhere Rendite + Hohe Liquidität, aber weniger Sicherheit (Kursschwankungen)</li>
+                        <li><strong>Immobilie:</strong> Gute Rendite + Hohe Sicherheit, aber niedrige Liquidität (Verkauf dauert)</li>
+                        <li><strong>Festgeld (5 Jahre):</strong> Hohe Sicherheit + Etwas Rendite, aber niedrige Liquidität (Geld ist gebunden)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Fazit:</strong> Du musst dich immer entscheiden, welche zwei Ecken dir am wichtigsten sind. Alle drei gleichzeitig maximieren geht nicht - wer das behauptet, lügt.</p>
+                </div>
+            </div>
+
+            <!-- Section 4: Diversification -->
+            <div class="content-section animate-on-scroll">
+                <h3>🥚 Diversifikation - "Leg nicht alle Eier in einen Korb!"</h3>
+                <p><strong>Diversifikation</strong> ist die wichtigste Strategie, um Risiko zu reduzieren. Die Idee ist einfach: Verteile dein Geld auf viele verschiedene Anlagen, damit der Verlust einer einzigen Anlage nicht dein ganzes Vermögen gefährdet.</p>
+
+                <div class="example-box">
+                    <p><strong>🎯 Stell dir vor:</strong> Du hast 1.000 € und investierst alles in die Aktie von Firma X. Wenn Firma X pleitegeht, sind deine 1.000 € weg - Totalverlust! Aber wenn du je 100 € in 10 verschiedene Firmen investierst und eine davon pleitegeht, verlierst du nur 100 € (10%) statt alles.</p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3">Arten der Diversifikation:</h4>
+                <ul>
+                    <li><strong>Nach Anlageklassen:</strong> Mische Aktien, Anleihen, Immobilien und Bargeld</li>
+                    <li><strong>Nach Regionen:</strong> Investiere nicht nur in Deutschland, sondern weltweit (Europa, USA, Asien)</li>
+                    <li><strong>Nach Branchen:</strong> Nicht alles in Technologie - auch Gesundheit, Industrie, Konsumgüter, Energie</li>
+                    <li><strong>Nach Unternehmensgröße:</strong> Große Konzerne (Blue Chips) und kleinere Unternehmen (Small Caps)</li>
+                    <li><strong>Zeitlich:</strong> Nicht alles auf einmal investieren, sondern über Zeit verteilen</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><strong>✅ Tipp:</strong> Ein breit gestreuter Welt-ETF (z.B. auf den MSCI World) enthält über 1.500 Aktien aus 23 Industrieländern. Das ist Diversifikation auf Knopfdruck!</p>
+                </div>
+            </div>
+
+            <!-- Section 5: Asset Allocation -->
+            <div class="content-section animate-on-scroll">
+                <h3>🎯 Asset Allocation - Der richtige Mix</h3>
+                <p><strong>Asset Allocation</strong> (Vermögensaufteilung) beschreibt, wie du dein Geld auf verschiedene Anlageklassen verteilst. Das ist die wichtigste Entscheidung bei der Geldanlage - Studien zeigen, dass sie über 90% des Anlageerfolgs bestimmt!</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center border border-green-500/30">
+                        <div class="text-3xl mb-3">🐢</div>
+                        <h4 class="font-bold text-green-400 mb-2">Konservativ</h4>
+                        <p class="text-sm text-gray-400 mb-3">Wenig Risiko, wenig Schwankung</p>
+                        <div class="space-y-2 text-left text-sm">
+                            <div class="flex justify-between"><span>Aktien</span><span class="text-green-400">20%</span></div>
+                            <div class="flex justify-between"><span>Anleihen</span><span class="text-blue-400">50%</span></div>
+                            <div class="flex justify-between"><span>Tagesgeld</span><span class="text-cyan-400">30%</span></div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center border border-indigo-500/30">
+                        <div class="text-3xl mb-3">⚖️</div>
+                        <h4 class="font-bold text-indigo-400 mb-2">Ausgewogen</h4>
+                        <p class="text-sm text-gray-400 mb-3">Balance aus Risiko und Sicherheit</p>
+                        <div class="space-y-2 text-left text-sm">
+                            <div class="flex justify-between"><span>Aktien</span><span class="text-green-400">50%</span></div>
+                            <div class="flex justify-between"><span>Anleihen</span><span class="text-blue-400">30%</span></div>
+                            <div class="flex justify-between"><span>Tagesgeld</span><span class="text-cyan-400">20%</span></div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center border border-red-500/30">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold text-red-400 mb-2">Offensiv</h4>
+                        <p class="text-sm text-gray-400 mb-3">Mehr Risiko, mehr Renditechance</p>
+                        <div class="space-y-2 text-left text-sm">
+                            <div class="flex justify-between"><span>Aktien</span><span class="text-green-400">80%</span></div>
+                            <div class="flex justify-between"><span>Anleihen</span><span class="text-blue-400">10%</span></div>
+                            <div class="flex justify-between"><span>Tagesgeld</span><span class="text-cyan-400">10%</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Faustregel:</strong> <em>100 minus dein Alter = Aktienanteil in Prozent.</em> Ein 16-Jähriger könnte also 84% in Aktien investieren, weil er noch Jahrzehnte Zeit hat, Schwankungen auszusitzen. Ein 60-Jähriger nur noch 40%.</p>
+                </div>
+            </div>
+
+            <!-- Section 6: Single Stock vs ETF -->
+            <div class="content-section animate-on-scroll">
+                <h3>📈 Einzelaktie vs. ETF - Ein Realbeispiel</h3>
+                <p>Schauen wir uns an, was passiert, wenn du alles auf eine Karte setzt versus breit streust:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 border border-red-500/30">
+                        <h4 class="font-bold text-red-400 mb-3">❌ Alles in eine Aktie: Wirecard</h4>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>2018: Aktie bei ca. 190 €</li>
+                            <li>Du investierst 5.000 € = ca. 26 Aktien</li>
+                            <li>2020: Bilanzskandal aufgedeckt</li>
+                            <li>Aktie fällt auf unter 1 €</li>
+                            <li><strong class="text-red-400">Ergebnis: Von 5.000 € bleiben ca. 26 € - fast Totalverlust!</strong></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 border border-green-500/30">
+                        <h4 class="font-bold text-green-400 mb-3">✅ Breit gestreut: MSCI World ETF</h4>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>2018: Du investierst 5.000 € in einen Welt-ETF</li>
+                            <li>Wirecard war im ETF enthalten, aber nur mit ~0,1%</li>
+                            <li>2020: Wirecard-Crash betrifft den ETF kaum</li>
+                            <li>Die anderen 1.500+ Aktien gleichen aus</li>
+                            <li><strong class="text-green-400">Ergebnis: 5.000 € wären bis Ende 2024 auf ca. 8.500 € gewachsen!</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Die Lektion:</strong> Diversifikation schützt dich nicht vor Verlusten, aber sie schützt dich vor Totalverlust. Das Wirecard-Beispiel zeigt: Selbst "sichere" Großunternehmen können scheitern. Kein Unternehmen ist "too big to fail" für Aktionäre.</p>
+                </div>
+            </div>
+
+            <!-- Section 7: Volatility -->
+            <div class="content-section animate-on-scroll">
+                <h3>🌊 Volatilität - Die Achterbahn der Börse</h3>
+                <p><strong>Volatilität</strong> misst, wie stark der Preis einer Anlage schwankt. Hohe Volatilität bedeutet große Ausschläge nach oben und unten - wie eine Achterbahnfahrt. Niedrige Volatilität bedeutet ruhige, stetige Entwicklung.</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">🐌 Niedrige Volatilität</h4>
+                        <p class="text-sm text-gray-400">Tagesgeld, Festgeld, Staatsanleihen. Schwankungen von ~0-3% pro Jahr. Langweilig, aber du schläfst ruhig.</p>
+                        <div class="mt-3 text-2xl text-center tracking-widest text-green-400">───────</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3">🎢 Hohe Volatilität</h4>
+                        <p class="text-sm text-gray-400">Einzelaktien, Krypto. Schwankungen von 20-80%+ pro Jahr. Aufregend, aber manchmal schlaflose Nächte.</p>
+                        <div class="mt-3 text-2xl text-center tracking-widest text-red-400">╱╲╱╲╱╲╱</div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel:</strong> Bitcoin schwankte 2022 zwischen ca. 47.000 € und 15.500 € - das ist eine Volatilität, die für viele Anleger schwer auszuhalten ist. Der MSCI World ETF schwankte im gleichen Zeitraum "nur" um ca. 20%. Ein Tagesgeldkonto schwankte gar nicht.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Merke:</strong> Volatilität ist nicht das gleiche wie Risiko! Eine volatile Anlage kann langfristig trotzdem steigen. Problematisch wird es nur, wenn du in einer Tiefphase verkaufen musst.</p>
+                </div>
+            </div>
+
+            <!-- Section 8: Time Horizon and Risk -->
+            <div class="content-section animate-on-scroll">
+                <h3>⏳ Anlagehorizont - Warum junge Menschen mehr Risiko eingehen können</h3>
+                <p>Dein <strong>Anlagehorizont</strong> ist die Zeit, die du dein Geld investiert lassen kannst, bevor du es brauchst. Und hier kommt die gute Nachricht für Teenager:</p>
+
+                <div class="info-box">
+                    <p><strong>💡 Dein größter Vorteil als junger Mensch: ZEIT!</strong> Wenn du mit 15 anfängst zu investieren, hast du bis zur Rente 50+ Jahre. In dieser Zeit können sich Kursverluste erholen, und der Zinseszinseffekt macht sein Wunder.</p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3">Historische Daten des MSCI World:</h4>
+                <ul>
+                    <li><strong>1 Jahr Anlagedauer:</strong> Rendite zwischen -40% und +55% - sehr riskant!</li>
+                    <li><strong>5 Jahre:</strong> Rendite zwischen -5% und +30% pro Jahr</li>
+                    <li><strong>10 Jahre:</strong> Rendite zwischen +1% und +20% pro Jahr</li>
+                    <li><strong>15+ Jahre:</strong> Historisch IMMER positive Rendite (ca. 7-9% p.a.)</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><strong>🎯 Rechenbeispiel:</strong> Du investierst mit 16 Jahren einmalig 1.000 € in einen Welt-ETF mit durchschnittlich 7% Rendite pro Jahr:</p>
+                    <ul>
+                        <li>Mit 26 (nach 10 Jahren): ca. 1.967 €</li>
+                        <li>Mit 36 (nach 20 Jahren): ca. 3.870 €</li>
+                        <li>Mit 46 (nach 30 Jahren): ca. 7.612 €</li>
+                        <li>Mit 66 (nach 50 Jahren): ca. 29.457 €</li>
+                    </ul>
+                    <p>Aus 1.000 € werden fast 30.000 € - nur durch Warten und den Zinseszinseffekt!</p>
+                </div>
+            </div>
+
+            <!-- Section 9: Dollar-Cost Averaging -->
+            <div class="content-section animate-on-scroll">
+                <h3>📅 Durchschnittskosteneffekt (Dollar-Cost Averaging)</h3>
+                <p>Statt einen großen Betrag auf einmal zu investieren, investierst du regelmäßig einen festen Betrag - zum Beispiel jeden Monat 50 €. Das nennt man <strong>Sparplan</strong> oder auf Englisch "Dollar-Cost Averaging".</p>
+
+                <div class="glass-card rounded-2xl p-5 my-6">
+                    <h4 class="font-bold text-indigo-400 mb-3">🎯 So funktioniert es (Beispiel: 50 €/Monat in einen ETF):</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-600">
+                                    <th class="text-left py-2">Monat</th>
+                                    <th class="text-right py-2">Kurs</th>
+                                    <th class="text-right py-2">Anteile gekauft</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-400">
+                                <tr class="border-b border-gray-700"><td class="py-2">Januar</td><td class="text-right">100 €</td><td class="text-right">0,50</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-2">Februar</td><td class="text-right">80 €</td><td class="text-right text-green-400">0,625</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-2">März</td><td class="text-right">50 €</td><td class="text-right text-green-400">1,00</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-2">April</td><td class="text-right">75 €</td><td class="text-right">0,667</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-2">Mai</td><td class="text-right">110 €</td><td class="text-right text-red-400">0,455</td></tr>
+                                <tr><td class="py-2">Juni</td><td class="text-right">100 €</td><td class="text-right">0,50</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-400"><strong>Ergebnis:</strong> 300 € investiert, 3,747 Anteile gekauft. Durchschnittskurs: 80,06 € (statt 85,83 € bei Einmalkauf zum Durchschnittspreis). Du kaufst automatisch mehr Anteile, wenn es billig ist!</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Vorteile des Sparplans:</strong></p>
+                    <ul>
+                        <li>Du musst nicht den "perfekten" Einstiegszeitpunkt finden</li>
+                        <li>Fallende Kurse sind sogar gut - du kaufst billig ein!</li>
+                        <li>Disziplin wird automatisiert - du investierst regelmäßig</li>
+                        <li>Schon ab 25 € pro Monat möglich bei vielen Brokern</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 10: Behavioral Finance -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧠 Behavioral Finance - Typische Anlegerfehler</h3>
+                <p>Unser Gehirn ist nicht für rationale Finanzentscheidungen gebaut. Wir machen immer wieder dieselben psychologischen Fehler. Wer sie kennt, kann sie vermeiden:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-2">😰 Panikverkauf</h4>
+                        <p class="text-sm text-gray-400">Die Kurse fallen, du bekommst Angst und verkaufst. Damit machst du den Verlust real und verpasst die Erholung. Wer im Corona-Crash im März 2020 verkauft hat, hat die Erholung bis Ende 2020 (+70%) verpasst.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-yellow-400 mb-2">🤑 FOMO (Fear of Missing Out)</h4>
+                        <p class="text-sm text-gray-400">Alle reden über eine Aktie oder Krypto, der Kurs steigt. Du springst auf den Zug auf - meistens zu spät, kurz vor dem Crash. Beispiel: Viele kauften Bitcoin bei 60.000 €, bevor er auf 15.000 € fiel.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-orange-400 mb-2">🐑 Herdenverhalten</h4>
+                        <p class="text-sm text-gray-400">"Alle kaufen das, also muss es gut sein!" Falsch. Wenn alle bereits gekauft haben, ist der Preis oft schon zu hoch. Warren Buffett sagt: "Sei ängstlich, wenn andere gierig sind."</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-purple-400 mb-2">🎰 Verlustaversion</h4>
+                        <p class="text-sm text-gray-400">Verluste schmerzen uns doppelt so stark wie Gewinne uns freuen. Deshalb halten wir Verlustaktien zu lange (Hoffnung) und verkaufen Gewinner zu früh (Angst, den Gewinn zu verlieren).</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 my-4">
+                    <h4 class="font-bold text-indigo-400 mb-2">🔮 Overconfidence (Selbstüberschätzung)</h4>
+                    <p class="text-sm text-gray-400">"Ich bin schlauer als der Markt!" Studien zeigen: 90% der aktiven Fonds schlagen den Markt langfristig NICHT. Wenn Profis es nicht schaffen, warum solltest du es als Hobby-Anleger?</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Die wichtigste Regel:</strong> Investiere nur Geld, das du langfristig nicht brauchst. Dann kannst du ruhig bleiben, wenn die Märkte verrückt spielen. Schalte Push-Benachrichtigungen für Börsenkurse aus und schaue maximal 1x pro Monat in dein Depot!</p>
+                </div>
+            </div>
+
+            <!-- Section 11: Exercise - Build a Portfolio -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧮 Übung: Baue dein eigenes Muster-Portfolio!</h3>
+                <div class="exercise-box">
+                    <p><strong>📋 Aufgabe:</strong> Stell dir vor, du hast 10.000 € zum Investieren. Teile das Geld auf die folgenden Anlageklassen auf. Überlege, welches Risikoprofil zu dir passt!</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-green-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">Tagesgeld<br>(Sicherheit)</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-blue-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">Anleihen<br>(Stabilität)</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-indigo-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">ETF Welt<br>(Wachstum)</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-purple-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">ETF Europa<br>(Heimatmarkt)</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-pink-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">Einzelaktien<br>(Spekulation)</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold text-red-400">____%</div>
+                            <p class="text-xs text-gray-400 mt-1">Krypto<br>(Hohes Risiko)</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-sm text-gray-400">Fragen zur Reflexion:</p>
+                    <ul class="text-sm text-gray-400">
+                        <li>Ergibt deine Aufteilung zusammen 100%?</li>
+                        <li>Wie viel könntest du im schlimmsten Fall verlieren?</li>
+                        <li>Könntest du ruhig schlafen, wenn die Aktienmärkte 40% fallen?</li>
+                        <li>Wie lange willst du das Geld anlegen?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 12: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3>📋 Zusammenfassung</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-indigo-400 mb-2">Wichtige Begriffe</h4>
+                        <ul>
+                            <li><strong>Risiko:</strong> Möglichkeit, Geld zu verlieren</li>
+                            <li><strong>Rendite:</strong> Gewinn einer Anlage</li>
+                            <li><strong>Diversifikation:</strong> Risikostreuung</li>
+                            <li><strong>Volatilität:</strong> Maß für Kursschwankungen</li>
+                            <li><strong>Asset Allocation:</strong> Vermögensaufteilung</li>
+                            <li><strong>Sparplan:</strong> Regelmäßig investieren</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-purple-400 mb-2">Das Wichtigste</h4>
+                        <ul>
+                            <li>Höhere Rendite = höheres Risiko</li>
+                            <li>Diversifikation reduziert Risiko</li>
+                            <li>Ein Sparplan glättet den Einstiegspreis</li>
+                            <li>Zeit ist dein größter Verbündeter</li>
+                            <li>Emotionen sind der größte Feind</li>
+                            <li>Rendite + Sicherheit + Liquidität: Wähle zwei!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center">📝 Kapitel-Test</h2>
+                <p class="text-gray-400 text-center mb-8">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter6.html">← Kapitel 6</a>
+                <a href="../index.html">Übersicht</a>
+                <a href="chapter8.html">Kapitel 8 →</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+        TestSystem.initTest(7, [
+            {
+                question: "Was besagt die goldene Regel der Geldanlage?",
+                options: ["Mehr Geld = mehr Sicherheit", "Höheres Risiko = potenziell höhere Rendite", "Aktien sind immer besser als Anleihen", "Man sollte nie investieren"],
+                correct: 1,
+                explanation: "Die goldene Regel besagt: Wer mehr Rendite möchte, muss bereit sein, mehr Risiko einzugehen. Ohne Risiko gibt es keine hohe Rendite."
+            },
+            {
+                question: "Was bedeutet Diversifikation?",
+                options: ["Alles in eine Aktie investieren", "Sein Geld auf viele verschiedene Anlagen verteilen", "Nur in sichere Anlagen investieren", "Geld auf dem Sparbuch lassen"],
+                correct: 1,
+                explanation: "Diversifikation bedeutet, sein Geld breit zu streuen - auf verschiedene Anlageklassen, Regionen und Branchen, um das Risiko zu reduzieren."
+            },
+            {
+                question: "Welche drei Ecken hat das magische Dreieck der Geldanlage?",
+                options: ["Aktien, Anleihen, Bargeld", "Rendite, Sicherheit, Liquidität", "Risiko, Gewinn, Verlust", "Sparen, Investieren, Konsumieren"],
+                correct: 1,
+                explanation: "Das magische Dreieck besteht aus Rendite, Sicherheit und Liquidität. Man kann nie alle drei gleichzeitig maximieren."
+            },
+            {
+                question: "Was ist der Durchschnittskosteneffekt (Dollar-Cost Averaging)?",
+                options: ["Man kauft immer zum günstigsten Kurs", "Man investiert regelmäßig einen festen Betrag, egal wie der Kurs steht", "Man berechnet den Durchschnittspreis aller Aktien", "Man wartet auf den besten Zeitpunkt zum Investieren"],
+                correct: 1,
+                explanation: "Beim Durchschnittskosteneffekt investierst du regelmäßig einen festen Betrag. So kaufst du automatisch mehr Anteile, wenn die Kurse niedrig sind, und weniger, wenn sie hoch sind."
+            },
+            {
+                question: "Was ist FOMO im Zusammenhang mit Geldanlage?",
+                options: ["Ein neuer ETF-Typ", "Die Angst, eine Gewinnchance zu verpassen", "Ein Finanzprodukt für Jugendliche", "Eine Form der Diversifikation"],
+                correct: 1,
+                explanation: "FOMO (Fear of Missing Out) ist die Angst, eine Chance zu verpassen. Sie verleitet Anleger dazu, bei steigenden Kursen einzusteigen - oft zu spät und zu teuer."
+            },
+            {
+                question: "Warum können junge Menschen mehr Risiko bei der Geldanlage eingehen?",
+                options: ["Weil sie weniger Geld haben", "Weil sie einen langen Anlagehorizont haben und Verluste aussitzen können", "Weil junge Leute mutiger sind", "Weil Verluste für sie nicht zählen"],
+                correct: 1,
+                explanation: "Junge Menschen haben Jahrzehnte Zeit, Kursverluste auszusitzen. Historisch hat sich der Aktienmarkt nach jedem Crash erholt. Zeit ist der größte Verbündete beim Investieren."
+            },
+            {
+                question: "Was misst die Volatilität?",
+                options: ["Die Rendite einer Anlage", "Wie stark der Preis einer Anlage schwankt", "Die Sicherheit einer Anlage", "Den Wert einer Aktie"],
+                correct: 1,
+                explanation: "Volatilität misst die Stärke der Kursschwankungen. Hohe Volatilität bedeutet starke Schwankungen (z.B. Krypto), niedrige bedeutet stabile Kurse (z.B. Tagesgeld)."
+            },
+            {
+                question: "Was ist ein Beispiel für das Unternehmensrisiko?",
+                options: ["Die Inflation steigt", "Der Euro verliert an Wert", "Ein einzelnes Unternehmen wie Wirecard geht pleite", "Die EZB erhöht die Zinsen"],
+                correct: 2,
+                explanation: "Das Unternehmensrisiko betrifft ein einzelnes Unternehmen, das in Schwierigkeiten geraten oder pleitegehen kann - wie im Fall Wirecard 2020."
+            },
+            {
+                question: "Ein breit gestreuter MSCI World ETF enthält Aktien aus wie vielen Industrieländern?",
+                options: ["10", "15", "23", "50"],
+                correct: 2,
+                explanation: "Der MSCI World Index enthält über 1.500 Aktien aus 23 Industrieländern weltweit - das bietet eine breite Diversifikation."
+            },
+            {
+                question: "Was rät Warren Buffett zum Thema Herdenverhalten?",
+                options: ["Kaufe was alle kaufen", "Sei ängstlich, wenn andere gierig sind", "Investiere nur in US-Aktien", "Verkaufe immer sofort bei Verlusten"],
+                correct: 1,
+                explanation: "Warren Buffett sagt: 'Sei ängstlich, wenn andere gierig sind, und sei gierig, wenn andere ängstlich sind.' Das bedeutet: Gegen den Strom schwimmen statt der Herde folgen."
+            }
+        ]);
+    </script>
+</body>
+</html>

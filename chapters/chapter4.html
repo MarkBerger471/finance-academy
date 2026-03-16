@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 4: Banken & Konten - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="chapter4.html" class="nav-link active">Kapitel</a>
+                    <a href="../tests/scoreboard.html" class="nav-link">Ergebnisse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🏧</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-orange-400 mb-4">Kapitel 4 von 10</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Banken & Konten</h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span>⏱ 1-1,5 Stunden</span>
+                    <span>|</span>
+                    <span>📝 10 Testfragen</span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2">40% des Kurses</p>
+            </div>
+
+            <!-- Section 1: What is a Bank -->
+            <div class="content-section animate-on-scroll">
+                <h3>🏦 Was ist eine Bank?</h3>
+                <p>Eine Bank ist ein Unternehmen, das sich um Geld kümmert - dein Geld und das Geld von Millionen anderer Menschen. Aber eine Bank ist kein Tresor, in dem dein Geld einfach nur herumliegt. Banken <strong>arbeiten</strong> mit deinem Geld!</p>
+
+                <div class="info-box">
+                    <p><strong>💡 Wie verdienen Banken Geld?</strong> Das Grundprinzip ist einfach: Banken nehmen Geld von Sparern an (Einlagen) und verleihen es an andere Menschen und Unternehmen (Kredite). Der Trick liegt in der <strong>Zinsspanne</strong> (auch Zinsmarge genannt).</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 my-6">
+                    <h4 class="font-bold text-orange-400 mb-3">📊 So funktioniert die Zinsspanne</h4>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">💰</div>
+                            <p class="text-sm text-gray-300 font-bold">Sparer bekommt</p>
+                            <div class="text-2xl font-bold text-green-400">1,5%</div>
+                            <p class="text-xs text-gray-400">Zinsen auf Spareinlagen</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">🏦</div>
+                            <p class="text-sm text-gray-300 font-bold">Bank verdient</p>
+                            <div class="text-2xl font-bold text-orange-400">3,5%</div>
+                            <p class="text-xs text-gray-400">Zinsspanne = Gewinn</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">🏠</div>
+                            <p class="text-sm text-gray-300 font-bold">Kreditnehmer zahlt</p>
+                            <div class="text-2xl font-bold text-red-400">5,0%</div>
+                            <p class="text-xs text-gray-400">Zinsen auf Kredit</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-4 text-center">Die Bank zahlt dir 1,5% Zinsen auf dein Sparkonto und verlangt 5,0% von jemandem, der einen Kredit aufnimmt. Die Differenz von 3,5% ist der Gewinn der Bank.</p>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel:</strong> Du legst 1.000 € auf dein Sparkonto. Die Bank zahlt dir dafür 1,5% Zinsen = <strong>15 € pro Jahr</strong>. Gleichzeitig verleiht die Bank deine 1.000 € an jemanden, der ein Auto kaufen will, und verlangt dafür 5% Zinsen = <strong>50 € pro Jahr</strong>. Die Bank verdient also 50 € - 15 € = <strong>35 € an deinen 1.000 €</strong>.</p>
+                </div>
+
+                <p>Neben Zinsen verdienen Banken auch Geld durch:</p>
+                <ul>
+                    <li><strong>Kontoführungsgebühren</strong> (z.B. 3-10 € pro Monat)</li>
+                    <li><strong>Kreditkartengebühren</strong> und Transaktionsgebühren</li>
+                    <li><strong>Anlageberatung</strong> und Fonds-Management</li>
+                    <li><strong>Überziehungszinsen</strong> (wenn dein Konto ins Minus rutscht - sehr teuer!)</li>
+                </ul>
+            </div>
+
+            <!-- Section 2: Types of Banks -->
+            <div class="content-section animate-on-scroll">
+                <h3>🏢 Arten von Banken in Deutschland</h3>
+                <p>In Deutschland gibt es verschiedene Arten von Banken. Jede hat ihre eigenen Stärken:</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="text-3xl mb-3">🏛</div>
+                        <h4 class="font-bold text-red-400 mb-2">Sparkassen</h4>
+                        <ul class="text-sm text-gray-400">
+                            <li>Öffentlich-rechtlich (gehören den Kommunen)</li>
+                            <li>Filialen fast überall in Deutschland</li>
+                            <li>Persönliche Beratung vor Ort</li>
+                            <li>Oft kostenlose Jugendkonten</li>
+                            <li>Größtes Filialnetz in Deutschland</li>
+                            <li>Beispiel: Stadtsparkasse, Kreissparkasse</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="text-3xl mb-3">🤝</div>
+                        <h4 class="font-bold text-blue-400 mb-2">Volksbanken / Raiffeisenbanken</h4>
+                        <ul class="text-sm text-gray-400">
+                            <li>Genossenschaftsbanken (gehören den Mitgliedern)</li>
+                            <li>Regional verwurzelt</li>
+                            <li>Mitglieder können mitbestimmen</li>
+                            <li>Persönliche Beratung</li>
+                            <li>Gute Jugendangebote</li>
+                            <li>Beispiel: VR Bank, Volksbank</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="text-3xl mb-3">📱</div>
+                        <h4 class="font-bold text-green-400 mb-2">Direktbanken</h4>
+                        <ul class="text-sm text-gray-400">
+                            <li>Nur online - keine Filialen</li>
+                            <li>Oft günstiger (keine Filialkosten)</li>
+                            <li>Moderne Apps</li>
+                            <li>Oft kostenlose Kontoführung</li>
+                            <li>Höhere Zinsen auf Tagesgeld</li>
+                            <li>Beispiele: ING, DKB, N26, comdirect</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Tipp für Jugendliche:</strong> Für dein erstes Konto ist eine <strong>Sparkasse oder Volksbank</strong> oft eine gute Wahl, weil du eine Filiale in der Nähe hast und persönliche Beratung bekommst. Später, wenn du dich auskennst, kann eine Direktbank eine günstige Ergänzung sein.</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Types of Accounts -->
+            <div class="content-section animate-on-scroll">
+                <h3>💳 Arten von Bankkonten</h3>
+                <p>Es gibt verschiedene Kontoarten, die jeweils unterschiedliche Zwecke haben:</p>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-orange-400 mb-3">🔄 Das Girokonto - Dein Alltagskonto</h4>
+                    <p class="text-gray-400 mb-3">Das Girokonto ist dein <strong>wichtigstes Konto</strong>. Hier geht dein Geld ein und von hier bezahlst du alles. Es ist wie dein finanzielles Hauptquartier.</p>
+                    <ul class="text-gray-400">
+                        <li>Hier landet dein Taschengeld, Gehalt oder BAföG</li>
+                        <li>Du kannst Überweisungen machen und empfangen</li>
+                        <li>Du bekommst eine Bankkarte (Debitkarte) dazu</li>
+                        <li>Lastschriften für Abos (Spotify, Netflix) werden hier abgebucht</li>
+                        <li>Kaum oder keine Zinsen auf das Guthaben</li>
+                        <li>Für Jugendliche oft <strong>kostenlos</strong></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-cyan-400 mb-3">🐷 Das Tagesgeldkonto - Flexibel sparen</h4>
+                    <p class="text-gray-400 mb-3">Perfekt für deinen <strong>Notgroschen</strong> und kurzfristiges Sparen. Du bekommst Zinsen und kommst trotzdem jederzeit an dein Geld.</p>
+                    <ul class="text-gray-400">
+                        <li>Höhere Zinsen als auf dem Girokonto (aktuell ca. 1,5-3,5%)</li>
+                        <li>Geld ist <strong>jederzeit verfügbar</strong></li>
+                        <li>Keine feste Laufzeit</li>
+                        <li>Keine Gebühren</li>
+                        <li>Kein direkter Zahlungsverkehr möglich - nur Überweisungen zum Girokonto</li>
+                        <li>Ideal für den Notgroschen!</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-purple-400 mb-3">🔒 Das Festgeldkonto - Mehr Zinsen, weniger Flexibilität</h4>
+                    <p class="text-gray-400 mb-3">Du legst dein Geld für eine <strong>feste Laufzeit</strong> an (z.B. 6 Monate, 1 Jahr, 3 Jahre). Dafür bekommst du höhere Zinsen.</p>
+                    <ul class="text-gray-400">
+                        <li>Höhere Zinsen als Tagesgeld (aktuell ca. 2,5-4,0%)</li>
+                        <li>Geld ist für die vereinbarte Zeit <strong>fest angelegt</strong></li>
+                        <li>Du kommst vorher nicht (oder nur mit Strafen) an das Geld</li>
+                        <li>Gut für Geld, das du für ein bestimmtes Ziel in z.B. 2 Jahren brauchst</li>
+                        <li>Keine Gebühren</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel - Die perfekte Kontostruktur:</strong></p>
+                    <ul>
+                        <li><strong>Girokonto:</strong> 100 € (für laufende Ausgaben im Monat)</li>
+                        <li><strong>Tagesgeldkonto:</strong> 250 € (Notgroschen - jederzeit verfügbar)</li>
+                        <li><strong>Festgeldkonto:</strong> 500 € (für den Führerschein in 2 Jahren - höhere Zinsen)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 4: Opening Your First Account -->
+            <div class="content-section animate-on-scroll">
+                <h3>🎉 Dein erstes Bankkonto eröffnen</h3>
+                <p>In Deutschland kannst du schon als Kind ein Bankkonto haben! Hier sind die Regeln:</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">👶</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Ab 0 Jahren</h4>
+                        <p class="text-sm text-gray-400">Eltern können ein <strong>Sparkonto</strong> für ihr Kind eröffnen. Das Kind hat kein eigenes Zugriffsrecht.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🧒</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Ab 7 Jahren</h4>
+                        <p class="text-sm text-gray-400">Mit <strong>Zustimmung der Eltern</strong> kannst du ein eigenes Girokonto eröffnen. Beschränkte Geschäftsfähigkeit.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🧑</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Ab 18 Jahren</h4>
+                        <p class="text-sm text-gray-400"><strong>Volle Geschäftsfähigkeit.</strong> Du kannst selbstständig alle Konten eröffnen und Verträge abschließen.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 my-6">
+                    <h4 class="font-bold text-orange-400 mb-3">📋 Was brauchst du zur Kontoeröffnung?</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><strong>Personalausweis oder Reisepass</strong> (von dir und deinen Eltern, wenn du unter 18 bist)</li>
+                        <li><strong>Meldebescheinigung</strong> (manchmal nötig)</li>
+                        <li><strong>Steueridentifikationsnummer</strong> (bekommst du automatisch nach der Geburt)</li>
+                        <li><strong>Unterschrift beider Elternteile</strong> (wenn du unter 18 bist)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Jugendkonto-Vorteile:</strong> Die meisten Banken bieten spezielle Jugendkonten an, die bis zum 18. oder sogar 25. Lebensjahr <strong>komplett kostenlos</strong> sind - keine Kontoführungsgebühren, kostenlose Debitkarte und oft sogar eine kostenlose Kreditkarte ab 18!</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Wichtig:</strong> Bei Jugendkonten gibt es keinen <strong>Dispokredit</strong> (Überziehung). Das bedeutet: Du kannst nicht mehr ausgeben, als auf deinem Konto ist. Das ist eigentlich ein Vorteil - denn Dispokredit-Zinsen sind extrem hoch (oft 10-15%)!</p>
+                </div>
+            </div>
+
+            <!-- Section 5: Online Banking & Security -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔐 Online-Banking & Sicherheit</h3>
+                <p>Mit Online-Banking kannst du deine Finanzen bequem vom Handy oder Computer aus verwalten. Aber Sicherheit steht an erster Stelle!</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">✅ Was du tun solltest</h4>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><strong>Starkes Passwort</strong> verwenden (mindestens 12 Zeichen, Groß/Klein, Zahlen, Sonderzeichen)</li>
+                            <li><strong>Zwei-Faktor-Authentifizierung</strong> (2FA) aktivieren</li>
+                            <li><strong>Nur eigene Geräte</strong> für Banking nutzen</li>
+                            <li><strong>Regelmäßig Kontoauszüge</strong> prüfen</li>
+                            <li><strong>Banking-App</strong> immer aktuell halten</li>
+                            <li><strong>Bildschirmsperre</strong> auf dem Handy aktivieren</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3">❌ Was du NICHT tun solltest</h4>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><strong>Niemals</strong> PIN oder Passwort weitergeben - auch nicht an Freunde!</li>
+                            <li><strong>Kein</strong> Banking in öffentlichem WLAN (Café, Bahnhof)</li>
+                            <li><strong>Nicht</strong> auf Links in verdächtigen E-Mails klicken (Phishing!)</li>
+                            <li><strong>Nicht</strong> das gleiche Passwort wie für Social Media nutzen</li>
+                            <li><strong>Kein</strong> Banking auf fremden Computern</li>
+                            <li><strong>Niemals</strong> TAN-Nummern am Telefon durchgeben</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Phishing erkennen:</strong> Banken fragen <strong>niemals</strong> per E-Mail, SMS oder Telefon nach deiner PIN, TAN oder deinem Passwort! Wenn du so eine Nachricht bekommst, ist es <strong>immer</strong> ein Betrugsversuch. Lösche die Nachricht und informiere deine Bank.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 my-4">
+                    <h4 class="font-bold text-orange-400 mb-3">📱 Mobile Banking - Das kann deine Banking-App</h4>
+                    <ul class="text-gray-400">
+                        <li>Kontostand und Umsätze jederzeit prüfen</li>
+                        <li>Überweisungen tätigen</li>
+                        <li>Daueraufträge einrichten (z.B. automatisch Sparen!)</li>
+                        <li>Mit dem Handy bezahlen (Apple Pay, Google Pay)</li>
+                        <li>Karte sperren, wenn du sie verlierst</li>
+                        <li>Push-Nachrichten bei jeder Kontobewegung - so merkst du sofort, wenn etwas nicht stimmt</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 6: IBAN, BIC, SEPA -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔢 IBAN, BIC & SEPA - Was bedeutet das alles?</h3>
+                <p>Wenn du Geld überweisen oder empfangen willst, brauchst du bestimmte Nummern. Hier ist, was sie bedeuten:</p>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-orange-400 mb-3">🏷 IBAN - Deine Kontonummer</h4>
+                    <p class="text-gray-400 mb-3">Die <strong>IBAN</strong> (International Bank Account Number) ist deine eindeutige Kontonummer in Europa. Sie sieht so aus:</p>
+                    <div class="glass-card rounded-xl p-4 text-center my-3 font-mono">
+                        <div class="text-lg font-bold text-orange-400">DE89 3704 0044 0532 0130 00</div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                        <div class="glass-card rounded-lg p-2 text-center">
+                            <div class="font-bold text-cyan-400">DE</div>
+                            <p class="text-xs text-gray-400">Ländercode (Deutschland)</p>
+                        </div>
+                        <div class="glass-card rounded-lg p-2 text-center">
+                            <div class="font-bold text-purple-400">89</div>
+                            <p class="text-xs text-gray-400">Prüfziffer</p>
+                        </div>
+                        <div class="glass-card rounded-lg p-2 text-center">
+                            <div class="font-bold text-green-400">37040044</div>
+                            <p class="text-xs text-gray-400">Bankleitzahl (BLZ)</p>
+                        </div>
+                        <div class="glass-card rounded-lg p-2 text-center">
+                            <div class="font-bold text-orange-400">0532013000</div>
+                            <p class="text-xs text-gray-400">Kontonummer</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-3">Eine deutsche IBAN hat immer <strong>22 Zeichen</strong>. Du findest deine IBAN auf deiner Bankkarte, im Online-Banking oder auf deinem Kontoauszug.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-orange-400 mb-3">🌐 BIC - Die Bankadresse</h4>
+                    <p class="text-gray-400">Der <strong>BIC</strong> (Bank Identifier Code, auch SWIFT-Code genannt) identifiziert deine Bank weltweit. Beispiel: <strong>COBADEFFXXX</strong> (Commerzbank Frankfurt). Innerhalb der EU brauchst du den BIC meistens <strong>nicht mehr</strong> - die IBAN reicht.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-5 mb-4">
+                    <h4 class="font-bold text-orange-400 mb-3">🇪🇺 SEPA - Überweisungen in Europa</h4>
+                    <p class="text-gray-400 mb-3"><strong>SEPA</strong> (Single Euro Payments Area) ist ein einheitlicher Zahlungsraum in Europa. Das bedeutet:</p>
+                    <ul class="text-gray-400">
+                        <li>Überweisungen innerhalb der SEPA-Zone sind <strong>so einfach und günstig</strong> wie Inlandsüberweisungen</li>
+                        <li>36 Länder sind dabei (alle EU-Länder + einige weitere)</li>
+                        <li>Eine Überweisung dauert maximal <strong>1 Bankarbeitstag</strong></li>
+                        <li>Du brauchst nur die <strong>IBAN</strong> des Empfängers</li>
+                        <li>Es gibt auch SEPA-Lastschriften (z.B. für Abos)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel:</strong> Dein Freund in Frankreich schickt dir 20 € für ein gemeinsames Geschenk. Er braucht nur deine IBAN, und das Geld ist am nächsten Bankarbeitstag auf deinem Konto - genau so schnell und günstig, als würde jemand aus deiner Stadt überweisen!</p>
+                </div>
+            </div>
+
+            <!-- Section 7: Debit vs Credit Cards -->
+            <div class="content-section animate-on-scroll">
+                <h3>💳 Debitkarte vs. Kreditkarte</h3>
+                <p>Als Jugendlicher bekommst du normalerweise eine <strong>Debitkarte</strong> (z.B. girocard, Visa Debit oder Mastercard Debit). Aber was ist der Unterschied zur Kreditkarte?</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">💳 Debitkarte (EC-Karte / girocard)</h4>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><strong>Sofortige Abbuchung:</strong> Geld wird direkt von deinem Konto abgebucht</li>
+                            <li><strong>Nur vorhandenes Geld:</strong> Du kannst nicht mehr ausgeben, als du hast</li>
+                            <li><strong>Für Jugendliche:</strong> Ab Kontoeröffnung verfügbar</li>
+                            <li><strong>Akzeptanz:</strong> In den meisten Geschäften in Deutschland</li>
+                            <li><strong>Kosten:</strong> Meist kostenlos im Jugendkonto</li>
+                            <li><strong>Online-Shopping:</strong> Mit Visa/Mastercard Debit möglich</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-blue-400 mb-3">💳 Kreditkarte</h4>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><strong>Spätere Abbuchung:</strong> Gesammelt am Monatsende oder in Raten</li>
+                            <li><strong>Kreditrahmen:</strong> Du kannst Geld ausgeben, das du (noch) nicht hast</li>
+                            <li><strong>Für Jugendliche:</strong> Meist erst ab 18 Jahren</li>
+                            <li><strong>Akzeptanz:</strong> Weltweit, auch online</li>
+                            <li><strong>Kosten:</strong> Oft Jahresgebühr (20-100 €)</li>
+                            <li><strong>Gefahr:</strong> Schulden durch Ratenzahlung!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Achtung bei Kreditkarten:</strong> Wenn du eine Kreditkarte auf Ratenzahlung stellst, zahlst du <strong>hohe Zinsen</strong> (oft 15-20% pro Jahr!). Beispiel: Du kaufst Sneaker für 150 € mit Kreditkarte und zahlst nur die Minimalrate. Mit 18% Zinsen zahlst du am Ende <strong>über 170 €</strong> - das sind 20 € extra! Bezahle Kreditkartenrechnungen immer <strong>sofort und vollständig</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Section 8: Bank Fees -->
+            <div class="content-section animate-on-scroll">
+                <h3>💸 Bankgebühren und wie du sie vermeidest</h3>
+                <p>Banken können verschiedene Gebühren verlangen. Hier ist ein Überblick und wie du sie umgehst:</p>
+
+                <div class="glass-card rounded-2xl p-5 my-6">
+                    <div class="grid gap-3">
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-gray-300">Kontoführungsgebühr</span>
+                            <span class="text-orange-400 font-bold">0-10 €/Monat</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-gray-300">Geld abheben am Fremdautomaten</span>
+                            <span class="text-orange-400 font-bold">1,95-5,00 €</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-gray-300">Kreditkarte Jahresgebühr</span>
+                            <span class="text-orange-400 font-bold">0-100 €/Jahr</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-gray-300">Papierbasierter Kontoauszug</span>
+                            <span class="text-orange-400 font-bold">0,50-1,50 €</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-gray-300">Überziehungszinsen (Dispo)</span>
+                            <span class="text-red-400 font-bold">10-15% p.a.</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Kartensperrung (Ersatzkarte)</span>
+                            <span class="text-orange-400 font-bold">5-15 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ So sparst du Bankgebühren:</strong></p>
+                    <ul>
+                        <li>Wähle ein <strong>kostenloses Jugendkonto</strong> - die meisten Banken bieten das an</li>
+                        <li>Hebe Geld nur an <strong>eigenen Automaten</strong> deiner Bank ab (Sparkasse an Sparkasse, etc.)</li>
+                        <li>Nutze <strong>Online-Kontoauszüge</strong> statt Papier</li>
+                        <li>Vergleiche Konditionen verschiedener Banken vor der Kontoeröffnung</li>
+                        <li>Frage nach <strong>Studentenkonten</strong> wenn du studierst - oft kostenlos bis 25 oder 30</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 9: Deposit Protection -->
+            <div class="content-section animate-on-scroll">
+                <h3>🛡 Einlagensicherung - Dein Geld ist geschützt!</h3>
+                <p>Was passiert, wenn deine Bank pleitegeht? Keine Sorge - in der EU gibt es die <strong>gesetzliche Einlagensicherung</strong>!</p>
+
+                <div class="glass-card rounded-2xl p-5 my-6 text-center">
+                    <div class="text-4xl mb-3">🛡</div>
+                    <h4 class="font-bold text-orange-400 text-xl mb-2">Gesetzliche Einlagensicherung</h4>
+                    <div class="text-4xl font-bold text-green-400 mb-2">100.000 €</div>
+                    <p class="text-gray-400">pro Kunde, pro Bank sind gesetzlich geschützt</p>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Was bedeutet das?</strong> Wenn eine Bank in der EU insolvent wird, bekommst du dein Geld bis zu <strong>100.000 €</strong> innerhalb von 7 Arbeitstagen zurück. Das gilt für Girokonten, Sparkonten, Tagesgeld und Festgeld. In Deutschland gibt es zusätzlich freiwillige Sicherungssysteme, die oft noch höhere Beträge abdecken.</p>
+                </div>
+
+                <p>Die drei Sicherungssysteme in Deutschland:</p>
+                <ul>
+                    <li><strong>Sparkassen:</strong> Institutssicherung - die Sparkassen-Finanzgruppe sorgt dafür, dass keine Sparkasse insolvent wird</li>
+                    <li><strong>Volksbanken:</strong> Institutssicherung durch den BVR (Bundesverband der Deutschen Volksbanken und Raiffeisenbanken)</li>
+                    <li><strong>Privatbanken:</strong> Gesetzliche Sicherung bis 100.000 € + freiwilliger Einlagensicherungsfonds</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><strong>✅ Für dich als Teenager:</strong> Mit deinem Kontoguthaben bist du weit unter 100.000 €, also ist dein Geld <strong>zu 100% geschützt</strong>. Mach dir keine Sorgen! Dieses Wissen wird aber wichtig, wenn du als Erwachsener größere Summen hast.</p>
+                </div>
+            </div>
+
+            <!-- Section 10: Exercise - Compare Youth Accounts -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧮 Übung: Jugendkonten vergleichen</h3>
+                <div class="exercise-box">
+                    <p><strong>📋 Aufgabe:</strong> Vergleiche die folgenden (fiktiven, aber realistischen) Jugendkonto-Angebote und entscheide, welches am besten zu dir passt!</p>
+
+                    <div class="grid md:grid-cols-3 gap-4 my-6">
+                        <div class="glass-card rounded-2xl p-4 border border-red-500/30">
+                            <h4 class="font-bold text-red-400 text-center mb-3">Sparkasse "Young"</h4>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li>Kontogebühr: <strong>0 €</strong> (bis 18)</li>
+                                <li>Debitkarte: <strong>kostenlos</strong></li>
+                                <li>Geld abheben: <strong>kostenlos</strong> an 23.000 Automaten</li>
+                                <li>Tagesgeld: <strong>1,0%</strong> Zinsen</li>
+                                <li>App: Ja, mit Kwitt (Geld an Freunde)</li>
+                                <li>Filiale: <strong>Ja, vor Ort</strong></li>
+                                <li>Besonderes: Beratung persönlich</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4 border border-green-500/30">
+                            <h4 class="font-bold text-green-400 text-center mb-3">DKB "U18-Konto"</h4>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li>Kontogebühr: <strong>0 €</strong></li>
+                                <li>Visa Debitkarte: <strong>kostenlos</strong></li>
+                                <li>Geld abheben: <strong>kostenlos</strong> weltweit</li>
+                                <li>Tagesgeld: <strong>2,5%</strong> Zinsen</li>
+                                <li>App: Ja, moderne App</li>
+                                <li>Filiale: <strong>Nein</strong> (Direktbank)</li>
+                                <li>Besonderes: Weltweit kostenlos bezahlen</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4 border border-blue-500/30">
+                            <h4 class="font-bold text-blue-400 text-center mb-3">Volksbank "MeinKonto"</h4>
+                            <ul class="text-sm text-gray-400 space-y-1">
+                                <li>Kontogebühr: <strong>0 €</strong> (bis 25)</li>
+                                <li>Debitkarte: <strong>kostenlos</strong></li>
+                                <li>Geld abheben: <strong>kostenlos</strong> an 18.000 Automaten</li>
+                                <li>Tagesgeld: <strong>1,5%</strong> Zinsen</li>
+                                <li>App: Ja</li>
+                                <li>Filiale: <strong>Ja, vor Ort</strong></li>
+                                <li>Besonderes: Genossenschaftsanteil möglich</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-4 my-4">
+                        <h4 class="font-bold text-orange-300 mb-3">Diskussionsfragen:</h4>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li><strong>1.</strong> Welches Konto würdest du wählen und warum?</li>
+                            <li><strong>2.</strong> Für wen ist eine Filiale wichtig? Für wen ist sie unwichtig?</li>
+                            <li><strong>3.</strong> Warum bieten Direktbanken oft bessere Konditionen (höhere Zinsen, kostenloses Abheben)?</li>
+                            <li><strong>4.</strong> Kann man auch bei zwei Banken gleichzeitig ein Konto haben? Was wären Vorteile?</li>
+                            <li><strong>5.</strong> Welche Kriterien sind dir bei einem Bankkonto am wichtigsten?</li>
+                        </ul>
+                    </div>
+
+                    <p class="mt-4 text-sm text-gray-400">Recherchiert in Gruppen die echten Jugendkonten bei eurer lokalen Sparkasse, Volksbank und einer Direktbank. Erstellt eine Vergleichstabelle!</p>
+                </div>
+            </div>
+
+            <!-- Section 11: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3>📋 Zusammenfassung</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-orange-400 mb-2">Wichtige Begriffe</h4>
+                        <ul>
+                            <li><strong>Zinsspanne:</strong> Differenz zwischen Spar- und Kreditzinsen</li>
+                            <li><strong>Girokonto:</strong> Konto für den täglichen Zahlungsverkehr</li>
+                            <li><strong>Tagesgeldkonto:</strong> Flexibles Sparkonto mit Zinsen</li>
+                            <li><strong>IBAN:</strong> Internationale Kontonummer</li>
+                            <li><strong>SEPA:</strong> Einheitlicher Euro-Zahlungsraum</li>
+                            <li><strong>Einlagensicherung:</strong> Schutz bis 100.000 €</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-orange-400 mb-2">Das Wichtigste</h4>
+                        <ul>
+                            <li>Banken verdienen Geld durch die Zinsspanne</li>
+                            <li>Sparkassen, Volksbanken und Direktbanken haben unterschiedliche Stärken</li>
+                            <li>Ein Girokonto + Tagesgeldkonto ist die perfekte Grundausstattung</li>
+                            <li>Online-Banking ist sicher, wenn du die Grundregeln befolgst</li>
+                            <li>Dein Geld ist bis 100.000 € durch die Einlagensicherung geschützt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center">📝 Kapitel-Test</h2>
+                <p class="text-gray-400 text-center mb-8">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter3.html">← Kapitel 3</a>
+                <a href="../index.html">Übersicht</a>
+                <a href="chapter5.html">Kapitel 5 →</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+        TestSystem.initTest(4, [
+            {
+                question: "Wie verdienen Banken hauptsächlich Geld?",
+                options: ["Durch den Verkauf von Goldbarren", "Durch die Zinsspanne zwischen Spar- und Kreditzinsen", "Durch staatliche Zuschüsse", "Durch den Verkauf von Kontokarten"],
+                correct: 1,
+                explanation: "Banken zahlen niedrigere Zinsen auf Spareinlagen als sie für Kredite verlangen. Diese Differenz (Zinsspanne) ist ihre Haupteinnahmequelle."
+            },
+            {
+                question: "Ab welchem Alter kannst du mit Zustimmung deiner Eltern ein Girokonto eröffnen?",
+                options: ["Ab 0 Jahren", "Ab 7 Jahren", "Ab 14 Jahren", "Ab 16 Jahren"],
+                correct: 1,
+                explanation: "Ab 7 Jahren bist du beschränkt geschäftsfähig und kannst mit Zustimmung deiner Eltern ein eigenes Girokonto eröffnen."
+            },
+            {
+                question: "Was ist der Hauptunterschied zwischen Tagesgeld und Festgeld?",
+                options: ["Tagesgeld gibt höhere Zinsen", "Beim Festgeld ist das Geld für eine feste Laufzeit angelegt", "Festgeld gibt es nur bei Direktbanken", "Tagesgeld gibt es nur bei Sparkassen"],
+                correct: 1,
+                explanation: "Beim Festgeld legst du dein Geld für eine vereinbarte Laufzeit fest an und bekommst dafür höhere Zinsen. Beim Tagesgeld ist das Geld jederzeit verfügbar."
+            },
+            {
+                question: "Wie viele Zeichen hat eine deutsche IBAN?",
+                options: ["10 Zeichen", "16 Zeichen", "22 Zeichen", "28 Zeichen"],
+                correct: 2,
+                explanation: "Eine deutsche IBAN hat immer 22 Zeichen: DE (Ländercode) + 2 Prüfziffern + 8 Ziffern Bankleitzahl + 10 Ziffern Kontonummer."
+            },
+            {
+                question: "Was ist Phishing?",
+                options: ["Ein neues Kartenspiel", "Betrugsversuche, bei denen Kriminelle versuchen, deine Bankdaten zu stehlen", "Eine Banking-App", "Ein Überweisungssystem"],
+                correct: 1,
+                explanation: "Phishing sind Betrugsversuche per E-Mail, SMS oder Telefon, bei denen Kriminelle versuchen, an deine Zugangsdaten oder PINs zu kommen."
+            },
+            {
+                question: "Bis zu welchem Betrag sind Bankeinlagen in der EU gesetzlich geschützt?",
+                options: ["10.000 €", "50.000 €", "100.000 €", "250.000 €"],
+                correct: 2,
+                explanation: "Die gesetzliche Einlagensicherung in der EU schützt Bankeinlagen bis zu 100.000 € pro Kunde und pro Bank."
+            },
+            {
+                question: "Was ist der Unterschied zwischen einer Debitkarte und einer Kreditkarte?",
+                options: ["Debitkarten sind teurer", "Bei der Debitkarte wird das Geld sofort abgebucht, bei der Kreditkarte erst später", "Kreditkarten gibt es nur bei Sparkassen", "Es gibt keinen Unterschied"],
+                correct: 1,
+                explanation: "Bei einer Debitkarte wird der Betrag sofort vom Konto abgebucht. Bei einer Kreditkarte werden die Beträge gesammelt und erst am Monatsende oder in Raten abgebucht."
+            },
+            {
+                question: "Warum bieten Direktbanken oft bessere Konditionen als Filialbanken?",
+                options: ["Sie sind staatlich gefördert", "Sie haben keine teuren Filialen und können Kosten sparen", "Sie haben mehr Kunden", "Ihre Computer sind schneller"],
+                correct: 1,
+                explanation: "Direktbanken sparen die hohen Kosten für Filialen, Miete und Personal vor Ort. Diese Ersparnis geben sie als bessere Konditionen an ihre Kunden weiter."
+            },
+            {
+                question: "Wofür steht SEPA?",
+                options: ["Sicherer Euro-Payment-Automat", "Single Euro Payments Area", "System für europäische Privatkonten-Abrechnung", "Sparkassen-Euro-Payment-App"],
+                correct: 1,
+                explanation: "SEPA steht für 'Single Euro Payments Area' (Einheitlicher Euro-Zahlungsverkehrsraum) und ermöglicht günstige Überweisungen in ganz Europa."
+            },
+            {
+                question: "Was solltest du NIEMALS machen beim Online-Banking?",
+                options: ["Die App regelmäßig aktualisieren", "Push-Nachrichten aktivieren", "Deine PIN per E-Mail oder Telefon weitergeben", "Kontoauszüge regelmäßig prüfen"],
+                correct: 2,
+                explanation: "Du solltest niemals deine PIN, TAN oder Passwörter per E-Mail, SMS oder Telefon weitergeben. Banken fragen nie danach - solche Anfragen sind immer Betrug (Phishing)."
+            }
+        ]);
+    </script>
+</body>
+</html>

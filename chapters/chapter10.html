@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 10: Dein Finanzplan - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-pink-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="chapter10.html" class="nav-link active">Kapitel</a>
+                    <a href="../tests/scoreboard.html" class="nav-link">Ergebnisse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🚀</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-pink-400 mb-4">Kapitel 10 von 10</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Dein Finanzplan</h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span>⏱ 1-1,5 Stunden</span>
+                    <span>|</span>
+                    <span>📝 10 Testfragen (Abschlusstest)</span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2">100% des Kurses 🎉</p>
+            </div>
+
+            <!-- Section 1: Review -->
+            <div class="content-section animate-on-scroll">
+                <h3>🎓 Rückblick: Was du in 10 Kapiteln gelernt hast</h3>
+                <p>Herzlichen Glückwunsch - du hast es bis zum letzten Kapitel geschafft! Bevor wir in deinen persönlichen Finanzplan eintauchen, schauen wir zurück, was du alles gelernt hast:</p>
+
+                <div class="grid md:grid-cols-2 gap-3 my-6">
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">💶</span> <strong class="text-cyan-400">Kap. 1:</strong>
+                        <span class="text-sm text-gray-400">Was Geld ist, Euro, Inflation</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">🏦</span> <strong class="text-blue-400">Kap. 2:</strong>
+                        <span class="text-sm text-gray-400">Bankkonten, Girokonto, Online-Banking</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">💡</span> <strong class="text-yellow-400">Kap. 3:</strong>
+                        <span class="text-sm text-gray-400">Sparen, Notgroschen, Sparziele</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">📊</span> <strong class="text-green-400">Kap. 4:</strong>
+                        <span class="text-sm text-gray-400">Budgetierung, Einnahmen & Ausgaben</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">💳</span> <strong class="text-red-400">Kap. 5:</strong>
+                        <span class="text-sm text-gray-400">Schulden, Kredite, Zinsen</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">📈</span> <strong class="text-purple-400">Kap. 6:</strong>
+                        <span class="text-sm text-gray-400">Investieren, Aktien, ETFs</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">🛡️</span> <strong class="text-orange-400">Kap. 7:</strong>
+                        <span class="text-sm text-gray-400">Versicherungen, Risikomanagement</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">🌐</span> <strong class="text-teal-400">Kap. 8:</strong>
+                        <span class="text-sm text-gray-400">Digitale Finanzen, Krypto, Scams</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <span class="text-lg">🧾</span> <strong class="text-lime-400">Kap. 9:</strong>
+                        <span class="text-sm text-gray-400">Steuern, Sozialversicherung, Brutto/Netto</span>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border border-pink-500/30">
+                        <span class="text-lg">🚀</span> <strong class="text-pink-400">Kap. 10:</strong>
+                        <span class="text-sm text-gray-400">Dein Finanzplan (du bist hier!)</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Das ist beeindruckend!</strong> Du hast mehr über persönliche Finanzen gelernt als die meisten Erwachsenen jemals in der Schule gelernt haben. Dieses Wissen ist ein echtes Geschenk an dein zukünftiges Ich. Jetzt geht es darum, es in die Tat umzusetzen!</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Your Financial Plan -->
+            <div class="content-section animate-on-scroll">
+                <h3>📋 Dein persönlicher Finanzplan in 5 Schritten</h3>
+                <p>Ein Finanzplan klingt kompliziert, ist es aber nicht. Es sind nur 5 einfache Schritte, die du nacheinander abarbeiten kannst:</p>
+
+                <div class="space-y-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-lg font-bold text-pink-400">1</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-2">Kenne deine aktuelle Situation</h4>
+                                <p class="text-sm text-gray-400">Mache eine Bestandsaufnahme: Wie viel Geld hast du? Was kommt rein (Taschengeld, Nebenjob)? Was gibst du aus? Hast du Schulden? Schreib alles auf!</p>
+                                <div class="mt-3 p-3 rounded-lg bg-white/5 text-sm">
+                                    <p class="text-gray-300"><strong>Frag dich:</strong></p>
+                                    <ul class="text-gray-400">
+                                        <li>Wie viel Geld habe ich auf meinem Konto?</li>
+                                        <li>Wie viel bekomme ich pro Monat (Taschengeld, Job)?</li>
+                                        <li>Wofür gebe ich mein Geld aus?</li>
+                                        <li>Schulde ich jemandem Geld?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-lg font-bold text-pink-400">2</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-2">Setze dir finanzielle Ziele</h4>
+                                <p class="text-sm text-gray-400">Ohne Ziele weißt du nicht, wohin du willst. Teile deine Ziele in drei Zeithorizonte ein:</p>
+                                <div class="grid md:grid-cols-3 gap-3 mt-3">
+                                    <div class="p-3 rounded-lg bg-white/5 text-sm">
+                                        <p class="font-bold text-green-400">Kurzfristig</p>
+                                        <p class="text-gray-400">0-1 Jahr</p>
+                                        <p class="text-xs text-gray-500 mt-1">z.B. 500 € für ein neues Handy sparen</p>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-white/5 text-sm">
+                                        <p class="font-bold text-yellow-400">Mittelfristig</p>
+                                        <p class="text-gray-400">1-5 Jahre</p>
+                                        <p class="text-xs text-gray-500 mt-1">z.B. 3.000 € Notgroschen aufbauen</p>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-white/5 text-sm">
+                                        <p class="font-bold text-red-400">Langfristig</p>
+                                        <p class="text-gray-400">5+ Jahre</p>
+                                        <p class="text-xs text-gray-500 mt-1">z.B. 10.000 € für den Führerschein + erstes Auto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-lg font-bold text-pink-400">3</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-2">Baue einen Notgroschen auf</h4>
+                                <p class="text-sm text-gray-400">Bevor du irgendetwas anderes tust: Spare einen <strong>Notgroschen</strong>! Als Schüler/Student reichen erstmal <strong>500-1.000 €</strong>. Später im Beruf sollten es <strong>3-6 Monatsausgaben</strong> sein. Dieses Geld liegt auf einem Tagesgeldkonto und ist nur für echte Notfälle!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-lg font-bold text-pink-400">4</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-2">Zahle schlechte Schulden ab</h4>
+                                <p class="text-sm text-gray-400">Hast du Schulden mit hohen Zinsen (Dispo, Ratenkredite, Kreditkarte)? Die haben Priorität! Schulden mit 10-20% Zinsen sind teurer als jede Anlage dir bringen könnte. Schulden abzahlen = garantierte Rendite.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-lg font-bold text-pink-400">5</div>
+                            <div>
+                                <h4 class="font-bold text-pink-400 mb-2">Fang früh an zu investieren</h4>
+                                <p class="text-sm text-gray-400">Sobald Notgroschen steht und Schulden weg sind: <strong>Investiere!</strong> Selbst kleine Beträge machen durch den Zinseszinseffekt langfristig einen riesigen Unterschied. Ein ETF-Sparplan ab 25 € pro Monat ist ein super Start.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: First Steps -->
+            <div class="content-section animate-on-scroll">
+                <h3>🏁 Deine ersten Schritte nach diesem Kurs</h3>
+                <p>Theorie ist schön, aber Praxis ist besser! Hier sind konkrete Dinge, die du <strong>jetzt sofort</strong> tun kannst:</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🏦</div>
+                        <h4 class="font-bold text-pink-400 mb-2">Bankkonto eröffnen</h4>
+                        <p class="text-sm text-gray-400">Falls du noch keins hast: Eröffne ein kostenloses Girokonto. Viele Banken bieten spezielle Jugendkonten ohne Gebühren an. Ab 18 auch ein Depot für Wertpapiere!</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">💰</div>
+                        <h4 class="font-bold text-green-400 mb-2">Spargewohnheit starten</h4>
+                        <p class="text-sm text-gray-400">Richte einen <strong>Dauerauftrag</strong> ein: Jeden Monat automatisch 10, 25 oder 50 € auf ein Sparkonto überweisen. Automatisierung ist der Schlüssel! Du wirst es nicht vermissen.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">📈</div>
+                        <h4 class="font-bold text-purple-400 mb-2">ETF-Sparplan starten</h4>
+                        <p class="text-sm text-gray-400">Ab 18: Eröffne ein Depot und starte einen <strong>ETF-Sparplan</strong>. Schon ab 25 €/Monat in einen breit gestreuten Welt-ETF (z.B. MSCI World). Die Bank kauft automatisch jeden Monat für dich.</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Rechenbeispiel ETF-Sparplan:</strong> Wenn du mit 18 anfängst, monatlich 50 € in einen ETF zu investieren (angenommene Rendite: 7% p.a.):</p>
+                    <ul>
+                        <li>Nach <strong>10 Jahren</strong> (mit 28): ca. <strong>8.654 €</strong> (eingezahlt: 6.000 €)</li>
+                        <li>Nach <strong>20 Jahren</strong> (mit 38): ca. <strong>26.047 €</strong> (eingezahlt: 12.000 €)</li>
+                        <li>Nach <strong>40 Jahren</strong> (mit 58): ca. <strong>131.744 €</strong> (eingezahlt: 24.000 €)</li>
+                    </ul>
+                    <p>Aus 24.000 € werden über 131.000 € - der Zinseszins macht den Rest!</p>
+                </div>
+            </div>
+
+            <!-- Section 4: FIRE Movement -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔥 Finanzielle Unabhängigkeit & FIRE</h3>
+                <p><strong>Finanzielle Unabhängigkeit</strong> bedeutet: Du hast genug Geld angespart/investiert, dass du von den Erträgen leben kannst, ohne arbeiten zu MÜSSEN. Die <strong>FIRE-Bewegung</strong> (Financial Independence, Retire Early) geht sogar noch weiter: möglichst früh in "Rente" gehen.</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-pink-400 mb-3">Die 4%-Regel</h4>
+                        <p class="text-sm text-gray-400">Eine Faustregel besagt: Du kannst jedes Jahr <strong>4%</strong> deines investierten Vermögens entnehmen, ohne dass es aufgebraucht wird. Das bedeutet:</p>
+                        <ul class="text-sm text-gray-400 mt-2">
+                            <li>Für 1.000 €/Monat brauchst du: <strong>300.000 €</strong></li>
+                            <li>Für 2.000 €/Monat brauchst du: <strong>600.000 €</strong></li>
+                            <li>Für 3.000 €/Monat brauchst du: <strong>900.000 €</strong></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">Varianten von FIRE</h4>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li><strong>Lean FIRE:</strong> Mit wenig Geld leben, früh aufhören</li>
+                            <li><strong>Fat FIRE:</strong> Komfortabel leben, etwas länger arbeiten</li>
+                            <li><strong>Barista FIRE:</strong> Teilzeit arbeiten, Rest aus Investments</li>
+                            <li><strong>Coast FIRE:</strong> Genug investiert, dass es bis zur Rente wächst - nur noch für laufende Kosten arbeiten</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Realistisch bleiben:</strong> FIRE ist nicht für jeden das Ziel. Aber die Grundprinzipien - viel sparen, klug investieren, Ausgaben im Griff haben - sind für JEDEN wertvoll. Auch wenn du "nur" mit 60 statt 67 aufhörst, ist das ein Gewinn!</p>
+                </div>
+            </div>
+
+            <!-- Section 5: Common Mistakes -->
+            <div class="content-section animate-on-scroll">
+                <h3>⚠️ Die häufigsten Finanzfehler (vermeide sie!)</h3>
+                <p>Aus Fehlern lernt man - aber es ist schlauer, aus den Fehlern anderer zu lernen. Hier sind die häufigsten Geldfallen:</p>
+
+                <div class="space-y-3 my-6">
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 1: Lifestyle Inflation</h4>
+                        <p class="text-sm text-gray-400">Du bekommst eine Gehaltserhöhung und gibst sofort mehr aus. Besser: Erhöhe zuerst deine Sparrate!</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 2: Kein Notgroschen</h4>
+                        <p class="text-sm text-gray-400">Ohne Puffer landest du bei unerwarteten Ausgaben schnell im Dispo oder bei teuren Krediten.</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 3: Konsumschulden machen</h4>
+                        <p class="text-sm text-gray-400">"Buy now, pay later", Ratenkäufe für Handys, Kleidung - Konsumschulden sind der schnellste Weg in finanzielle Probleme.</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 4: Nicht investieren aus Angst</h4>
+                        <p class="text-sm text-gray-400">Viele Deutsche lassen ihr Geld auf dem Girokonto, wo die Inflation es auffrisst. Langfristig investieren schlägt Sparen!</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 5: "Heißen Tipps" folgen</h4>
+                        <p class="text-sm text-gray-400">Krypto-Hype, Meme-Aktien, "Get rich quick" - wer Trends hinterherrennt, verliert meistens Geld. Langweilig investieren = erfolgreich investieren.</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400">❌ Fehler 6: Versicherungen ignorieren</h4>
+                        <p class="text-sm text-gray-400">Eine Haftpflichtversicherung kostet 5 €/Monat. Ein Schaden ohne Versicherung kann dich 100.000 € kosten.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Time Value of Money -->
+            <div class="content-section animate-on-scroll">
+                <h3>⏰ Die Macht der Zeit: Warum mit 18 anfangen alles ändert</h3>
+                <p>Der größte Vorteil, den du als junger Mensch hast, ist <strong>Zeit</strong>. Der Zinseszinseffekt braucht Zeit, um seine volle Wirkung zu entfalten. Schau dir diesen Vergleich an:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 border border-green-500/30">
+                        <h4 class="font-bold text-green-400 mb-3">👩 Lisa startet mit 18</h4>
+                        <p class="text-sm text-gray-400">Investiert 100 €/Monat von 18-28 (10 Jahre), dann NICHTS mehr.</p>
+                        <p class="text-sm text-gray-400 mt-2">Eingezahlt: <strong>12.000 €</strong></p>
+                        <p class="text-sm text-gray-400">Mit 60 (bei 7% p.a.): <strong>ca. 148.000 €</strong></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 border border-red-500/30">
+                        <h4 class="font-bold text-red-400 mb-3">👨 Tom startet mit 30</h4>
+                        <p class="text-sm text-gray-400">Investiert 100 €/Monat von 30-60 (30 Jahre), durchgehend.</p>
+                        <p class="text-sm text-gray-400 mt-2">Eingezahlt: <strong>36.000 €</strong></p>
+                        <p class="text-sm text-gray-400">Mit 60 (bei 7% p.a.): <strong>ca. 122.000 €</strong></p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Krass, oder?</strong> Lisa hat nur <strong>12.000 €</strong> eingezahlt (10 Jahre lang), Tom hat <strong>36.000 €</strong> eingezahlt (30 Jahre lang). Trotzdem hat Lisa am Ende MEHR Geld! Der Grund: Ihre 12.000 € hatten <strong>42 Jahre</strong> Zeit zu wachsen. Das ist die unglaubliche Macht des Zinseszinses. Jedes Jahr, das du wartest, kostet dich bares Geld.</p>
+                </div>
+            </div>
+
+            <!-- Section 7: Resources -->
+            <div class="content-section animate-on-scroll">
+                <h3>📚 Weiterlernen - Ressourcen für deine Finanzbildung</h3>
+                <p>Dieser Kurs ist der Anfang, nicht das Ende! Hier sind empfehlenswerte Quellen, um dein Finanzwissen weiter auszubauen:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-pink-400 mb-3">📖 Bücher</h4>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li><strong>"Rich Dad Poor Dad"</strong> - Robert Kiyosaki</li>
+                            <li><strong>"Der reichste Mann von Babylon"</strong> - George S. Clason</li>
+                            <li><strong>"Souverän investieren mit Indexfonds und ETFs"</strong> - Gerd Kommer</li>
+                            <li><strong>"Ein Hund namens Money"</strong> - Bodo Schäfer (super für Einsteiger!)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">🎧 Podcasts & YouTube</h4>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li><strong>Finanzfluss</strong> - YouTube & Podcast</li>
+                            <li><strong>Finanztip</strong> - unabhängige Verbraucherberatung</li>
+                            <li><strong>Madame Moneypenny</strong> - Finanzen für Frauen</li>
+                            <li><strong>Der Finanzwesir</strong> - Blog & Podcast</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Goldene Regel:</strong> Sei vorsichtig bei Finanzinfluencern, die dir "schnellen Reichtum" versprechen oder teure Kurse verkaufen wollen. Seriöse Finanzbildung gibt es kostenlos. Wenn etwas zu gut klingt, um wahr zu sein, ist es das meistens auch.</p>
+                </div>
+            </div>
+
+            <!-- Section 8: Exercise -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧮 Übung: Dein persönlicher 5-Jahres-Finanzplan</h3>
+                <div class="exercise-box">
+                    <p><strong>📋 Aufgabe:</strong> Nimm dir ein Blatt Papier oder öffne eine Notiz-App und beantworte diese Fragen. Das ist DEIN Plan - sei ehrlich zu dir selbst!</p>
+
+                    <div class="space-y-4 mt-4">
+                        <div class="glass-card rounded-xl p-4">
+                            <h4 class="font-bold text-pink-400 mb-2">1. Meine aktuelle Situation</h4>
+                            <ul class="text-sm text-gray-400">
+                                <li>Wie viel Geld habe ich gerade? _____ €</li>
+                                <li>Wie viel bekomme ich monatlich? _____ €</li>
+                                <li>Wie viel gebe ich monatlich aus? _____ €</li>
+                                <li>Habe ich Schulden? Wenn ja, wie viel? _____ €</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4">
+                            <h4 class="font-bold text-pink-400 mb-2">2. Meine Ziele für die nächsten 5 Jahre</h4>
+                            <ul class="text-sm text-gray-400">
+                                <li>In 1 Jahr möchte ich: _____</li>
+                                <li>In 3 Jahren möchte ich: _____</li>
+                                <li>In 5 Jahren möchte ich: _____</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4">
+                            <h4 class="font-bold text-pink-400 mb-2">3. Meine ersten 3 Schritte</h4>
+                            <ul class="text-sm text-gray-400">
+                                <li>Diese Woche werde ich: _____</li>
+                                <li>Diesen Monat werde ich: _____</li>
+                                <li>In den nächsten 3 Monaten werde ich: _____</li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-4">
+                            <h4 class="font-bold text-pink-400 mb-2">4. Meine Sparstrategie</h4>
+                            <ul class="text-sm text-gray-400">
+                                <li>Ich werde monatlich _____ € sparen</li>
+                                <li>Mein Notgroschen-Ziel: _____ €</li>
+                                <li>Ich möchte ab _____ (Datum) investieren</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 9: Motivational Closing -->
+            <div class="content-section animate-on-scroll">
+                <h3>🌟 Deine finanzielle Zukunft liegt in deinen Händen</h3>
+
+                <div class="glass-card rounded-2xl p-8 my-6 text-center border border-pink-500/30">
+                    <div class="text-5xl mb-4">🎉</div>
+                    <h4 class="text-2xl font-bold text-pink-400 mb-4">Herzlichen Glückwunsch!</h4>
+                    <p class="text-lg text-gray-300 mb-4">Du hast den gesamten Kurs abgeschlossen. Das zeigt: Du nimmst deine Zukunft ernst.</p>
+                    <p class="text-gray-400 mb-6">Die meisten Menschen lernen Finanzen erst, wenn es zu spät ist - wenn die Schulden da sind, die Rente nicht reicht oder die Inflation das Ersparte aufgefressen hat. Du bist anders. Du startest mit einem Vorsprung.</p>
+                    <div class="text-left max-w-lg mx-auto">
+                        <p class="text-gray-300 mb-3">Denk immer daran:</p>
+                        <ul class="text-gray-400 space-y-2">
+                            <li><strong>Es ist nie zu früh, anzufangen</strong> - aber es kann zu spät sein</li>
+                            <li><strong>Kleine Schritte</strong> führen zu großen Ergebnissen</li>
+                            <li><strong>Wissen ist Macht</strong> - vor allem bei Finanzen</li>
+                            <li><strong>Fehler gehören dazu</strong> - wichtig ist, daraus zu lernen</li>
+                            <li><strong>Konsistenz schlägt Perfektion</strong> - 50 € jeden Monat ist besser als einmal 600 € pro Jahr</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Ein letzter Gedanke:</strong> Finanzielle Bildung ist kein einmaliges Event, sondern ein lebenslanger Prozess. Die Welt verändert sich, neue Produkte kommen auf den Markt, Gesetze ändern sich. Bleib neugierig, bleib informiert - und teile dein Wissen mit Freunden und Familie!</p>
+                </div>
+            </div>
+
+            <!-- Section 10: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3>📋 Zusammenfassung des gesamten Kurses</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-pink-400 mb-2">Dein Finanzplan</h4>
+                        <ul>
+                            <li><strong>Schritt 1:</strong> Aktuelle Situation kennen</li>
+                            <li><strong>Schritt 2:</strong> Ziele setzen (kurz, mittel, lang)</li>
+                            <li><strong>Schritt 3:</strong> Notgroschen aufbauen</li>
+                            <li><strong>Schritt 4:</strong> Schulden abbauen</li>
+                            <li><strong>Schritt 5:</strong> Investieren starten</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-green-400 mb-2">Die goldenen Regeln</h4>
+                        <ul>
+                            <li>Gib weniger aus als du einnimmst</li>
+                            <li>Bezahle dich selbst zuerst (sparen!)</li>
+                            <li>Vermeide Konsumschulden</li>
+                            <li>Investiere früh und regelmäßig</li>
+                            <li>Diversifiziere deine Anlagen</li>
+                            <li>Lass dich nicht von Emotionen leiten</li>
+                            <li>Bilde dich kontinuierlich weiter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center">📝 Abschlusstest</h2>
+                <p class="text-gray-400 text-center mb-8">Der große Abschlusstest! 10 Fragen aus allen Kapiteln. Zeig, was du gelernt hast!</p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter9.html">← Kapitel 9</a>
+                <a href="../index.html">Übersicht</a>
+                <a href="../tests/scoreboard.html">🏆 Ergebnisse →</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+        TestSystem.initTest(10, [
+            {
+                question: "Was sind die drei Funktionen des Geldes? (Kapitel 1)",
+                options: ["Sparen, Ausgeben, Investieren", "Tauschmittel, Wertmaßstab, Wertaufbewahrung", "Kaufen, Verkaufen, Tauschen", "Verdienen, Sparen, Verschenken"],
+                correct: 1,
+                explanation: "Die drei klassischen Funktionen des Geldes sind: Tauschmittel (zum Bezahlen), Wertmaßstab (Preise vergleichen) und Wertaufbewahrung (Sparen)."
+            },
+            {
+                question: "Was ist ein Girokonto? (Kapitel 2)",
+                options: ["Ein Konto nur zum Sparen", "Ein Konto für den täglichen Zahlungsverkehr", "Ein Konto nur für Aktien", "Ein Konto bei der EZB"],
+                correct: 1,
+                explanation: "Ein Girokonto ist das Basiskonto für den täglichen Zahlungsverkehr - Gehalt empfangen, Miete überweisen, mit Karte bezahlen."
+            },
+            {
+                question: "Wie groß sollte ein Notgroschen idealerweise sein? (Kapitel 3)",
+                options: ["100 €", "1 Monatsgehalt", "3-6 Monatsausgaben", "1 Jahresgehalt"],
+                correct: 2,
+                explanation: "Ein Notgroschen sollte 3-6 Monatsausgaben betragen, damit du bei Jobverlust oder unerwarteten Kosten abgesichert bist."
+            },
+            {
+                question: "Was ist die 50-30-20-Regel? (Kapitel 4)",
+                options: ["50% Steuern, 30% Miete, 20% Essen", "50% Bedürfnisse, 30% Wünsche, 20% Sparen/Investieren", "50% Sparen, 30% Ausgeben, 20% Investieren", "50% Fixkosten, 30% Steuern, 20% Freizeit"],
+                correct: 1,
+                explanation: "Die 50-30-20-Regel teilt dein Nettoeinkommen auf: 50% für Bedürfnisse (Miete, Essen), 30% für Wünsche (Hobbys, Ausgehen) und 20% zum Sparen/Investieren."
+            },
+            {
+                question: "Was ist der Zinseszinseffekt? (Kapitel 5/6)",
+                options: ["Zinsen, die man doppelt zahlen muss", "Zinsen auf bereits verdiente Zinsen", "Zinsen, die der Staat kassiert", "Zinsen bei Ratenzahlung"],
+                correct: 1,
+                explanation: "Beim Zinseszinseffekt verdienst du Zinsen auf deine ursprüngliche Einlage UND auf bereits verdiente Zinsen. Das führt zu exponentiellem Wachstum."
+            },
+            {
+                question: "Was ist ein ETF? (Kapitel 6)",
+                options: ["Ein elektronisches Bankkonto", "Ein börsengehandelter Fonds, der einen Index abbildet", "Eine Art Kryptowährung", "Ein Steuersparmodell"],
+                correct: 1,
+                explanation: "ETF steht für Exchange Traded Fund - ein börsengehandelter Fonds, der einen Index (z.B. den MSCI World) nachbildet und so breit diversifiziert."
+            },
+            {
+                question: "Welche Versicherung ist für junge Leute am wichtigsten? (Kapitel 7)",
+                options: ["Hausratversicherung", "Rechtsschutzversicherung", "Private Haftpflichtversicherung", "Lebensversicherung"],
+                correct: 2,
+                explanation: "Die private Haftpflichtversicherung ist die wichtigste Versicherung überhaupt. Sie schützt dich, wenn du anderen Schaden zufügst - und das kann schnell sehr teuer werden."
+            },
+            {
+                question: "Was ist die wichtigste Regel bei Krypto-Investments? (Kapitel 8)",
+                options: ["Alles in Bitcoin investieren", "Nur investieren, was man bereit ist zu verlieren", "Immer den heißesten Coins folgen", "Freunden Coins leihen"],
+                correct: 1,
+                explanation: "Kryptowährungen sind hochspekulativ. Man sollte nur Geld investieren, dessen Totalverlust man verkraften kann."
+            },
+            {
+                question: "Wie hoch ist der Grundfreibetrag 2024 ungefähr? (Kapitel 9)",
+                options: ["5.000 €", "8.000 €", "11.604 €", "20.000 €"],
+                correct: 2,
+                explanation: "Der Grundfreibetrag 2024 liegt bei ca. 11.604 €. Bis zu diesem Betrag zahlst du keine Einkommensteuer."
+            },
+            {
+                question: "Warum ist es so wichtig, früh mit dem Investieren anzufangen? (Kapitel 10)",
+                options: ["Weil Aktien billiger sind, wenn man jung ist", "Weil der Zinseszinseffekt mehr Zeit hat zu wirken", "Weil man als junger Mensch mehr Risiko eingehen darf", "Weil Banken jungen Leuten bessere Zinsen geben"],
+                correct: 1,
+                explanation: "Je früher du anfängst, desto länger hat der Zinseszinseffekt Zeit, dein Geld exponentiell wachsen zu lassen. Lisa (Start mit 18, nur 10 Jahre eingezahlt) schlägt Tom (Start mit 30, 30 Jahre eingezahlt) - Zeit ist der entscheidende Faktor!"
+            }
+        ]);
+    </script>
+</body>
+</html>

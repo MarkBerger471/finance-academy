@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 5: Zinsen & Zinseszins - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-red-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="chapter5.html" class="nav-link active">Kapitel</a>
+                    <a href="../tests/scoreboard.html" class="nav-link">Ergebnisse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">📊</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-red-400 mb-4">Kapitel 5 von 10</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Zinsen & Zinseszins</h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span>⏱ 1-1,5 Stunden</span>
+                    <span>|</span>
+                    <span>📝 10 Testfragen</span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2">50% des Kurses</p>
+            </div>
+
+            <!-- Section 1: What are interest rates? -->
+            <div class="content-section animate-on-scroll">
+                <h3>💶 Was sind Zinsen?</h3>
+                <p>Stell dir vor, dein Freund braucht 100 € und fragt dich, ob du ihm das Geld leihst. Du sagst: "Klar, aber in einem Jahr gibst du mir 103 € zurück." Diese extra 3 € sind <strong>Zinsen</strong> - der Preis dafür, dass du dein Geld jemand anderem zur Verfügung stellst.</p>
+
+                <div class="info-box">
+                    <p><strong>💡 Einfach erklärt:</strong> Zinsen sind wie eine "Miete" für Geld. Wenn du jemandem Geld leihst (oder es bei der Bank anlegst), bekommst du dafür eine Belohnung. Wenn du dir Geld leihst, zahlst du dafür einen Preis. Der Zinssatz wird in Prozent pro Jahr angegeben.</p>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel:</strong> Du legst 1.000 € auf ein Sparkonto mit 3% Zinsen pro Jahr. Nach einem Jahr bekommst du:</p>
+                    <ul>
+                        <li>1.000 € × 3% = <strong>30 € Zinsen</strong></li>
+                        <li>Dein neuer Kontostand: <strong>1.030 €</strong></li>
+                    </ul>
+                    <p>Du hast 30 € verdient, ohne etwas dafür zu tun! Dein Geld hat für dich gearbeitet.</p>
+                </div>
+
+                <p>Das Prinzip funktioniert in beide Richtungen:</p>
+                <ul>
+                    <li><strong>Du bekommst Zinsen</strong>, wenn du Geld sparst, anlegst oder jemandem leihst</li>
+                    <li><strong>Du zahlst Zinsen</strong>, wenn du dir Geld leihst (Kredit, Dispo, Ratenzahlung)</li>
+                </ul>
+            </div>
+
+            <!-- Section 2: Simple vs Compound Interest -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔄 Einfache Zinsen vs. Zinseszins</h3>
+                <p>Hier wird es richtig spannend! Es gibt einen enormen Unterschied zwischen <strong>einfachen Zinsen</strong> und dem <strong>Zinseszins</strong>.</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-orange-400 mb-3">📐 Einfache Zinsen</h4>
+                        <p class="text-sm text-gray-400 mb-3">Du bekommst Zinsen nur auf deinen <strong>ursprünglichen Betrag</strong>.</p>
+                        <p class="text-sm text-gray-400">1.000 € bei 5% pro Jahr:</p>
+                        <ul>
+                            <li class="text-sm">Jahr 1: 1.000 € + 50 € = 1.050 €</li>
+                            <li class="text-sm">Jahr 2: 1.050 € + 50 € = 1.100 €</li>
+                            <li class="text-sm">Jahr 3: 1.100 € + 50 € = 1.150 €</li>
+                            <li class="text-sm">Jahr 10: <strong>1.500 €</strong></li>
+                        </ul>
+                        <p class="text-sm text-orange-400 mt-2">Gewinn nach 10 Jahren: 500 €</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3">🚀 Zinseszins</h4>
+                        <p class="text-sm text-gray-400 mb-3">Du bekommst Zinsen auf deinen Betrag <strong>plus die bereits verdienten Zinsen</strong>.</p>
+                        <p class="text-sm text-gray-400">1.000 € bei 5% pro Jahr:</p>
+                        <ul>
+                            <li class="text-sm">Jahr 1: 1.000 € × 1,05 = 1.050 €</li>
+                            <li class="text-sm">Jahr 2: 1.050 € × 1,05 = 1.102,50 €</li>
+                            <li class="text-sm">Jahr 3: 1.102,50 € × 1,05 = 1.157,63 €</li>
+                            <li class="text-sm">Jahr 10: <strong>1.628,89 €</strong></li>
+                        </ul>
+                        <p class="text-sm text-red-400 mt-2">Gewinn nach 10 Jahren: 628,89 €</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Der Unterschied:</strong> Beim Zinseszins verdienst du "Zinsen auf Zinsen". Das klingt zunächst nach wenig Unterschied - aber über lange Zeiträume wird der Effekt gewaltig! Der Unterschied im Beispiel oben ist nach 10 Jahren schon 128,89 €, und er wird mit jedem Jahr größer.</p>
+                </div>
+            </div>
+
+            <!-- Section 3: The Rule of 72 -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧮 Die 72er-Regel</h3>
+                <p>Es gibt einen genialen Trick, um schnell auszurechnen, wie lange es dauert, bis sich dein Geld verdoppelt:</p>
+
+                <div class="glass-card rounded-2xl p-6 text-center my-6">
+                    <h4 class="text-2xl font-bold text-red-400 mb-2">72 ÷ Zinssatz = Jahre bis zur Verdopplung</h4>
+                    <p class="text-gray-400 text-sm">Eine einfache Formel, die erstaunlich genau ist!</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🐢</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Bei 2% Zinsen</h4>
+                        <p class="text-sm text-gray-400">72 ÷ 2 = <strong>36 Jahre</strong></p>
+                        <p class="text-xs text-gray-500 mt-1">1.000 € werden zu 2.000 €</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🐇</div>
+                        <h4 class="font-bold text-red-400 mb-2">Bei 6% Zinsen</h4>
+                        <p class="text-sm text-gray-400">72 ÷ 6 = <strong>12 Jahre</strong></p>
+                        <p class="text-xs text-gray-500 mt-1">1.000 € werden zu 2.000 €</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold text-pink-400 mb-2">Bei 9% Zinsen</h4>
+                        <p class="text-sm text-gray-400">72 ÷ 9 = <strong>8 Jahre</strong></p>
+                        <p class="text-xs text-gray-500 mt-1">1.000 € werden zu 2.000 €</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Tipp:</strong> Die 72er-Regel funktioniert auch andersherum! Bei 3% Inflation verliert dein Geld in 72 ÷ 3 = 24 Jahren die Hälfte seiner Kaufkraft. Noch ein Grund, Geld nicht einfach unter dem Kopfkissen liegen zu lassen!</p>
+                </div>
+            </div>
+
+            <!-- Section 4: Growth of 1000€ over time -->
+            <div class="content-section animate-on-scroll">
+                <h3>📈 1.000 € bei 3% - Die Kraft der Zeit</h3>
+                <p>Schauen wir uns an, was aus 1.000 € wird, wenn du sie einmalig anlegst und den Zinseszins wirken lässt:</p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h4 class="font-bold text-orange-400 mb-2">Nach 10 Jahren</h4>
+                        <p class="text-3xl font-bold text-white">1.344 €</p>
+                        <p class="text-sm text-gray-400 mt-2">Gewinn: 344 €</p>
+                        <p class="text-xs text-gray-500">+34,4%</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h4 class="font-bold text-red-400 mb-2">Nach 20 Jahren</h4>
+                        <p class="text-3xl font-bold text-white">1.806 €</p>
+                        <p class="text-sm text-gray-400 mt-2">Gewinn: 806 €</p>
+                        <p class="text-xs text-gray-500">+80,6%</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h4 class="font-bold text-pink-400 mb-2">Nach 30 Jahren</h4>
+                        <p class="text-3xl font-bold text-white">2.427 €</p>
+                        <p class="text-sm text-gray-400 mt-2">Gewinn: 1.427 €</p>
+                        <p class="text-xs text-gray-500">+142,7%</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Beachte:</strong> In den ersten 10 Jahren hast du 344 € Gewinn gemacht. In den nächsten 10 Jahren (Jahr 10-20) waren es schon 462 €. Und in den letzten 10 Jahren (Jahr 20-30) waren es 621 €! Der Zinseszins beschleunigt sich immer weiter - je länger du wartest, desto schneller wächst dein Geld.</p>
+                </div>
+
+                <p>Was passiert bei höheren Zinssätzen? Vergleich von 1.000 € nach 30 Jahren:</p>
+                <ul>
+                    <li>Bei <strong>1%</strong>: 1.348 € (Gewinn: 348 €)</li>
+                    <li>Bei <strong>3%</strong>: 2.427 € (Gewinn: 1.427 €)</li>
+                    <li>Bei <strong>5%</strong>: 4.322 € (Gewinn: 3.322 €)</li>
+                    <li>Bei <strong>7%</strong>: 7.612 € (Gewinn: 6.612 €)</li>
+                    <li>Bei <strong>10%</strong>: 17.449 € (Gewinn: 16.449 €)</li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Einstein Quote -->
+            <div class="content-section animate-on-scroll">
+                <h3>🌟 Das "8. Weltwunder"</h3>
+                <p>Albert Einstein soll einmal gesagt haben:</p>
+
+                <div class="glass-card rounded-2xl p-6 text-center my-6 border border-red-500/20">
+                    <p class="text-xl italic text-red-300">"Der Zinseszins ist das achte Weltwunder. Wer ihn versteht, verdient daran. Wer ihn nicht versteht, bezahlt ihn."</p>
+                    <p class="text-gray-500 text-sm mt-3">- Albert Einstein (zugeschrieben)</p>
+                </div>
+
+                <p>Ob Einstein das wirklich gesagt hat, ist umstritten. Aber die Aussage ist trotzdem brillant! Der Zinseszins ist wie ein <strong>Schneeball</strong>, der einen Berg hinunterrollt:</p>
+                <ul>
+                    <li>Am Anfang ist er klein und langsam</li>
+                    <li>Mit der Zeit wird er immer größer und schneller</li>
+                    <li>Nach vielen Jahren ist er riesig und kaum noch aufzuhalten</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Wichtig:</strong> Der Zinseszins wirkt in beide Richtungen! Er kann dein Vermögen wachsen lassen - aber er kann auch Schulden explodieren lassen. Wenn du einen Kredit mit hohen Zinsen hast und ihn nicht zurückzahlst, wachsen die Schulden durch den Zinseszins immer schneller.</p>
+                </div>
+            </div>
+
+            <!-- Section 6: Real vs Nominal Interest -->
+            <div class="content-section animate-on-scroll">
+                <h3>🔍 Realzins vs. Nominalzins</h3>
+                <p>Nicht alle Zinsen sind gleich viel wert! Du musst die <strong>Inflation</strong> berücksichtigen:</p>
+
+                <div class="glass-card rounded-2xl p-6 text-center my-6">
+                    <h4 class="text-xl font-bold text-red-400 mb-2">Realzins = Nominalzins - Inflation</h4>
+                    <p class="text-gray-400 text-sm">Der Realzins zeigt, wie viel dein Geld wirklich wächst</p>
+                </div>
+
+                <div class="example-box">
+                    <p><strong>🎯 Beispiel:</strong></p>
+                    <ul>
+                        <li>Dein Sparkonto zahlt <strong>3% Zinsen</strong> (Nominalzins)</li>
+                        <li>Die Inflation beträgt <strong>2%</strong></li>
+                        <li>Dein Realzins: 3% - 2% = <strong>1%</strong></li>
+                    </ul>
+                    <p>Das heißt: Obwohl dein Kontostand um 3% wächst, ist dein Geld nur 1% mehr wert - denn die Preise sind ja auch um 2% gestiegen!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">✅ Positiver Realzins</h4>
+                        <p class="text-sm text-gray-400">Wenn die Zinsen höher als die Inflation sind: Dein Geld gewinnt an Kaufkraft.</p>
+                        <p class="text-sm text-gray-400 mt-2">Beispiel: 4% Zinsen bei 2% Inflation = +2% realer Gewinn</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3">❌ Negativer Realzins</h4>
+                        <p class="text-sm text-gray-400">Wenn die Inflation höher als die Zinsen ist: Dein Geld verliert an Kaufkraft, obwohl es "mehr wird"!</p>
+                        <p class="text-sm text-gray-400 mt-2">Beispiel: 1% Zinsen bei 3% Inflation = -2% realer Verlust</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Tipp:</strong> In den Jahren 2021-2023 war die Inflation in der Eurozone teilweise bei 6-10%, während Sparkonten oft nur 0-2% Zinsen zahlten. Das bedeutete einen massiven negativen Realzins - das Geld auf dem Sparkonto verlor real an Wert!</p>
+                </div>
+            </div>
+
+            <!-- Section 7: Where you earn vs pay interest -->
+            <div class="content-section animate-on-scroll">
+                <h3>💰 Wo du Zinsen bekommst - und wo du sie zahlst</h3>
+                <p>Im Alltag begegnen dir Zinsen überall. Hier der wichtige Unterschied:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3">📥 Du bekommst Zinsen bei:</h4>
+                        <ul>
+                            <li><strong>Sparkonto / Tagesgeld:</strong> ca. 0,5-3,5% p.a.</li>
+                            <li><strong>Festgeld:</strong> ca. 2-4% p.a. (Geld ist für eine feste Zeit gebunden)</li>
+                            <li><strong>Anleihen / Bonds:</strong> ca. 2-5% p.a.</li>
+                            <li><strong>Bausparvertrag:</strong> ca. 0,5-2% p.a.</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">p.a. = per annum = pro Jahr</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3">📤 Du zahlst Zinsen bei:</h4>
+                        <ul>
+                            <li><strong>Dispokredit (Konto überzogen):</strong> ca. 10-15% p.a.!</li>
+                            <li><strong>Kreditkarte (Ratenzahlung):</strong> ca. 12-20% p.a.!</li>
+                            <li><strong>Ratenkredit:</strong> ca. 4-10% p.a.</li>
+                            <li><strong>Baufinanzierung:</strong> ca. 3-5% p.a.</li>
+                            <li><strong>"Klarna / Ratenkauf":</strong> oft 0% - aber Vorsicht vor Gebühren!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ Achtung:</strong> Siehst du das? Für Erspartes bekommst du vielleicht 2-3% Zinsen, aber für einen Dispokredit zahlst du 10-15%! Banken verdienen genau an diesem Unterschied. Deshalb: Vermeide Schulden mit hohen Zinsen so gut es geht!</p>
+                </div>
+            </div>
+
+            <!-- Section 8: Power of starting early -->
+            <div class="content-section animate-on-scroll">
+                <h3>⏰ Warum früh anfangen so wichtig ist</h3>
+                <p>Hier kommt der vielleicht wichtigste Teil dieses Kapitels. Vergleichen wir zwei Personen:</p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 border border-green-500/20">
+                        <h4 class="font-bold text-green-400 mb-3">🌱 Emma (startet mit 18)</h4>
+                        <ul>
+                            <li>Spart 100 € pro Monat</li>
+                            <li>Startet mit 18 Jahren</li>
+                            <li>Hört mit 28 auf (10 Jahre)</li>
+                            <li>Eingezahlt: <strong>12.000 €</strong></li>
+                            <li>Lässt das Geld dann bis 58 liegen</li>
+                            <li>Bei 7% Rendite pro Jahr:</li>
+                        </ul>
+                        <p class="text-2xl font-bold text-green-400 mt-3">≈ 132.000 €</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 border border-orange-500/20">
+                        <h4 class="font-bold text-orange-400 mb-3">🌿 Lukas (startet mit 28)</h4>
+                        <ul>
+                            <li>Spart 100 € pro Monat</li>
+                            <li>Startet mit 28 Jahren</li>
+                            <li>Spart durchgehend bis 58 (30 Jahre!)</li>
+                            <li>Eingezahlt: <strong>36.000 €</strong></li>
+                            <li>Bei 7% Rendite pro Jahr:</li>
+                        </ul>
+                        <p class="text-2xl font-bold text-orange-400 mt-3">≈ 122.000 €</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>💡 Unglaublich, oder?</strong> Emma hat nur 12.000 € eingezahlt und trotzdem mehr als Lukas, der 36.000 € eingezahlt hat! Der Unterschied: Emma hat dem Zinseszins 10 Jahre mehr Zeit gegeben. Das zeigt: <strong>Zeit ist beim Investieren wichtiger als die Höhe der Einzahlung!</strong></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>✅ Fazit:</strong> Der beste Zeitpunkt zum Starten war gestern. Der zweitbeste Zeitpunkt ist heute! Selbst kleine Beträge von 25 € oder 50 € pro Monat können über Jahrzehnte zu beachtlichen Summen wachsen.</p>
+                </div>
+            </div>
+
+            <!-- Section 9: Compound Interest Exercise -->
+            <div class="content-section animate-on-scroll">
+                <h3>🧮 Übung: Zinseszins berechnen</h3>
+                <div class="exercise-box">
+                    <p><strong>📋 Aufgabe:</strong> Berechne, wie viel aus deiner Einmalanlage nach den angegebenen Jahren wird. Nutze die Formel: <strong>Endkapital = Startkapital × (1 + Zinssatz)^Jahre</strong></p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-lg font-bold text-red-400">500 € bei 2%</div>
+                            <p class="text-xs text-gray-400 mt-1">nach 10 Jahren?</p>
+                            <p class="text-xs text-gray-500 mt-1">Lösung: 609,50 €</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-lg font-bold text-orange-400">1.000 € bei 5%</div>
+                            <p class="text-xs text-gray-400 mt-1">nach 15 Jahren?</p>
+                            <p class="text-xs text-gray-500 mt-1">Lösung: 2.078,93 €</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-lg font-bold text-red-400">2.000 € bei 4%</div>
+                            <p class="text-xs text-gray-400 mt-1">nach 20 Jahren?</p>
+                            <p class="text-xs text-gray-500 mt-1">Lösung: 4.382,25 €</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-4 text-center">
+                            <div class="text-lg font-bold text-pink-400">5.000 € bei 7%</div>
+                            <p class="text-xs text-gray-400 mt-1">nach 30 Jahren?</p>
+                            <p class="text-xs text-gray-500 mt-1">Lösung: 38.061,28 €</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-sm text-gray-400"><strong>Bonusfrage:</strong> Mit der 72er-Regel: Wie lange dauert es, bis sich 1.000 € bei 4% Zinsen verdoppelt haben? (Antwort: 72 ÷ 4 = 18 Jahre)</p>
+                </div>
+            </div>
+
+            <!-- Section 10: Negative Interest & Fees -->
+            <div class="content-section animate-on-scroll">
+                <h3>📉 Negativzinsen & Gebühren</h3>
+                <p>In den Jahren 2014-2022 gab es in der Eurozone etwas Ungewöhnliches: <strong>Negativzinsen</strong>. Die EZB hatte den Leitzins unter 0% gesenkt. Was bedeutet das?</p>
+
+                <ul>
+                    <li><strong>Für Banken:</strong> Sie mussten der EZB Geld dafür zahlen, dass sie Geld bei ihr "parken"</li>
+                    <li><strong>Für Sparer:</strong> Einige Banken gaben diese Kosten als "Verwahrentgelt" weiter - du musstest also dafür zahlen, dein Geld auf dem Konto zu haben!</li>
+                    <li><strong>Für Kreditnehmer:</strong> Theoretisch günstigere Kredite (z.B. für Hausbau)</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>💡 Warum Negativzinsen?</strong> Die EZB wollte, dass Menschen und Unternehmen mehr Geld ausgeben und investieren, anstatt es zu sparen - um die Wirtschaft anzukurbeln. Seit 2022 hat die EZB die Zinsen wieder deutlich angehoben.</p>
+                </div>
+
+                <p>Auch heute solltest du auf <strong>versteckte Kosten</strong> achten:</p>
+                <ul>
+                    <li><strong>Kontoführungsgebühren:</strong> 3-10 € pro Monat fressen deine Zinserträge auf</li>
+                    <li><strong>Depotgebühren:</strong> Kosten für die Verwahrung von Wertpapieren</li>
+                    <li><strong>Inflation:</strong> Auch wenn du 2% Zinsen bekommst - wenn die Inflation 3% ist, verlierst du real Geld</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><strong>✅ Tipp:</strong> Vergleiche immer die Zinsen nach Abzug aller Gebühren und nach Abzug der Inflation. Nur der "echte" Gewinn (Realzins minus Gebühren) zählt!</p>
+                </div>
+            </div>
+
+            <!-- Section 11: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3>📋 Zusammenfassung</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-red-400 mb-2">Wichtige Begriffe</h4>
+                        <ul>
+                            <li><strong>Zinsen:</strong> "Miete" für geliehenes Geld</li>
+                            <li><strong>Zinseszins:</strong> Zinsen auf Zinsen</li>
+                            <li><strong>72er-Regel:</strong> 72 ÷ Zinssatz = Verdopplungszeit</li>
+                            <li><strong>Nominalzins:</strong> Der angegebene Zinssatz</li>
+                            <li><strong>Realzins:</strong> Nominalzins minus Inflation</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-orange-400 mb-2">Das Wichtigste</h4>
+                        <ul>
+                            <li>Zinseszins ist dein mächtigster Verbündeter beim Sparen</li>
+                            <li>Je früher du anfängst, desto mehr arbeitet die Zeit für dich</li>
+                            <li>Achte immer auf den Realzins (nach Inflation)</li>
+                            <li>Hohe Schuldzinsen (Dispo, Kreditkarte) unbedingt vermeiden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center">📝 Kapitel-Test</h2>
+                <p class="text-gray-400 text-center mb-8">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter4.html">← Kapitel 4</a>
+                <a href="../index.html">Übersicht</a>
+                <a href="chapter6.html">Kapitel 6 →</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+        TestSystem.initTest(5, [
+            {
+                question: "Was sind Zinsen einfach erklärt?",
+                options: ["Eine Steuer auf Einkommen", "Der Preis (die 'Miete') für geliehenes Geld", "Ein Rabatt beim Einkaufen", "Eine Gebühr für das Girokonto"],
+                correct: 1,
+                explanation: "Zinsen sind der Preis, den man für die Nutzung von geliehenem Geld zahlt - oder die Belohnung, die man bekommt, wenn man sein Geld verleiht."
+            },
+            {
+                question: "Was ist der entscheidende Unterschied zwischen einfachen Zinsen und Zinseszins?",
+                options: ["Zinseszins ist immer höher", "Beim Zinseszins verdient man Zinsen auch auf die bereits verdienten Zinsen", "Einfache Zinsen gibt es nur bei Banken", "Es gibt keinen Unterschied"],
+                correct: 1,
+                explanation: "Beim Zinseszins werden die Zinsen zum Kapital addiert, und im nächsten Jahr verdient man Zinsen auf den größeren Betrag - also 'Zinsen auf Zinsen'."
+            },
+            {
+                question: "Wie lautet die 72er-Regel?",
+                options: ["72 × Zinssatz = Gewinn", "72 + Zinssatz = Endkapital", "72 ÷ Zinssatz = ungefähre Jahre bis zur Verdopplung", "72 - Zinssatz = Realzins"],
+                correct: 2,
+                explanation: "Die 72er-Regel besagt: Teile 72 durch den Zinssatz, und du erhältst ungefähr die Anzahl der Jahre, bis sich dein Geld verdoppelt."
+            },
+            {
+                question: "Wie lange dauert es ungefähr, bis sich 1.000 € bei 6% Zinsen verdoppeln?",
+                options: ["6 Jahre", "12 Jahre", "18 Jahre", "24 Jahre"],
+                correct: 1,
+                explanation: "72 ÷ 6 = 12 Jahre. Nach etwa 12 Jahren wären aus 1.000 € ungefähr 2.000 € geworden."
+            },
+            {
+                question: "Was ist der Realzins?",
+                options: ["Der Zinssatz, den die Bank anbietet", "Der Zinssatz abzüglich der Inflation", "Der höchste verfügbare Zinssatz", "Der Zinssatz für Immobilien"],
+                correct: 1,
+                explanation: "Der Realzins ergibt sich aus dem Nominalzins (dem angegebenen Zinssatz) minus der Inflationsrate. Nur der Realzins zeigt den tatsächlichen Wertzuwachs."
+            },
+            {
+                question: "Dein Sparkonto zahlt 2% Zinsen, die Inflation beträgt 3%. Was passiert mit deinem Geld?",
+                options: ["Es wächst real um 2%", "Es wächst real um 5%", "Es verliert real an Kaufkraft (-1%)", "Nichts, die Inflation spielt keine Rolle"],
+                correct: 2,
+                explanation: "Realzins = 2% - 3% = -1%. Obwohl dein Kontostand wächst, kannst du dir weniger davon kaufen, weil die Preise schneller steigen als dein Geld."
+            },
+            {
+                question: "Wie hoch sind typischerweise die Zinsen für einen Dispokredit?",
+                options: ["1-2% pro Jahr", "3-5% pro Jahr", "10-15% pro Jahr", "0% - der Dispo ist kostenlos"],
+                correct: 2,
+                explanation: "Dispokredite sind mit 10-15% pro Jahr extrem teuer! Sie sollten nur im absoluten Notfall und so kurz wie möglich genutzt werden."
+            },
+            {
+                question: "Emma spart von 18-28 (10 Jahre, 100 €/Monat) und lässt das Geld dann liegen. Lukas spart von 28-58 (30 Jahre, 100 €/Monat). Wer hat bei 7% Rendite mehr?",
+                options: ["Lukas, weil er dreimal so lange spart", "Beide haben gleich viel", "Emma, weil sie früher angefangen hat", "Das kann man nicht berechnen"],
+                correct: 2,
+                explanation: "Emma hat trotz nur 12.000 € Einzahlung (vs. 36.000 € bei Lukas) am Ende mehr, weil der Zinseszins 10 Jahre länger wirken konnte. Zeit ist beim Investieren der wichtigste Faktor!"
+            },
+            {
+                question: "Was waren Negativzinsen?",
+                options: ["Besonders hohe Zinsen", "Zinsen unter 0% - man zahlte dafür, Geld auf dem Konto zu haben", "Zinsen, die nur für Jugendliche gelten", "Zinsen auf negative Kontostände"],
+                correct: 1,
+                explanation: "Bei Negativzinsen (2014-2022 in der Eurozone) mussten Banken und teilweise auch Sparer dafür zahlen, Geld zu 'parken' - die Welt stand quasi Kopf!"
+            },
+            {
+                question: "Warum hat Einstein den Zinseszins angeblich das '8. Weltwunder' genannt?",
+                options: ["Weil er Mathematik hasste", "Weil Zinsen kompliziert sind", "Weil der Zinseszins über lange Zeit eine enorme, exponentielle Wirkung entfaltet", "Weil es genau 8 verschiedene Zinsarten gibt"],
+                correct: 2,
+                explanation: "Der Zinseszins wirkt exponentiell: Am Anfang ist der Effekt klein, aber über Jahrzehnte wird er gewaltig. Wer ihn versteht und nutzt, kann damit ein Vermögen aufbauen."
+            }
+        ]);
+    </script>
+</body>
+</html>
