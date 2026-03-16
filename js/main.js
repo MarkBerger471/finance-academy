@@ -17,18 +17,8 @@ const Lang = {
 
     apply() {
         const lang = this.get();
-        document.querySelectorAll('[data-de]').forEach(el => {
-            el.textContent = el.getAttribute(`data-${lang}`);
-        });
-        document.querySelectorAll('[data-de-html]').forEach(el => {
-            el.innerHTML = el.getAttribute(`data-${lang}-html`);
-        });
-        document.querySelectorAll('.lang-de').forEach(el => {
-            el.style.display = lang === 'de' ? '' : 'none';
-        });
-        document.querySelectorAll('.lang-en').forEach(el => {
-            el.style.display = lang === 'en' ? '' : 'none';
-        });
+        // Toggle language via class on <html> - CSS handles show/hide
+        document.documentElement.setAttribute('data-lang', lang);
         // Update toggle buttons
         document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach(btn => {
             btn.innerHTML = lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE';
