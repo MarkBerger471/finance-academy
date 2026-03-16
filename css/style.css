@@ -1,11 +1,17 @@
 /* iOS Glass Design System */
 
-/* Bilingual: only show active language, no mixing */
+/* Trilingual: only show active language, no mixing */
 .lang-en { display: none !important; }
+.lang-fr { display: none !important; }
 .lang-de { display: unset; }
 
 [data-lang="en"] .lang-en { display: unset !important; }
 [data-lang="en"] .lang-de { display: none !important; }
+[data-lang="en"] .lang-fr { display: none !important; }
+
+[data-lang="fr"] .lang-fr { display: unset !important; }
+[data-lang="fr"] .lang-de { display: none !important; }
+[data-lang="fr"] .lang-en { display: none !important; }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }

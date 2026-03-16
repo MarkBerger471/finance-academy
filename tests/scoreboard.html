@@ -24,8 +24,8 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="../index.html" class="nav-link">Home</a>
-                    <a href="../chapters/chapter1.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span></a>
-                    <a href="scoreboard.html" class="nav-link active"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span></a>
+                    <a href="../chapters/chapter1.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="scoreboard.html" class="nav-link active"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
                     <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
                 </div>
                 <div class="flex items-center gap-2 md:hidden">
@@ -41,19 +41,19 @@
                 <span class="inline-block text-6xl mb-4">🏆</span>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">
                     <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                        <span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span>
+                        <span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span>
                     </span>
                 </h1>
-                <p class="text-gray-400 text-lg"><span class="lang-de">Übersicht aller Testergebnisse</span><span class="lang-en">Overview of all test results</span></p>
+                <p class="text-gray-400 text-lg"><span class="lang-de">Übersicht aller Testergebnisse</span><span class="lang-en">Overview of all test results</span><span class="lang-fr">Aperçu de tous les résultats</span></p>
             </div>
 
             <div class="grid grid-cols-3 gap-4 mb-8" id="summary-cards"></div>
 
             <div class="glass-card rounded-3xl p-6 mb-8 animate-on-scroll">
-                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">📊 Detaillierte Ergebnisse</span><span class="lang-en">📊 Detailed Results</span></h2>
+                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">📊 Detaillierte Ergebnisse</span><span class="lang-en">📊 Detailed Results</span><span class="lang-fr">📊 Résultats détaillés</span></h2>
                 <div class="overflow-x-auto">
                     <div class="score-row header">
-                        <div><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span></div>
+                        <div><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span></div>
                         <div class="text-center">Luisa</div>
                         <div class="text-center">Marlene</div>
                         <div class="text-center">Carla</div>
@@ -63,16 +63,16 @@
             </div>
 
             <div class="glass-card rounded-3xl p-6 mb-8 animate-on-scroll">
-                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">📈 Fortschritt</span><span class="lang-en">📈 Progress</span></h2>
+                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">📈 Fortschritt</span><span class="lang-en">📈 Progress</span><span class="lang-fr">📈 Progression</span></h2>
                 <div id="progress-bars" class="space-y-4"></div>
             </div>
 
             <div class="flex flex-wrap gap-4 justify-center animate-on-scroll">
                 <a href="../chapters/chapter1.html" class="glass-button-primary px-6 py-3 rounded-xl inline-flex items-center space-x-2">
-                    <span>📚</span><span><span class="lang-de">Zum ersten Kapitel</span><span class="lang-en">Go to first chapter</span></span>
+                    <span>📚</span><span><span class="lang-de">Zum ersten Kapitel</span><span class="lang-en">Go to first chapter</span><span class="lang-fr">Aller au premier chapitre</span></span>
                 </a>
                 <button onclick="resetAll()" class="glass-button px-6 py-3 rounded-xl inline-flex items-center space-x-2 text-red-400">
-                    <span>🗑️</span><span><span class="lang-de">Alle Ergebnisse löschen</span><span class="lang-en">Delete all results</span></span>
+                    <span>🗑️</span><span><span class="lang-de">Alle Ergebnisse löschen</span><span class="lang-en">Delete all results</span><span class="lang-fr">Supprimer tous les résultats</span></span>
                 </button>
             </div>
         </div>
@@ -81,21 +81,21 @@
     <script src="../js/main.js"></script>
     <script>
         const chapters = [
-            { num: 1, title_de: 'Was ist Geld?', title_en: 'What is Money?', icon: '💶' },
-            { num: 2, title_de: 'Einnahmen & Ausgaben', title_en: 'Income & Expenses', icon: '🏦' },
-            { num: 3, title_de: 'Sparen & Ziele setzen', title_en: 'Saving & Setting Goals', icon: '🐷' },
-            { num: 4, title_de: 'Banken & Konten', title_en: 'Banks & Accounts', icon: '🏧' },
-            { num: 5, title_de: 'Zinsen & Zinseszins', title_en: 'Interest & Compound Interest', icon: '📊' },
-            { num: 6, title_de: 'Investieren Grundlagen', title_en: 'Investing Basics', icon: '📈' },
-            { num: 7, title_de: 'Risiko & Diversifikation', title_en: 'Risk & Diversification', icon: '⚖️' },
-            { num: 8, title_de: 'Schulden & Kredite', title_en: 'Debt & Loans', icon: '💳' },
-            { num: 9, title_de: 'Steuern & Staat', title_en: 'Taxes & Government', icon: '🧾' },
-            { num: 10, title_de: 'Dein Finanzplan', title_en: 'Your Financial Plan', icon: '🚀' },
+            { num: 1, title_de: 'Was ist Geld?', title_en: 'What is Money?', title_fr: "Qu'est-ce que l'argent ?", icon: '💶' },
+            { num: 2, title_de: 'Einnahmen & Ausgaben', title_en: 'Income & Expenses', title_fr: 'Revenus & Dépenses', icon: '🏦' },
+            { num: 3, title_de: 'Sparen & Ziele setzen', title_en: 'Saving & Setting Goals', title_fr: 'Épargner & Fixer des objectifs', icon: '🐷' },
+            { num: 4, title_de: 'Banken & Konten', title_en: 'Banks & Accounts', title_fr: 'Banques & Comptes', icon: '🏧' },
+            { num: 5, title_de: 'Zinsen & Zinseszins', title_en: 'Interest & Compound Interest', title_fr: 'Intérêts & Intérêts composés', icon: '📊' },
+            { num: 6, title_de: 'Investieren Grundlagen', title_en: 'Investing Basics', title_fr: "Les bases de l'investissement", icon: '📈' },
+            { num: 7, title_de: 'Risiko & Diversifikation', title_en: 'Risk & Diversification', title_fr: 'Risque & Diversification', icon: '⚖️' },
+            { num: 8, title_de: 'Schulden & Kredite', title_en: 'Debt & Loans', title_fr: 'Dettes & Crédits', icon: '💳' },
+            { num: 9, title_de: 'Steuern & Staat', title_en: 'Taxes & Government', title_fr: 'Impôts & État', icon: '🧾' },
+            { num: 10, title_de: 'Dein Finanzplan', title_en: 'Your Financial Plan', title_fr: 'Ton plan financier', icon: '🚀' },
         ];
 
         const kids = ['Luisa', 'Marlene', 'Carla'];
         const kidColors = ['cyan', 'purple', 'pink'];
-        const t = (de, en) => Lang.get() === 'de' ? de : en;
+        const t = (de, en, fr) => { const l = Lang.get(); return l === 'fr' && fr ? fr : l === 'en' ? en : de; };
 
         function render() {
             const scores = TestSystem.getScores();
@@ -115,7 +115,7 @@
                         <div class="text-3xl mb-2">${emoji}</div>
                         <h3 class="font-bold text-${kidColors[ki]}-400 mb-1">${kid}</h3>
                         <div class="text-3xl font-bold mb-1">${totalQuestions > 0 ? avgPercent + '%' : '-'}</div>
-                        <p class="text-gray-500 text-xs">${completedChapters}/10 ${t('Kapitel', 'chapters')}</p>
+                        <p class="text-gray-500 text-xs">${completedChapters}/10 ${t('Kapitel', 'chapters', 'chapitres')}</p>
                         <div class="progress-bar mt-3"><div class="progress-fill" style="width: ${completedChapters * 10}%"></div></div>
                     </div>
                 `;
@@ -123,7 +123,8 @@
 
             const rowsEl = document.getElementById('score-rows');
             rowsEl.innerHTML = chapters.map(ch => {
-                const title = Lang.get() === 'de' ? ch.title_de : ch.title_en;
+                const lang = Lang.get();
+                const title = lang === 'fr' ? (ch.title_fr || ch.title_en) : lang === 'en' ? ch.title_en : ch.title_de;
                 const cells = kids.map((kid, ki) => {
                     const s = scores[`ch${ch.num}_kid${ki}`];
                     if (!s) return '<div class="score-cell pending">-</div>';
@@ -137,12 +138,12 @@
             progressEl.innerHTML = kids.map((kid, ki) => {
                 let completed = 0;
                 chapters.forEach(ch => { if (scores[`ch${ch.num}_kid${ki}`]) completed++; });
-                return `<div><div class="flex justify-between text-sm mb-1"><span class="text-${kidColors[ki]}-400 font-semibold">${kid}</span><span class="text-gray-400">${completed}/10 ${t('Kapitel', 'chapters')}</span></div><div class="progress-bar"><div class="progress-fill" style="width: ${completed * 10}%"></div></div></div>`;
+                return `<div><div class="flex justify-between text-sm mb-1"><span class="text-${kidColors[ki]}-400 font-semibold">${kid}</span><span class="text-gray-400">${completed}/10 ${t('Kapitel', 'chapters', 'chapitres')}</span></div><div class="progress-bar"><div class="progress-fill" style="width: ${completed * 10}%"></div></div></div>`;
             }).join('');
         }
 
         function resetAll() {
-            if (confirm(t('Wirklich ALLE Ergebnisse löschen? Das kann nicht rückgängig gemacht werden!', 'Really delete ALL results? This cannot be undone!'))) {
+            if (confirm(t('Wirklich ALLE Ergebnisse löschen? Das kann nicht rückgängig gemacht werden!', 'Really delete ALL results? This cannot be undone!', 'Vraiment supprimer TOUS les résultats ? Cette action est irréversible !'))) {
                 TestSystem.clearAll();
                 render();
             }

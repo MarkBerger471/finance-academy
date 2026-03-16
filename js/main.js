@@ -12,16 +12,19 @@ const Lang = {
     },
 
     toggle() {
-        this.set(this.get() === 'de' ? 'en' : 'de');
+        const order = ['de', 'en', 'fr'];
+        const next = order[(order.indexOf(this.get()) + 1) % order.length];
+        this.set(next);
     },
 
     apply() {
         const lang = this.get();
         // Toggle language via class on <html> - CSS handles show/hide
         document.documentElement.setAttribute('data-lang', lang);
-        // Update toggle buttons
+        // Update toggle buttons - show next language
+        const labels = { de: '🇬🇧 EN', en: '🇫🇷 FR', fr: '🇩🇪 DE' };
         document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach(btn => {
-            btn.innerHTML = lang === 'de' ? '🇬🇧 EN' : '🇩🇪 DE';
+            btn.innerHTML = labels[lang] || '🇬🇧 EN';
         });
         // Re-render test if active
         if (TestSystem._render) {
@@ -70,8 +73,11 @@ const TestSystem = {
     KIDS: ['Luisa', 'Marlene', 'Carla'],
     STORAGE_KEY: 'finance_academy_scores',
 
-    t(de, en) {
-        return Lang.get() === 'de' ? de : en;
+    t(de, en, fr) {
+        const lang = Lang.get();
+        if (lang === 'fr' && fr) return fr;
+        if (lang === 'en') return en;
+        return de;
     },
 
     getScores() {
@@ -104,6 +110,14 @@ const TestSystem = {
 
         function getQ(q) {
             const lang = Lang.get();
+            if (lang === 'fr' && q.question_fr) {
+                return {
+                    question: q.question_fr,
+                    options: q.options_fr || q.options,
+                    explanation: q.explanation_fr || q.explanation,
+                    correct: q.correct
+                };
+            }
             if (lang === 'en' && q.question_en) {
                 return {
                     question: q.question_en,
@@ -137,8 +151,8 @@ const TestSystem = {
                         <p class="text-4xl font-bold mb-2">
                             <span class="${existingScore.percentage >= 80 ? 'text-green-400' : existingScore.percentage >= 60 ? 'text-yellow-400' : 'text-red-400'}">${existingScore.percentage}%</span>
                         </p>
-                        <p class="text-gray-400 mb-6">${existingScore.score} ${TestSystem.t('von', 'of')} ${existingScore.total} ${TestSystem.t('richtig', 'correct')}</p>
-                        <button class="glass-button-primary px-6 py-3 rounded-xl" onclick="TestSystem._resetKid(${currentKid})">${TestSystem.t('Test wiederholen', 'Retake test')}</button>
+                        <p class="text-gray-400 mb-6">${existingScore.score} ${TestSystem.t('von', 'of', 'sur')} ${existingScore.total} ${TestSystem.t('richtig', 'correct', 'correct(s)')}</p>
+                        <button class="glass-button-primary px-6 py-3 rounded-xl" onclick="TestSystem._resetKid(${currentKid})">${TestSystem.t('Test wiederholen', 'Retake test', 'Refaire le test')}</button>
                     </div>
                 `;
             }
@@ -161,9 +175,9 @@ const TestSystem = {
             `}).join('') + `
                 <div class="text-center mt-8">
                     <button id="submit-test" class="glass-button-primary px-8 py-4 rounded-2xl text-lg font-semibold opacity-50 cursor-not-allowed" disabled onclick="TestSystem._submit(${chapter}, ${currentKid})">
-                        ${TestSystem.t('Test abgeben', 'Submit test')}
+                        ${TestSystem.t('Test abgeben', 'Submit test', 'Soumettre le test')}
                     </button>
-                    <p class="text-gray-500 text-sm mt-2" id="answer-count">0 ${TestSystem.t('von', 'of')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered')}</p>
+                    <p class="text-gray-500 text-sm mt-2" id="answer-count">0 ${TestSystem.t('von', 'of', 'sur')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}</p>
                 </div>
             `;
         }
@@ -214,7 +228,7 @@ const TestSystem = {
 
             const count = Object.keys(answered).length;
             const countEl = document.getElementById('answer-count');
-            if (countEl) countEl.textContent = `${count} ${TestSystem.t('von', 'of')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered')}`;
+            if (countEl) countEl.textContent = `${count} ${TestSystem.t('von', 'of', 'sur')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}`;
 
             const submitBtn = document.getElementById('submit-test');
             if (submitBtn && count === questions.length) {
