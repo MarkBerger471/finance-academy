@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Test system
 const TestSystem = {
-    KIDS: ['Kind 1', 'Kind 2', 'Kind 3'],
+    KIDS: ['Luisa', 'Marlene', 'Carla'],
     STORAGE_KEY: 'finance_academy_scores',
 
     getScores() {
