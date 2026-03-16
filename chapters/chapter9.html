@@ -23,8 +23,9 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="../index.html" class="nav-link">Home</a>
-                    <a href="chapter9.html" class="nav-link active">Kapitel</a>
-                    <a href="../tests/scoreboard.html" class="nav-link">Ergebnisse</a>
+                    <a href="chapter9.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span></a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
                 </div>
             </div>
         </div>
@@ -34,128 +35,200 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12 animate-fade-in">
                 <span class="inline-block text-6xl mb-4">🧾</span>
-                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-lime-400 mb-4">Kapitel 9 von 10</div>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Steuern & Staat</h1>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-lime-400 mb-4">
+                    <span class="lang-de">Kapitel 9 von 10</span>
+                    <span class="lang-en">Chapter 9 of 10</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="lang-de">Steuern & Staat</span>
+                    <span class="lang-en">Taxes & Government</span>
+                </h1>
                 <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
-                    <span>⏱ 1-1,5 Stunden</span>
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span></span>
                     <span>|</span>
-                    <span>📝 10 Testfragen</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span></span>
                 </div>
                 <div class="progress-bar max-w-md mx-auto mt-6">
                     <div class="progress-fill" style="width: 90%"></div>
                 </div>
-                <p class="text-gray-500 text-xs mt-2">90% des Kurses</p>
+                <p class="text-gray-500 text-xs mt-2">
+                    <span class="lang-de">90% des Kurses</span>
+                    <span class="lang-en">90% of the course</span>
+                </p>
             </div>
 
             <!-- Section 1: Why Taxes? -->
             <div class="content-section animate-on-scroll">
-                <h3>🌍 Warum zahlen wir Steuern?</h3>
-                <p>Stell dir vor, es gäbe keine Steuern. Klingt erstmal super, oder? Aber dann gäbe es auch: keine Schulen, keine Straßen, keine Polizei, keine Feuerwehr, keine Krankenhäuser und keinen öffentlichen Nahverkehr. All das wird durch <strong>Steuergelder</strong> finanziert.</p>
+                <h3>
+                    <span class="lang-de">🌍 Warum zahlen wir Steuern?</span>
+                    <span class="lang-en">🌍 Why do we pay taxes?</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Stell dir vor, es gäbe keine Steuern. Klingt erstmal super, oder? Aber dann gäbe es auch: keine Schulen, keine Straßen, keine Polizei, keine Feuerwehr, keine Krankenhäuser und keinen öffentlichen Nahverkehr. All das wird durch <strong>Steuergelder</strong> finanziert.</span>
+                    <span class="lang-en">Imagine there were no taxes. Sounds great at first, right? But then there would also be: no schools, no roads, no police, no fire departments, no hospitals, and no public transport. All of this is funded by <strong>tax revenues</strong>.</span>
+                </p>
 
                 <div class="info-box">
-                    <p><strong>💡 Was sind Steuern?</strong> Steuern sind Pflichtabgaben an den Staat, für die du keine direkte Gegenleistung bekommst. Das unterscheidet sie von <strong>Gebühren</strong> (z.B. Parkgebühr) oder <strong>Beiträgen</strong> (z.B. Rundfunkbeitrag). Steuern fließen in einen großen Topf und werden für allgemeine staatliche Aufgaben verwendet.</p>
+                    <p>
+                        <span class="lang-de"><strong>💡 Was sind Steuern?</strong> Steuern sind Pflichtabgaben an den Staat, für die du keine direkte Gegenleistung bekommst. Das unterscheidet sie von <strong>Gebühren</strong> (z.B. Parkgebühr) oder <strong>Beiträgen</strong> (z.B. Rundfunkbeitrag). Steuern fließen in einen großen Topf und werden für allgemeine staatliche Aufgaben verwendet.</span>
+                        <span class="lang-en"><strong>💡 What are taxes?</strong> Taxes are mandatory payments to the government for which you receive no direct service in return. This distinguishes them from <strong>fees</strong> (e.g., parking fees) or <strong>contributions</strong> (e.g., broadcasting fees). Taxes flow into a large pool and are used for general government tasks.</span>
+                    </p>
                 </div>
 
-                <p>Der deutsche Staat nimmt jährlich über <strong>900 Milliarden Euro</strong> an Steuern ein. Dieses Geld wird unter anderem verwendet für:</p>
+                <p>
+                    <span class="lang-de">Der deutsche Staat nimmt jährlich über <strong>900 Milliarden Euro</strong> an Steuern ein. Dieses Geld wird unter anderem verwendet für:</span>
+                    <span class="lang-en">The German government collects over <strong>900 billion euros</strong> in taxes annually. This money is used for, among other things:</span>
+                </p>
                 <ul>
-                    <li><strong>Bildung:</strong> Schulen, Universitäten, Forschung</li>
-                    <li><strong>Infrastruktur:</strong> Straßen, Brücken, öffentlicher Nahverkehr</li>
-                    <li><strong>Sicherheit:</strong> Polizei, Feuerwehr, Bundeswehr</li>
-                    <li><strong>Sozialleistungen:</strong> Arbeitslosengeld, Kindergeld, BAföG</li>
-                    <li><strong>Gesundheit:</strong> Krankenhäuser, Gesundheitsämter</li>
-                    <li><strong>Verwaltung:</strong> Behörden, Gerichte, Diplomatie</li>
+                    <li><span class="lang-de"><strong>Bildung:</strong> Schulen, Universitäten, Forschung</span><span class="lang-en"><strong>Education:</strong> Schools, universities, research</span></li>
+                    <li><span class="lang-de"><strong>Infrastruktur:</strong> Straßen, Brücken, öffentlicher Nahverkehr</span><span class="lang-en"><strong>Infrastructure:</strong> Roads, bridges, public transport</span></li>
+                    <li><span class="lang-de"><strong>Sicherheit:</strong> Polizei, Feuerwehr, Bundeswehr</span><span class="lang-en"><strong>Security:</strong> Police, fire departments, armed forces</span></li>
+                    <li><span class="lang-de"><strong>Sozialleistungen:</strong> Arbeitslosengeld, Kindergeld, BAföG</span><span class="lang-en"><strong>Social benefits:</strong> Unemployment benefits, child benefits, student grants</span></li>
+                    <li><span class="lang-de"><strong>Gesundheit:</strong> Krankenhäuser, Gesundheitsämter</span><span class="lang-en"><strong>Healthcare:</strong> Hospitals, public health offices</span></li>
+                    <li><span class="lang-de"><strong>Verwaltung:</strong> Behörden, Gerichte, Diplomatie</span><span class="lang-en"><strong>Administration:</strong> Government agencies, courts, diplomacy</span></li>
                 </ul>
 
                 <div class="tip-box">
-                    <p><strong>✅ Merke:</strong> Steuern sind der Preis, den wir für eine funktionierende Gesellschaft zahlen. Ohne Steuern würde unser gesamtes Zusammenleben nicht funktionieren. Deutschland ist ein <strong>Sozialstaat</strong> - das bedeutet, der Staat kümmert sich besonders um Menschen, die Hilfe brauchen.</p>
+                    <p>
+                        <span class="lang-de"><strong>✅ Merke:</strong> Steuern sind der Preis, den wir für eine funktionierende Gesellschaft zahlen. Ohne Steuern würde unser gesamtes Zusammenleben nicht funktionieren. Deutschland ist ein <strong>Sozialstaat</strong> - das bedeutet, der Staat kümmert sich besonders um Menschen, die Hilfe brauchen.</span>
+                        <span class="lang-en"><strong>✅ Remember:</strong> Taxes are the price we pay for a functioning society. Without taxes, our entire way of living together would not work. Germany is a <strong>welfare state</strong> - meaning the government takes special care of people who need help.</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 2: Types of Taxes -->
             <div class="content-section animate-on-scroll">
-                <h3>📊 Die wichtigsten Steuerarten in Deutschland</h3>
-                <p>In Deutschland gibt es über 40 verschiedene Steuerarten. Die wichtigsten solltest du kennen:</p>
+                <h3>
+                    <span class="lang-de">📊 Die wichtigsten Steuerarten in Deutschland</span>
+                    <span class="lang-en">📊 The most important types of taxes in Germany</span>
+                </h3>
+                <p>
+                    <span class="lang-de">In Deutschland gibt es über 40 verschiedene Steuerarten. Die wichtigsten solltest du kennen:</span>
+                    <span class="lang-en">There are over 40 different types of taxes in Germany. You should know the most important ones:</span>
+                </p>
 
                 <div class="grid md:grid-cols-2 gap-4 my-6">
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">💼</div>
-                        <h4 class="font-bold text-lime-400 mb-2">Einkommensteuer</h4>
-                        <p class="text-sm text-gray-400">Die wichtigste Steuer! Du zahlst sie auf dein Einkommen (Gehalt, Gewinne, Mieteinnahmen). Sie ist <strong>progressiv</strong> - je mehr du verdienst, desto höher der Steuersatz.</p>
+                        <h4 class="font-bold text-lime-400 mb-2">
+                            <span class="lang-de">Einkommensteuer</span>
+                            <span class="lang-en">Income Tax</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Die wichtigste Steuer! Du zahlst sie auf dein Einkommen (Gehalt, Gewinne, Mieteinnahmen). Sie ist <strong>progressiv</strong> - je mehr du verdienst, desto höher der Steuersatz.</span>
+                            <span class="lang-en">The most important tax! You pay it on your income (salary, profits, rental income). It is <strong>progressive</strong> - the more you earn, the higher the tax rate.</span>
+                        </p>
                         <ul class="text-sm text-gray-400 mt-2">
-                            <li>0% bis zum Grundfreibetrag (~11.604 €)</li>
-                            <li>14% ab dem Grundfreibetrag (Eingangssteuersatz)</li>
-                            <li>Bis zu 42% (ab ~66.761 €)</li>
-                            <li>45% "Reichensteuer" (ab ~277.826 €)</li>
+                            <li><span class="lang-de">0% bis zum Grundfreibetrag (~11.604 €)</span><span class="lang-en">0% up to the basic allowance (~11,604 €)</span></li>
+                            <li><span class="lang-de">14% ab dem Grundfreibetrag (Eingangssteuersatz)</span><span class="lang-en">14% above the basic allowance (entry tax rate)</span></li>
+                            <li><span class="lang-de">Bis zu 42% (ab ~66.761 €)</span><span class="lang-en">Up to 42% (from ~66,761 €)</span></li>
+                            <li><span class="lang-de">45% "Reichensteuer" (ab ~277.826 €)</span><span class="lang-en">45% "wealth tax" (from ~277,826 €)</span></li>
                         </ul>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">🛒</div>
-                        <h4 class="font-bold text-green-400 mb-2">Mehrwertsteuer (MwSt.)</h4>
-                        <p class="text-sm text-gray-400">Auch <strong>Umsatzsteuer</strong> genannt. Du zahlst sie bei jedem Einkauf - sie steckt schon im Preis!</p>
+                        <h4 class="font-bold text-green-400 mb-2">
+                            <span class="lang-de">Mehrwertsteuer (MwSt.)</span>
+                            <span class="lang-en">Value Added Tax (VAT)</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Auch <strong>Umsatzsteuer</strong> genannt. Du zahlst sie bei jedem Einkauf - sie steckt schon im Preis!</span>
+                            <span class="lang-en">Also called <strong>sales tax</strong>. You pay it with every purchase - it's already included in the price!</span>
+                        </p>
                         <ul class="text-sm text-gray-400 mt-2">
-                            <li><strong>19%</strong> regulärer Satz (Elektronik, Kleidung, etc.)</li>
-                            <li><strong>7%</strong> ermäßigter Satz (Lebensmittel, Bücher, ÖPNV)</li>
+                            <li><span class="lang-de"><strong>19%</strong> regulärer Satz (Elektronik, Kleidung, etc.)</span><span class="lang-en"><strong>19%</strong> standard rate (electronics, clothing, etc.)</span></li>
+                            <li><span class="lang-de"><strong>7%</strong> ermäßigter Satz (Lebensmittel, Bücher, ÖPNV)</span><span class="lang-en"><strong>7%</strong> reduced rate (food, books, public transport)</span></li>
                         </ul>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">📈</div>
-                        <h4 class="font-bold text-cyan-400 mb-2">Kapitalertragsteuer</h4>
-                        <p class="text-sm text-gray-400">Gewinne aus Aktien, ETFs, Zinsen oder Dividenden werden mit <strong>25%</strong> besteuert, plus <strong>Solidaritätszuschlag</strong> (5,5% auf die Steuer) und ggf. Kirchensteuer.</p>
-                        <p class="text-sm text-gray-400 mt-2">Effektiv: ca. <strong>26,375%</strong> (ohne Kirchensteuer)</p>
+                        <h4 class="font-bold text-cyan-400 mb-2">
+                            <span class="lang-de">Kapitalertragsteuer</span>
+                            <span class="lang-en">Capital Gains Tax</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Gewinne aus Aktien, ETFs, Zinsen oder Dividenden werden mit <strong>25%</strong> besteuert, plus <strong>Solidaritätszuschlag</strong> (5,5% auf die Steuer) und ggf. Kirchensteuer.</span>
+                            <span class="lang-en">Profits from stocks, ETFs, interest, or dividends are taxed at <strong>25%</strong>, plus <strong>solidarity surcharge</strong> (5.5% on the tax) and possibly church tax.</span>
+                        </p>
+                        <p class="text-sm text-gray-400 mt-2">
+                            <span class="lang-de">Effektiv: ca. <strong>26,375%</strong> (ohne Kirchensteuer)</span>
+                            <span class="lang-en">Effective rate: approx. <strong>26.375%</strong> (without church tax)</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">🏠</div>
-                        <h4 class="font-bold text-purple-400 mb-2">Weitere Steuern</h4>
+                        <h4 class="font-bold text-purple-400 mb-2">
+                            <span class="lang-de">Weitere Steuern</span>
+                            <span class="lang-en">Other Taxes</span>
+                        </h4>
                         <ul class="text-sm text-gray-400">
-                            <li><strong>Gewerbesteuer:</strong> Für Unternehmen und Selbstständige, geht an die Gemeinde</li>
-                            <li><strong>Grundsteuer:</strong> Für Grundstücks- und Immobilienbesitzer</li>
-                            <li><strong>Kfz-Steuer:</strong> Für Autobesitzer</li>
-                            <li><strong>Erbschaftsteuer:</strong> Bei Erbschaften über dem Freibetrag</li>
+                            <li><span class="lang-de"><strong>Gewerbesteuer:</strong> Für Unternehmen und Selbstständige, geht an die Gemeinde</span><span class="lang-en"><strong>Trade tax:</strong> For businesses and self-employed, goes to the municipality</span></li>
+                            <li><span class="lang-de"><strong>Grundsteuer:</strong> Für Grundstücks- und Immobilienbesitzer</span><span class="lang-en"><strong>Property tax:</strong> For property and real estate owners</span></li>
+                            <li><span class="lang-de"><strong>Kfz-Steuer:</strong> Für Autobesitzer</span><span class="lang-en"><strong>Vehicle tax:</strong> For car owners</span></li>
+                            <li><span class="lang-de"><strong>Erbschaftsteuer:</strong> Bei Erbschaften über dem Freibetrag</span><span class="lang-en"><strong>Inheritance tax:</strong> On inheritances above the allowance</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="example-box">
-                    <p><strong>🎯 Beispiel Mehrwertsteuer:</strong> Du kaufst ein Spiel für 59,99 €. In diesem Preis stecken bereits 19% MwSt. Der Nettobetrag wäre 50,41 € + 9,58 € Steuer = 59,99 €. Diese 9,58 € gehen an den Staat! Bei einem Buch für 15,00 € sind es nur 7%: 14,02 € netto + 0,98 € MwSt.</p>
+                    <p>
+                        <span class="lang-de"><strong>🎯 Beispiel Mehrwertsteuer:</strong> Du kaufst ein Spiel für 59,99 €. In diesem Preis stecken bereits 19% MwSt. Der Nettobetrag wäre 50,41 € + 9,58 € Steuer = 59,99 €. Diese 9,58 € gehen an den Staat! Bei einem Buch für 15,00 € sind es nur 7%: 14,02 € netto + 0,98 € MwSt.</span>
+                        <span class="lang-en"><strong>🎯 VAT Example:</strong> You buy a game for €59.99. This price already includes 19% VAT. The net amount would be €50.41 + €9.58 tax = €59.99. That €9.58 goes to the government! For a book costing €15.00, it's only 7%: €14.02 net + €0.98 VAT.</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 3: Progressive Tax System -->
             <div class="content-section animate-on-scroll">
-                <h3>📐 Das progressive Steuersystem erklärt</h3>
-                <p>Deutschland hat ein <strong>progressives Steuersystem</strong>. Das bedeutet: Wer mehr verdient, zahlt nicht nur mehr Steuern, sondern auch einen höheren <strong>Prozentsatz</strong>. Das Prinzip dahinter heißt <strong>Leistungsfähigkeitsprinzip</strong> - wer mehr leisten kann, soll auch mehr beitragen.</p>
+                <h3>
+                    <span class="lang-de">📐 Das progressive Steuersystem erklärt</span>
+                    <span class="lang-en">📐 The progressive tax system explained</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Deutschland hat ein <strong>progressives Steuersystem</strong>. Das bedeutet: Wer mehr verdient, zahlt nicht nur mehr Steuern, sondern auch einen höheren <strong>Prozentsatz</strong>. Das Prinzip dahinter heißt <strong>Leistungsfähigkeitsprinzip</strong> - wer mehr leisten kann, soll auch mehr beitragen.</span>
+                    <span class="lang-en">Germany has a <strong>progressive tax system</strong>. This means: Those who earn more not only pay more taxes, but also a higher <strong>percentage</strong>. The principle behind this is called the <strong>ability-to-pay principle</strong> - those who can afford more should also contribute more.</span>
+                </p>
 
                 <div class="info-box">
-                    <p><strong>💡 Wichtig zu verstehen:</strong> Der höhere Steuersatz gilt nur für den Teil des Einkommens, der über der jeweiligen Grenze liegt! Das nennt man <strong>Grenzsteuersatz</strong>. Wenn du z.B. 50.000 € verdienst, zahlst du NICHT auf alles 42%, sondern:</p>
+                    <p>
+                        <span class="lang-de"><strong>💡 Wichtig zu verstehen:</strong> Der höhere Steuersatz gilt nur für den Teil des Einkommens, der über der jeweiligen Grenze liegt! Das nennt man <strong>Grenzsteuersatz</strong>. Wenn du z.B. 50.000 € verdienst, zahlst du NICHT auf alles 42%, sondern:</span>
+                        <span class="lang-en"><strong>💡 Important to understand:</strong> The higher tax rate only applies to the portion of income above the respective threshold! This is called the <strong>marginal tax rate</strong>. If you earn e.g. €50,000, you do NOT pay 42% on everything, but rather:</span>
+                    </p>
                     <ul>
-                        <li>0% auf die ersten ~11.604 € (Grundfreibetrag)</li>
-                        <li>14-42% gestaffelt auf den Rest</li>
+                        <li><span class="lang-de">0% auf die ersten ~11.604 € (Grundfreibetrag)</span><span class="lang-en">0% on the first ~€11,604 (basic allowance)</span></li>
+                        <li><span class="lang-de">14-42% gestaffelt auf den Rest</span><span class="lang-en">14-42% graduated on the remainder</span></li>
                     </ul>
-                    <p>Der tatsächliche Durchschnittssteuersatz liegt dadurch deutlich niedriger als der Spitzensteuersatz!</p>
+                    <p>
+                        <span class="lang-de">Der tatsächliche Durchschnittssteuersatz liegt dadurch deutlich niedriger als der Spitzensteuersatz!</span>
+                        <span class="lang-en">The actual average tax rate is therefore significantly lower than the top tax rate!</span>
+                    </p>
                 </div>
 
                 <div class="glass-card rounded-2xl p-5 my-6">
-                    <h4 class="font-bold text-lime-400 mb-3">Steuertarif 2024 - vereinfacht:</h4>
+                    <h4 class="font-bold text-lime-400 mb-3">
+                        <span class="lang-de">Steuertarif 2024 - vereinfacht:</span>
+                        <span class="lang-en">Tax rates 2024 - simplified:</span>
+                    </h4>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Bis 11.604 €</span>
-                            <span class="text-green-400 font-bold">0% (steuerfrei!)</span>
+                            <span><span class="lang-de">Bis 11.604 €</span><span class="lang-en">Up to €11,604</span></span>
+                            <span class="text-green-400 font-bold"><span class="lang-de">0% (steuerfrei!)</span><span class="lang-en">0% (tax-free!)</span></span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>11.605 € - 17.005 €</span>
+                            <span><span class="lang-de">11.605 € - 17.005 €</span><span class="lang-en">€11,605 - €17,005</span></span>
                             <span class="text-yellow-400 font-bold">14% - 24%</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>17.006 € - 66.760 €</span>
+                            <span><span class="lang-de">17.006 € - 66.760 €</span><span class="lang-en">€17,006 - €66,760</span></span>
                             <span class="text-orange-400 font-bold">24% - 42%</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>66.761 € - 277.825 €</span>
+                            <span><span class="lang-de">66.761 € - 277.825 €</span><span class="lang-en">€66,761 - €277,825</span></span>
                             <span class="text-red-400 font-bold">42%</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Ab 277.826 €</span>
-                            <span class="text-red-500 font-bold">45% ("Reichensteuer")</span>
+                            <span><span class="lang-de">Ab 277.826 €</span><span class="lang-en">From €277,826</span></span>
+                            <span class="text-red-500 font-bold"><span class="lang-de">45% ("Reichensteuer")</span><span class="lang-en">45% ("wealth tax")</span></span>
                         </div>
                     </div>
                 </div>
@@ -163,252 +236,429 @@
 
             <!-- Section 4: Lohnsteuerkarte and Steuerklassen -->
             <div class="content-section animate-on-scroll">
-                <h3>💳 Steuerklassen & Lohnsteuerkarte</h3>
-                <p>Wenn du einen Job anfängst, wirst du einer <strong>Steuerklasse</strong> zugeordnet. Die Steuerklasse bestimmt, wie viel Lohnsteuer dein Arbeitgeber direkt von deinem Gehalt abzieht.</p>
+                <h3>
+                    <span class="lang-de">💳 Steuerklassen & Lohnsteuerkarte</span>
+                    <span class="lang-en">💳 Tax classes & wage tax card</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Wenn du einen Job anfängst, wirst du einer <strong>Steuerklasse</strong> zugeordnet. Die Steuerklasse bestimmt, wie viel Lohnsteuer dein Arbeitgeber direkt von deinem Gehalt abzieht.</span>
+                    <span class="lang-en">When you start a job, you are assigned to a <strong>tax class</strong>. The tax class determines how much income tax your employer deducts directly from your salary.</span>
+                </p>
 
                 <div class="grid md:grid-cols-2 gap-4 my-6">
                     <div class="glass-card rounded-2xl p-5">
-                        <h4 class="font-bold text-lime-400 mb-3">Die 6 Steuerklassen</h4>
+                        <h4 class="font-bold text-lime-400 mb-3">
+                            <span class="lang-de">Die 6 Steuerklassen</span>
+                            <span class="lang-en">The 6 tax classes</span>
+                        </h4>
                         <ul class="text-sm space-y-2">
-                            <li><strong>Klasse I:</strong> Ledige, Geschiedene (die meisten jungen Leute!)</li>
-                            <li><strong>Klasse II:</strong> Alleinerziehende</li>
-                            <li><strong>Klasse III:</strong> Verheiratete (Partner verdient mehr)</li>
-                            <li><strong>Klasse IV:</strong> Verheiratete (beide verdienen ähnlich)</li>
-                            <li><strong>Klasse V:</strong> Verheiratete (Partner verdient weniger)</li>
-                            <li><strong>Klasse VI:</strong> Zweitjob</li>
+                            <li><span class="lang-de"><strong>Klasse I:</strong> Ledige, Geschiedene (die meisten jungen Leute!)</span><span class="lang-en"><strong>Class I:</strong> Single, divorced (most young people!)</span></li>
+                            <li><span class="lang-de"><strong>Klasse II:</strong> Alleinerziehende</span><span class="lang-en"><strong>Class II:</strong> Single parents</span></li>
+                            <li><span class="lang-de"><strong>Klasse III:</strong> Verheiratete (Partner verdient mehr)</span><span class="lang-en"><strong>Class III:</strong> Married (partner earns more)</span></li>
+                            <li><span class="lang-de"><strong>Klasse IV:</strong> Verheiratete (beide verdienen ähnlich)</span><span class="lang-en"><strong>Class IV:</strong> Married (both earn similarly)</span></li>
+                            <li><span class="lang-de"><strong>Klasse V:</strong> Verheiratete (Partner verdient weniger)</span><span class="lang-en"><strong>Class V:</strong> Married (partner earns less)</span></li>
+                            <li><span class="lang-de"><strong>Klasse VI:</strong> Zweitjob</span><span class="lang-en"><strong>Class VI:</strong> Second job</span></li>
                         </ul>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
-                        <h4 class="font-bold text-green-400 mb-3">ELStAM - Die digitale Lohnsteuerkarte</h4>
-                        <p class="text-sm text-gray-400">Die alte Papier-Lohnsteuerkarte gibt es seit 2013 nicht mehr. Heute werden deine Steuermerkmale <strong>elektronisch</strong> gespeichert (ELStAM = Elektronische LohnSteuerAbzugsMerkmale).</p>
-                        <p class="text-sm text-gray-400 mt-2">Dein Arbeitgeber ruft deine Daten direkt beim Finanzamt ab. Du brauchst dafür nur deine <strong>Steuer-ID</strong> - die bekommt jeder bei der Geburt.</p>
+                        <h4 class="font-bold text-green-400 mb-3">
+                            <span class="lang-de">ELStAM - Die digitale Lohnsteuerkarte</span>
+                            <span class="lang-en">ELStAM - The digital wage tax card</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Die alte Papier-Lohnsteuerkarte gibt es seit 2013 nicht mehr. Heute werden deine Steuermerkmale <strong>elektronisch</strong> gespeichert (ELStAM = Elektronische LohnSteuerAbzugsMerkmale).</span>
+                            <span class="lang-en">The old paper wage tax card no longer exists since 2013. Today your tax features are stored <strong>electronically</strong> (ELStAM = Electronic Wage Tax Deduction Features).</span>
+                        </p>
+                        <p class="text-sm text-gray-400 mt-2">
+                            <span class="lang-de">Dein Arbeitgeber ruft deine Daten direkt beim Finanzamt ab. Du brauchst dafür nur deine <strong>Steuer-ID</strong> - die bekommt jeder bei der Geburt.</span>
+                            <span class="lang-en">Your employer retrieves your data directly from the tax office. You only need your <strong>tax ID</strong> for this - everyone gets one at birth.</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="tip-box">
-                    <p><strong>✅ Für dich relevant:</strong> Als junger unverheirateter Mensch wirst du in <strong>Steuerklasse I</strong> eingestuft. Bei einem Minijob (bis 538 €/Monat) zahlst du meistens gar keine Lohnsteuer - der Arbeitgeber zahlt eine Pauschalsteuer.</p>
+                    <p>
+                        <span class="lang-de"><strong>✅ Für dich relevant:</strong> Als junger unverheirateter Mensch wirst du in <strong>Steuerklasse I</strong> eingestuft. Bei einem Minijob (bis 538 €/Monat) zahlst du meistens gar keine Lohnsteuer - der Arbeitgeber zahlt eine Pauschalsteuer.</span>
+                        <span class="lang-en"><strong>✅ Relevant for you:</strong> As a young unmarried person, you will be assigned to <strong>tax class I</strong>. With a mini-job (up to €538/month), you usually don't pay any income tax - the employer pays a flat-rate tax.</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 5: Sozialversicherungen -->
             <div class="content-section animate-on-scroll">
-                <h3>🛡️ Die Sozialversicherungen</h3>
-                <p>Neben den Steuern gibt es in Deutschland die <strong>Sozialversicherungen</strong>. Sie bilden ein "soziales Netz", das dich in schwierigen Lebenssituationen auffängt. Es gibt <strong>fünf Säulen</strong>:</p>
+                <h3>
+                    <span class="lang-de">🛡️ Die Sozialversicherungen</span>
+                    <span class="lang-en">🛡️ Social insurance</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Neben den Steuern gibt es in Deutschland die <strong>Sozialversicherungen</strong>. Sie bilden ein "soziales Netz", das dich in schwierigen Lebenssituationen auffängt. Es gibt <strong>fünf Säulen</strong>:</span>
+                    <span class="lang-en">Besides taxes, Germany has <strong>social insurance</strong>. They form a "social safety net" that catches you in difficult life situations. There are <strong>five pillars</strong>:</span>
+                </p>
 
                 <div class="grid md:grid-cols-2 gap-4 my-6">
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">🏥</div>
-                        <h4 class="font-bold text-lime-400 mb-2">Krankenversicherung</h4>
-                        <p class="text-sm text-gray-400">Bezahlt Arztbesuche, Medikamente, Krankenhausaufenthalte. <strong>Ca. 14,6%</strong> deines Bruttogehalts + Zusatzbeitrag (~1,7%). Arbeitgeber und Arbeitnehmer zahlen jeweils die Hälfte.</p>
+                        <h4 class="font-bold text-lime-400 mb-2">
+                            <span class="lang-de">Krankenversicherung</span>
+                            <span class="lang-en">Health Insurance</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Bezahlt Arztbesuche, Medikamente, Krankenhausaufenthalte. <strong>Ca. 14,6%</strong> deines Bruttogehalts + Zusatzbeitrag (~1,7%). Arbeitgeber und Arbeitnehmer zahlen jeweils die Hälfte.</span>
+                            <span class="lang-en">Covers doctor visits, medications, hospital stays. <strong>Approx. 14.6%</strong> of your gross salary + additional contribution (~1.7%). Employer and employee each pay half.</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">👴</div>
-                        <h4 class="font-bold text-green-400 mb-2">Rentenversicherung</h4>
-                        <p class="text-sm text-gray-400">Sichert dein Einkommen im Alter. <strong>18,6%</strong> des Bruttogehalts (je Hälfte Arbeitgeber/Arbeitnehmer). Reicht alleine aber oft nicht für den Lebensstandard!</p>
+                        <h4 class="font-bold text-green-400 mb-2">
+                            <span class="lang-de">Rentenversicherung</span>
+                            <span class="lang-en">Pension Insurance</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Sichert dein Einkommen im Alter. <strong>18,6%</strong> des Bruttogehalts (je Hälfte Arbeitgeber/Arbeitnehmer). Reicht alleine aber oft nicht für den Lebensstandard!</span>
+                            <span class="lang-en">Secures your income in old age. <strong>18.6%</strong> of gross salary (half each employer/employee). Often not enough on its own to maintain your standard of living!</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">🧓</div>
-                        <h4 class="font-bold text-cyan-400 mb-2">Pflegeversicherung</h4>
-                        <p class="text-sm text-gray-400">Hilft, wenn du pflegebedürftig wirst. <strong>3,4%</strong> (Kinderlose: 4,0%). Wird immer wichtiger, da die Gesellschaft altert.</p>
+                        <h4 class="font-bold text-cyan-400 mb-2">
+                            <span class="lang-de">Pflegeversicherung</span>
+                            <span class="lang-en">Long-term Care Insurance</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Hilft, wenn du pflegebedürftig wirst. <strong>3,4%</strong> (Kinderlose: 4,0%). Wird immer wichtiger, da die Gesellschaft altert.</span>
+                            <span class="lang-en">Helps when you need long-term care. <strong>3.4%</strong> (childless: 4.0%). Becoming increasingly important as society ages.</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5">
                         <div class="text-3xl mb-3">📋</div>
-                        <h4 class="font-bold text-purple-400 mb-2">Arbeitslosenversicherung</h4>
-                        <p class="text-sm text-gray-400">Zahlt Arbeitslosengeld, wenn du deinen Job verlierst. <strong>2,6%</strong> des Bruttogehalts (je Hälfte). Bietet auch Weiterbildungsmaßnahmen an.</p>
+                        <h4 class="font-bold text-purple-400 mb-2">
+                            <span class="lang-de">Arbeitslosenversicherung</span>
+                            <span class="lang-en">Unemployment Insurance</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Zahlt Arbeitslosengeld, wenn du deinen Job verlierst. <strong>2,6%</strong> des Bruttogehalts (je Hälfte). Bietet auch Weiterbildungsmaßnahmen an.</span>
+                            <span class="lang-en">Pays unemployment benefits when you lose your job. <strong>2.6%</strong> of gross salary (half each). Also offers further training programs.</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="glass-card rounded-2xl p-5 my-4">
                     <div class="text-3xl mb-3">⚠️</div>
-                    <h4 class="font-bold text-orange-400 mb-2">Unfallversicherung</h4>
-                    <p class="text-sm text-gray-400">Die fünfte Säule! Zahlt bei Arbeitsunfällen und Berufskrankheiten. Besonderheit: Wird <strong>komplett vom Arbeitgeber</strong> bezahlt. Auch Schüler und Studenten sind über die gesetzliche Unfallversicherung geschützt.</p>
+                    <h4 class="font-bold text-orange-400 mb-2">
+                        <span class="lang-de">Unfallversicherung</span>
+                        <span class="lang-en">Accident Insurance</span>
+                    </h4>
+                    <p class="text-sm text-gray-400">
+                        <span class="lang-de">Die fünfte Säule! Zahlt bei Arbeitsunfällen und Berufskrankheiten. Besonderheit: Wird <strong>komplett vom Arbeitgeber</strong> bezahlt. Auch Schüler und Studenten sind über die gesetzliche Unfallversicherung geschützt.</span>
+                        <span class="lang-en">The fifth pillar! Pays for work accidents and occupational diseases. Special feature: Paid <strong>entirely by the employer</strong>. Students and school pupils are also covered by statutory accident insurance.</span>
+                    </p>
                 </div>
 
                 <div class="info-box">
-                    <p><strong>💡 Merke:</strong> Die Sozialversicherungsbeiträge werden zwischen Arbeitgeber und Arbeitnehmer <strong>geteilt</strong> (außer Unfallversicherung). Auf deiner Gehaltsabrechnung siehst du nur DEINEN Anteil - dein Arbeitgeber zahlt nochmal fast genauso viel extra!</p>
+                    <p>
+                        <span class="lang-de"><strong>💡 Merke:</strong> Die Sozialversicherungsbeiträge werden zwischen Arbeitgeber und Arbeitnehmer <strong>geteilt</strong> (außer Unfallversicherung). Auf deiner Gehaltsabrechnung siehst du nur DEINEN Anteil - dein Arbeitgeber zahlt nochmal fast genauso viel extra!</span>
+                        <span class="lang-en"><strong>💡 Remember:</strong> Social insurance contributions are <strong>split</strong> between employer and employee (except accident insurance). On your payslip you only see YOUR share - your employer pays almost the same amount on top!</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 6: Payslip Example -->
             <div class="content-section animate-on-scroll">
-                <h3>📄 Von Brutto zu Netto - Die Gehaltsabrechnung</h3>
-                <p>Jetzt kommt der spannende Teil: Wie viel bleibt eigentlich von deinem Gehalt übrig? Schauen wir uns ein konkretes Beispiel an:</p>
+                <h3>
+                    <span class="lang-de">📄 Von Brutto zu Netto - Die Gehaltsabrechnung</span>
+                    <span class="lang-en">📄 From gross to net - The payslip</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Jetzt kommt der spannende Teil: Wie viel bleibt eigentlich von deinem Gehalt übrig? Schauen wir uns ein konkretes Beispiel an:</span>
+                    <span class="lang-en">Now comes the exciting part: How much of your salary actually remains? Let's look at a concrete example:</span>
+                </p>
 
                 <div class="glass-card rounded-2xl p-6 my-6">
-                    <h4 class="font-bold text-lime-400 mb-4 text-lg">Beispiel: 3.000 € Bruttogehalt</h4>
-                    <p class="text-sm text-gray-400 mb-4">Steuerklasse I, keine Kinder, keine Kirchensteuer, Alter 25</p>
+                    <h4 class="font-bold text-lime-400 mb-4 text-lg">
+                        <span class="lang-de">Beispiel: 3.000 € Bruttogehalt</span>
+                        <span class="lang-en">Example: €3,000 gross salary</span>
+                    </h4>
+                    <p class="text-sm text-gray-400 mb-4">
+                        <span class="lang-de">Steuerklasse I, keine Kinder, keine Kirchensteuer, Alter 25</span>
+                        <span class="lang-en">Tax class I, no children, no church tax, age 25</span>
+                    </p>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between items-center p-3 rounded-lg bg-white/10 font-bold text-lg">
-                            <span>Bruttogehalt</span>
+                            <span><span class="lang-de">Bruttogehalt</span><span class="lang-en">Gross salary</span></span>
                             <span class="text-lime-400">3.000,00 €</span>
                         </div>
 
-                        <div class="mt-4 mb-2 text-gray-500 text-xs uppercase tracking-wider">Sozialversicherungen (Arbeitnehmeranteil)</div>
+                        <div class="mt-4 mb-2 text-gray-500 text-xs uppercase tracking-wider">
+                            <span class="lang-de">Sozialversicherungen (Arbeitnehmeranteil)</span>
+                            <span class="lang-en">Social insurance (employee share)</span>
+                        </div>
 
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Krankenversicherung (7,3% + ~0,85% Zusatz)</span>
+                            <span><span class="lang-de">Krankenversicherung (7,3% + ~0,85% Zusatz)</span><span class="lang-en">Health insurance (7.3% + ~0.85% supplement)</span></span>
                             <span class="text-red-400">- 244,50 €</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Rentenversicherung (9,3%)</span>
+                            <span><span class="lang-de">Rentenversicherung (9,3%)</span><span class="lang-en">Pension insurance (9.3%)</span></span>
                             <span class="text-red-400">- 279,00 €</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Pflegeversicherung (2,0% mit Kind / 2,3% ohne)</span>
+                            <span><span class="lang-de">Pflegeversicherung (2,0% mit Kind / 2,3% ohne)</span><span class="lang-en">Long-term care insurance (2.0% with child / 2.3% without)</span></span>
                             <span class="text-red-400">- 60,00 €</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Arbeitslosenversicherung (1,3%)</span>
+                            <span><span class="lang-de">Arbeitslosenversicherung (1,3%)</span><span class="lang-en">Unemployment insurance (1.3%)</span></span>
                             <span class="text-red-400">- 39,00 €</span>
                         </div>
 
-                        <div class="mt-4 mb-2 text-gray-500 text-xs uppercase tracking-wider">Steuern</div>
+                        <div class="mt-4 mb-2 text-gray-500 text-xs uppercase tracking-wider">
+                            <span class="lang-de">Steuern</span>
+                            <span class="lang-en">Taxes</span>
+                        </div>
 
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Lohnsteuer</span>
+                            <span><span class="lang-de">Lohnsteuer</span><span class="lang-en">Income tax</span></span>
                             <span class="text-red-400">- 326,58 €</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Solidaritätszuschlag</span>
+                            <span><span class="lang-de">Solidaritätszuschlag</span><span class="lang-en">Solidarity surcharge</span></span>
                             <span class="text-red-400">- 0,00 €</span>
                         </div>
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Kirchensteuer</span>
+                            <span><span class="lang-de">Kirchensteuer</span><span class="lang-en">Church tax</span></span>
                             <span class="text-gray-500">- 0,00 €</span>
                         </div>
 
                         <div class="border-t border-white/20 my-3"></div>
 
                         <div class="flex justify-between items-center p-2 rounded-lg bg-white/5">
-                            <span>Gesamt-Abzüge</span>
+                            <span><span class="lang-de">Gesamt-Abzüge</span><span class="lang-en">Total deductions</span></span>
                             <span class="text-red-400 font-bold">- 949,08 €</span>
                         </div>
 
                         <div class="flex justify-between items-center p-3 rounded-lg bg-lime-500/20 font-bold text-lg mt-2">
-                            <span>Nettogehalt (was auf dein Konto kommt)</span>
+                            <span><span class="lang-de">Nettogehalt (was auf dein Konto kommt)</span><span class="lang-en">Net salary (what arrives in your account)</span></span>
                             <span class="text-lime-400">≈ 2.050,92 €</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="warning-box">
-                    <p><strong>⚠️ Schock?</strong> Von 3.000 € brutto bleiben nur ca. 2.050 € netto übrig - das sind etwa <strong>68%</strong>! Fast ein Drittel geht an Steuern und Sozialabgaben. Deshalb ist es so wichtig, bei Jobverhandlungen immer den <strong>Bruttobetrag</strong> zu kennen UND zu wissen, wie viel netto übrigbleibt.</p>
+                    <p>
+                        <span class="lang-de"><strong>⚠️ Schock?</strong> Von 3.000 € brutto bleiben nur ca. 2.050 € netto übrig - das sind etwa <strong>68%</strong>! Fast ein Drittel geht an Steuern und Sozialabgaben. Deshalb ist es so wichtig, bei Jobverhandlungen immer den <strong>Bruttobetrag</strong> zu kennen UND zu wissen, wie viel netto übrigbleibt.</span>
+                        <span class="lang-en"><strong>⚠️ Shocked?</strong> From €3,000 gross, only about €2,050 net remains - that's about <strong>68%</strong>! Almost a third goes to taxes and social contributions. That's why it's so important to always know the <strong>gross amount</strong> in job negotiations AND to know how much net remains.</span>
+                    </p>
                 </div>
 
                 <div class="tip-box">
-                    <p><strong>✅ Tipp:</strong> Der Solidaritätszuschlag (Soli) fällt seit 2021 für die meisten Arbeitnehmer weg. Nur Gutverdiener (Lohnsteuer über ca. 17.543 € pro Jahr) zahlen ihn noch. Bei Kapitalerträgen wird er aber weiterhin abgezogen!</p>
+                    <p>
+                        <span class="lang-de"><strong>✅ Tipp:</strong> Der Solidaritätszuschlag (Soli) fällt seit 2021 für die meisten Arbeitnehmer weg. Nur Gutverdiener (Lohnsteuer über ca. 17.543 € pro Jahr) zahlen ihn noch. Bei Kapitalerträgen wird er aber weiterhin abgezogen!</span>
+                        <span class="lang-en"><strong>✅ Tip:</strong> The solidarity surcharge (Soli) has been eliminated for most employees since 2021. Only high earners (income tax over approx. €17,543 per year) still pay it. However, it is still deducted from capital gains!</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 7: Tax-free Allowances -->
             <div class="content-section animate-on-scroll">
-                <h3>🎁 Freibeträge - Steuern sparen (legal!)</h3>
-                <p>Der Staat lässt dir bestimmte Beträge <strong>steuerfrei</strong>. Die wichtigsten Freibeträge solltest du kennen:</p>
+                <h3>
+                    <span class="lang-de">🎁 Freibeträge - Steuern sparen (legal!)</span>
+                    <span class="lang-en">🎁 Tax allowances - Save on taxes (legally!)</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Der Staat lässt dir bestimmte Beträge <strong>steuerfrei</strong>. Die wichtigsten Freibeträge solltest du kennen:</span>
+                    <span class="lang-en">The government lets you keep certain amounts <strong>tax-free</strong>. You should know the most important allowances:</span>
+                </p>
 
                 <div class="grid md:grid-cols-2 gap-4 my-6">
                     <div class="glass-card rounded-2xl p-5 text-center">
                         <div class="text-3xl mb-3">💰</div>
-                        <h4 class="font-bold text-lime-400 mb-2">Grundfreibetrag</h4>
+                        <h4 class="font-bold text-lime-400 mb-2">
+                            <span class="lang-de">Grundfreibetrag</span>
+                            <span class="lang-en">Basic allowance</span>
+                        </h4>
                         <div class="text-2xl font-bold text-white mb-2">~11.604 €</div>
-                        <p class="text-sm text-gray-400">Pro Jahr steuerfrei verdienen (2024). Das ist das Existenzminimum - so viel brauchst du zum Leben. Erst ab diesem Betrag zahlst du Einkommensteuer.</p>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Pro Jahr steuerfrei verdienen (2024). Das ist das Existenzminimum - so viel brauchst du zum Leben. Erst ab diesem Betrag zahlst du Einkommensteuer.</span>
+                            <span class="lang-en">Earn tax-free per year (2024). This is the subsistence level - how much you need to live. You only pay income tax above this amount.</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5 text-center">
                         <div class="text-3xl mb-3">📈</div>
-                        <h4 class="font-bold text-green-400 mb-2">Sparerpauschbetrag</h4>
+                        <h4 class="font-bold text-green-400 mb-2">
+                            <span class="lang-de">Sparerpauschbetrag</span>
+                            <span class="lang-en">Saver's allowance</span>
+                        </h4>
                         <div class="text-2xl font-bold text-white mb-2">1.000 €</div>
-                        <p class="text-sm text-gray-400">Pro Person und Jahr auf Kapitalerträge (Zinsen, Dividenden, Kursgewinne). Für Ehepaare zusammen 2.000 €. Dafür musst du einen <strong>Freistellungsauftrag</strong> bei deiner Bank einrichten!</p>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Pro Person und Jahr auf Kapitalerträge (Zinsen, Dividenden, Kursgewinne). Für Ehepaare zusammen 2.000 €. Dafür musst du einen <strong>Freistellungsauftrag</strong> bei deiner Bank einrichten!</span>
+                            <span class="lang-en">Per person per year on capital gains (interest, dividends, price gains). For married couples together €2,000. You need to set up an <strong>exemption order</strong> at your bank for this!</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="example-box">
-                    <p><strong>🎯 Beispiel Sparerpauschbetrag:</strong> Du hast einen ETF-Sparplan und machst 800 € Gewinn im Jahr. Da das unter 1.000 € liegt, zahlst du <strong>keine Steuern</strong> darauf! Machst du aber 1.500 € Gewinn, werden nur die 500 € über dem Freibetrag besteuert: 500 € x 26,375% = 131,88 € Steuern.</p>
+                    <p>
+                        <span class="lang-de"><strong>🎯 Beispiel Sparerpauschbetrag:</strong> Du hast einen ETF-Sparplan und machst 800 € Gewinn im Jahr. Da das unter 1.000 € liegt, zahlst du <strong>keine Steuern</strong> darauf! Machst du aber 1.500 € Gewinn, werden nur die 500 € über dem Freibetrag besteuert: 500 € x 26,375% = 131,88 € Steuern.</span>
+                        <span class="lang-en"><strong>🎯 Saver's allowance example:</strong> You have an ETF savings plan and make €800 profit per year. Since that's below €1,000, you pay <strong>no taxes</strong> on it! But if you make €1,500 profit, only the €500 above the allowance is taxed: €500 x 26.375% = €131.88 in taxes.</span>
+                    </p>
                 </div>
 
                 <div class="tip-box">
-                    <p><strong>✅ Wichtig für Teens:</strong> Wenn du einen Ferienjob oder Nebenjob hast und unter 11.604 € im Jahr verdienst, zahlst du <strong>keine Einkommensteuer</strong>! Falls dein Arbeitgeber trotzdem Lohnsteuer abzieht, bekommst du sie über die <strong>Steuererklärung</strong> zurück.</p>
+                    <p>
+                        <span class="lang-de"><strong>✅ Wichtig für Teens:</strong> Wenn du einen Ferienjob oder Nebenjob hast und unter 11.604 € im Jahr verdienst, zahlst du <strong>keine Einkommensteuer</strong>! Falls dein Arbeitgeber trotzdem Lohnsteuer abzieht, bekommst du sie über die <strong>Steuererklärung</strong> zurück.</span>
+                        <span class="lang-en"><strong>✅ Important for teens:</strong> If you have a holiday job or side job and earn less than €11,604 per year, you pay <strong>no income tax</strong>! If your employer still deducts income tax, you get it back through your <strong>tax return</strong>.</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 8: Why Taxes Matter -->
             <div class="content-section animate-on-scroll">
-                <h3>🤝 Warum Steuern wichtig für die Gesellschaft sind</h3>
-                <p>Steuern sind kein "Geld wegnehmen" - sie sind der <strong>Grundpfeiler unserer Demokratie und Gesellschaft</strong>. Hier ist, was Steuern ermöglichen:</p>
+                <h3>
+                    <span class="lang-de">🤝 Warum Steuern wichtig für die Gesellschaft sind</span>
+                    <span class="lang-en">🤝 Why taxes are important for society</span>
+                </h3>
+                <p>
+                    <span class="lang-de">Steuern sind kein "Geld wegnehmen" - sie sind der <strong>Grundpfeiler unserer Demokratie und Gesellschaft</strong>. Hier ist, was Steuern ermöglichen:</span>
+                    <span class="lang-en">Taxes are not "taking money away" - they are the <strong>cornerstone of our democracy and society</strong>. Here is what taxes make possible:</span>
+                </p>
 
                 <div class="grid md:grid-cols-3 gap-4 my-6">
                     <div class="glass-card rounded-2xl p-5 text-center">
                         <div class="text-3xl mb-3">⚖️</div>
-                        <h4 class="font-bold text-lime-400 mb-2">Gerechtigkeit</h4>
-                        <p class="text-sm text-gray-400">Das progressive System sorgt dafür, dass Starke mehr beitragen als Schwache. Sozialleistungen helfen Menschen in Not.</p>
+                        <h4 class="font-bold text-lime-400 mb-2">
+                            <span class="lang-de">Gerechtigkeit</span>
+                            <span class="lang-en">Fairness</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Das progressive System sorgt dafür, dass Starke mehr beitragen als Schwache. Sozialleistungen helfen Menschen in Not.</span>
+                            <span class="lang-en">The progressive system ensures that the strong contribute more than the weak. Social benefits help people in need.</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5 text-center">
                         <div class="text-3xl mb-3">🏗️</div>
-                        <h4 class="font-bold text-green-400 mb-2">Infrastruktur</h4>
-                        <p class="text-sm text-gray-400">Straßen, Schulen, Krankenhäuser, Internet - all das wird mit Steuergeldern gebaut und unterhalten.</p>
+                        <h4 class="font-bold text-green-400 mb-2">
+                            <span class="lang-de">Infrastruktur</span>
+                            <span class="lang-en">Infrastructure</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">Straßen, Schulen, Krankenhäuser, Internet - all das wird mit Steuergeldern gebaut und unterhalten.</span>
+                            <span class="lang-en">Roads, schools, hospitals, internet - all of this is built and maintained with tax money.</span>
+                        </p>
                     </div>
                     <div class="glass-card rounded-2xl p-5 text-center">
                         <div class="text-3xl mb-3">🎓</div>
-                        <h4 class="font-bold text-cyan-400 mb-2">Bildung für alle</h4>
-                        <p class="text-sm text-gray-400">In Deutschland sind Schulen und viele Unis kostenlos - bezahlt durch Steuern. In den USA kostet ein Studium oft 50.000 $ pro Jahr!</p>
+                        <h4 class="font-bold text-cyan-400 mb-2">
+                            <span class="lang-de">Bildung für alle</span>
+                            <span class="lang-en">Education for all</span>
+                        </h4>
+                        <p class="text-sm text-gray-400">
+                            <span class="lang-de">In Deutschland sind Schulen und viele Unis kostenlos - bezahlt durch Steuern. In den USA kostet ein Studium oft 50.000 $ pro Jahr!</span>
+                            <span class="lang-en">In Germany, schools and many universities are free - paid for by taxes. In the USA, a degree often costs $50,000 per year!</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="warning-box">
-                    <p><strong>⚠️ Steuerhinterziehung ist eine Straftat!</strong> Wer Steuern nicht zahlt oder falsche Angaben macht, begeht eine Straftat und kann mit Geldstrafen oder sogar Gefängnis bestraft werden. Steuervermeidung (legale Nutzung von Freibeträgen und Abzügen) ist dagegen völlig in Ordnung und sogar klug!</p>
+                    <p>
+                        <span class="lang-de"><strong>⚠️ Steuerhinterziehung ist eine Straftat!</strong> Wer Steuern nicht zahlt oder falsche Angaben macht, begeht eine Straftat und kann mit Geldstrafen oder sogar Gefängnis bestraft werden. Steuervermeidung (legale Nutzung von Freibeträgen und Abzügen) ist dagegen völlig in Ordnung und sogar klug!</span>
+                        <span class="lang-en"><strong>⚠️ Tax evasion is a criminal offense!</strong> Anyone who doesn't pay taxes or makes false statements commits a crime and can be punished with fines or even prison. Tax avoidance (legal use of allowances and deductions) is perfectly fine and even smart!</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Section 9: Exercise -->
             <div class="content-section animate-on-scroll">
-                <h3>🧮 Übung: Gehaltsabrechnung lesen</h3>
+                <h3>
+                    <span class="lang-de">🧮 Übung: Gehaltsabrechnung lesen</span>
+                    <span class="lang-en">🧮 Exercise: Reading a payslip</span>
+                </h3>
                 <div class="exercise-box">
-                    <p><strong>📋 Aufgabe:</strong> Max hat seinen ersten richtigen Job! Sein Arbeitgeber bietet ihm 2.500 € brutto im Monat an. Berechne näherungsweise, was Max netto bekommt:</p>
+                    <p>
+                        <span class="lang-de"><strong>📋 Aufgabe:</strong> Max hat seinen ersten richtigen Job! Sein Arbeitgeber bietet ihm 2.500 € brutto im Monat an. Berechne näherungsweise, was Max netto bekommt:</span>
+                        <span class="lang-en"><strong>📋 Task:</strong> Max has his first real job! His employer offers him €2,500 gross per month. Calculate approximately what Max receives net:</span>
+                    </p>
 
                     <div class="glass-card rounded-xl p-4 mt-4">
                         <div class="space-y-2 text-sm">
-                            <div class="flex justify-between"><span>Bruttogehalt</span><span class="font-bold">2.500,00 €</span></div>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Bruttogehalt</span><span class="lang-en">Gross salary</span></span>
+                                <span class="font-bold">2.500,00 €</span>
+                            </div>
                             <div class="border-t border-white/10 my-2"></div>
-                            <p class="text-gray-400">Rechne selbst (Arbeitnehmeranteil):</p>
-                            <div class="flex justify-between"><span>Krankenversicherung (~8,15%)</span><span class="text-gray-500">- ??? €</span></div>
-                            <div class="flex justify-between"><span>Rentenversicherung (9,3%)</span><span class="text-gray-500">- ??? €</span></div>
-                            <div class="flex justify-between"><span>Pflegeversicherung (~2,0%)</span><span class="text-gray-500">- ??? €</span></div>
-                            <div class="flex justify-between"><span>Arbeitslosenversicherung (1,3%)</span><span class="text-gray-500">- ??? €</span></div>
-                            <div class="flex justify-between"><span>Lohnsteuer (ca. 230 €)</span><span class="text-gray-500">- ??? €</span></div>
+                            <p class="text-gray-400">
+                                <span class="lang-de">Rechne selbst (Arbeitnehmeranteil):</span>
+                                <span class="lang-en">Calculate yourself (employee share):</span>
+                            </p>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Krankenversicherung (~8,15%)</span><span class="lang-en">Health insurance (~8.15%)</span></span>
+                                <span class="text-gray-500">- ??? €</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Rentenversicherung (9,3%)</span><span class="lang-en">Pension insurance (9.3%)</span></span>
+                                <span class="text-gray-500">- ??? €</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Pflegeversicherung (~2,0%)</span><span class="lang-en">Long-term care insurance (~2.0%)</span></span>
+                                <span class="text-gray-500">- ??? €</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Arbeitslosenversicherung (1,3%)</span><span class="lang-en">Unemployment insurance (1.3%)</span></span>
+                                <span class="text-gray-500">- ??? €</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span><span class="lang-de">Lohnsteuer (ca. 230 €)</span><span class="lang-en">Income tax (approx. €230)</span></span>
+                                <span class="text-gray-500">- ??? €</span>
+                            </div>
                             <div class="border-t border-white/10 my-2"></div>
-                            <div class="flex justify-between font-bold"><span>Nettogehalt ≈</span><span class="text-lime-400">??? €</span></div>
+                            <div class="flex justify-between font-bold">
+                                <span><span class="lang-de">Nettogehalt ≈</span><span class="lang-en">Net salary ≈</span></span>
+                                <span class="text-lime-400">??? €</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="mt-4 text-sm text-gray-400">
-                        <p><strong>Lösung:</strong> KV: ~203,75 € | RV: 232,50 € | PV: ~50,00 € | AV: 32,50 € | Lohnsteuer: ~230 € | <strong>Netto: ≈ 1.751,25 €</strong> (ca. 70% des Brutto)</p>
+                        <p>
+                            <span class="lang-de"><strong>Lösung:</strong> KV: ~203,75 € | RV: 232,50 € | PV: ~50,00 € | AV: 32,50 € | Lohnsteuer: ~230 € | <strong>Netto: ≈ 1.751,25 €</strong> (ca. 70% des Brutto)</span>
+                            <span class="lang-en"><strong>Solution:</strong> HI: ~€203.75 | PI: €232.50 | LCI: ~€50.00 | UI: €32.50 | Income tax: ~€230 | <strong>Net: ≈ €1,751.25</strong> (approx. 70% of gross)</span>
+                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- Section 10: Summary -->
             <div class="content-section animate-on-scroll">
-                <h3>📋 Zusammenfassung</h3>
+                <h3>
+                    <span class="lang-de">📋 Zusammenfassung</span>
+                    <span class="lang-en">📋 Summary</span>
+                </h3>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="glass-card rounded-xl p-4">
-                        <h4 class="font-bold text-lime-400 mb-2">Wichtige Begriffe</h4>
+                        <h4 class="font-bold text-lime-400 mb-2">
+                            <span class="lang-de">Wichtige Begriffe</span>
+                            <span class="lang-en">Key terms</span>
+                        </h4>
                         <ul>
-                            <li><strong>Einkommensteuer:</strong> Progressive Steuer auf Einkommen</li>
-                            <li><strong>MwSt.:</strong> 19% (normal) bzw. 7% (ermäßigt)</li>
-                            <li><strong>Kapitalertragsteuer:</strong> 25% auf Anlagegewinne</li>
-                            <li><strong>Grundfreibetrag:</strong> ~11.604 € steuerfrei</li>
-                            <li><strong>Sparerpauschbetrag:</strong> 1.000 € auf Kapitalerträge</li>
-                            <li><strong>Brutto:</strong> Gehalt vor Abzügen</li>
-                            <li><strong>Netto:</strong> Was auf dem Konto ankommt</li>
+                            <li><span class="lang-de"><strong>Einkommensteuer:</strong> Progressive Steuer auf Einkommen</span><span class="lang-en"><strong>Income tax:</strong> Progressive tax on income</span></li>
+                            <li><span class="lang-de"><strong>MwSt.:</strong> 19% (normal) bzw. 7% (ermäßigt)</span><span class="lang-en"><strong>VAT:</strong> 19% (standard) or 7% (reduced)</span></li>
+                            <li><span class="lang-de"><strong>Kapitalertragsteuer:</strong> 25% auf Anlagegewinne</span><span class="lang-en"><strong>Capital gains tax:</strong> 25% on investment gains</span></li>
+                            <li><span class="lang-de"><strong>Grundfreibetrag:</strong> ~11.604 € steuerfrei</span><span class="lang-en"><strong>Basic allowance:</strong> ~€11,604 tax-free</span></li>
+                            <li><span class="lang-de"><strong>Sparerpauschbetrag:</strong> 1.000 € auf Kapitalerträge</span><span class="lang-en"><strong>Saver's allowance:</strong> €1,000 on capital gains</span></li>
+                            <li><span class="lang-de"><strong>Brutto:</strong> Gehalt vor Abzügen</span><span class="lang-en"><strong>Gross:</strong> Salary before deductions</span></li>
+                            <li><span class="lang-de"><strong>Netto:</strong> Was auf dem Konto ankommt</span><span class="lang-en"><strong>Net:</strong> What arrives in your account</span></li>
                         </ul>
                     </div>
                     <div class="glass-card rounded-xl p-4">
-                        <h4 class="font-bold text-green-400 mb-2">Das Wichtigste</h4>
+                        <h4 class="font-bold text-green-400 mb-2">
+                            <span class="lang-de">Das Wichtigste</span>
+                            <span class="lang-en">The essentials</span>
+                        </h4>
                         <ul>
-                            <li>Steuern finanzieren unsere Gesellschaft</li>
-                            <li>Das progressive System: Wer mehr verdient, zahlt mehr</li>
-                            <li>Sozialversicherungen schützen bei Krankheit, Alter, Pflege und Arbeitslosigkeit</li>
-                            <li>Von 3.000 € brutto bleiben ca. 2.050 € netto</li>
-                            <li>Freibeträge sind dein Freund: Nutze sie!</li>
-                            <li>Freistellungsauftrag bei der Bank einrichten!</li>
+                            <li><span class="lang-de">Steuern finanzieren unsere Gesellschaft</span><span class="lang-en">Taxes fund our society</span></li>
+                            <li><span class="lang-de">Das progressive System: Wer mehr verdient, zahlt mehr</span><span class="lang-en">The progressive system: Those who earn more, pay more</span></li>
+                            <li><span class="lang-de">Sozialversicherungen schützen bei Krankheit, Alter, Pflege und Arbeitslosigkeit</span><span class="lang-en">Social insurance protects against illness, old age, long-term care needs, and unemployment</span></li>
+                            <li><span class="lang-de">Von 3.000 € brutto bleiben ca. 2.050 € netto</span><span class="lang-en">From €3,000 gross, about €2,050 net remains</span></li>
+                            <li><span class="lang-de">Freibeträge sind dein Freund: Nutze sie!</span><span class="lang-en">Tax allowances are your friend: Use them!</span></li>
+                            <li><span class="lang-de">Freistellungsauftrag bei der Bank einrichten!</span><span class="lang-en">Set up an exemption order at your bank!</span></li>
                         </ul>
                     </div>
                 </div>
@@ -416,16 +666,22 @@
 
             <!-- Test Section -->
             <div class="content-section mt-12" id="test-section">
-                <h2 class="text-3xl font-bold mb-2 text-center">📝 Kapitel-Test</h2>
-                <p class="text-gray-400 text-center mb-8">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</p>
+                <h2 class="text-3xl font-bold mb-2 text-center">
+                    <span class="lang-de">📝 Kapitel-Test</span>
+                    <span class="lang-en">📝 Chapter Test</span>
+                </h2>
+                <p class="text-gray-400 text-center mb-8">
+                    <span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span>
+                    <span class="lang-en">Test your knowledge! First choose your name, then answer all questions.</span>
+                </p>
                 <div id="test-container"></div>
             </div>
 
             <!-- Chapter Navigation -->
             <div class="chapter-nav">
-                <a href="chapter8.html">← Kapitel 8</a>
-                <a href="../index.html">Übersicht</a>
-                <a href="chapter10.html">Kapitel 10 →</a>
+                <a href="chapter8.html"><span class="lang-de">← Kapitel 8</span><span class="lang-en">← Chapter 8</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span></a>
+                <a href="chapter10.html"><span class="lang-de">Kapitel 10 →</span><span class="lang-en">Chapter 10 →</span></a>
             </div>
         </div>
     </main>
@@ -435,63 +691,93 @@
         TestSystem.initTest(9, [
             {
                 question: "Warum zahlen wir Steuern?",
+                question_en: "Why do we pay taxes?",
                 options: ["Damit die Politiker reich werden", "Um öffentliche Aufgaben wie Schulen, Straßen und Sicherheit zu finanzieren", "Weil die Banken es verlangen", "Um die Inflation zu bekämpfen"],
+                options_en: ["So that politicians get rich", "To fund public services like schools, roads, and security", "Because banks demand it", "To fight inflation"],
                 correct: 1,
-                explanation: "Steuern finanzieren öffentliche Aufgaben wie Bildung, Infrastruktur, Sicherheit und Sozialleistungen - alles, was unsere Gesellschaft am Laufen hält."
+                explanation: "Steuern finanzieren öffentliche Aufgaben wie Bildung, Infrastruktur, Sicherheit und Sozialleistungen - alles, was unsere Gesellschaft am Laufen hält.",
+                explanation_en: "Taxes fund public services like education, infrastructure, security, and social benefits - everything that keeps our society running."
             },
             {
                 question: "Wie hoch ist der reguläre Mehrwertsteuersatz in Deutschland?",
+                question_en: "What is the standard VAT rate in Germany?",
                 options: ["7%", "14%", "19%", "25%"],
+                options_en: ["7%", "14%", "19%", "25%"],
                 correct: 2,
-                explanation: "Der reguläre MwSt.-Satz beträgt 19%. Der ermäßigte Satz von 7% gilt für Grundbedarf wie Lebensmittel und Bücher."
+                explanation: "Der reguläre MwSt.-Satz beträgt 19%. Der ermäßigte Satz von 7% gilt für Grundbedarf wie Lebensmittel und Bücher.",
+                explanation_en: "The standard VAT rate is 19%. The reduced rate of 7% applies to basic necessities like food and books."
             },
             {
                 question: "Was bedeutet 'progressives Steuersystem'?",
+                question_en: "What does 'progressive tax system' mean?",
                 options: ["Alle zahlen den gleichen Steuersatz", "Je weniger man verdient, desto mehr Steuern zahlt man", "Je mehr man verdient, desto höher der Steuersatz", "Steuern steigen jedes Jahr automatisch"],
+                options_en: ["Everyone pays the same tax rate", "The less you earn, the more taxes you pay", "The more you earn, the higher the tax rate", "Taxes increase automatically every year"],
                 correct: 2,
-                explanation: "Progressiv bedeutet: Der Steuersatz steigt mit dem Einkommen. Wer mehr verdient, zahlt einen höheren Prozentsatz - aber nur auf den Teil über der jeweiligen Grenze."
+                explanation: "Progressiv bedeutet: Der Steuersatz steigt mit dem Einkommen. Wer mehr verdient, zahlt einen höheren Prozentsatz - aber nur auf den Teil über der jeweiligen Grenze.",
+                explanation_en: "Progressive means: The tax rate increases with income. Those who earn more pay a higher percentage - but only on the portion above the respective threshold."
             },
             {
                 question: "Wie hoch ist der Grundfreibetrag 2024 ungefähr?",
+                question_en: "What is the approximate basic tax allowance in 2024?",
                 options: ["5.000 €", "8.000 €", "11.604 €", "20.000 €"],
+                options_en: ["€5,000", "€8,000", "€11,604", "€20,000"],
                 correct: 2,
-                explanation: "Der Grundfreibetrag liegt 2024 bei ca. 11.604 €. Bis zu diesem Betrag zahlst du keine Einkommensteuer - er sichert das Existenzminimum."
+                explanation: "Der Grundfreibetrag liegt 2024 bei ca. 11.604 €. Bis zu diesem Betrag zahlst du keine Einkommensteuer - er sichert das Existenzminimum.",
+                explanation_en: "The basic allowance in 2024 is approx. €11,604. Up to this amount you pay no income tax - it secures the subsistence level."
             },
             {
                 question: "Welche Sozialversicherung wird komplett vom Arbeitgeber bezahlt?",
+                question_en: "Which social insurance is paid entirely by the employer?",
                 options: ["Krankenversicherung", "Rentenversicherung", "Unfallversicherung", "Arbeitslosenversicherung"],
+                options_en: ["Health insurance", "Pension insurance", "Accident insurance", "Unemployment insurance"],
                 correct: 2,
-                explanation: "Die Unfallversicherung ist die einzige Sozialversicherung, die komplett vom Arbeitgeber bezahlt wird. Alle anderen werden zwischen Arbeitgeber und Arbeitnehmer geteilt."
+                explanation: "Die Unfallversicherung ist die einzige Sozialversicherung, die komplett vom Arbeitgeber bezahlt wird. Alle anderen werden zwischen Arbeitgeber und Arbeitnehmer geteilt.",
+                explanation_en: "Accident insurance is the only social insurance paid entirely by the employer. All others are split between employer and employee."
             },
             {
                 question: "Wie viel bleibt von 3.000 € brutto ungefähr netto übrig (Steuerklasse I)?",
+                question_en: "How much remains from €3,000 gross approximately net (tax class I)?",
                 options: ["Ca. 2.800 €", "Ca. 2.400 €", "Ca. 2.050 €", "Ca. 1.500 €"],
+                options_en: ["Approx. €2,800", "Approx. €2,400", "Approx. €2,050", "Approx. €1,500"],
                 correct: 2,
-                explanation: "Von 3.000 € brutto bleiben nach Steuern und Sozialabgaben etwa 2.050 € netto übrig - also ca. 68% des Bruttogehalts."
+                explanation: "Von 3.000 € brutto bleiben nach Steuern und Sozialabgaben etwa 2.050 € netto übrig - also ca. 68% des Bruttogehalts.",
+                explanation_en: "From €3,000 gross, about €2,050 net remains after taxes and social contributions - about 68% of gross salary."
             },
             {
                 question: "Was ist der Sparerpauschbetrag?",
+                question_en: "What is the saver's allowance (Sparerpauschbetrag)?",
                 options: ["Der Betrag, den man maximal sparen darf", "1.000 € steuerfreie Kapitalerträge pro Person und Jahr", "Ein Zuschuss vom Staat zum Sparen", "Der Mindestbetrag auf dem Sparkonto"],
+                options_en: ["The maximum amount you're allowed to save", "€1,000 tax-free capital gains per person per year", "A government subsidy for saving", "The minimum amount in a savings account"],
                 correct: 1,
-                explanation: "Der Sparerpauschbetrag ermöglicht es dir, pro Jahr 1.000 € an Kapitalerträgen (Zinsen, Dividenden, Kursgewinne) steuerfrei zu erhalten. Dafür brauchst du einen Freistellungsauftrag bei der Bank."
+                explanation: "Der Sparerpauschbetrag ermöglicht es dir, pro Jahr 1.000 € an Kapitalerträgen (Zinsen, Dividenden, Kursgewinne) steuerfrei zu erhalten. Dafür brauchst du einen Freistellungsauftrag bei der Bank.",
+                explanation_en: "The saver's allowance lets you receive €1,000 in capital gains (interest, dividends, price gains) tax-free per year. You need an exemption order at your bank for this."
             },
             {
                 question: "Wie hoch ist die Kapitalertragsteuer in Deutschland?",
+                question_en: "How high is the capital gains tax in Germany?",
                 options: ["14%", "19%", "25% (plus Soli)", "42%"],
+                options_en: ["14%", "19%", "25% (plus solidarity surcharge)", "42%"],
                 correct: 2,
-                explanation: "Die Kapitalertragsteuer beträgt 25% plus 5,5% Solidaritätszuschlag (auf die Steuer), also effektiv ca. 26,375%. Ggf. kommt noch Kirchensteuer dazu."
+                explanation: "Die Kapitalertragsteuer beträgt 25% plus 5,5% Solidaritätszuschlag (auf die Steuer), also effektiv ca. 26,375%. Ggf. kommt noch Kirchensteuer dazu.",
+                explanation_en: "The capital gains tax is 25% plus 5.5% solidarity surcharge (on the tax), effectively approx. 26.375%. Church tax may also apply."
             },
             {
                 question: "In welche Steuerklasse werden ledige Arbeitnehmer eingestuft?",
+                question_en: "Which tax class are single employees assigned to?",
                 options: ["Steuerklasse I", "Steuerklasse II", "Steuerklasse IV", "Steuerklasse VI"],
+                options_en: ["Tax class I", "Tax class II", "Tax class IV", "Tax class VI"],
                 correct: 0,
-                explanation: "Ledige, geschiedene oder verwitwete Arbeitnehmer werden in Steuerklasse I eingestuft. Das betrifft die meisten jungen Berufseinsteiger."
+                explanation: "Ledige, geschiedene oder verwitwete Arbeitnehmer werden in Steuerklasse I eingestuft. Das betrifft die meisten jungen Berufseinsteiger.",
+                explanation_en: "Single, divorced, or widowed employees are assigned to tax class I. This applies to most young career starters."
             },
             {
                 question: "Welcher ermäßigte MwSt.-Satz gilt für Lebensmittel und Bücher?",
+                question_en: "What reduced VAT rate applies to food and books?",
                 options: ["0%", "5%", "7%", "10%"],
+                options_en: ["0%", "5%", "7%", "10%"],
                 correct: 2,
-                explanation: "Der ermäßigte MwSt.-Satz von 7% gilt für Grundbedarf wie Lebensmittel, Bücher, Zeitungen und öffentlichen Nahverkehr."
+                explanation: "Der ermäßigte MwSt.-Satz von 7% gilt für Grundbedarf wie Lebensmittel, Bücher, Zeitungen und öffentlichen Nahverkehr.",
+                explanation_en: "The reduced VAT rate of 7% applies to basic necessities like food, books, newspapers, and public transport."
             }
         ]);
     </script>
