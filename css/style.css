@@ -457,3 +457,138 @@ html {
     background: rgba(255, 255, 255, 0.1);
     color: white;
 }
+
+/* Bonus/Advanced section - collapsible */
+.bonus-section {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.bonus-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    user-select: none;
+}
+
+.bonus-header:hover {
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.bonus-header h4 {
+    font-weight: 700;
+    color: #c084fc;
+    margin: 0;
+}
+
+.bonus-chevron {
+    transition: transform 0.3s ease;
+    color: #c084fc;
+}
+
+.bonus-section.open .bonus-chevron {
+    transform: rotate(180deg);
+}
+
+.bonus-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+.bonus-section.open .bonus-content {
+    max-height: 2000px;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.bonus-content p, .bonus-content li {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+/* Notes system */
+.notes-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.notes-textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+}
+
+.notes-textarea:focus {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.notes-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Quiz difficulty tabs */
+.difficulty-tab {
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.difficulty-tab.active {
+    color: white;
+}
+
+.difficulty-tab.basis.active {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: rgba(34, 197, 94, 0.5);
+}
+
+.difficulty-tab.advanced.active {
+    background: rgba(168, 85, 247, 0.3);
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+/* Family challenge */
+.challenge-card {
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(249, 115, 22, 0.1));
+    border: 1px solid rgba(234, 179, 8, 0.25);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    border-color: rgba(234, 179, 8, 0.4);
+    transform: translateY(-2px);
+}
+
+.challenge-card.completed {
+    opacity: 0.6;
+    border-color: rgba(34, 197, 94, 0.3);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+}

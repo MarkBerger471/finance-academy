@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 14: Versicherungen Basics - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🛡️</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-sky-400 mb-4"><span class="lang-de">Kapitel 14 von 16</span><span class="lang-en">Chapter 14 of 16</span><span class="lang-fr">Chapitre 14 sur 16</span></div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Versicherungen Basics</span><span class="lang-en">Insurance Basics</span><span class="lang-fr">Les bases de l'assurance</span></h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                    <span>|</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span><span class="lang-fr">📝 10 questions de test</span></span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 87.5%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">87,5% des Kurses</span><span class="lang-en">87.5% of the course</span><span class="lang-fr">87,5% du cours</span></p>
+            </div>
+
+            <!-- Section 1: How Insurance Works -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🤝 Wie Versicherungen funktionieren</span><span class="lang-en">🤝 How Insurance Works</span><span class="lang-fr">🤝 Comment fonctionnent les assurances</span></h3>
+                <p><span class="lang-de">Stell dir vor, 1.000 Leute legen jeden Monat jeweils 10 € in einen gemeinsamen Topf. Das sind 10.000 € pro Monat. Wenn jetzt einer von ihnen einen Wasserschaden in der Wohnung hat, der 5.000 € kostet, wird das aus dem Topf bezahlt. Das ist das <strong>Solidarprinzip</strong> - viele zahlen ein, damit die wenigen, die Pech haben, abgesichert sind.</span><span class="lang-en">Imagine 1,000 people each put 10 euros per month into a shared pot. That's 10,000 euros per month. If one of them has water damage in their apartment costing 5,000 euros, it gets paid from the pot. This is the <strong>solidarity principle</strong> - many pay in so that the few who are unlucky are protected.</span><span class="lang-fr">Imagine que 1 000 personnes mettent chacune 10 € par mois dans un pot commun. Cela fait 10 000 € par mois. Si l'une d'entre elles a un dégât des eaux dans son appartement qui coûte 5 000 €, c'est payé avec le pot commun. C'est le <strong>principe de solidarité</strong> - beaucoup paient pour que les quelques malchanceux soient protégés.</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Die wichtigsten Begriffe:</strong><br><strong>Beitrag/Prämie:</strong> Der Betrag, den du regelmäßig an die Versicherung zahlst.<br><strong>Schadensfall/Leistungsfall:</strong> Wenn das versicherte Ereignis eintritt und du Geld von der Versicherung bekommst.<br><strong>Selbstbeteiligung:</strong> Der Anteil, den du im Schadensfall selbst zahlst (z.B. die ersten 150 €). Je höher die Selbstbeteiligung, desto niedriger die Prämie.</span><span class="lang-en"><strong>💡 Key Terms:</strong><br><strong>Premium:</strong> The amount you regularly pay to the insurance company.<br><strong>Claim:</strong> When the insured event occurs and you receive money from the insurance.<br><strong>Deductible:</strong> The portion you pay yourself in a claim (e.g., the first 150 euros). The higher the deductible, the lower the premium.</span><span class="lang-fr"><strong>💡 Les termes clés :</strong><br><strong>Cotisation/Prime :</strong> Le montant que tu paies régulièrement à l'assurance.<br><strong>Sinistre :</strong> Quand l'événement assuré se produit et que tu reçois de l'argent de l'assurance.<br><strong>Franchise :</strong> La partie que tu paies toi-même en cas de sinistre (p. ex. les premiers 150 €). Plus la franchise est élevée, plus la prime est basse.</span></p>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa zahlt 5 € im Monat für ihre Haftpflichtversicherung (60 € im Jahr). Als sie beim Freund versehentlich den teuren Fernseher umwirft (Schaden: 800 €), übernimmt die Versicherung die Kosten. Ohne Versicherung hätte Luisa 800 € aus eigener Tasche zahlen müssen!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa pays 5 euros per month for her liability insurance (60 euros per year). When she accidentally knocks over her friend's expensive TV (damage: 800 euros), the insurance covers the cost. Without insurance, Luisa would have had to pay 800 euros out of her own pocket!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa paie 5 € par mois pour son assurance responsabilité civile (60 € par an). Quand elle renverse accidentellement la télévision coûteuse de son ami (dommage : 800 €), l'assurance prend en charge les frais. Sans assurance, Luisa aurait dû payer 800 € de sa poche !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Tipp:</strong> Versicherungen lohnen sich vor allem für Risiken, die dich finanziell ruinieren könnten. Faustregel: Versichere große Risiken, trage kleine Risiken selbst.</span><span class="lang-en"><strong>✅ Tip:</strong> Insurance is especially worthwhile for risks that could financially ruin you. Rule of thumb: Insure big risks, carry small risks yourself.</span><span class="lang-fr"><strong>✅ Conseil :</strong> L'assurance est surtout utile pour les risques qui pourraient te ruiner financièrement. Règle d'or : assure les gros risques, assume les petits risques toi-même.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 2: Important Insurance Types -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Wichtige Versicherungen</span><span class="lang-en">📋 Important Insurance Types</span><span class="lang-fr">📋 Les assurances importantes</span></h3>
+                <p><span class="lang-de">Nicht alle Versicherungen sind gleich wichtig. Hier sind die drei, die du kennen musst:</span><span class="lang-en">Not all insurance types are equally important. Here are the three you need to know:</span><span class="lang-fr">Toutes les assurances ne sont pas aussi importantes. Voici les trois que tu dois connaître :</span></p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🏥</div>
+                        <h4 class="font-bold text-sky-400 mb-2"><span class="lang-de">Krankenversicherung</span><span class="lang-en">Health Insurance</span><span class="lang-fr">Assurance maladie</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">In Deutschland <strong>Pflicht!</strong> Du bist entweder gesetzlich (GKV) oder privat (PKV) versichert. Die GKV richtet sich nach dem Einkommen, die PKV nach Alter und Gesundheit.</span><span class="lang-en">In Germany, this is <strong>mandatory!</strong> You are either publicly (GKV) or privately (PKV) insured. Public insurance is based on income, private insurance on age and health.</span><span class="lang-fr">En Allemagne, c'est <strong>obligatoire !</strong> Tu es assuré(e) soit par le régime public (GKV) soit privé (PKV). L'assurance publique dépend du revenu, la privée de l'âge et de la santé.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h4 class="font-bold text-sky-400 mb-2"><span class="lang-de">Haftpflicht</span><span class="lang-en">Liability Insurance</span><span class="lang-fr">Responsabilité civile</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de"><strong>Absolutes Must-have!</strong> Zahlt, wenn du anderen Schaden zufügst. Schon ab ca. 3-5 € im Monat. Ohne sie kannst du bei einem Unfall finanziell ruiniert sein.</span><span class="lang-en"><strong>Absolute must-have!</strong> Pays when you cause damage to others. Starting from around 3-5 euros per month. Without it, an accident could financially ruin you.</span><span class="lang-fr"><strong>Indispensable !</strong> Paie quand tu causes des dommages à autrui. À partir d'environ 3-5 € par mois. Sans elle, un accident pourrait te ruiner financièrement.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">💼</div>
+                        <h4 class="font-bold text-sky-400 mb-2"><span class="lang-de">Berufsunfähigkeit</span><span class="lang-en">Disability Insurance</span><span class="lang-fr">Assurance invalidité</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de"><strong>Sehr wichtig!</strong> Zahlt, wenn du aus gesundheitlichen Gründen nicht mehr arbeiten kannst. Je jünger du abschließt, desto günstiger. Etwa jeder Vierte wird im Laufe des Lebens berufsunfähig.</span><span class="lang-en"><strong>Very important!</strong> Pays if you can no longer work for health reasons. The younger you sign up, the cheaper it is. About one in four people become unable to work during their lifetime.</span><span class="lang-fr"><strong>Très important !</strong> Paie si tu ne peux plus travailler pour des raisons de santé. Plus tu souscris jeune, moins c'est cher. Environ une personne sur quatre devient invalide au cours de sa vie.</span></p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Wichtig:</strong> Die private Haftpflichtversicherung ist die wichtigste freiwillige Versicherung überhaupt! In Deutschland bist du unbegrenzt haftbar, wenn du jemandem Schaden zufügst. Marlene hat aus Versehen das Fahrrad einer Freundin beschädigt - Reparaturkosten: 350 €. Ohne Haftpflicht hätte sie das selbst zahlen müssen. Und stell dir vor, du verursachst einen Unfall, bei dem jemand verletzt wird - die Kosten können in die Millionen gehen!</span><span class="lang-en"><strong>⚠️ Important:</strong> Private liability insurance is the most important voluntary insurance of all! In Germany, you have unlimited liability when you cause damage to someone. Marlene accidentally damaged a friend's bicycle - repair costs: 350 euros. Without liability insurance, she would have had to pay this herself. And imagine causing an accident where someone gets injured - costs can run into the millions!</span><span class="lang-fr"><strong>⚠️ Important :</strong> L'assurance responsabilité civile est l'assurance volontaire la plus importante ! En Allemagne, tu es responsable de manière illimitée si tu causes des dommages à quelqu'un. Marlene a accidentellement endommagé le vélo d'une amie - frais de réparation : 350 €. Sans responsabilité civile, elle aurait dû payer elle-même. Et imagine que tu causes un accident où quelqu'un est blessé - les coûts peuvent atteindre des millions !</span></p>
+                </div>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 GKV vs. PKV kurz erklärt:</strong> Die <strong>gesetzliche Krankenversicherung (GKV)</strong> versichert ca. 90% der Deutschen. Der Beitrag richtet sich nach dem Einkommen (ca. 14,6% + Zusatzbeitrag). Die <strong>private Krankenversicherung (PKV)</strong> steht Selbstständigen und Gutverdienern offen. Der Beitrag richtet sich nach Alter und Gesundheitszustand. Für junge, gesunde Menschen kann die PKV günstiger sein - aber im Alter wird sie oft deutlich teurer!</span><span class="lang-en"><strong>💡 GKV vs. PKV explained briefly:</strong> <strong>Public health insurance (GKV)</strong> covers about 90% of Germans. The premium is based on income (about 14.6% + additional contribution). <strong>Private health insurance (PKV)</strong> is available to self-employed and high earners. The premium depends on age and health status. For young, healthy people, PKV can be cheaper - but in old age, it often becomes significantly more expensive!</span><span class="lang-fr"><strong>💡 GKV vs. PKV en bref :</strong> L'<strong>assurance maladie publique (GKV)</strong> couvre environ 90 % des Allemands. La cotisation dépend du revenu (environ 14,6 % + cotisation supplémentaire). L'<strong>assurance maladie privée (PKV)</strong> est accessible aux indépendants et aux hauts revenus. La cotisation dépend de l'âge et de l'état de santé. Pour les jeunes en bonne santé, la PKV peut être moins chère - mais avec l'âge, elle devient souvent beaucoup plus chère !</span></p>
+                </div>
+            </div>
+
+            <!-- Section 3: Insurance for Young People -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🎓 Versicherungen für junge Leute</span><span class="lang-en">🎓 Insurance for Young People</span><span class="lang-fr">🎓 Les assurances pour les jeunes</span></h3>
+                <p><span class="lang-de">Gute Nachricht: Als Jugendliche bist du in vielen Bereichen noch über deine Eltern mitversichert. Aber das ändert sich!</span><span class="lang-en">Good news: As a teenager, you are still covered by your parents' insurance in many areas. But that changes!</span><span class="lang-fr">Bonne nouvelle : en tant qu'adolescent(e), tu es encore couvert(e) par l'assurance de tes parents dans de nombreux domaines. Mais cela change !</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3"><span class="lang-de">✅ Noch über die Eltern versichert</span><span class="lang-en">✅ Still covered by parents</span><span class="lang-fr">✅ Encore couvert(e) par les parents</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Krankenversicherung</strong> (Familienversicherung bis 25, wenn du studierst)</span><span class="lang-en"><strong>Health insurance</strong> (family insurance until 25 if you're studying)</span><span class="lang-fr"><strong>Assurance maladie</strong> (assurance familiale jusqu'à 25 ans si tu étudies)</span></li>
+                            <li><span class="lang-de"><strong>Haftpflicht</strong> (solange du bei den Eltern wohnst und in Erstausbildung bist)</span><span class="lang-en"><strong>Liability</strong> (as long as you live with parents and are in initial education)</span><span class="lang-fr"><strong>Responsabilité civile</strong> (tant que tu vis chez tes parents et es en formation initiale)</span></li>
+                            <li><span class="lang-de"><strong>Hausratversicherung</strong> der Eltern (dein Zimmer ist mitversichert)</span><span class="lang-en"><strong>Home contents insurance</strong> of parents (your room is covered)</span><span class="lang-fr"><strong>Assurance habitation</strong> des parents (ta chambre est couverte)</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-orange-400 mb-3"><span class="lang-de">⚠️ Eigene Versicherung nötig ab...</span><span class="lang-en">⚠️ Own insurance needed from...</span><span class="lang-fr">⚠️ Propre assurance nécessaire à partir de...</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Auszug</strong> aus dem Elternhaus → eigene Haftpflicht!</span><span class="lang-en"><strong>Moving out</strong> of parents' home → own liability insurance!</span><span class="lang-fr"><strong>Déménagement</strong> du domicile parental → propre responsabilité civile !</span></li>
+                            <li><span class="lang-de"><strong>Ende der Ausbildung/Studium</strong> → eigene Krankenversicherung</span><span class="lang-en"><strong>End of education/studies</strong> → own health insurance</span><span class="lang-fr"><strong>Fin de la formation/des études</strong> → propre assurance maladie</span></li>
+                            <li><span class="lang-de"><strong>Erster Job</strong> → Berufsunfähigkeitsversicherung überlegen</span><span class="lang-en"><strong>First job</strong> → consider disability insurance</span><span class="lang-fr"><strong>Premier emploi</strong> → envisager une assurance invalidité</span></li>
+                            <li><span class="lang-de"><strong>Eigenes Auto</strong> → Kfz-Versicherung (Pflicht!)</span><span class="lang-en"><strong>Own car</strong> → car insurance (mandatory!)</span><span class="lang-fr"><strong>Propre voiture</strong> → assurance auto (obligatoire !)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Carla ist 19 und zieht für ihr Studium in eine WG. Sie ist zwar noch über ihre Eltern krankenversichert (Familienversicherung bis 25), aber für die Haftpflicht braucht sie jetzt eine eigene Police. Kostenpunkt: nur ca. 40-60 € im Jahr - das sollte jeder haben!</span><span class="lang-en"><strong>🎯 Example:</strong> Carla is 19 and moves into a shared apartment for university. She is still covered by her parents' health insurance (family insurance until 25), but she now needs her own liability policy. Cost: only about 40-60 euros per year - everyone should have this!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Carla a 19 ans et emménage en colocation pour ses études. Elle est encore couverte par l'assurance maladie de ses parents (assurance familiale jusqu'à 25 ans), mais elle a maintenant besoin de sa propre police de responsabilité civile. Coût : seulement environ 40-60 € par an - tout le monde devrait l'avoir !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Tipp für Studis:</strong> Als Student kannst du dich ab 25 (oder wenn du mehr als 520 € im Monat verdienst) für ca. 110 € im Monat in der studentischen Krankenversicherung versichern - ein spezieller günstiger Tarif! Informiere dich rechtzeitig vor deinem 25. Geburtstag.</span><span class="lang-en"><strong>✅ Tip for students:</strong> As a student, from age 25 (or if you earn more than 520 euros per month), you can get student health insurance for about 110 euros per month - a special affordable rate! Inform yourself in good time before your 25th birthday.</span><span class="lang-fr"><strong>✅ Conseil pour les étudiants :</strong> En tant qu'étudiant(e), à partir de 25 ans (ou si tu gagnes plus de 520 € par mois), tu peux souscrire une assurance maladie étudiante pour environ 110 € par mois - un tarif spécial avantageux ! Renseigne-toi à temps avant tes 25 ans.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 4: Unnecessary Insurance -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🚫 Unnötige Versicherungen</span><span class="lang-en">🚫 Unnecessary Insurance</span><span class="lang-fr">🚫 Les assurances inutiles</span></h3>
+                <p><span class="lang-de">Die Versicherungsbranche verdient gut daran, dir Angst zu machen. Aber nicht jede Versicherung ist sinnvoll. Hier sind typische Geldverschwendungen:</span><span class="lang-en">The insurance industry makes good money from scaring you. But not every insurance policy makes sense. Here are typical wastes of money:</span><span class="lang-fr">Le secteur de l'assurance gagne bien sa vie en te faisant peur. Mais toutes les assurances ne sont pas utiles. Voici des gaspillages typiques :</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3"><span class="lang-de">❌ Meist unnötig</span><span class="lang-en">❌ Usually unnecessary</span><span class="lang-fr">❌ Généralement inutile</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Handy-Versicherung:</strong> Kostet oft 8-10 €/Monat, deckt aber wenig ab. Lieber selbst Geld zurücklegen!</span><span class="lang-en"><strong>Phone insurance:</strong> Often costs 8-10 euros/month but covers little. Better to save money yourself!</span><span class="lang-fr"><strong>Assurance téléphone :</strong> Coûte souvent 8-10 €/mois mais couvre peu. Mieux vaut mettre de l'argent de côté !</span></li>
+                            <li><span class="lang-de"><strong>Restschuldversicherung:</strong> Wird bei Krediten aufgedrängt, ist aber überteuert und oft nutzlos.</span><span class="lang-en"><strong>Residual debt insurance:</strong> Pushed with loans, but overpriced and often useless.</span><span class="lang-fr"><strong>Assurance solde restant dû :</strong> Imposée avec les crédits, mais hors de prix et souvent inutile.</span></li>
+                            <li><span class="lang-de"><strong>Reisegepäckversicherung:</strong> Deckt kaum etwas ab, viele Ausschlüsse.</span><span class="lang-en"><strong>Travel luggage insurance:</strong> Covers almost nothing, many exclusions.</span><span class="lang-fr"><strong>Assurance bagages de voyage :</strong> Ne couvre presque rien, nombreuses exclusions.</span></li>
+                            <li><span class="lang-de"><strong>Brillenversicherung:</strong> Lohnt sich fast nie, da die Prämien hoch sind.</span><span class="lang-en"><strong>Glasses insurance:</strong> Almost never worth it due to high premiums.</span><span class="lang-fr"><strong>Assurance lunettes :</strong> Ne vaut presque jamais la peine à cause des primes élevées.</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3"><span class="lang-de">✅ Sinnvoll</span><span class="lang-en">✅ Worthwhile</span><span class="lang-fr">✅ Utile</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Haftpflicht:</strong> Absolute Pflicht! (3-5 €/Monat)</span><span class="lang-en"><strong>Liability:</strong> Absolute must! (3-5 euros/month)</span><span class="lang-fr"><strong>Responsabilité civile :</strong> Indispensable ! (3-5 €/mois)</span></li>
+                            <li><span class="lang-de"><strong>Berufsunfähigkeit:</strong> Sehr wichtig, früh abschließen!</span><span class="lang-en"><strong>Disability:</strong> Very important, sign up early!</span><span class="lang-fr"><strong>Invalidité :</strong> Très important, souscrire tôt !</span></li>
+                            <li><span class="lang-de"><strong>Auslandskrankenversicherung:</strong> Für Reisen außerhalb der EU, sehr günstig (ca. 10 €/Jahr).</span><span class="lang-en"><strong>International health insurance:</strong> For travel outside the EU, very cheap (about 10 euros/year).</span><span class="lang-fr"><strong>Assurance maladie à l'étranger :</strong> Pour les voyages hors UE, très abordable (environ 10 €/an).</span></li>
+                            <li><span class="lang-de"><strong>Kfz-Haftpflicht:</strong> Gesetzliche Pflicht, wenn du ein Auto hast.</span><span class="lang-en"><strong>Car liability:</strong> Legal requirement if you own a car.</span><span class="lang-fr"><strong>Responsabilité civile auto :</strong> Obligation légale si tu as une voiture.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Marlene überlegt, eine Handy-Versicherung für 8 €/Monat abzuschließen. In 2 Jahren zahlt sie 192 € an Prämien. Ihr Handy ist dann 2 Jahre alt und bei einem Schaden bekommt sie vielleicht nur 200 € erstattet - abzüglich 50 € Selbstbeteiligung. Hätte sie die 8 €/Monat selbst gespart, hätte sie 192 € auf dem Konto und wäre flexibler!</span><span class="lang-en"><strong>🎯 Example:</strong> Marlene considers getting phone insurance for 8 euros/month. In 2 years, she pays 192 euros in premiums. Her phone is then 2 years old and in case of damage, she might only get 200 euros back - minus 50 euros deductible. If she had saved the 8 euros/month herself, she would have 192 euros in her account and more flexibility!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Marlene envisage une assurance téléphone à 8 €/mois. En 2 ans, elle paie 192 € de primes. Son téléphone a alors 2 ans et en cas de dommage, elle ne recevrait peut-être que 200 € - moins 50 € de franchise. Si elle avait économisé les 8 €/mois elle-même, elle aurait 192 € sur son compte et plus de flexibilité !</span></p>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Achtung Verkaufstricks:</strong> Lass dich nicht unter Druck setzen! Versicherungsvertreter verdienen Provision für jeden Abschluss. Nimm dir immer Zeit zum Vergleichen. Portale wie Check24 oder Verivox helfen beim Preisvergleich. Und unterschreibe nie etwas an der Haustür!</span><span class="lang-en"><strong>⚠️ Watch out for sales tricks:</strong> Don't let yourself be pressured! Insurance agents earn commission on every sale. Always take time to compare. Comparison portals like Check24 or Verivox help with price comparison. And never sign anything at the front door!</span><span class="lang-fr"><strong>⚠️ Attention aux techniques de vente :</strong> Ne te laisse pas mettre sous pression ! Les agents d'assurance gagnent une commission sur chaque vente. Prends toujours le temps de comparer. Des portails comme Check24 ou Verivox aident à comparer les prix. Et ne signe jamais rien à la porte !</span></p>
+                </div>
+            </div>
+
+            <!-- Section 5: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Zusammenfassung</span><span class="lang-en">📋 Summary</span><span class="lang-fr">📋 Résumé</span></h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-sky-400 mb-2"><span class="lang-de">Wichtige Begriffe</span><span class="lang-en">Key Terms</span><span class="lang-fr">Termes importants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Solidarprinzip:</strong> Viele zahlen ein, wenige erhalten Leistung</span><span class="lang-en"><strong>Solidarity principle:</strong> Many pay in, few receive benefits</span><span class="lang-fr"><strong>Principe de solidarité :</strong> Beaucoup paient, peu reçoivent des prestations</span></li>
+                            <li><span class="lang-de"><strong>Prämie:</strong> Regelmäßiger Versicherungsbeitrag</span><span class="lang-en"><strong>Premium:</strong> Regular insurance contribution</span><span class="lang-fr"><strong>Prime :</strong> Cotisation régulière d'assurance</span></li>
+                            <li><span class="lang-de"><strong>Selbstbeteiligung:</strong> Eigenanteil im Schadensfall</span><span class="lang-en"><strong>Deductible:</strong> Your share in a claim</span><span class="lang-fr"><strong>Franchise :</strong> Ta part en cas de sinistre</span></li>
+                            <li><span class="lang-de"><strong>Haftpflicht:</strong> Deckt Schäden, die du anderen zufügst</span><span class="lang-en"><strong>Liability:</strong> Covers damage you cause to others</span><span class="lang-fr"><strong>Responsabilité civile :</strong> Couvre les dommages causés à autrui</span></li>
+                            <li><span class="lang-de"><strong>BU-Versicherung:</strong> Berufsunfähigkeitsversicherung</span><span class="lang-en"><strong>BU insurance:</strong> Disability insurance</span><span class="lang-fr"><strong>Assurance BU :</strong> Assurance invalidité professionnelle</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Das Wichtigste</span><span class="lang-en">Key Takeaways</span><span class="lang-fr">L'essentiel</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Versichere große Risiken, trage kleine selbst</span><span class="lang-en">Insure big risks, carry small ones yourself</span><span class="lang-fr">Assure les gros risques, assume les petits toi-même</span></li>
+                            <li><span class="lang-de">Haftpflicht ist die wichtigste freiwillige Versicherung</span><span class="lang-en">Liability is the most important voluntary insurance</span><span class="lang-fr">La responsabilité civile est l'assurance volontaire la plus importante</span></li>
+                            <li><span class="lang-de">Als junger Mensch bist du oft noch über die Eltern versichert</span><span class="lang-en">As a young person, you're often still covered by your parents</span><span class="lang-fr">En tant que jeune, tu es souvent encore couvert(e) par tes parents</span></li>
+                            <li><span class="lang-de">Handy- und Restschuldversicherung sind meist Geldverschwendung</span><span class="lang-en">Phone and residual debt insurance are usually a waste of money</span><span class="lang-fr">L'assurance téléphone et solde restant dû sont généralement du gaspillage</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center"><span class="lang-de">📝 Kapitel-Test</span><span class="lang-en">📝 Chapter Test</span><span class="lang-fr">📝 Test du chapitre</span></h2>
+                <p class="text-gray-400 text-center mb-8"><span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span><span class="lang-en">Test your knowledge! First choose your name and then answer all questions.</span><span class="lang-fr">Teste tes connaissances ! Choisis d'abord ton nom puis réponds à toutes les questions.</span></p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter13.html"><span class="lang-de">← Kapitel 13</span><span class="lang-en">← Chapter 13</span><span class="lang-fr">← Chapitre 13</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span><span class="lang-fr">Aperçu</span></a>
+                <a href="chapter15.html"><span class="lang-de">Kapitel 15 →</span><span class="lang-en">Chapter 15 →</span><span class="lang-fr">Chapitre 15 →</span></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        TestSystem.initTest(14, [
+            {
+                question: "Was ist das Solidarprinzip bei Versicherungen?",
+                question_en: "What is the solidarity principle in insurance?",
+                question_fr: "Qu'est-ce que le principe de solidarité en assurance ?",
+                options: ["Jeder zahlt nur für sich selbst", "Viele zahlen ein, damit die wenigen Geschädigten abgesichert sind", "Der Staat bezahlt alle Schäden", "Nur reiche Leute zahlen Versicherungen"],
+                options_en: ["Everyone pays only for themselves", "Many pay in so that the few who suffer damage are protected", "The state pays for all damages", "Only rich people pay for insurance"],
+                options_fr: ["Chacun paie uniquement pour soi-même", "Beaucoup paient pour que les quelques sinistrés soient protégés", "L'État paie tous les dommages", "Seuls les riches paient les assurances"],
+                correct: 1,
+                explanation: "Beim Solidarprinzip zahlen viele Versicherte regelmäßig Beiträge in einen gemeinsamen Topf, aus dem die wenigen Geschädigten entschädigt werden.",
+                explanation_en: "With the solidarity principle, many insured people regularly pay contributions into a shared pool, from which the few who suffer damage are compensated.",
+                explanation_fr: "Avec le principe de solidarité, de nombreux assurés paient régulièrement des cotisations dans un pot commun, à partir duquel les quelques sinistrés sont indemnisés."
+            },
+            {
+                question: "Welche Versicherung ist die wichtigste freiwillige Versicherung?",
+                question_en: "Which insurance is the most important voluntary insurance?",
+                question_fr: "Quelle est l'assurance volontaire la plus importante ?",
+                options: ["Handy-Versicherung", "Reisegepäckversicherung", "Private Haftpflichtversicherung", "Brillenversicherung"],
+                options_en: ["Phone insurance", "Travel luggage insurance", "Private liability insurance", "Glasses insurance"],
+                options_fr: ["Assurance téléphone", "Assurance bagages", "Assurance responsabilité civile", "Assurance lunettes"],
+                correct: 2,
+                explanation: "Die private Haftpflichtversicherung ist die wichtigste freiwillige Versicherung, da du in Deutschland unbegrenzt haftbar bist, wenn du anderen Schaden zufügst.",
+                explanation_en: "Private liability insurance is the most important voluntary insurance because in Germany you have unlimited liability when you cause damage to others.",
+                explanation_fr: "L'assurance responsabilité civile est l'assurance volontaire la plus importante car en Allemagne, tu es responsable de manière illimitée des dommages causés à autrui."
+            },
+            {
+                question: "Was ist eine Selbstbeteiligung?",
+                question_en: "What is a deductible?",
+                question_fr: "Qu'est-ce qu'une franchise ?",
+                options: ["Der monatliche Versicherungsbeitrag", "Der Anteil, den du im Schadensfall selbst zahlst", "Die Provision des Versicherungsvertreters", "Der Gewinn der Versicherung"],
+                options_en: ["The monthly insurance premium", "The portion you pay yourself in a claim", "The insurance agent's commission", "The insurance company's profit"],
+                options_fr: ["La cotisation mensuelle d'assurance", "La partie que tu paies toi-même en cas de sinistre", "La commission de l'agent d'assurance", "Le bénéfice de l'assurance"],
+                correct: 1,
+                explanation: "Die Selbstbeteiligung ist der Betrag, den du bei einem Schaden selbst trägst. Je höher sie ist, desto niedriger ist deine monatliche Prämie.",
+                explanation_en: "The deductible is the amount you pay yourself when damage occurs. The higher it is, the lower your monthly premium.",
+                explanation_fr: "La franchise est le montant que tu paies toi-même en cas de sinistre. Plus elle est élevée, plus ta prime mensuelle est basse."
+            },
+            {
+                question: "Welche Versicherung ist in Deutschland Pflicht?",
+                question_en: "Which insurance is mandatory in Germany?",
+                question_fr: "Quelle assurance est obligatoire en Allemagne ?",
+                options: ["Haftpflichtversicherung", "Berufsunfähigkeitsversicherung", "Krankenversicherung", "Hausratversicherung"],
+                options_en: ["Liability insurance", "Disability insurance", "Health insurance", "Home contents insurance"],
+                options_fr: ["Assurance responsabilité civile", "Assurance invalidité", "Assurance maladie", "Assurance habitation"],
+                correct: 2,
+                explanation: "Die Krankenversicherung ist in Deutschland gesetzlich vorgeschrieben - jeder muss entweder gesetzlich (GKV) oder privat (PKV) versichert sein.",
+                explanation_en: "Health insurance is legally required in Germany - everyone must be insured either publicly (GKV) or privately (PKV).",
+                explanation_fr: "L'assurance maladie est obligatoire en Allemagne - chacun doit être assuré soit par le régime public (GKV) soit privé (PKV)."
+            },
+            {
+                question: "Bis zu welchem Alter sind Studierende in der Familienversicherung der Eltern mitversichert?",
+                question_en: "Until what age are students covered by their parents' family insurance?",
+                question_fr: "Jusqu'à quel âge les étudiants sont-ils couverts par l'assurance familiale des parents ?",
+                options: ["18 Jahre", "21 Jahre", "25 Jahre", "30 Jahre"],
+                options_en: ["18 years", "21 years", "25 years", "30 years"],
+                options_fr: ["18 ans", "21 ans", "25 ans", "30 ans"],
+                correct: 2,
+                explanation: "Studierende können bis zum 25. Lebensjahr in der gesetzlichen Familienversicherung ihrer Eltern mitversichert bleiben.",
+                explanation_en: "Students can remain covered by their parents' public family insurance until the age of 25.",
+                explanation_fr: "Les étudiants peuvent rester couverts par l'assurance familiale publique de leurs parents jusqu'à 25 ans."
+            },
+            {
+                question: "Warum ist eine Handy-Versicherung meist unnötig?",
+                question_en: "Why is phone insurance usually unnecessary?",
+                question_fr: "Pourquoi l'assurance téléphone est-elle généralement inutile ?",
+                options: ["Weil Handys nie kaputt gehen", "Weil die Prämien im Verhältnis zum Nutzen zu hoch sind", "Weil der Staat Handys ersetzt", "Weil Handys zu billig sind"],
+                options_en: ["Because phones never break", "Because premiums are too high relative to the benefit", "Because the state replaces phones", "Because phones are too cheap"],
+                options_fr: ["Parce que les téléphones ne cassent jamais", "Parce que les primes sont trop élevées par rapport au bénéfice", "Parce que l'État remplace les téléphones", "Parce que les téléphones sont trop bon marché"],
+                correct: 1,
+                explanation: "Die monatlichen Prämien summieren sich schnell, und die Erstattung ist oft gering (Zeitwert minus Selbstbeteiligung). Besser selbst Geld zurücklegen!",
+                explanation_en: "Monthly premiums add up quickly, and reimbursement is often low (current value minus deductible). Better to save money yourself!",
+                explanation_fr: "Les primes mensuelles s'accumulent vite, et le remboursement est souvent faible (valeur actuelle moins franchise). Mieux vaut mettre de l'argent de côté !"
+            },
+            {
+                question: "Was passiert mit der Haftpflichtversicherung der Eltern, wenn du ausziehst?",
+                question_en: "What happens to your parents' liability insurance when you move out?",
+                question_fr: "Que se passe-t-il avec la responsabilité civile des parents quand tu déménages ?",
+                options: ["Sie gilt automatisch weiter", "Du brauchst eine eigene Haftpflichtversicherung", "Die Eltern zahlen doppelt", "Haftpflicht ist dann nicht mehr nötig"],
+                options_en: ["It automatically continues", "You need your own liability insurance", "Parents pay double", "Liability insurance is no longer needed"],
+                options_fr: ["Elle continue automatiquement", "Tu as besoin de ta propre assurance responsabilité civile", "Les parents paient le double", "La responsabilité civile n'est plus nécessaire"],
+                correct: 1,
+                explanation: "Wenn du aus dem Elternhaus ausziehst, bist du in der Regel nicht mehr über die Haftpflicht der Eltern mitversichert und brauchst eine eigene.",
+                explanation_en: "When you move out of your parents' home, you are usually no longer covered by your parents' liability insurance and need your own.",
+                explanation_fr: "Quand tu quittes le domicile parental, tu n'es généralement plus couvert(e) par la responsabilité civile de tes parents et tu as besoin de la tienne."
+            },
+            {
+                question: "Was unterscheidet die GKV von der PKV?",
+                question_en: "What distinguishes public (GKV) from private (PKV) health insurance?",
+                question_fr: "Qu'est-ce qui distingue l'assurance maladie publique (GKV) de la privée (PKV) ?",
+                options: ["GKV ist immer teurer", "GKV-Beitrag richtet sich nach Einkommen, PKV nach Alter und Gesundheit", "PKV ist für alle offen", "Es gibt keinen Unterschied"],
+                options_en: ["GKV is always more expensive", "GKV premium is based on income, PKV on age and health", "PKV is open to everyone", "There is no difference"],
+                options_fr: ["La GKV est toujours plus chère", "La cotisation GKV dépend du revenu, la PKV de l'âge et de la santé", "La PKV est ouverte à tous", "Il n'y a pas de différence"],
+                correct: 1,
+                explanation: "Der GKV-Beitrag wird prozentual vom Einkommen berechnet, während der PKV-Beitrag von Alter, Gesundheitszustand und gewünschtem Leistungsumfang abhängt.",
+                explanation_en: "The GKV premium is calculated as a percentage of income, while the PKV premium depends on age, health status, and desired coverage level.",
+                explanation_fr: "La cotisation GKV est calculée en pourcentage du revenu, tandis que la cotisation PKV dépend de l'âge, de l'état de santé et du niveau de couverture souhaité."
+            },
+            {
+                question: "Wann sollte man eine Berufsunfähigkeitsversicherung abschließen?",
+                question_en: "When should you get disability insurance?",
+                question_fr: "Quand faut-il souscrire une assurance invalidité ?",
+                options: ["Erst mit 50 Jahren", "So früh wie möglich, da es dann günstiger ist", "Nur wenn man krank ist", "Gar nicht, das braucht man nicht"],
+                options_en: ["Only at age 50", "As early as possible, since it's cheaper then", "Only when you're sick", "Not at all, you don't need it"],
+                options_fr: ["Seulement à 50 ans", "Le plus tôt possible, car c'est moins cher", "Seulement quand on est malade", "Pas du tout, on n'en a pas besoin"],
+                correct: 1,
+                explanation: "Je jünger und gesünder du bist, desto günstiger ist die Berufsunfähigkeitsversicherung. Etwa jeder Vierte wird im Laufe des Lebens berufsunfähig.",
+                explanation_en: "The younger and healthier you are, the cheaper disability insurance is. About one in four people become unable to work during their lifetime.",
+                explanation_fr: "Plus tu es jeune et en bonne santé, moins l'assurance invalidité est chère. Environ une personne sur quatre devient invalide au cours de sa vie."
+            },
+            {
+                question: "Was ist die beste Faustregel für Versicherungen?",
+                question_en: "What is the best rule of thumb for insurance?",
+                question_fr: "Quelle est la meilleure règle d'or pour les assurances ?",
+                options: ["Alles versichern, was möglich ist", "Nur Pflichtversicherungen abschließen", "Große Risiken versichern, kleine selbst tragen", "Nie eine Versicherung abschließen"],
+                options_en: ["Insure everything possible", "Only get mandatory insurance", "Insure big risks, carry small ones yourself", "Never get insurance"],
+                options_fr: ["Assurer tout ce qui est possible", "Ne souscrire que les assurances obligatoires", "Assurer les gros risques, assumer les petits soi-même", "Ne jamais souscrire d'assurance"],
+                correct: 2,
+                explanation: "Versichere Risiken, die dich finanziell ruinieren könnten (Haftpflicht, Berufsunfähigkeit). Kleine Risiken (kaputtes Handy) kannst du selbst tragen.",
+                explanation_en: "Insure risks that could financially ruin you (liability, disability). You can carry small risks (broken phone) yourself.",
+                explanation_fr: "Assure les risques qui pourraient te ruiner financièrement (responsabilité civile, invalidité). Les petits risques (téléphone cassé), tu peux les assumer toi-même."
+            }
+        ]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="../chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition font-semibold text-purple-400">Tools</a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-10 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">📋</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="lang-de">Budget-Planer</span>
+                    <span class="lang-en">Budget Planner</span>
+                    <span class="lang-fr">Planificateur de budget</span>
+                </h1>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    <span class="lang-de">Plane deine Einnahmen und Ausgaben und behalte den Überblick über dein Geld.</span>
+                    <span class="lang-en">Plan your income and expenses and keep track of your money.</span>
+                    <span class="lang-fr">Planifie tes revenus et dépenses et garde le contrôle de ton argent.</span>
+                </p>
+            </div>
+
+            <!-- Kid Selector -->
+            <div class="flex justify-center gap-3 mb-8">
+                <button class="kid-tab active" data-kid="0" onclick="Budget.selectKid(0)">Luisa</button>
+                <button class="kid-tab" data-kid="1" onclick="Budget.selectKid(1)">Marlene</button>
+                <button class="kid-tab" data-kid="2" onclick="Budget.selectKid(2)">Carla</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Income Section -->
+                <div class="glass-card rounded-3xl p-6">
+                    <h2 class="text-xl font-bold mb-4 text-green-400 flex items-center gap-2">
+                        <span class="text-2xl">💵</span>
+                        <span class="lang-de">Einnahmen</span>
+                        <span class="lang-en">Income</span>
+                        <span class="lang-fr">Revenus</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <!-- Taschengeld / Allowance -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">Taschengeld</span>
+                                <span class="lang-en">Allowance</span>
+                                <span class="lang-fr">Argent de poche</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="income_allowance" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Minijob / Part-time -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">Minijob</span>
+                                <span class="lang-en">Part-time job</span>
+                                <span class="lang-fr">Petit boulot</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="income_job" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Sonstiges / Other -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">Sonstiges</span>
+                                <span class="lang-en">Other</span>
+                                <span class="lang-fr">Autres</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="income_other" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-sm text-gray-400">
+                            <span class="lang-de">Gesamt Einnahmen</span>
+                            <span class="lang-en">Total Income</span>
+                            <span class="lang-fr">Total revenus</span>
+                        </span>
+                        <span id="total-income" class="text-lg font-bold text-green-400">0.00 €</span>
+                    </div>
+                </div>
+
+                <!-- Expenses Section -->
+                <div class="glass-card rounded-3xl p-6">
+                    <h2 class="text-xl font-bold mb-4 text-red-400 flex items-center gap-2">
+                        <span class="text-2xl">🛒</span>
+                        <span class="lang-de">Ausgaben</span>
+                        <span class="lang-en">Expenses</span>
+                        <span class="lang-fr">Dépenses</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <!-- Essen & Trinken -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">🍕 Essen & Trinken</span>
+                                <span class="lang-en">🍕 Food & Drinks</span>
+                                <span class="lang-fr">🍕 Nourriture & Boissons</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_food" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Kleidung -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">👕 Kleidung</span>
+                                <span class="lang-en">👕 Clothes</span>
+                                <span class="lang-fr">👕 Vêtements</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_clothes" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Handy & Apps -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">📱 Handy & Apps</span>
+                                <span class="lang-en">📱 Phone & Apps</span>
+                                <span class="lang-fr">📱 Téléphone & Applis</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_phone" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Streaming & Gaming -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span>🎮 Streaming & Gaming</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_streaming" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Freizeit -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">🎳 Freizeit</span>
+                                <span class="lang-en">🎳 Leisure</span>
+                                <span class="lang-fr">🎳 Loisirs</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_leisure" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Sparen -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">🏦 Sparen</span>
+                                <span class="lang-en">🏦 Savings</span>
+                                <span class="lang-fr">🏦 Épargne</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_savings" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Sonstiges -->
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">
+                                <span class="lang-de">📦 Sonstiges</span>
+                                <span class="lang-en">📦 Other</span>
+                                <span class="lang-fr">📦 Autres</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" min="0" step="0.01" class="calc-input pr-8" data-field="expense_other" oninput="Budget.calculate()" placeholder="0.00">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-sm text-gray-400">
+                            <span class="lang-de">Gesamt Ausgaben</span>
+                            <span class="lang-en">Total Expenses</span>
+                            <span class="lang-fr">Total dépenses</span>
+                        </span>
+                        <span id="total-expenses" class="text-lg font-bold text-red-400">0.00 €</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Balance Summary -->
+            <div class="glass-card rounded-3xl p-6 mt-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-center sm:text-left">
+                        <h2 class="text-xl font-bold flex items-center gap-2 justify-center sm:justify-start">
+                            <span class="text-2xl">⚖️</span>
+                            <span class="lang-de">Bilanz</span>
+                            <span class="lang-en">Balance</span>
+                            <span class="lang-fr">Bilan</span>
+                        </h2>
+                        <p class="text-sm text-gray-400 mt-1">
+                            <span class="lang-de">Einnahmen minus Ausgaben</span>
+                            <span class="lang-en">Income minus expenses</span>
+                            <span class="lang-fr">Revenus moins dépenses</span>
+                        </p>
+                    </div>
+                    <div id="balance-display" class="text-3xl font-bold text-green-400">0.00 €</div>
+                </div>
+                <div id="balance-message" class="mt-3 text-center text-sm text-gray-400"></div>
+            </div>
+
+            <!-- Expense Distribution Chart -->
+            <div class="glass-card rounded-3xl p-6 mt-6">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <span class="text-2xl">📊</span>
+                    <span class="lang-de">Ausgabenverteilung</span>
+                    <span class="lang-en">Expense Distribution</span>
+                    <span class="lang-fr">Répartition des dépenses</span>
+                </h2>
+                <div id="chart-container" class="space-y-3">
+                    <p class="text-gray-500 text-sm text-center py-4">
+                        <span class="lang-de">Trage Ausgaben ein, um die Verteilung zu sehen.</span>
+                        <span class="lang-en">Enter expenses to see the distribution.</span>
+                        <span class="lang-fr">Saisis des dépenses pour voir la répartition.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Save / Load Buttons -->
+            <div class="flex justify-center gap-4 mt-8">
+                <button onclick="Budget.save()" class="glass-button-primary px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class="lang-de">Speichern</span>
+                    <span class="lang-en">Save</span>
+                    <span class="lang-fr">Enregistrer</span>
+                </button>
+                <button onclick="Budget.reset()" class="glass-button px-6 py-3 rounded-xl font-semibold flex items-center gap-2 text-gray-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    <span class="lang-de">Zurücksetzen</span>
+                    <span class="lang-en">Reset</span>
+                    <span class="lang-fr">Réinitialiser</span>
+                </button>
+            </div>
+            <p id="save-feedback" class="text-center text-sm mt-3 text-green-400 opacity-0 transition-opacity duration-300"></p>
+
+        </div>
+    </main>
+
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung für die nächste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Éducation financière pour la prochaine génération</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script>
+    const Budget = (() => {
+        const STORAGE_KEY = 'finance_academy_budget';
+        const KIDS = ['Luisa', 'Marlene', 'Carla'];
+        let currentKid = 0;
+
+        const INCOME_FIELDS = ['income_allowance', 'income_job', 'income_other'];
+        const EXPENSE_FIELDS = [
+            { key: 'expense_food',      color: '#f97316', de: 'Essen & Trinken', en: 'Food & Drinks',    fr: 'Nourriture' },
+            { key: 'expense_clothes',   color: '#a855f7', de: 'Kleidung',        en: 'Clothes',          fr: 'Vêtements' },
+            { key: 'expense_phone',     color: '#3b82f6', de: 'Handy & Apps',    en: 'Phone & Apps',     fr: 'Tél. & Applis' },
+            { key: 'expense_streaming', color: '#ef4444', de: 'Streaming',       en: 'Streaming',        fr: 'Streaming' },
+            { key: 'expense_leisure',   color: '#eab308', de: 'Freizeit',        en: 'Leisure',          fr: 'Loisirs' },
+            { key: 'expense_savings',   color: '#22c55e', de: 'Sparen',          en: 'Savings',          fr: 'Épargne' },
+            { key: 'expense_other',     color: '#64748b', de: 'Sonstiges',       en: 'Other',            fr: 'Autres' }
+        ];
+
+        function t(de, en, fr) {
+            const l = (typeof Lang !== 'undefined') ? Lang.get() : 'de';
+            return l === 'fr' ? fr : l === 'en' ? en : de;
+        }
+
+        function getInput(field) {
+            const el = document.querySelector(`[data-field="${field}"]`);
+            return el ? parseFloat(el.value) || 0 : 0;
+        }
+
+        function setInput(field, value) {
+            const el = document.querySelector(`[data-field="${field}"]`);
+            if (el) el.value = value > 0 ? value : '';
+        }
+
+        function getAllData() {
+            const data = {};
+            [...INCOME_FIELDS, ...EXPENSE_FIELDS.map(e => e.key)].forEach(f => {
+                data[f] = getInput(f);
+            });
+            return data;
+        }
+
+        function loadData() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                const kidData = stored[KIDS[currentKid]] || {};
+                const allFields = [...INCOME_FIELDS, ...EXPENSE_FIELDS.map(e => e.key)];
+                allFields.forEach(f => setInput(f, kidData[f] || 0));
+            } catch (e) {
+                // ignore
+            }
+        }
+
+        function calculate() {
+            let totalIncome = 0;
+            INCOME_FIELDS.forEach(f => { totalIncome += getInput(f); });
+
+            let totalExpenses = 0;
+            EXPENSE_FIELDS.forEach(e => { totalExpenses += getInput(e.key); });
+
+            const balance = totalIncome - totalExpenses;
+
+            document.getElementById('total-income').textContent = totalIncome.toFixed(2) + ' €';
+            document.getElementById('total-expenses').textContent = totalExpenses.toFixed(2) + ' €';
+
+            const balEl = document.getElementById('balance-display');
+            balEl.textContent = (balance >= 0 ? '+' : '') + balance.toFixed(2) + ' €';
+            balEl.className = 'text-3xl font-bold ' + (balance >= 0 ? 'text-green-400' : 'text-red-400');
+
+            const msgEl = document.getElementById('balance-message');
+            if (totalIncome === 0 && totalExpenses === 0) {
+                msgEl.textContent = '';
+            } else if (balance > 0) {
+                msgEl.textContent = t(
+                    'Super! Du hast noch Geld übrig. 🎉',
+                    'Great! You have money left over. 🎉',
+                    'Super ! Il te reste de l\'argent. 🎉'
+                );
+                msgEl.className = 'mt-3 text-center text-sm text-green-400';
+            } else if (balance === 0) {
+                msgEl.textContent = t(
+                    'Genau ausgeglichen — kein Überschuss, keine Schulden.',
+                    'Exactly balanced — no surplus, no debt.',
+                    'Parfaitement équilibré — ni surplus, ni dette.'
+                );
+                msgEl.className = 'mt-3 text-center text-sm text-yellow-400';
+            } else {
+                msgEl.textContent = t(
+                    'Achtung! Du gibst mehr aus als du einnimmst. ⚠️',
+                    'Warning! You are spending more than you earn. ⚠️',
+                    'Attention ! Tu dépenses plus que tu ne gagnes. ⚠️'
+                );
+                msgEl.className = 'mt-3 text-center text-sm text-red-400';
+            }
+
+            renderChart(totalExpenses);
+        }
+
+        function renderChart(totalExpenses) {
+            const container = document.getElementById('chart-container');
+            if (totalExpenses === 0) {
+                container.innerHTML = `<p class="text-gray-500 text-sm text-center py-4">
+                    <span class="lang-de">Trage Ausgaben ein, um die Verteilung zu sehen.</span>
+                    <span class="lang-en">Enter expenses to see the distribution.</span>
+                    <span class="lang-fr">Saisis des dépenses pour voir la répartition.</span>
+                </p>`;
+                // Re-apply language visibility
+                const lang = document.documentElement.getAttribute('data-lang') || 'de';
+                document.documentElement.setAttribute('data-lang', lang);
+                return;
+            }
+
+            let html = '';
+            EXPENSE_FIELDS.forEach(e => {
+                const val = getInput(e.key);
+                if (val <= 0) return;
+                const pct = Math.round((val / totalExpenses) * 100);
+                const label = t(e.de, e.en, e.fr);
+                html += `
+                    <div class="flex items-center gap-3">
+                        <div class="w-28 sm:w-36 text-sm text-gray-300 text-right shrink-0">${label}</div>
+                        <div class="flex-1 h-7 rounded-lg overflow-hidden bg-white/5 relative">
+                            <div class="h-full rounded-lg transition-all duration-500" style="width: ${pct}%; background: ${e.color};"></div>
+                        </div>
+                        <div class="w-20 text-sm text-gray-400 shrink-0">${val.toFixed(2)} € <span class="text-xs">(${pct}%)</span></div>
+                    </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function save() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                stored[KIDS[currentKid]] = getAllData();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+                const fb = document.getElementById('save-feedback');
+                fb.textContent = t(
+                    `Budget für ${KIDS[currentKid]} gespeichert!`,
+                    `Budget saved for ${KIDS[currentKid]}!`,
+                    `Budget enregistré pour ${KIDS[currentKid]} !`
+                );
+                fb.style.opacity = '1';
+                setTimeout(() => { fb.style.opacity = '0'; }, 2000);
+            } catch (e) {
+                // ignore
+            }
+        }
+
+        function reset() {
+            const allFields = [...INCOME_FIELDS, ...EXPENSE_FIELDS.map(e => e.key)];
+            allFields.forEach(f => setInput(f, 0));
+            calculate();
+        }
+
+        function selectKid(idx) {
+            // Auto-save current kid before switching
+            try {
+                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                stored[KIDS[currentKid]] = getAllData();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+            } catch (e) { /* ignore */ }
+
+            currentKid = idx;
+            document.querySelectorAll('.kid-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', i === idx);
+            });
+            loadData();
+            calculate();
+        }
+
+        // Init on load
+        function init() {
+            loadData();
+            calculate();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+        return { calculate, save, reset, selectKid };
+    })();
+    </script>
+</body>
+</html>

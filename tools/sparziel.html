@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparziel-Tracker - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-slower': 'float 10s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+        <div class="absolute top-2/3 left-1/4 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Resultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="../chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition bg-white/5">Tools</a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Resultats</span></a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-10 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🎯</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="lang-de">Sparziel-Tracker</span>
+                    <span class="lang-en">Savings Goal Tracker</span>
+                    <span class="lang-fr">Suivi des objectifs d'epargne</span>
+                </h1>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    <span class="lang-de">Setze dir Sparziele, verfolge deinen Fortschritt und erreiche deine Traume!</span>
+                    <span class="lang-en">Set savings goals, track your progress and reach your dreams!</span>
+                    <span class="lang-fr">Fixe des objectifs d'epargne, suis tes progres et realise tes reves !</span>
+                </p>
+            </div>
+
+            <!-- Kid Selector Tabs -->
+            <div class="flex justify-center gap-3 mb-8">
+                <button class="kid-tab active" data-kid="0" onclick="switchKid(0)">🦋 Luisa</button>
+                <button class="kid-tab" data-kid="1" onclick="switchKid(1)">🌸 Marlene</button>
+                <button class="kid-tab" data-kid="2" onclick="switchKid(2)">🌟 Carla</button>
+            </div>
+
+            <!-- Summary Card -->
+            <div id="summary-card" class="glass-card rounded-3xl p-6 mb-8 text-center">
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <span class="text-2xl">💰</span>
+                    <h2 class="text-xl font-bold">
+                        <span class="lang-de">Gesamt gespart</span>
+                        <span class="lang-en">Total Saved</span>
+                        <span class="lang-fr">Total epargne</span>
+                    </h2>
+                </div>
+                <p id="summary-total" class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">0,00 &euro;</p>
+                <p id="summary-goals" class="text-gray-400 text-sm mt-1"></p>
+            </div>
+
+            <!-- Add Goal Form -->
+            <div class="glass-card rounded-3xl p-6 mb-8">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span>✨</span>
+                    <span class="lang-de">Neues Sparziel erstellen</span>
+                    <span class="lang-en">Create New Savings Goal</span>
+                    <span class="lang-fr">Creer un nouvel objectif</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Name des Ziels</span>
+                            <span class="lang-en">Goal Name</span>
+                            <span class="lang-fr">Nom de l'objectif</span>
+                        </label>
+                        <input id="goal-name" type="text" placeholder="z.B. Neues Handy" class="calc-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Zielbetrag (&euro;)</span>
+                            <span class="lang-en">Target Amount (&euro;)</span>
+                            <span class="lang-fr">Montant cible (&euro;)</span>
+                        </label>
+                        <input id="goal-target" type="number" min="1" step="0.01" placeholder="0,00" class="calc-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Bereits gespart (&euro;)</span>
+                            <span class="lang-en">Already Saved (&euro;)</span>
+                            <span class="lang-fr">Deja epargne (&euro;)</span>
+                        </label>
+                        <input id="goal-current" type="number" min="0" step="0.01" placeholder="0,00" class="calc-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Monatl. Sparbetrag (&euro;, optional)</span>
+                            <span class="lang-en">Monthly Savings (&euro;, optional)</span>
+                            <span class="lang-fr">Epargne mensuelle (&euro;, optionnel)</span>
+                        </label>
+                        <input id="goal-monthly" type="number" min="0" step="0.01" placeholder="0,00" class="calc-input">
+                    </div>
+                </div>
+                <button onclick="addGoal()" class="glass-button-primary px-6 py-3 rounded-xl text-sm font-semibold w-full md:w-auto">
+                    <span class="lang-de">🎯 Sparziel hinzufugen</span>
+                    <span class="lang-en">🎯 Add Savings Goal</span>
+                    <span class="lang-fr">🎯 Ajouter l'objectif</span>
+                </button>
+            </div>
+
+            <!-- Goals List -->
+            <div id="goals-container"></div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="glass-card rounded-3xl p-12 text-center hidden">
+                <span class="text-6xl block mb-4">🌱</span>
+                <p class="text-xl font-bold mb-2">
+                    <span class="lang-de">Noch keine Sparziele</span>
+                    <span class="lang-en">No savings goals yet</span>
+                    <span class="lang-fr">Pas encore d'objectifs</span>
+                </p>
+                <p class="text-gray-400">
+                    <span class="lang-de">Erstelle dein erstes Sparziel oben!</span>
+                    <span class="lang-en">Create your first savings goal above!</span>
+                    <span class="lang-fr">Cree ton premier objectif ci-dessus !</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung fur die nachste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Education financiere pour la prochaine generation</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script>
+    (function() {
+        const STORAGE_KEY = 'finance_academy_goals';
+        const KIDS = ['Luisa', 'Marlene', 'Carla'];
+        const KID_COLORS = ['cyan', 'purple', 'pink'];
+        const KID_EMOJIS = ['🦋', '🌸', '🌟'];
+        let currentKid = 0;
+
+        function t(de, en, fr) {
+            const l = Lang.get();
+            return l === 'fr' && fr ? fr : l === 'en' ? en : de;
+        }
+
+        function loadGoals() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { 0: [], 1: [], 2: [] };
+            } catch (e) {
+                return { 0: [], 1: [], 2: [] };
+            }
+        }
+
+        function saveGoals(goals) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(goals));
+        }
+
+        function getMotivation(pct) {
+            if (pct >= 100) return {
+                emoji: '🎉',
+                de: 'Ziel erreicht! Fantastisch!',
+                en: 'Goal reached! Fantastic!',
+                fr: 'Objectif atteint ! Fantastique !'
+            };
+            if (pct >= 75) return {
+                emoji: '🔥',
+                de: 'Fast geschafft! Du bist auf der Zielgeraden!',
+                en: 'Almost there! You are on the home stretch!',
+                fr: 'Presque termine ! Tu es dans la derniere ligne droite !'
+            };
+            if (pct >= 50) return {
+                emoji: '💪',
+                de: 'Halbzeit! Starke Leistung, weiter so!',
+                en: 'Halfway! Great job, keep it up!',
+                fr: 'A mi-chemin ! Super travail, continue !'
+            };
+            if (pct >= 25) return {
+                emoji: '⭐',
+                de: 'Guter Start! Ein Viertel geschafft!',
+                en: 'Good start! A quarter done!',
+                fr: 'Bon debut ! Un quart accompli !'
+            };
+            return {
+                emoji: '🌱',
+                de: 'Jede Reise beginnt mit dem ersten Schritt!',
+                en: 'Every journey starts with the first step!',
+                fr: 'Chaque voyage commence par le premier pas !'
+            };
+        }
+
+        function formatCurrency(amount) {
+            return amount.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' \u20AC';
+        }
+
+        function renderGoals() {
+            const goals = loadGoals();
+            const kidGoals = goals[currentKid] || [];
+            const container = document.getElementById('goals-container');
+            const emptyState = document.getElementById('empty-state');
+
+            // Update summary
+            const totalSaved = kidGoals.reduce((sum, g) => sum + g.current, 0);
+            const totalTarget = kidGoals.reduce((sum, g) => sum + g.target, 0);
+            document.getElementById('summary-total').textContent = formatCurrency(totalSaved);
+            const goalsCount = kidGoals.length;
+            const completedCount = kidGoals.filter(g => g.current >= g.target).length;
+            document.getElementById('summary-goals').textContent = goalsCount > 0
+                ? t(
+                    `${goalsCount} Ziel${goalsCount !== 1 ? 'e' : ''} | ${completedCount} erreicht | ${formatCurrency(totalTarget)} Gesamtziel`,
+                    `${goalsCount} goal${goalsCount !== 1 ? 's' : ''} | ${completedCount} reached | ${formatCurrency(totalTarget)} total target`,
+                    `${goalsCount} objectif${goalsCount !== 1 ? 's' : ''} | ${completedCount} atteint${completedCount !== 1 ? 's' : ''} | ${formatCurrency(totalTarget)} objectif total`
+                )
+                : '';
+
+            if (kidGoals.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            container.innerHTML = kidGoals.map((goal, idx) => {
+                const pct = Math.min(100, Math.round((goal.current / goal.target) * 100));
+                const remaining = Math.max(0, goal.target - goal.current);
+                const motivation = getMotivation(pct);
+                const isComplete = pct >= 100;
+
+                let timeEstimate = '';
+                if (goal.monthly && goal.monthly > 0 && remaining > 0) {
+                    const months = Math.ceil(remaining / goal.monthly);
+                    if (months === 1) {
+                        timeEstimate = t('~ 1 Monat', '~ 1 month', '~ 1 mois');
+                    } else if (months < 12) {
+                        timeEstimate = t(`~ ${months} Monate`, `~ ${months} months`, `~ ${months} mois`);
+                    } else {
+                        const years = Math.floor(months / 12);
+                        const rem = months % 12;
+                        timeEstimate = t(
+                            `~ ${years} Jahr${years > 1 ? 'e' : ''}${rem > 0 ? ` ${rem} Mon.` : ''}`,
+                            `~ ${years} year${years > 1 ? 's' : ''}${rem > 0 ? ` ${rem} mo.` : ''}`,
+                            `~ ${years} an${years > 1 ? 's' : ''}${rem > 0 ? ` ${rem} mois` : ''}`
+                        );
+                    }
+                } else if (isComplete) {
+                    timeEstimate = t('Geschafft!', 'Done!', 'Termine !');
+                }
+
+                const progressColor = isComplete
+                    ? 'from-green-400 to-emerald-500'
+                    : pct >= 75
+                        ? 'from-yellow-400 to-orange-500'
+                        : 'from-indigo-500 to-purple-500';
+
+                return `
+                    <div class="glass-card rounded-3xl p-6 mb-4 ${isComplete ? 'border-green-500/30' : ''}">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h3 class="text-lg font-bold flex items-center gap-2">
+                                    ${isComplete ? '🏆' : '🎯'} ${goal.name}
+                                </h3>
+                                <p class="text-sm text-gray-400 mt-1">
+                                    ${formatCurrency(goal.current)} / ${formatCurrency(goal.target)}
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-bold ${isComplete ? 'text-green-400' : 'text-' + KID_COLORS[currentKid] + '-400'}">${pct}%</span>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-bar h-3 mb-3">
+                            <div class="h-full rounded-full bg-gradient-to-r ${progressColor} transition-all duration-500" style="width: ${pct}%"></div>
+                        </div>
+
+                        <!-- Motivation Message -->
+                        <div class="mb-4 px-3 py-2 rounded-xl ${isComplete ? 'bg-green-500/10 border border-green-500/20' : 'bg-white/5'}">
+                            <p class="text-sm">
+                                ${motivation.emoji} <em>${t(motivation.de, motivation.en, motivation.fr)}</em>
+                            </p>
+                        </div>
+
+                        <!-- Stats Row -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4 text-sm">
+                            <div class="bg-white/5 rounded-xl p-3 text-center">
+                                <p class="text-gray-500 text-xs">${t('Verbleibend', 'Remaining', 'Restant')}</p>
+                                <p class="font-bold">${formatCurrency(remaining)}</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3 text-center">
+                                <p class="text-gray-500 text-xs">${t('Monatl. Sparen', 'Monthly Savings', 'Epargne mensuelle')}</p>
+                                <p class="font-bold">${goal.monthly ? formatCurrency(goal.monthly) : '—'}</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-3 text-center col-span-2 md:col-span-1">
+                                <p class="text-gray-500 text-xs">${t('Geschatzte Zeit', 'Estimated Time', 'Temps estime')}</p>
+                                <p class="font-bold">${timeEstimate || '—'}</p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-2">
+                            ${!isComplete ? `
+                            <button onclick="showAddSavings(${idx})" class="glass-button-primary px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-1">
+                                💵 ${t('Einzahlen', 'Add Savings', 'Deposer')}
+                            </button>
+                            ` : ''}
+                            <button onclick="editMonthly(${idx})" class="glass-button px-4 py-2 rounded-xl text-sm flex items-center gap-1">
+                                📅 ${t('Monatl. anpassen', 'Adjust Monthly', 'Ajuster mensuel')}
+                            </button>
+                            <button onclick="deleteGoal(${idx})" class="glass-button px-4 py-2 rounded-xl text-sm flex items-center gap-1 hover:border-red-500/50 hover:text-red-400">
+                                🗑️ ${t('Loschen', 'Delete', 'Supprimer')}
+                            </button>
+                        </div>
+
+                        <!-- Inline Add-Savings Form (hidden by default) -->
+                        <div id="add-savings-${idx}" class="hidden mt-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <input id="add-amount-${idx}" type="number" min="0.01" step="0.01" placeholder="${t('Betrag in Euro', 'Amount in Euro', 'Montant en euros')}" class="calc-input flex-1">
+                                <button onclick="confirmAddSavings(${idx})" class="glass-button-primary px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap">
+                                    ✅ ${t('Einzahlen', 'Deposit', 'Deposer')}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Expose functions globally
+        window.switchKid = function(kidIdx) {
+            currentKid = kidIdx;
+            document.querySelectorAll('.kid-tab').forEach(tab => {
+                tab.classList.toggle('active', parseInt(tab.dataset.kid) === kidIdx);
+            });
+            renderGoals();
+        };
+
+        window.addGoal = function() {
+            const name = document.getElementById('goal-name').value.trim();
+            const target = parseFloat(document.getElementById('goal-target').value);
+            const current = parseFloat(document.getElementById('goal-current').value) || 0;
+            const monthly = parseFloat(document.getElementById('goal-monthly').value) || 0;
+
+            if (!name) {
+                alert(t('Bitte gib einen Namen ein.', 'Please enter a name.', 'Veuillez entrer un nom.'));
+                return;
+            }
+            if (!target || target <= 0) {
+                alert(t('Bitte gib einen Zielbetrag ein.', 'Please enter a target amount.', 'Veuillez entrer un montant cible.'));
+                return;
+            }
+
+            const goals = loadGoals();
+            if (!goals[currentKid]) goals[currentKid] = [];
+            goals[currentKid].push({
+                name: name,
+                target: target,
+                current: Math.min(current, target * 10),
+                monthly: monthly,
+                created: Date.now()
+            });
+            saveGoals(goals);
+
+            // Clear form
+            document.getElementById('goal-name').value = '';
+            document.getElementById('goal-target').value = '';
+            document.getElementById('goal-current').value = '';
+            document.getElementById('goal-monthly').value = '';
+
+            renderGoals();
+        };
+
+        window.showAddSavings = function(idx) {
+            const el = document.getElementById('add-savings-' + idx);
+            el.classList.toggle('hidden');
+            if (!el.classList.contains('hidden')) {
+                document.getElementById('add-amount-' + idx).focus();
+            }
+        };
+
+        window.confirmAddSavings = function(idx) {
+            const input = document.getElementById('add-amount-' + idx);
+            const amount = parseFloat(input.value);
+            if (!amount || amount <= 0) {
+                alert(t('Bitte gib einen gultigen Betrag ein.', 'Please enter a valid amount.', 'Veuillez entrer un montant valide.'));
+                return;
+            }
+
+            const goals = loadGoals();
+            const goal = goals[currentKid][idx];
+            goal.current = Math.round((goal.current + amount) * 100) / 100;
+            saveGoals(goals);
+
+            // Celebrate if goal just reached
+            if (goal.current >= goal.target) {
+                setTimeout(() => {
+                    alert(t(
+                        `🎉 ${KIDS[currentKid]} hat das Sparziel "${goal.name}" erreicht! Herzlichen Gluckwunsch!`,
+                        `🎉 ${KIDS[currentKid]} reached the savings goal "${goal.name}"! Congratulations!`,
+                        `🎉 ${KIDS[currentKid]} a atteint l'objectif d'epargne "${goal.name}" ! Felicitations !`
+                    ));
+                }, 100);
+            }
+
+            renderGoals();
+        };
+
+        window.editMonthly = function(idx) {
+            const goals = loadGoals();
+            const goal = goals[currentKid][idx];
+            const newMonthly = prompt(
+                t(
+                    `Monatlicher Sparbetrag fur "${goal.name}" (aktuell: ${goal.monthly ? formatCurrency(goal.monthly) : '—'}):`,
+                    `Monthly savings for "${goal.name}" (current: ${goal.monthly ? formatCurrency(goal.monthly) : '—'}):`,
+                    `Epargne mensuelle pour "${goal.name}" (actuel : ${goal.monthly ? formatCurrency(goal.monthly) : '—'}) :`
+                ),
+                goal.monthly || ''
+            );
+            if (newMonthly !== null) {
+                const val = parseFloat(newMonthly);
+                if (!isNaN(val) && val >= 0) {
+                    goal.monthly = Math.round(val * 100) / 100;
+                    saveGoals(goals);
+                    renderGoals();
+                }
+            }
+        };
+
+        window.deleteGoal = function(idx) {
+            const goals = loadGoals();
+            const goal = goals[currentKid][idx];
+            const confirmed = confirm(t(
+                `Sparziel "${goal.name}" wirklich loschen?`,
+                `Really delete savings goal "${goal.name}"?`,
+                `Vraiment supprimer l'objectif "${goal.name}" ?`
+            ));
+            if (confirmed) {
+                goals[currentKid].splice(idx, 1);
+                saveGoals(goals);
+                renderGoals();
+            }
+        };
+
+        // Initial render
+        renderGoals();
+    })();
+    </script>
+</body>
+</html>

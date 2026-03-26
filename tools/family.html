@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Finance Challenge - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-slower': 'float 10s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="../chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Tools</a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">👨‍👩‍👧‍👧</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                        <span class="lang-de">Family Finance Challenge</span>
+                        <span class="lang-en">Family Finance Challenge</span>
+                        <span class="lang-fr">Défi financier en famille</span>
+                    </span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <span class="lang-de">Aufgaben, die ihr als Familie gemeinsam meistern könnt. Lernt zusammen und habt Spaß dabei!</span>
+                    <span class="lang-en">Challenges you can tackle as a family. Learn together and have fun!</span>
+                    <span class="lang-fr">Des défis que vous pouvez relever en famille. Apprenez ensemble et amusez-vous !</span>
+                </p>
+            </div>
+
+            <!-- Progress summary -->
+            <div class="glass-card rounded-2xl p-6 mb-8 text-center animate-on-scroll" id="challenge-summary"></div>
+
+            <!-- Challenge cards -->
+            <div class="space-y-4" id="challenge-list"></div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung für die nächste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Éducation financière pour la prochaine génération</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        function t(de, en, fr) {
+            const l = Lang.get();
+            return l === 'fr' && fr ? fr : l === 'en' ? en : de;
+        }
+
+        function render() {
+            const completed = FamilyChallenges.getCompleted();
+            const total = FamilyChallenges.CHALLENGES.length;
+            const done = completed.length;
+            const pct = Math.round((done / total) * 100);
+
+            document.getElementById('challenge-summary').innerHTML = `
+                <div class="text-4xl font-bold mb-2">
+                    <span class="${pct === 100 ? 'text-green-400' : 'text-yellow-400'}">${done}</span>
+                    <span class="text-gray-500 text-2xl">/ ${total}</span>
+                </div>
+                <p class="text-gray-400 mb-3">${t('Challenges abgeschlossen', 'Challenges completed', 'Défis terminés')}</p>
+                <div class="progress-bar max-w-xs mx-auto"><div class="progress-fill" style="width: ${pct}%"></div></div>
+                ${pct === 100 ? `<p class="text-green-400 mt-3 font-semibold">${t('Ihr seid ein fantastisches Team! 🎉', 'You are a fantastic team! 🎉', 'Vous êtes une équipe fantastique ! 🎉')}</p>` : ''}
+            `;
+
+            document.getElementById('challenge-list').innerHTML = FamilyChallenges.CHALLENGES.map(ch => {
+                const isDone = completed.includes(ch.id);
+                return `
+                    <div class="challenge-card ${isDone ? 'completed' : ''} animate-on-scroll">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl flex-shrink-0 mt-1">${ch.icon}</div>
+                            <div class="flex-grow">
+                                <h3 class="text-lg font-bold mb-1 ${isDone ? 'line-through text-gray-500' : ''}">${FamilyChallenges.getTitle(ch)}</h3>
+                                <p class="text-gray-400 text-sm mb-3">${FamilyChallenges.getDesc(ch)}</p>
+                                <button
+                                    onclick="FamilyChallenges.toggleComplete('${ch.id}'); render();"
+                                    class="${isDone ? 'glass-button text-green-400' : 'glass-button-primary'} px-4 py-2 rounded-xl text-sm"
+                                >
+                                    ${isDone
+                                        ? t('✓ Erledigt — rückgängig?', '✓ Done — undo?', '✓ Fait — annuler ?')
+                                        : t('Als erledigt markieren', 'Mark as done', 'Marquer comme fait')
+                                    }
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Re-observe scroll animations
+            document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(el => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(el);
+            });
+        }
+
+        const origApply = Lang.apply.bind(Lang);
+        Lang.apply = function() { origApply(); render(); };
+        render();
+    </script>
+</body>
+</html>

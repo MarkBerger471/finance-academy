@@ -24,7 +24,8 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="../index.html" class="nav-link">Home</a>
-                    <a href="chapter5.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
                     <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
                     <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
                 </div>
@@ -36,7 +37,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12 animate-fade-in">
                 <span class="inline-block text-6xl mb-4">📊</span>
-                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-red-400 mb-4"><span class="lang-de">Kapitel 5 von 10</span><span class="lang-en">Chapter 5 of 10</span><span class="lang-fr">Chapitre 5 sur 10</span></div>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-red-400 mb-4"><span class="lang-de">Kapitel 5 von 16</span><span class="lang-en">Chapter 5 of 16</span><span class="lang-fr">Chapitre 5 sur 16</span></div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Zinsen & Zinseszins</span><span class="lang-en">Interest & Compound Interest</span><span class="lang-fr">Intérêts & intérêts composés</span></h1>
                 <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
                     <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 Hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
@@ -44,9 +45,9 @@
                     <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 Test Questions</span><span class="lang-fr">📝 10 questions de test</span></span>
                 </div>
                 <div class="progress-bar max-w-md mx-auto mt-6">
-                    <div class="progress-fill" style="width: 50%"></div>
+                    <div class="progress-fill" style="width: 31%"></div>
                 </div>
-                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">50% des Kurses</span><span class="lang-en">50% of the course</span><span class="lang-fr">50% du cours</span></p>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">31% des Kurses</span><span class="lang-en">31% of the course</span><span class="lang-fr">31% du cours</span></p>
             </div>
 
             <!-- Section 1: What are interest rates? -->
@@ -426,6 +427,8 @@
     </main>
 
     <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
     <script>
         TestSystem.initTest(5, [
             {

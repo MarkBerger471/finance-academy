@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitelübersicht - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-slower': 'float 10s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">📚</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                        <span class="lang-de">Kapitelübersicht</span>
+                        <span class="lang-en">Chapter Overview</span>
+                        <span class="lang-fr">Aperçu des chapitres</span>
+                    </span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <span class="lang-de">Dein Fortschritt auf einen Blick. Klicke auf ein Kapitel, um zu starten oder weiterzulernen.</span>
+                    <span class="lang-en">Your progress at a glance. Click a chapter to start or continue learning.</span>
+                    <span class="lang-fr">Ta progression en un coup d'œil. Clique sur un chapitre pour commencer ou continuer.</span>
+                </p>
+            </div>
+
+            <!-- Per-person progress summary -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12" id="person-progress"></div>
+
+            <!-- Chapter list -->
+            <div class="space-y-4" id="chapter-list"></div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung für die nächste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Éducation financière pour la prochaine génération</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script>
+        const chapters = [
+            { num: 1, title_de: 'Was ist Geld?', title_en: 'What is Money?', title_fr: "Qu'est-ce que l'argent ?", icon: '💶', color: 'cyan' },
+            { num: 2, title_de: 'Einnahmen & Ausgaben', title_en: 'Income & Expenses', title_fr: 'Revenus & Dépenses', icon: '🏦', color: 'green' },
+            { num: 3, title_de: 'Sparen & Ziele setzen', title_en: 'Saving & Setting Goals', title_fr: 'Épargner & Fixer des objectifs', icon: '🐷', color: 'purple' },
+            { num: 4, title_de: 'Banken & Konten', title_en: 'Banks & Accounts', title_fr: 'Banques & Comptes', icon: '🏧', color: 'orange' },
+            { num: 5, title_de: 'Zinsen & Zinseszins', title_en: 'Interest & Compound Interest', title_fr: 'Intérêts & Intérêts composés', icon: '📊', color: 'red' },
+            { num: 6, title_de: 'Investieren Grundlagen', title_en: 'Investing Basics', title_fr: "Les bases de l'investissement", icon: '📈', color: 'teal' },
+            { num: 7, title_de: 'Risiko & Diversifikation', title_en: 'Risk & Diversification', title_fr: 'Risque & Diversification', icon: '⚖️', color: 'indigo' },
+            { num: 8, title_de: 'Schulden & Kredite', title_en: 'Debt & Loans', title_fr: 'Dettes & Crédits', icon: '💳', color: 'yellow' },
+            { num: 9, title_de: 'Steuern & Staat', title_en: 'Taxes & Government', title_fr: 'Impôts & État', icon: '🧾', color: 'lime' },
+            { num: 10, title_de: 'Dein Finanzplan', title_en: 'Your Financial Plan', title_fr: 'Ton plan financier', icon: '🚀', color: 'pink' },
+            { num: 11, title_de: 'Abo-Fallen & digitale Ausgaben', title_en: 'Subscription Traps & Digital Spending', title_fr: "Pièges d'abonnement & dépenses numériques", icon: '📱', color: 'violet' },
+            { num: 12, title_de: 'Erstes eigenes Einkommen', title_en: 'Your First Income', title_fr: 'Ton premier revenu', icon: '💼', color: 'emerald' },
+            { num: 13, title_de: 'Krypto & digitale Assets', title_en: 'Crypto & Digital Assets', title_fr: 'Crypto & actifs numériques', icon: '₿', color: 'amber' },
+            { num: 14, title_de: 'Versicherungen Basics', title_en: 'Insurance Basics', title_fr: "Les bases de l'assurance", icon: '🛡️', color: 'sky' },
+            { num: 15, title_de: 'Erste eigene Wohnung', title_en: 'Your First Apartment', title_fr: 'Ton premier appartement', icon: '🏠', color: 'rose' },
+            { num: 16, title_de: 'Finanz-Scams & Social Media', title_en: 'Financial Scams & Social Media', title_fr: 'Arnaques financières & réseaux sociaux', icon: '🚨', color: 'red' },
+        ];
+
+        const kids = ['Luisa', 'Marlene', 'Carla'];
+        const kidColors = ['cyan', 'purple', 'pink'];
+        const totalChapters = 16;
+
+        function t(de, en, fr) {
+            const l = Lang.get();
+            return l === 'fr' && fr ? fr : l === 'en' ? en : de;
+        }
+
+        function getTitle(ch) {
+            const l = Lang.get();
+            return l === 'fr' ? ch.title_fr : l === 'en' ? ch.title_en : ch.title_de;
+        }
+
+        function getChapterStatus(chNum) {
+            const scores = TestSystem.getScores();
+            let completedBy = [];
+            let bestScore = 0;
+            kids.forEach((kid, ki) => {
+                const s = scores[`ch${chNum}_kid${ki}`];
+                if (s) {
+                    completedBy.push({ kid, kidIndex: ki, percentage: s.percentage });
+                    if (s.percentage > bestScore) bestScore = s.percentage;
+                }
+            });
+            return { completedBy, bestScore, isCompleted: completedBy.length === kids.length };
+        }
+
+        function render() {
+            const scores = TestSystem.getScores();
+
+            // Per-person progress
+            const personEl = document.getElementById('person-progress');
+            personEl.innerHTML = kids.map((kid, ki) => {
+                let completed = 0;
+                let totalScore = 0, totalQuestions = 0;
+                chapters.forEach(ch => {
+                    const s = scores[`ch${ch.num}_kid${ki}`];
+                    if (s) { completed++; totalScore += s.score; totalQuestions += s.total; }
+                });
+                const avgPercent = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+                const progressPct = Math.round((completed / totalChapters) * 100);
+                return `
+                    <div class="glass-card rounded-2xl p-5 animate-on-scroll">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-bold text-${kidColors[ki]}-400 text-lg">${kid}</h3>
+                            <span class="text-2xl">${avgPercent >= 80 ? '🏆' : avgPercent >= 60 ? '⭐' : avgPercent > 0 ? '📚' : '⏳'}</span>
+                        </div>
+                        <div class="flex items-end justify-between mb-2">
+                            <span class="text-3xl font-bold">${completed}<span class="text-lg text-gray-500">/${totalChapters}</span></span>
+                            <span class="text-sm text-gray-400">${avgPercent > 0 ? avgPercent + '% ' + t('Schnitt', 'avg', 'moy.') : t('Noch nicht gestartet', 'Not started yet', 'Pas encore commencé')}</span>
+                        </div>
+                        <div class="progress-bar mb-2"><div class="progress-fill" style="width: ${progressPct}%"></div></div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-1 flex-wrap">${Gamification.renderBadges(ki, true)}</div>
+                            ${Gamification.renderStreak(ki)}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Chapter list
+            const listEl = document.getElementById('chapter-list');
+            listEl.innerHTML = chapters.map((ch, i) => {
+                const status = getChapterStatus(ch.num);
+                const title = getTitle(ch);
+
+                // Status indicator
+                let statusBadge;
+                if (status.isCompleted) {
+                    statusBadge = `<span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 border border-green-500/30">${t('Abgeschlossen', 'Completed', 'Terminé')}</span>`;
+                } else if (status.completedBy.length > 0) {
+                    statusBadge = `<span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">${t('In Bearbeitung', 'In Progress', 'En cours')}</span>`;
+                } else {
+                    statusBadge = `<span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-400 border border-white/10">${t('Offen', 'Open', 'Ouvert')}</span>`;
+                }
+
+                // Kid avatars who completed
+                const kidAvatars = status.completedBy.length > 0
+                    ? `<div class="flex items-center gap-2 mt-2">
+                        ${status.completedBy.map(c => `<span class="text-xs glass-badge px-2 py-0.5 rounded-full text-${kidColors[c.kidIndex]}-400">${c.kid} ${c.percentage}%</span>`).join('')}
+                       </div>`
+                    : '';
+
+                return `
+                    <a href="chapter${ch.num}.html" class="block glass-card rounded-2xl p-5 group animate-on-scroll hover:border-${ch.color}-500/30 transition-all">
+                        <div class="flex items-center gap-5">
+                            <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-${ch.color}-500/30 to-${ch.color}-500/10 flex items-center justify-center text-3xl">
+                                ${ch.icon}
+                            </div>
+                            <div class="flex-grow min-w-0">
+                                <div class="flex items-center gap-3 mb-1 flex-wrap">
+                                    <span class="text-xs text-${ch.color}-400 font-semibold">${t('Kapitel', 'Chapter', 'Chapitre')} ${ch.num}</span>
+                                    ${statusBadge}
+                                </div>
+                                <h3 class="text-lg font-bold group-hover:text-${ch.color}-400 transition-colors">${title}</h3>
+                                ${kidAvatars}
+                            </div>
+                            <div class="flex-shrink-0 hidden sm:block">
+                                <svg class="w-6 h-6 text-gray-500 group-hover:text-${ch.color}-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+
+            // Re-observe scroll animations
+            document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(el => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(el);
+            });
+        }
+
+        // Override Lang.apply to re-render
+        const origApply = Lang.apply.bind(Lang);
+        Lang.apply = function() { origApply(); render(); };
+        render();
+    </script>
+</body>
+</html>

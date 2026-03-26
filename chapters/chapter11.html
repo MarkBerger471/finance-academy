@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 11: Abo-Fallen & digitale Ausgaben - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">📱</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-violet-400 mb-4"><span class="lang-de">Kapitel 11 von 16</span><span class="lang-en">Chapter 11 of 16</span><span class="lang-fr">Chapitre 11 sur 16</span></div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Abo-Fallen & digitale Ausgaben</span><span class="lang-en">Subscription Traps & Digital Spending</span><span class="lang-fr">Pièges d'abonnement & dépenses numériques</span></h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                    <span>|</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span><span class="lang-fr">📝 10 questions de test</span></span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 68.75%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">68% des Kurses</span><span class="lang-en">68% of the course</span><span class="lang-fr">68% du cours</span></p>
+            </div>
+
+            <!-- Section 1: Abo-Überblick -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📊 Abo-Überblick: Was kostet dein digitales Leben?</span><span class="lang-en">📊 Subscription Overview: What Does Your Digital Life Cost?</span><span class="lang-fr">📊 Aperçu des abonnements : Combien coûte ta vie numérique ?</span></h3>
+                <p><span class="lang-de">Spotify, Netflix, Gaming-Pässe, Cloud-Speicher, Musik-Apps, Fitness-Tracker - die Liste der monatlichen Abos wird immer länger. Einzeln sehen die Beträge klein aus, aber zusammen können sie ein riesiges Loch in dein Budget reißen.</span><span class="lang-en">Spotify, Netflix, gaming passes, cloud storage, music apps, fitness trackers - the list of monthly subscriptions keeps growing. Individually the amounts look small, but together they can blow a huge hole in your budget.</span><span class="lang-fr">Spotify, Netflix, pass de jeux, stockage cloud, applis de musique, traqueurs de fitness - la liste des abonnements mensuels ne cesse de s'allonger. Individuellement, les montants semblent faibles, mais ensemble, ils peuvent créer un énorme trou dans ton budget.</span></p>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa hat folgende Abos: Spotify (9,99 €/Monat), Netflix (13,99 €/Monat), iCloud-Speicher (2,99 €/Monat), Xbox Game Pass (9,99 €/Monat) und eine Fitness-App (4,99 €/Monat). Das sind zusammen <strong>41,95 € pro Monat</strong> - also <strong>503,40 € pro Jahr</strong>!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa has the following subscriptions: Spotify (9.99 euros/month), Netflix (13.99 euros/month), iCloud storage (2.99 euros/month), Xbox Game Pass (9.99 euros/month), and a fitness app (4.99 euros/month). That adds up to <strong>41.95 euros per month</strong> - or <strong>503.40 euros per year</strong>!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa a les abonnements suivants : Spotify (9,99 €/mois), Netflix (13,99 €/mois), stockage iCloud (2,99 €/mois), Xbox Game Pass (9,99 €/mois) et une appli fitness (4,99 €/mois). Cela fait <strong>41,95 € par mois</strong> - soit <strong>503,40 € par an</strong> !</span></p>
+                </div>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Die Jahreskosten-Falle:</strong> Unser Gehirn denkt in kleinen Monatsbeträgen. "Nur 9,99 € im Monat" klingt harmlos. Aber rechne immer den Jahresbetrag aus: 9,99 € x 12 = 119,88 € pro Jahr. Bei 5 Abos bist du schnell bei über 500 € - das ist ein halbes Smartphone!</span><span class="lang-en"><strong>💡 The Annual Cost Trap:</strong> Our brain thinks in small monthly amounts. "Only 9.99 euros per month" sounds harmless. But always calculate the annual amount: 9.99 euros x 12 = 119.88 euros per year. With 5 subscriptions, you quickly reach over 500 euros - that's half a smartphone!</span><span class="lang-fr"><strong>💡 Le piège du coût annuel :</strong> Notre cerveau raisonne en petits montants mensuels. « Seulement 9,99 € par mois » semble inoffensif. Mais calcule toujours le montant annuel : 9,99 € x 12 = 119,88 € par an. Avec 5 abonnements, tu arrives vite à plus de 500 € - c'est la moitié d'un smartphone !</span></p>
+                </div>
+
+                <div class="exercise-box">
+                    <p><span class="lang-de"><strong>📋 Aufgabe:</strong> Schreibe alle deine aktuellen Abos auf und berechne die Jahreskosten. Nutze diese Tabelle:</span><span class="lang-en"><strong>📋 Task:</strong> Write down all your current subscriptions and calculate the annual costs. Use this table:</span><span class="lang-fr"><strong>📋 Exercice :</strong> Note tous tes abonnements actuels et calcule les coûts annuels. Utilise ce tableau :</span></p>
+                    <div class="grid grid-cols-3 gap-2 mt-4 text-sm">
+                        <div class="glass-card rounded-xl p-3 text-center font-bold text-violet-400"><span class="lang-de">Abo-Name</span><span class="lang-en">Subscription</span><span class="lang-fr">Abonnement</span></div>
+                        <div class="glass-card rounded-xl p-3 text-center font-bold text-violet-400"><span class="lang-de">Monat (€)</span><span class="lang-en">Monthly (€)</span><span class="lang-fr">Mois (€)</span></div>
+                        <div class="glass-card rounded-xl p-3 text-center font-bold text-violet-400"><span class="lang-de">Jahr (€)</span><span class="lang-en">Annual (€)</span><span class="lang-fr">Année (€)</span></div>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-400"><span class="lang-de">Vergiss nicht: Familienabos, App-Abos, Cloud-Speicher, Gaming-Dienste und Probeabos!</span><span class="lang-en">Don't forget: family plans, app subscriptions, cloud storage, gaming services, and trial subscriptions!</span><span class="lang-fr">N'oublie pas : abonnements familiaux, applis, stockage cloud, services de jeux et abonnements d'essai !</span></p>
+                </div>
+            </div>
+
+            <!-- Section 2: Mikrotransaktionen & In-App-Käufe -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🎮 Mikrotransaktionen & In-App-Käufe</span><span class="lang-en">🎮 Microtransactions & In-App Purchases</span><span class="lang-fr">🎮 Microtransactions & achats intégrés</span></h3>
+                <p><span class="lang-de">Viele Spiele sind "kostenlos" zum Herunterladen - aber verdienen Milliarden durch kleine Käufe im Spiel. Diese Mikrotransaktionen sind so gestaltet, dass du fast nicht widerstehen kannst.</span><span class="lang-en">Many games are "free" to download - but earn billions through small in-game purchases. These microtransactions are designed so that you can barely resist them.</span><span class="lang-fr">Beaucoup de jeux sont « gratuits » à télécharger - mais gagnent des milliards grâce aux petits achats dans le jeu. Ces microtransactions sont conçues pour que tu ne puisses presque pas y résister.</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3"><span class="lang-de">🧠 Psycho-Tricks der Spiele</span><span class="lang-en">🧠 Psychological Tricks in Games</span><span class="lang-fr">🧠 Astuces psychologiques des jeux</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>FOMO</strong> (Fear of Missing Out): "Nur noch 2 Stunden! Kauf jetzt den Skin!"</span><span class="lang-en"><strong>FOMO</strong> (Fear of Missing Out): "Only 2 hours left! Buy the skin now!"</span><span class="lang-fr"><strong>FOMO</strong> (peur de rater) : « Plus que 2 heures ! Achète le skin maintenant ! »</span></li>
+                            <li><span class="lang-de"><strong>Lootboxen:</strong> Zufallspakete wie ein Glücksspiel - du weißt nie, was du bekommst</span><span class="lang-en"><strong>Loot boxes:</strong> Random packs like gambling - you never know what you'll get</span><span class="lang-fr"><strong>Loot boxes :</strong> Packs aléatoires comme un jeu de hasard - tu ne sais jamais ce que tu obtiens</span></li>
+                            <li><span class="lang-de"><strong>Battle Passes:</strong> "Du hast schon bezahlt, jetzt musst du auch spielen, damit es sich lohnt"</span><span class="lang-en"><strong>Battle Passes:</strong> "You already paid, now you have to play to make it worth it"</span><span class="lang-fr"><strong>Battle Pass :</strong> « Tu as déjà payé, maintenant tu dois jouer pour que ça vaille le coup »</span></li>
+                            <li><span class="lang-de"><strong>Virtuelle Währungen:</strong> Gems, V-Bucks, Coins - du verlierst das Gefühl für echtes Geld</span><span class="lang-en"><strong>Virtual currencies:</strong> Gems, V-Bucks, Coins - you lose the feeling for real money</span><span class="lang-fr"><strong>Monnaies virtuelles :</strong> Gemmes, V-Bucks, Coins - tu perds la notion de l'argent réel</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-violet-400 mb-3"><span class="lang-de">💸 Die wahren Kosten</span><span class="lang-en">💸 The Real Costs</span><span class="lang-fr">💸 Les vrais coûts</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Ein "kostenloser" Spieler gibt im Schnitt 0 € aus</span><span class="lang-en">A "free" player spends 0 euros on average</span><span class="lang-fr">Un joueur « gratuit » dépense 0 € en moyenne</span></li>
+                            <li><span class="lang-de">Aber zahlende Spieler geben durchschnittlich <strong>50-200 € pro Jahr</strong> aus</span><span class="lang-en">But paying players spend an average of <strong>50-200 euros per year</strong></span><span class="lang-fr">Mais les joueurs payants dépensent en moyenne <strong>50 à 200 € par an</strong></span></li>
+                            <li><span class="lang-de">"Whales" (Großzahler) geben <strong>über 1.000 €</strong> pro Spiel aus</span><span class="lang-en">"Whales" (big spenders) spend <strong>over 1,000 euros</strong> per game</span><span class="lang-fr">Les « whales » (gros dépensiers) dépensent <strong>plus de 1 000 €</strong> par jeu</span></li>
+                            <li><span class="lang-de">Fortnite verdiente 2023 über <strong>5 Milliarden Dollar</strong> - durch ein "kostenloses" Spiel!</span><span class="lang-en">Fortnite earned over <strong>5 billion dollars</strong> in 2023 - from a "free" game!</span><span class="lang-fr">Fortnite a gagné plus de <strong>5 milliards de dollars</strong> en 2023 - avec un jeu « gratuit » !</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Achtung:</strong> Lootboxen funktionieren wie Glücksspiel: Du zahlst echtes Geld für eine zufällige Belohnung. In Belgien und den Niederlanden sind Lootboxen bereits verboten! Auch in Deutschland wird über Regulierungen diskutiert. Merke: Wenn ein Spiel "kostenlos" ist, bist du das Produkt.</span><span class="lang-en"><strong>⚠️ Warning:</strong> Loot boxes work like gambling: You pay real money for a random reward. In Belgium and the Netherlands, loot boxes are already banned! Regulations are being discussed in Germany too. Remember: If a game is "free," you are the product.</span><span class="lang-fr"><strong>⚠️ Attention :</strong> Les loot boxes fonctionnent comme des jeux de hasard : tu paies de l'argent réel pour une récompense aléatoire. En Belgique et aux Pays-Bas, les loot boxes sont déjà interdites ! Des réglementations sont aussi discutées en Allemagne. Retiens : si un jeu est « gratuit », c'est toi le produit.</span></p>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Marlene spielt ein "kostenloses" Handyspiel und kauft jede Woche ein kleines Paket für 2,99 €. "Ist ja nicht viel", denkt sie. Aber: 2,99 € x 52 Wochen = <strong>155,48 € pro Jahr</strong>. Dafür hätte sie sich ein neues Konsolenspiel UND Zubehör kaufen können!</span><span class="lang-en"><strong>🎯 Example:</strong> Marlene plays a "free" mobile game and buys a small pack every week for 2.99 euros. "It's not much," she thinks. But: 2.99 euros x 52 weeks = <strong>155.48 euros per year</strong>. She could have bought a new console game AND accessories with that!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Marlene joue à un jeu mobile « gratuit » et achète un petit pack chaque semaine pour 2,99 €. « Ce n'est pas grand-chose », pense-t-elle. Mais : 2,99 € x 52 semaines = <strong>155,48 € par an</strong>. Avec ça, elle aurait pu s'acheter un nouveau jeu de console ET des accessoires !</span></p>
+                </div>
+            </div>
+
+            <!-- Section 3: Abo-Check -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🔍 Abo-Check: Aufräumen und sparen</span><span class="lang-en">🔍 Subscription Audit: Clean Up and Save</span><span class="lang-fr">🔍 Audit d'abonnements : faire le tri et économiser</span></h3>
+                <p><span class="lang-de">Viele Menschen zahlen für Abos, die sie kaum oder gar nicht nutzen. Ein regelmäßiger Abo-Check hilft dir, unnötige Kosten zu finden und Geld zu sparen.</span><span class="lang-en">Many people pay for subscriptions they barely or never use. A regular subscription audit helps you find unnecessary costs and save money.</span><span class="lang-fr">Beaucoup de gens paient pour des abonnements qu'ils utilisent peu ou pas du tout. Un audit régulier t'aide à trouver les coûts inutiles et à économiser de l'argent.</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 So machst du einen Abo-Check:</strong></span><span class="lang-en"><strong>💡 How to do a subscription audit:</strong></span><span class="lang-fr"><strong>💡 Comment faire un audit d'abonnements :</strong></span></p>
+                    <ul>
+                        <li><span class="lang-de"><strong>Schritt 1:</strong> Prüfe deine Kontoauszüge oder die App-Store-Aboverwaltung auf alle wiederkehrenden Zahlungen</span><span class="lang-en"><strong>Step 1:</strong> Check your bank statements or app store subscription management for all recurring payments</span><span class="lang-fr"><strong>Étape 1 :</strong> Vérifie tes relevés bancaires ou la gestion des abonnements de l'app store pour tous les paiements récurrents</span></li>
+                        <li><span class="lang-de"><strong>Schritt 2:</strong> Frage dich bei jedem Abo: "Habe ich das in den letzten 30 Tagen genutzt?"</span><span class="lang-en"><strong>Step 2:</strong> Ask yourself for each subscription: "Have I used this in the last 30 days?"</span><span class="lang-fr"><strong>Étape 2 :</strong> Demande-toi pour chaque abonnement : « L'ai-je utilisé ces 30 derniers jours ? »</span></li>
+                        <li><span class="lang-de"><strong>Schritt 3:</strong> Kündige alles, was du nicht regelmäßig nutzt - du kannst es jederzeit wieder abonnieren</span><span class="lang-en"><strong>Step 3:</strong> Cancel everything you don't use regularly - you can always resubscribe</span><span class="lang-fr"><strong>Étape 3 :</strong> Résilie tout ce que tu n'utilises pas régulièrement - tu peux toujours te réabonner</span></li>
+                        <li><span class="lang-de"><strong>Schritt 4:</strong> Suche nach kostenlosen Alternativen für die gekündigten Dienste</span><span class="lang-en"><strong>Step 4:</strong> Look for free alternatives for the cancelled services</span><span class="lang-fr"><strong>Étape 4 :</strong> Cherche des alternatives gratuites pour les services résiliés</span></li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Kündigungs-Tipps:</strong></span><span class="lang-en"><strong>✅ Cancellation Tips:</strong></span><span class="lang-fr"><strong>✅ Conseils de résiliation :</strong></span></p>
+                    <ul>
+                        <li><span class="lang-de">Nutze Kündigungsdienste wie <strong>aboalarm</strong> oder <strong>Volders</strong> - sie erinnern dich rechtzeitig</span><span class="lang-en">Use cancellation services like <strong>aboalarm</strong> or <strong>Volders</strong> - they remind you in time</span><span class="lang-fr">Utilise des services de résiliation comme <strong>aboalarm</strong> ou <strong>Volders</strong> - ils te rappellent à temps</span></li>
+                        <li><span class="lang-de">Stelle bei jedem neuen Abo sofort eine <strong>Kalender-Erinnerung</strong> für das Kündigungsdatum ein</span><span class="lang-en">Set a <strong>calendar reminder</strong> for the cancellation date immediately with every new subscription</span><span class="lang-fr">Mets immédiatement un <strong>rappel dans le calendrier</strong> pour la date de résiliation avec chaque nouvel abonnement</span></li>
+                        <li><span class="lang-de">In der EU hast du ein <strong>14-Tage-Widerrufsrecht</strong> bei Online-Abschlüssen</span><span class="lang-en">In the EU you have a <strong>14-day right of withdrawal</strong> for online purchases</span><span class="lang-fr">Dans l'UE, tu as un <strong>droit de rétractation de 14 jours</strong> pour les achats en ligne</span></li>
+                        <li><span class="lang-de">Prüfe deine Abos im <strong>App Store / Google Play</strong> unter "Abonnements verwalten"</span><span class="lang-en">Check your subscriptions in the <strong>App Store / Google Play</strong> under "Manage Subscriptions"</span><span class="lang-fr">Vérifie tes abonnements dans l'<strong>App Store / Google Play</strong> sous « Gérer les abonnements »</span></li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Carla hat ihren Abo-Check gemacht und festgestellt: Sie zahlt noch für eine Sprachlern-App (7,99 €/Monat), die sie seit 4 Monaten nicht benutzt hat, und für einen Cloud-Speicher (9,99 €/Monat), obwohl ihr Handy-Speicher ausreicht. Durch die Kündigung spart sie <strong>215,76 € im Jahr</strong>!</span><span class="lang-en"><strong>🎯 Example:</strong> Carla did her subscription audit and found: She's still paying for a language learning app (7.99 euros/month) she hasn't used in 4 months, and for cloud storage (9.99 euros/month) even though her phone storage is enough. By cancelling, she saves <strong>215.76 euros per year</strong>!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Carla a fait son audit d'abonnements et a découvert : elle paie encore pour une appli d'apprentissage de langues (7,99 €/mois) qu'elle n'a pas utilisée depuis 4 mois, et pour un stockage cloud (9,99 €/mois) alors que la mémoire de son téléphone suffit. En résiliant, elle économise <strong>215,76 € par an</strong> !</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Kostenlose Alternativen:</span><span class="lang-en">Free Alternatives:</span><span class="lang-fr">Alternatives gratuites :</span></h4>
+                <div class="grid md:grid-cols-2 gap-4 my-4">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3"><span class="lang-de">🆓 Statt bezahlter Abos</span><span class="lang-en">🆓 Instead of Paid Subscriptions</span><span class="lang-fr">🆓 Au lieu d'abonnements payants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Musik:</strong> Kostenlose Spotify-Version, YouTube Music (mit Werbung)</span><span class="lang-en"><strong>Music:</strong> Free Spotify version, YouTube Music (with ads)</span><span class="lang-fr"><strong>Musique :</strong> Version gratuite de Spotify, YouTube Music (avec pub)</span></li>
+                            <li><span class="lang-de"><strong>Cloud:</strong> Google Drive (15 GB gratis), OneDrive (5 GB)</span><span class="lang-en"><strong>Cloud:</strong> Google Drive (15 GB free), OneDrive (5 GB)</span><span class="lang-fr"><strong>Cloud :</strong> Google Drive (15 Go gratuits), OneDrive (5 Go)</span></li>
+                            <li><span class="lang-de"><strong>Office:</strong> Google Docs, LibreOffice (komplett kostenlos)</span><span class="lang-en"><strong>Office:</strong> Google Docs, LibreOffice (completely free)</span><span class="lang-fr"><strong>Bureautique :</strong> Google Docs, LibreOffice (entièrement gratuit)</span></li>
+                            <li><span class="lang-de"><strong>Filme:</strong> Mediatheken (ARD, ZDF), Bücherei-Streaming</span><span class="lang-en"><strong>Movies:</strong> Public broadcasting libraries, library streaming</span><span class="lang-fr"><strong>Films :</strong> Médiathèques publiques, streaming bibliothèque</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-blue-400 mb-3"><span class="lang-de">📚 Bibliothek als Geheimtipp</span><span class="lang-en">📚 Libraries as a Hidden Gem</span><span class="lang-fr">📚 La bibliothèque, un bon plan méconnu</span></h4>
+                        <ul>
+                            <li><span class="lang-de">E-Books und Hörbücher über <strong>Onleihe</strong></span><span class="lang-en">E-books and audiobooks via <strong>Onleihe</strong></span><span class="lang-fr">E-books et livres audio via <strong>Onleihe</strong></span></li>
+                            <li><span class="lang-de">Filme und Serien über <strong>Filmfriend</strong></span><span class="lang-en">Movies and series via <strong>Filmfriend</strong></span><span class="lang-fr">Films et séries via <strong>Filmfriend</strong></span></li>
+                            <li><span class="lang-de">Zeitschriften digital über <strong>PressReader</strong></span><span class="lang-en">Digital magazines via <strong>PressReader</strong></span><span class="lang-fr">Magazines numériques via <strong>PressReader</strong></span></li>
+                            <li><span class="lang-de">Alles für ca. <strong>10-20 € Jahresgebühr</strong>!</span><span class="lang-en">All for about <strong>10-20 euros annual fee</strong>!</span><span class="lang-fr">Le tout pour environ <strong>10-20 € de cotisation annuelle</strong> !</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Tipps & Regeln -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🛡️ Tipps & Regeln für smarte digitale Ausgaben</span><span class="lang-en">🛡️ Tips & Rules for Smart Digital Spending</span><span class="lang-fr">🛡️ Conseils & règles pour des dépenses numériques intelligentes</span></h3>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
+                        <h4 class="font-bold text-cyan-400 mb-2"><span class="lang-de">Familien-Sharing</span><span class="lang-en">Family Sharing</span><span class="lang-fr">Partage familial</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Spotify Family (bis zu 6 Personen für 15,99 €) statt 6 Einzel-Abos (59,94 €). Auch Netflix, Apple, YouTube und viele andere bieten Familien-Tarife an. <strong>Spart bis zu 70%!</strong></span><span class="lang-en">Spotify Family (up to 6 people for 15.99 euros) instead of 6 individual subscriptions (59.94 euros). Netflix, Apple, YouTube and many others also offer family plans. <strong>Save up to 70%!</strong></span><span class="lang-fr">Spotify Family (jusqu'à 6 personnes pour 15,99 €) au lieu de 6 abonnements individuels (59,94 €). Netflix, Apple, YouTube et bien d'autres proposent aussi des tarifs familiaux. <strong>Économise jusqu'à 70 % !</strong></span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🎓</div>
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Studenten-Rabatte</span><span class="lang-en">Student Discounts</span><span class="lang-fr">Réductions étudiantes</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Spotify, Apple Music, Amazon Prime und viele andere bieten <strong>50% Rabatt</strong> für Schüler und Studenten. Immer nachfragen! Auch GitHub, JetBrains und Adobe haben Bildungstarife.</span><span class="lang-en">Spotify, Apple Music, Amazon Prime and many others offer <strong>50% discounts</strong> for students. Always ask! GitHub, JetBrains and Adobe also have education plans.</span><span class="lang-fr">Spotify, Apple Music, Amazon Prime et bien d'autres offrent <strong>50 % de réduction</strong> pour les étudiants. Demande toujours ! GitHub, JetBrains et Adobe ont aussi des tarifs éducation.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">⏰</div>
+                        <h4 class="font-bold text-pink-400 mb-2"><span class="lang-de">Probeabo-Falle</span><span class="lang-en">Free Trial Trap</span><span class="lang-fr">Piège de l'essai gratuit</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">"30 Tage kostenlos testen!" - und dann wird automatisch abgebucht. <strong>Setze SOFORT einen Kalendereintrag</strong> zum Kündigen, wenn du ein Probeabo startest. Besser: Kündige direkt nach der Anmeldung - du kannst trotzdem bis zum Ende testen.</span><span class="lang-en">"30 days free trial!" - and then you're automatically charged. <strong>Set a calendar reminder IMMEDIATELY</strong> to cancel when you start a trial. Better yet: cancel right after signing up - you can still use it until the end.</span><span class="lang-fr">« 30 jours d'essai gratuit ! » - puis tu es automatiquement débité. <strong>Mets IMMÉDIATEMENT un rappel</strong> pour résilier quand tu commences un essai. Mieux encore : résilie juste après l'inscription - tu peux quand même l'utiliser jusqu'à la fin.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">💰</div>
+                        <h4 class="font-bold text-green-400 mb-2"><span class="lang-de">Digitales Budget</span><span class="lang-en">Digital Budget</span><span class="lang-fr">Budget numérique</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Setze dir ein festes <strong>monatliches Limit für digitale Ausgaben</strong> (z.B. 15-25 € für Abos + 10 € für In-App-Käufe). Nutze Prepaid-Guthaben statt Kreditkarte für App-Stores - wenn das Guthaben leer ist, ist Schluss.</span><span class="lang-en">Set a fixed <strong>monthly limit for digital spending</strong> (e.g., 15-25 euros for subscriptions + 10 euros for in-app purchases). Use prepaid credit instead of credit cards for app stores - when the credit runs out, you stop.</span><span class="lang-fr">Fixe-toi une <strong>limite mensuelle pour les dépenses numériques</strong> (p. ex. 15-25 € pour les abonnements + 10 € pour les achats in-app). Utilise du crédit prépayé au lieu d'une carte bancaire pour les app stores - quand le crédit est épuisé, c'est fini.</span></p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Dark Patterns - Tricks der Anbieter:</strong> Viele Dienste machen das Kündigen absichtlich schwer. Der "Abonnieren"-Button ist groß und bunt, der "Kündigen"-Link klein und versteckt. Manche Anbieter erfordern einen Anruf oder schicken dich durch 5 Seiten mit "Bist du sicher?"-Fragen. Das nennt man <strong>Dark Patterns</strong>. Lass dich nicht entmutigen - du hast das Recht zu kündigen!</span><span class="lang-en"><strong>⚠️ Dark Patterns - Provider Tricks:</strong> Many services intentionally make cancelling difficult. The "Subscribe" button is big and colorful, the "Cancel" link is small and hidden. Some providers require a phone call or send you through 5 pages of "Are you sure?" questions. These are called <strong>dark patterns</strong>. Don't be discouraged - you have the right to cancel!</span><span class="lang-fr"><strong>⚠️ Dark Patterns - Les ruses des fournisseurs :</strong> Beaucoup de services rendent volontairement la résiliation difficile. Le bouton « S'abonner » est grand et coloré, le lien « Résilier » est petit et caché. Certains fournisseurs exigent un appel téléphonique ou t'envoient à travers 5 pages de questions « Es-tu sûr ? ». Ce sont des <strong>dark patterns</strong>. Ne te laisse pas décourager - tu as le droit de résilier !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Die 24-Stunden-Regel:</strong> Bevor du einen In-App-Kauf machst oder ein neues Abo abschließt: <strong>Warte 24 Stunden.</strong> Wenn du es am nächsten Tag immer noch willst, dann kaufe es. Meistens wirst du feststellen, dass der Kaufimpuls verschwunden ist. Luisa spart mit dieser Regel über 200 € pro Jahr!</span><span class="lang-en"><strong>✅ The 24-Hour Rule:</strong> Before making an in-app purchase or signing up for a new subscription: <strong>Wait 24 hours.</strong> If you still want it the next day, buy it. Most of the time you'll find the impulse has passed. Luisa saves over 200 euros per year with this rule!</span><span class="lang-fr"><strong>✅ La règle des 24 heures :</strong> Avant de faire un achat in-app ou de souscrire un nouvel abonnement : <strong>attends 24 heures.</strong> Si tu le veux toujours le lendemain, achète-le. La plupart du temps, tu constateras que l'envie d'acheter a disparu. Luisa économise plus de 200 € par an avec cette règle !</span></p>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Zusammenfassung</span><span class="lang-en">📋 Summary</span><span class="lang-fr">📋 Résumé</span></h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-violet-400 mb-2"><span class="lang-de">Wichtige Begriffe</span><span class="lang-en">Key Terms</span><span class="lang-fr">Termes importants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Abo-Falle:</strong> Vergessene oder unnötige Abos, die Geld kosten</span><span class="lang-en"><strong>Subscription trap:</strong> Forgotten or unnecessary subscriptions that cost money</span><span class="lang-fr"><strong>Piège d'abonnement :</strong> Abonnements oubliés ou inutiles qui coûtent de l'argent</span></li>
+                            <li><span class="lang-de"><strong>Mikrotransaktion:</strong> Kleine Käufe im Spiel oder in Apps</span><span class="lang-en"><strong>Microtransaction:</strong> Small purchases in games or apps</span><span class="lang-fr"><strong>Microtransaction :</strong> Petits achats dans les jeux ou les applis</span></li>
+                            <li><span class="lang-de"><strong>FOMO:</strong> Fear of Missing Out - Angst, etwas zu verpassen</span><span class="lang-en"><strong>FOMO:</strong> Fear of Missing Out - fear of missing something</span><span class="lang-fr"><strong>FOMO :</strong> Fear of Missing Out - peur de rater quelque chose</span></li>
+                            <li><span class="lang-de"><strong>Dark Patterns:</strong> Design-Tricks, die dich zum Kauf verleiten</span><span class="lang-en"><strong>Dark Patterns:</strong> Design tricks that lure you into buying</span><span class="lang-fr"><strong>Dark Patterns :</strong> Astuces de design qui t'incitent à acheter</span></li>
+                            <li><span class="lang-de"><strong>Lootbox:</strong> Zufallspaket in Spielen (ähnlich Glücksspiel)</span><span class="lang-en"><strong>Loot box:</strong> Random pack in games (similar to gambling)</span><span class="lang-fr"><strong>Loot box :</strong> Pack aléatoire dans les jeux (similaire au jeu de hasard)</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-cyan-400 mb-2"><span class="lang-de">Das Wichtigste</span><span class="lang-en">Key Takeaways</span><span class="lang-fr">L'essentiel</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Rechne Abo-Kosten immer auf das Jahr hoch</span><span class="lang-en">Always calculate subscription costs annually</span><span class="lang-fr">Calcule toujours les coûts d'abonnement sur l'année</span></li>
+                            <li><span class="lang-de">"Kostenlose" Spiele verdienen Milliarden durch Mikrotransaktionen</span><span class="lang-en">"Free" games earn billions through microtransactions</span><span class="lang-fr">Les jeux « gratuits » gagnent des milliards grâce aux microtransactions</span></li>
+                            <li><span class="lang-de">Mache alle 3 Monate einen Abo-Check</span><span class="lang-en">Do a subscription audit every 3 months</span><span class="lang-fr">Fais un audit d'abonnements tous les 3 mois</span></li>
+                            <li><span class="lang-de">Nutze Familien-Tarife, Studenten-Rabatte und kostenlose Alternativen</span><span class="lang-en">Use family plans, student discounts, and free alternatives</span><span class="lang-fr">Utilise les tarifs familiaux, les réductions étudiantes et les alternatives gratuites</span></li>
+                            <li><span class="lang-de">Die 24-Stunden-Regel schützt vor Impulskäufen</span><span class="lang-en">The 24-hour rule protects against impulse purchases</span><span class="lang-fr">La règle des 24 heures protège contre les achats impulsifs</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center"><span class="lang-de">📝 Kapitel-Test</span><span class="lang-en">📝 Chapter Test</span><span class="lang-fr">📝 Test du chapitre</span></h2>
+                <p class="text-gray-400 text-center mb-8"><span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span><span class="lang-en">Test your knowledge! First choose your name and then answer all questions.</span><span class="lang-fr">Teste tes connaissances ! Choisis d'abord ton nom puis réponds à toutes les questions.</span></p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter10.html"><span class="lang-de">← Kapitel 10</span><span class="lang-en">← Chapter 10</span><span class="lang-fr">← Chapitre 10</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span><span class="lang-fr">Aperçu</span></a>
+                <a href="chapter12.html"><span class="lang-de">Kapitel 12 →</span><span class="lang-en">Chapter 12 →</span><span class="lang-fr">Chapitre 12 →</span></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        TestSystem.initTest(11, [
+            {
+                question: "Luisa hat 5 Abos für je 9,99 €/Monat. Wie viel zahlt sie pro Jahr?",
+                question_en: "Luisa has 5 subscriptions at 9.99 euros/month each. How much does she pay per year?",
+                question_fr: "Luisa a 5 abonnements à 9,99 €/mois chacun. Combien paie-t-elle par an ?",
+                options: ["49,95 €", "99,90 €", "399,60 €", "599,40 €"],
+                options_en: ["49.95 euros", "99.90 euros", "399.60 euros", "599.40 euros"],
+                options_fr: ["49,95 €", "99,90 €", "399,60 €", "599,40 €"],
+                correct: 3,
+                explanation: "5 x 9,99 € = 49,95 € pro Monat. 49,95 € x 12 Monate = 599,40 € pro Jahr.",
+                explanation_en: "5 x 9.99 euros = 49.95 euros per month. 49.95 euros x 12 months = 599.40 euros per year.",
+                explanation_fr: "5 x 9,99 € = 49,95 € par mois. 49,95 € x 12 mois = 599,40 € par an."
+            },
+            {
+                question: "Was bedeutet FOMO im Zusammenhang mit Spielen?",
+                question_en: "What does FOMO mean in the context of games?",
+                question_fr: "Que signifie FOMO dans le contexte des jeux ?",
+                options: ["Free Online Multiplayer Option", "Fear of Missing Out - Angst, etwas zu verpassen", "Fast Online Money Order", "Fun Over Money Opportunities"],
+                options_en: ["Free Online Multiplayer Option", "Fear of Missing Out - fear of missing something", "Fast Online Money Order", "Fun Over Money Opportunities"],
+                options_fr: ["Free Online Multiplayer Option", "Fear of Missing Out - peur de rater quelque chose", "Fast Online Money Order", "Fun Over Money Opportunities"],
+                correct: 1,
+                explanation: "FOMO (Fear of Missing Out) ist eine Taktik, bei der zeitlich begrenzte Angebote dich unter Druck setzen, sofort zu kaufen.",
+                explanation_en: "FOMO (Fear of Missing Out) is a tactic where time-limited offers pressure you to buy immediately.",
+                explanation_fr: "FOMO (Fear of Missing Out) est une tactique où les offres limitées dans le temps te mettent la pression pour acheter immédiatement."
+            },
+            {
+                question: "Warum sind Lootboxen problematisch?",
+                question_en: "Why are loot boxes problematic?",
+                question_fr: "Pourquoi les loot boxes sont-elles problématiques ?",
+                options: ["Sie sind zu teuer", "Sie funktionieren wie Glücksspiel mit zufälligen Belohnungen", "Sie machen das Spiel langsamer", "Sie sind nur für Erwachsene"],
+                options_en: ["They are too expensive", "They work like gambling with random rewards", "They make the game slower", "They are only for adults"],
+                options_fr: ["Elles sont trop chères", "Elles fonctionnent comme un jeu de hasard avec des récompenses aléatoires", "Elles ralentissent le jeu", "Elles sont réservées aux adultes"],
+                correct: 1,
+                explanation: "Lootboxen sind problematisch, weil man echtes Geld für zufällige virtuelle Gegenstände ausgibt - ähnlich wie beim Glücksspiel. In einigen Ländern sind sie bereits verboten.",
+                explanation_en: "Loot boxes are problematic because you spend real money for random virtual items - similar to gambling. They are already banned in some countries.",
+                explanation_fr: "Les loot boxes sont problématiques car on dépense de l'argent réel pour des objets virtuels aléatoires - comme au jeu de hasard. Elles sont déjà interdites dans certains pays."
+            },
+            {
+                question: "Was ist die beste Strategie bei einem kostenlosen Probeabo?",
+                question_en: "What is the best strategy with a free trial subscription?",
+                question_fr: "Quelle est la meilleure stratégie avec un abonnement d'essai gratuit ?",
+                options: ["Einfach vergessen und weiterlaufen lassen", "Sofort nach der Anmeldung kündigen - man kann trotzdem bis zum Ende testen", "Nie kostenlose Probeabos nutzen", "Erst am letzten Tag kündigen"],
+                options_en: ["Just forget about it and let it run", "Cancel right after signing up - you can still use it until the end", "Never use free trials", "Cancel only on the last day"],
+                options_fr: ["L'oublier et le laisser courir", "Résilier juste après l'inscription - on peut quand même l'utiliser jusqu'à la fin", "Ne jamais utiliser d'essais gratuits", "Résilier seulement le dernier jour"],
+                correct: 1,
+                explanation: "Am besten sofort nach der Anmeldung kündigen. Bei den meisten Diensten kannst du trotzdem bis zum Ende der Probezeit nutzen, vergisst aber nicht die Kündigung.",
+                explanation_en: "Best to cancel right after signing up. With most services you can still use it until the end of the trial, but you won't forget to cancel.",
+                explanation_fr: "Le mieux est de résilier juste après l'inscription. Avec la plupart des services, tu peux quand même l'utiliser jusqu'à la fin de la période d'essai, mais tu n'oublieras pas de résilier."
+            },
+            {
+                question: "Wie viel kann man mit einem Spotify Family-Abo (6 Personen) im Vergleich zu 6 Einzel-Abos sparen?",
+                question_en: "How much can you save with a Spotify Family plan (6 people) compared to 6 individual subscriptions?",
+                question_fr: "Combien peut-on économiser avec un abonnement Spotify Family (6 personnes) par rapport à 6 abonnements individuels ?",
+                options: ["Etwa 10%", "Etwa 30%", "Etwa 50%", "Etwa 70%"],
+                options_en: ["About 10%", "About 30%", "About 50%", "About 70%"],
+                options_fr: ["Environ 10 %", "Environ 30 %", "Environ 50 %", "Environ 70 %"],
+                correct: 3,
+                explanation: "6 Einzel-Abos: 6 x 9,99 € = 59,94 €. Family-Abo: 15,99 €. Ersparnis: ca. 73% - also rund 70%!",
+                explanation_en: "6 individual subscriptions: 6 x 9.99 euros = 59.94 euros. Family plan: 15.99 euros. Savings: about 73% - around 70%!",
+                explanation_fr: "6 abonnements individuels : 6 x 9,99 € = 59,94 €. Abonnement Family : 15,99 €. Économie : environ 73 % - soit environ 70 % !"
+            },
+            {
+                question: "Was sind 'Dark Patterns'?",
+                question_en: "What are 'dark patterns'?",
+                question_fr: "Que sont les « dark patterns » ?",
+                options: ["Dunkle Farbschemata in Apps", "Design-Tricks, die dich zum Kauf oder gegen die Kündigung manipulieren", "Geheime Spielmuster in Games", "Verschlüsselte Zahlungsmethoden"],
+                options_en: ["Dark color schemes in apps", "Design tricks that manipulate you into buying or against cancelling", "Secret game patterns", "Encrypted payment methods"],
+                options_fr: ["Des schémas de couleurs sombres dans les applis", "Des astuces de design qui te manipulent pour acheter ou t'empêcher de résilier", "Des motifs secrets dans les jeux", "Des méthodes de paiement cryptées"],
+                correct: 1,
+                explanation: "Dark Patterns sind manipulative Design-Elemente, die es schwer machen zu kündigen oder die dich zum Kauf drängen - z.B. versteckte Kündigungs-Links oder große, bunte Kauf-Buttons.",
+                explanation_en: "Dark patterns are manipulative design elements that make it hard to cancel or push you to buy - e.g., hidden cancel links or large, colorful buy buttons.",
+                explanation_fr: "Les dark patterns sont des éléments de design manipulateurs qui rendent la résiliation difficile ou te poussent à acheter - p. ex. des liens de résiliation cachés ou de grands boutons d'achat colorés."
+            },
+            {
+                question: "Marlene gibt wöchentlich 2,99 € für In-App-Käufe aus. Was kostet das pro Jahr?",
+                question_en: "Marlene spends 2.99 euros weekly on in-app purchases. What does it cost per year?",
+                question_fr: "Marlene dépense 2,99 € par semaine en achats in-app. Combien cela coûte-t-il par an ?",
+                options: ["35,88 €", "77,74 €", "119,60 €", "155,48 €"],
+                options_en: ["35.88 euros", "77.74 euros", "119.60 euros", "155.48 euros"],
+                options_fr: ["35,88 €", "77,74 €", "119,60 €", "155,48 €"],
+                correct: 3,
+                explanation: "2,99 € x 52 Wochen = 155,48 € pro Jahr. Kleine wöchentliche Beträge summieren sich schnell!",
+                explanation_en: "2.99 euros x 52 weeks = 155.48 euros per year. Small weekly amounts add up quickly!",
+                explanation_fr: "2,99 € x 52 semaines = 155,48 € par an. Les petits montants hebdomadaires s'additionnent vite !"
+            },
+            {
+                question: "Was ist der erste Schritt bei einem Abo-Check?",
+                question_en: "What is the first step in a subscription audit?",
+                question_fr: "Quelle est la première étape d'un audit d'abonnements ?",
+                options: ["Alle Abos sofort kündigen", "Kontoauszüge prüfen und alle wiederkehrenden Zahlungen auflisten", "Neue, günstigere Abos abschließen", "Die App-Store-Bewertungen lesen"],
+                options_en: ["Cancel all subscriptions immediately", "Check bank statements and list all recurring payments", "Sign up for new, cheaper subscriptions", "Read app store reviews"],
+                options_fr: ["Résilier immédiatement tous les abonnements", "Vérifier les relevés bancaires et lister tous les paiements récurrents", "Souscrire de nouveaux abonnements moins chers", "Lire les avis de l'app store"],
+                correct: 1,
+                explanation: "Der erste Schritt ist immer, einen Überblick zu bekommen: Welche Abos habe ich überhaupt? Dafür prüft man Kontoauszüge und die Abo-Verwaltung im App Store.",
+                explanation_en: "The first step is always to get an overview: What subscriptions do I even have? For this, check bank statements and the subscription management in the app store.",
+                explanation_fr: "La première étape est toujours d'avoir une vue d'ensemble : quels abonnements ai-je ? Pour cela, vérifie tes relevés bancaires et la gestion des abonnements dans l'app store."
+            },
+            {
+                question: "Warum verwenden Spiele virtuelle Währungen (V-Bucks, Gems, etc.)?",
+                question_en: "Why do games use virtual currencies (V-Bucks, Gems, etc.)?",
+                question_fr: "Pourquoi les jeux utilisent-ils des monnaies virtuelles (V-Bucks, Gems, etc.) ?",
+                options: ["Weil echtes Geld im Spiel nicht funktioniert", "Damit Spieler das Gefühl für echtes Geld verlieren und mehr ausgeben", "Weil es gesetzlich vorgeschrieben ist", "Weil es den Spielern besser gefällt"],
+                options_en: ["Because real money doesn't work in games", "So players lose the feeling for real money and spend more", "Because it's required by law", "Because players prefer it"],
+                options_fr: ["Parce que l'argent réel ne fonctionne pas dans les jeux", "Pour que les joueurs perdent la notion de l'argent réel et dépensent plus", "Parce que c'est exigé par la loi", "Parce que les joueurs préfèrent"],
+                correct: 1,
+                explanation: "Virtuelle Währungen verschleiern den echten Geldwert. Wenn du '1000 Gems' kaufst, denkst du nicht daran, dass das 9,99 € sind. Das ist ein bewusster psychologischer Trick.",
+                explanation_en: "Virtual currencies obscure the real monetary value. When you buy '1000 Gems', you don't think about the fact that it's 9.99 euros. This is a deliberate psychological trick.",
+                explanation_fr: "Les monnaies virtuelles masquent la vraie valeur monétaire. Quand tu achètes « 1000 Gems », tu ne penses pas au fait que ça coûte 9,99 €. C'est un tour psychologique délibéré."
+            },
+            {
+                question: "Welche der folgenden Optionen ist die sparsamste für Filme, E-Books und Zeitschriften?",
+                question_en: "Which of the following is the most economical option for movies, e-books, and magazines?",
+                question_fr: "Laquelle des options suivantes est la plus économique pour les films, les e-books et les magazines ?",
+                options: ["Netflix + Kindle Unlimited + ein Zeitschriften-Abo", "Alles einzeln kaufen", "Ein Bibliotheksausweis mit Onleihe und Filmfriend", "Drei verschiedene Streaming-Dienste"],
+                options_en: ["Netflix + Kindle Unlimited + a magazine subscription", "Buy everything individually", "A library card with Onleihe and Filmfriend", "Three different streaming services"],
+                options_fr: ["Netflix + Kindle Unlimited + un abonnement magazine", "Tout acheter individuellement", "Une carte de bibliothèque avec Onleihe et Filmfriend", "Trois services de streaming différents"],
+                correct: 2,
+                explanation: "Ein Bibliotheksausweis kostet nur 10-20 € pro Jahr und bietet Zugang zu E-Books (Onleihe), Filmen (Filmfriend), Zeitschriften (PressReader) und vielem mehr!",
+                explanation_en: "A library card costs only 10-20 euros per year and provides access to e-books (Onleihe), movies (Filmfriend), magazines (PressReader), and much more!",
+                explanation_fr: "Une carte de bibliothèque ne coûte que 10-20 € par an et donne accès aux e-books (Onleihe), films (Filmfriend), magazines (PressReader) et bien plus !"
+            }
+        ]);
+    </script>
+</body>
+</html>

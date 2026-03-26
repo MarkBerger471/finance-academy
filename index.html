@@ -40,7 +40,8 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="index.html" class="nav-link active">Home</a>
-                    <a href="chapters/chapter1.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="tools/index.html" class="nav-link">Tools</a>
                     <a href="tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
                     <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
                 </div>
@@ -56,7 +57,8 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
             <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
-            <a href="chapters/chapter1.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="tools/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Tools</a>
             <a href="tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
         </div>
     </nav>
@@ -87,8 +89,8 @@
                 <span class="lang-en">Learn everything about money, saving, investing and financial independence - designed for young people.</span>
                 <span class="lang-fr">Apprends tout sur l'argent, l'épargne, l'investissement et l'indépendance financière - conçu pour les jeunes.</span>
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="chapters/chapter1.html" class="glass-button-primary px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center space-x-2 group">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" id="hero-buttons">
+                <a href="chapters/chapter1.html" id="hero-cta" class="glass-button-primary px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center space-x-2 group">
                     <span class="lang-de">Jetzt starten</span>
                     <span class="lang-en">Start now</span>
                     <span class="lang-fr">Commencer</span>
@@ -96,7 +98,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>
-                <a href="#chapters" class="glass-button px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center">
+                <a href="chapters/index.html" class="glass-button px-8 py-4 rounded-2xl text-lg font-semibold inline-flex items-center justify-center">
                     <span class="lang-de">Alle Kapitel ansehen</span>
                     <span class="lang-en">View all chapters</span>
                     <span class="lang-fr">Voir tous les chapitres</span>
@@ -109,21 +111,33 @@
     <section class="py-16 px-4 relative z-10">
         <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="glass-card rounded-2xl p-6 text-center animate-on-scroll">
-                <div class="text-3xl font-bold text-cyan-400">10</div>
+                <div class="text-3xl font-bold text-cyan-400">16</div>
                 <div class="text-gray-400 text-sm mt-1"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></div>
             </div>
             <div class="glass-card rounded-2xl p-6 text-center animate-on-scroll">
-                <div class="text-3xl font-bold text-purple-400">15h</div>
+                <div class="text-3xl font-bold text-purple-400">24h</div>
                 <div class="text-gray-400 text-sm mt-1"><span class="lang-de">Lernzeit</span><span class="lang-en">Learning time</span><span class="lang-fr">Temps d'étude</span></div>
             </div>
             <div class="glass-card rounded-2xl p-6 text-center animate-on-scroll">
-                <div class="text-3xl font-bold text-pink-400">100</div>
+                <div class="text-3xl font-bold text-pink-400">160</div>
                 <div class="text-gray-400 text-sm mt-1"><span class="lang-de">Testfragen</span><span class="lang-en">Test questions</span><span class="lang-fr">Questions de test</span></div>
             </div>
             <div class="glass-card rounded-2xl p-6 text-center animate-on-scroll">
                 <div class="text-3xl font-bold text-green-400">3</div>
                 <div class="text-gray-400 text-sm mt-1"><span class="lang-de">Teilnehmer</span><span class="lang-en">Participants</span><span class="lang-fr">Participants</span></div>
             </div>
+        </div>
+    </section>
+
+    <!-- Per-Person Progress -->
+    <section class="pb-8 px-4 relative z-10" id="person-progress-section" style="display:none">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center animate-on-scroll">
+                <span class="lang-de">📊 Euer Fortschritt</span>
+                <span class="lang-en">📊 Your Progress</span>
+                <span class="lang-fr">📊 Votre progression</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="home-progress-cards"></div>
         </div>
     </section>
 
@@ -139,9 +153,9 @@
                     </span>
                 </h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    <span class="lang-de">10 praxisnahe Kapitel, die dich Schritt für Schritt zum Finanzprofi machen.</span>
-                    <span class="lang-en">10 hands-on chapters that turn you into a financial expert step by step.</span>
-                    <span class="lang-fr">10 chapitres pratiques qui te transforment en expert financier étape par étape.</span>
+                    <span class="lang-de">16 praxisnahe Kapitel, die dich Schritt für Schritt zum Finanzprofi machen.</span>
+                    <span class="lang-en">16 hands-on chapters that turn you into a financial expert step by step.</span>
+                    <span class="lang-fr">16 chapitres pratiques qui te transforment en expert financier étape par étape.</span>
                 </p>
             </div>
 
@@ -315,6 +329,108 @@
                         </span>
                     </div>
                 </a>
+
+                <!-- Chapter 11 -->
+                <a href="chapters/chapter11.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500/30 to-purple-500/30 flex items-center justify-center text-2xl">📱</div>
+                        <span class="text-xs text-violet-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 11</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-violet-400 transition-colors"><span class="lang-de">Abo-Fallen & digitale Ausgaben</span><span class="lang-en">Subscription Traps & Digital Spending</span><span class="lang-fr">Pièges d'abonnement & dépenses numériques</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Spotify, Netflix, Gaming - wie digitale Abos dein Budget belasten.</span><span class="lang-en">Spotify, Netflix, Gaming - how digital subscriptions affect your budget.</span><span class="lang-fr">Spotify, Netflix, Gaming - comment les abonnements numériques pèsent sur ton budget.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-violet-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Chapter 12 -->
+                <a href="chapters/chapter12.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center text-2xl">💼</div>
+                        <span class="text-xs text-emerald-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 12</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors"><span class="lang-de">Erstes eigenes Einkommen</span><span class="lang-en">Your First Income</span><span class="lang-fr">Ton premier revenu</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Minijob, Ferienjob, Taschengeld - dein Weg zum ersten Geld.</span><span class="lang-en">Part-time jobs, summer jobs, allowance - your path to first earnings.</span><span class="lang-fr">Mini-job, job d'été, argent de poche - ton chemin vers tes premiers revenus.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-emerald-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Chapter 13 -->
+                <a href="chapters/chapter13.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center text-2xl">₿</div>
+                        <span class="text-xs text-amber-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 13</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors"><span class="lang-de">Krypto & digitale Assets</span><span class="lang-en">Crypto & Digital Assets</span><span class="lang-fr">Crypto & actifs numériques</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Blockchain, Bitcoin & Co. - kritisch verstehen statt blind folgen.</span><span class="lang-en">Blockchain, Bitcoin & Co. - understand critically instead of following blindly.</span><span class="lang-fr">Blockchain, Bitcoin & Co. - comprendre de façon critique plutôt que suivre aveuglément.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-amber-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Chapter 14 -->
+                <a href="chapters/chapter14.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500/30 to-blue-500/30 flex items-center justify-center text-2xl">🛡️</div>
+                        <span class="text-xs text-sky-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 14</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-sky-400 transition-colors"><span class="lang-de">Versicherungen Basics</span><span class="lang-en">Insurance Basics</span><span class="lang-fr">Les bases de l'assurance</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Haftpflicht, Krankenversicherung und was du ab 18 wissen musst.</span><span class="lang-en">Liability, health insurance and what you need to know from age 18.</span><span class="lang-fr">Responsabilité civile, assurance maladie et ce qu'il faut savoir à partir de 18 ans.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-sky-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Chapter 15 -->
+                <a href="chapters/chapter15.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500/30 to-pink-500/30 flex items-center justify-center text-2xl">🏠</div>
+                        <span class="text-xs text-rose-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 15</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-rose-400 transition-colors"><span class="lang-de">Erste eigene Wohnung</span><span class="lang-en">Your First Apartment</span><span class="lang-fr">Ton premier appartement</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Kaution, Nebenkosten, Mietvertrag - bereit für dein erstes Zuhause.</span><span class="lang-en">Deposit, utilities, rental contract - ready for your first home.</span><span class="lang-fr">Caution, charges, bail - prêt(e) pour ton premier chez-toi.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-rose-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Chapter 16 -->
+                <a href="chapters/chapter16.html" class="chapter-card glass-card rounded-3xl p-6 group animate-on-scroll block">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/30 to-orange-500/30 flex items-center justify-center text-2xl">🚨</div>
+                        <span class="text-xs text-red-400 glass-badge px-3 py-1 rounded-full"><span class="lang-de">Kapitel</span><span class="lang-en">Chapter</span><span class="lang-fr">Chapitre</span> 16</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-red-400 transition-colors"><span class="lang-de">Finanz-Scams & Social Media</span><span class="lang-en">Financial Scams & Social Media</span><span class="lang-fr">Arnaques financières & réseaux sociaux</span></h3>
+                    <p class="text-gray-400 text-sm mb-4"><span class="lang-de">Fake-Influencer, Pyramidensysteme und wie du dich schützt.</span><span class="lang-en">Fake influencers, pyramid schemes and how to protect yourself.</span><span class="lang-fr">Faux influenceurs, systèmes pyramidaux et comment te protéger.</span></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                        <span class="group-hover:text-red-400 transition-colors flex items-center space-x-1">
+                            <span><span class="lang-de">Starten</span><span class="lang-en">Start</span><span class="lang-fr">Commencer</span></span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -332,5 +448,91 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/gamification.js"></script>
+    <script>
+        // Home progress cards
+        (function() {
+            const scores = TestSystem.getScores();
+            const kids = ['Luisa', 'Marlene', 'Carla'];
+            const kidColors = ['cyan', 'purple', 'pink'];
+            const totalChapters = 16;
+            const t = (de, en, fr) => { const l = Lang.get(); return l === 'fr' && fr ? fr : l === 'en' ? en : de; };
+
+            let hasAnyProgress = false;
+            kids.forEach((kid, ki) => {
+                for (let ch = 1; ch <= totalChapters; ch++) {
+                    if (scores[`ch${ch}_kid${ki}`]) { hasAnyProgress = true; break; }
+                }
+            });
+
+            if (hasAnyProgress) {
+                document.getElementById('person-progress-section').style.display = '';
+                const container = document.getElementById('home-progress-cards');
+                container.innerHTML = kids.map((kid, ki) => {
+                    let completed = 0, totalScore = 0, totalQ = 0;
+                    for (let ch = 1; ch <= totalChapters; ch++) {
+                        const s = scores[`ch${ch}_kid${ki}`];
+                        if (s) { completed++; totalScore += s.score; totalQ += s.total; }
+                    }
+                    const avg = totalQ > 0 ? Math.round((totalScore / totalQ) * 100) : 0;
+                    const pct = Math.round((completed / totalChapters) * 100);
+                    const badges = Gamification.renderBadges(ki, true);
+                    const streak = Gamification.renderStreak(ki);
+                    return `
+                        <div class="glass-card rounded-2xl p-5 animate-on-scroll">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-${kidColors[ki]}-400">${kid}</h3>
+                                <span class="text-sm text-gray-400">${completed}/${totalChapters} ${t('Kapitel', 'chapters', 'chapitres')}</span>
+                            </div>
+                            <div class="progress-bar mb-2"><div class="progress-fill" style="width: ${pct}%"></div></div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm ${avg >= 80 ? 'text-green-400' : avg >= 60 ? 'text-yellow-400' : 'text-gray-400'}">${avg > 0 ? avg + '% ' + t('Schnitt', 'avg', 'moy.') : ''}</span>
+                                ${streak}
+                            </div>
+                            ${badges ? `<div class="flex gap-1 mt-2 flex-wrap">${badges}</div>` : ''}
+                        </div>
+                    `;
+                }).join('');
+            }
+        })();
+
+        // "Weiterlernen" — update hero CTA to continue where user left off
+        (function() {
+            const scores = TestSystem.getScores();
+            const totalChapters = 16;
+            // Find first incomplete chapter (where not all 3 kids have a score)
+            let nextChapter = null;
+            let hasAnyProgress = false;
+            for (let ch = 1; ch <= totalChapters; ch++) {
+                let allDone = true;
+                for (let ki = 0; ki < 3; ki++) {
+                    if (scores[`ch${ch}_kid${ki}`]) {
+                        hasAnyProgress = true;
+                    } else {
+                        allDone = false;
+                    }
+                }
+                if (!allDone && nextChapter === null) {
+                    nextChapter = ch;
+                }
+            }
+            if (hasAnyProgress && nextChapter) {
+                const cta = document.getElementById('hero-cta');
+                if (cta) {
+                    cta.href = `chapters/chapter${nextChapter}.html`;
+                    const t = (de, en, fr) => {
+                        const l = Lang.get();
+                        return l === 'fr' && fr ? fr : l === 'en' ? en : de;
+                    };
+                    cta.innerHTML = `
+                        <span>${t('Weiterlernen', 'Continue learning', 'Continuer')} — ${t('Kapitel', 'Chapter', 'Chapitre')} ${nextChapter}</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    `;
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

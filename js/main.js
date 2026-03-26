@@ -104,6 +104,7 @@ const TestSystem = {
     initTest(chapter, questions) {
         let currentKid = 0;
         let answered = {};
+        let difficulty = 'all'; // 'all', 'basis', 'advanced'
 
         const container = document.getElementById('test-container');
         if (!container) return;
@@ -129,15 +130,31 @@ const TestSystem = {
             return q;
         }
 
+        const hasAdvanced = questions.some(q => q.difficulty === 'advanced');
+
         function renderKidSelector() {
+            const difficultySelector = hasAdvanced ? `
+                <div class="flex gap-2 justify-center mb-6">
+                    <button class="difficulty-tab ${difficulty === 'all' ? 'active basis' : ''}" onclick="TestSystem._setDifficulty('all')">
+                        ${TestSystem.t('Alle Fragen', 'All Questions', 'Toutes les questions')}
+                    </button>
+                    <button class="difficulty-tab basis ${difficulty === 'basis' ? 'active' : ''}" onclick="TestSystem._setDifficulty('basis')">
+                        ${TestSystem.t('Basis', 'Basic', 'Base')}
+                    </button>
+                    <button class="difficulty-tab advanced ${difficulty === 'advanced' ? 'active' : ''}" onclick="TestSystem._setDifficulty('advanced')">
+                        ${TestSystem.t('Fortgeschritten', 'Advanced', 'Avancé')}
+                    </button>
+                </div>
+            ` : '';
             return `
-                <div class="flex flex-wrap gap-3 justify-center mb-8">
+                <div class="flex flex-wrap gap-3 justify-center mb-4">
                     ${TestSystem.KIDS.map((kid, i) => {
                         const existing = TestSystem.getScore(chapter, i);
                         const done = existing ? ` (${existing.percentage}%)` : '';
                         return `<button class="kid-tab ${i === currentKid ? 'active' : ''}" onclick="TestSystem._selectKid(${i})">${kid}${done}</button>`;
                     }).join('')}
                 </div>
+                ${difficultySelector}
             `;
         }
 
@@ -158,11 +175,16 @@ const TestSystem = {
             }
 
             answered = {};
-            return questions.map((q, qi) => {
+            const activeQuestions = difficulty === 'all' ? questions :
+                questions.filter(q => (q.difficulty || 'basis') === difficulty);
+            const displayQuestions = activeQuestions.length > 0 ? activeQuestions : questions;
+            return displayQuestions.map((q, displayIdx) => {
+                const qi = questions.indexOf(q);
                 const lq = getQ(q);
+                const diffBadge = q.difficulty === 'advanced' ? `<span class="text-xs text-purple-400 ml-2">[${TestSystem.t('Fortgeschritten', 'Advanced', 'Avancé')}]</span>` : '';
                 return `
                 <div class="question-card" id="q${qi}">
-                    <p class="font-semibold mb-3 text-lg">${qi + 1}. ${lq.question}</p>
+                    <p class="font-semibold mb-3 text-lg">${displayIdx + 1}. ${lq.question}${diffBadge}</p>
                     <div class="space-y-2">
                         ${lq.options.map((opt, oi) => `
                             <button class="answer-option" data-question="${qi}" data-option="${oi}" onclick="TestSystem._answer(${qi}, ${oi}, ${q.correct})">
@@ -177,7 +199,7 @@ const TestSystem = {
                     <button id="submit-test" class="glass-button-primary px-8 py-4 rounded-2xl text-lg font-semibold opacity-50 cursor-not-allowed" disabled onclick="TestSystem._submit(${chapter}, ${currentKid})">
                         ${TestSystem.t('Test abgeben', 'Submit test', 'Soumettre le test')}
                     </button>
-                    <p class="text-gray-500 text-sm mt-2" id="answer-count">0 ${TestSystem.t('von', 'of', 'sur')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}</p>
+                    <p class="text-gray-500 text-sm mt-2" id="answer-count">0 ${TestSystem.t('von', 'of', 'sur')} ${displayQuestions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}</p>
                 </div>
             `;
         }
@@ -194,6 +216,11 @@ const TestSystem = {
         TestSystem._selectKid = function(i) {
             currentKid = i;
             TestSystem._currentKid = i;
+            render();
+        };
+
+        TestSystem._setDifficulty = function(d) {
+            difficulty = d;
             render();
         };
 
@@ -226,12 +253,14 @@ const TestSystem = {
                 explanation.classList.remove('hidden');
             }
 
+            const visibleQs = document.querySelectorAll('.question-card');
+            const visibleCount = visibleQs.length;
             const count = Object.keys(answered).length;
             const countEl = document.getElementById('answer-count');
-            if (countEl) countEl.textContent = `${count} ${TestSystem.t('von', 'of', 'sur')} ${questions.length} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}`;
+            if (countEl) countEl.textContent = `${count} ${TestSystem.t('von', 'of', 'sur')} ${visibleCount} ${TestSystem.t('Fragen beantwortet', 'questions answered', 'questions répondues')}`;
 
             const submitBtn = document.getElementById('submit-test');
-            if (submitBtn && count === questions.length) {
+            if (submitBtn && count === visibleCount) {
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                 submitBtn.classList.add('animate-bounce');

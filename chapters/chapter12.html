@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 12: Erstes eigenes Einkommen - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">💼</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-emerald-400 mb-4"><span class="lang-de">Kapitel 12 von 16</span><span class="lang-en">Chapter 12 of 16</span><span class="lang-fr">Chapitre 12 sur 16</span></div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Erstes eigenes Einkommen</span><span class="lang-en">Your First Income</span><span class="lang-fr">Ton premier revenu</span></h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                    <span>|</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span><span class="lang-fr">📝 10 questions de test</span></span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">75% des Kurses</span><span class="lang-en">75% of the course</span><span class="lang-fr">75% du cours</span></p>
+            </div>
+
+            <!-- Section 1: Minijob & Taschengeld -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">💼 Minijob & Taschengeld</span><span class="lang-en">💼 Mini Jobs & Pocket Money</span><span class="lang-fr">💼 Mini-emplois & argent de poche</span></h3>
+                <p><span class="lang-de">Irgendwann kommt der Moment, in dem du dir dein eigenes Geld verdienen willst - oder vielleicht sogar musst. Ob Babysitting, Nachhilfe oder Ferienjob: Es gibt viele Möglichkeiten, als Jugendlicher erste Erfahrungen in der Arbeitswelt zu sammeln.</span><span class="lang-en">At some point, the moment comes when you want to earn your own money - or maybe even have to. Whether it's babysitting, tutoring, or a summer job: there are many ways for teenagers to gain their first work experience.</span><span class="lang-fr">Un jour arrive le moment où tu veux gagner ton propre argent - ou peut-être même où tu dois le faire. Que ce soit du babysitting, des cours particuliers ou un job d'été : il existe de nombreuses façons pour les ados d'acquérir une première expérience professionnelle.</span></p>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Typische Jobs für Jugendliche:</span><span class="lang-en">Typical jobs for teenagers:</span><span class="lang-fr">Jobs typiques pour les ados :</span></h4>
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">👶</div>
+                        <h4 class="font-bold text-emerald-400 mb-2"><span class="lang-de">Babysitting</span><span class="lang-en">Babysitting</span><span class="lang-fr">Babysitting</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Ab ca. 13 Jahren möglich. Typisch: 8-12 € pro Stunde. Ideal zum Einstieg!</span><span class="lang-en">Possible from about 13 years. Typical: 8-12 euros per hour. Ideal to get started!</span><span class="lang-fr">Possible dès environ 13 ans. Typique : 8-12 € de l'heure. Idéal pour commencer !</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">📚</div>
+                        <h4 class="font-bold text-cyan-400 mb-2"><span class="lang-de">Nachhilfe</span><span class="lang-en">Tutoring</span><span class="lang-fr">Cours particuliers</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Wenn du in einem Fach gut bist, kannst du jüngeren Schülern helfen. 10-15 € pro Stunde.</span><span class="lang-en">If you're good at a subject, you can help younger students. 10-15 euros per hour.</span><span class="lang-fr">Si tu es bon(ne) dans une matière, tu peux aider des élèves plus jeunes. 10-15 € de l'heure.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">☀️</div>
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Ferienjob</span><span class="lang-en">Summer Job</span><span class="lang-fr">Job d'été</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">In den Schulferien richtig arbeiten, z.B. im Supermarkt, Café oder Büro. Ab 15 Jahren erlaubt.</span><span class="lang-en">Work properly during school holidays, e.g. in a supermarket, café, or office. Allowed from age 15.</span><span class="lang-fr">Travailler pendant les vacances scolaires, p. ex. dans un supermarché, un café ou un bureau. Autorisé dès 15 ans.</span></p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Was ist ein Minijob?</strong> Ein Minijob (auch "geringfügige Beschäftigung") ist ein Job, bei dem du maximal <strong>520 € im Monat</strong> verdienst. Der große Vorteil: Du zahlst keine Einkommensteuer und keine Sozialversicherungsbeiträge (mit Ausnahme der Rentenversicherung, von der du dich befreien lassen kannst). Ein Minijob ist für viele Jugendliche der perfekte Einstieg ins Berufsleben.</span><span class="lang-en"><strong>💡 What is a Minijob?</strong> A Minijob (also called "marginal employment") is a job where you earn a maximum of <strong>520 euros per month</strong>. The big advantage: you don't pay income tax or social security contributions (except pension insurance, from which you can get an exemption). A Minijob is the perfect entry into working life for many teenagers.</span><span class="lang-fr"><strong>💡 Qu'est-ce qu'un Minijob ?</strong> Un Minijob (aussi appelé « emploi marginal ») est un emploi où tu gagnes au maximum <strong>520 € par mois</strong>. Le grand avantage : tu ne paies ni impôt sur le revenu ni cotisations sociales (sauf l'assurance retraite, dont tu peux te faire exempter). Un Minijob est l'entrée idéale dans la vie professionnelle pour beaucoup d'ados.</span></p>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Altersregeln beachten!</strong> Unter 13 Jahren: Arbeiten ist grundsätzlich verboten. Ab 13 Jahren: Leichte Arbeiten mit Zustimmung der Eltern (max. 2 Stunden/Tag). Ab 15 Jahren: Ferienjobs und Minijobs erlaubt (max. 8 Stunden/Tag, max. 40 Stunden/Woche in den Ferien). Ab 18 Jahren: Keine besonderen Einschränkungen mehr.</span><span class="lang-en"><strong>⚠️ Age rules to follow!</strong> Under 13: Working is generally prohibited. From 13: Light work with parental consent (max. 2 hours/day). From 15: Summer jobs and Minijobs allowed (max. 8 hours/day, max. 40 hours/week during holidays). From 18: No more special restrictions.</span><span class="lang-fr"><strong>⚠️ Règles d'âge à respecter !</strong> Moins de 13 ans : le travail est en principe interdit. Dès 13 ans : petits travaux avec accord des parents (max. 2 heures/jour). Dès 15 ans : jobs d'été et Minijobs autorisés (max. 8 heures/jour, max. 40 heures/semaine pendant les vacances). Dès 18 ans : plus de restrictions particulières.</span></p>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Carla (13) passt jeden Samstag auf die Kinder der Nachbarn auf und verdient 10 € pro Stunde für 2 Stunden. Das sind 80 € im Monat - ihr erstes eigenes Geld! Sie braucht dafür die Zustimmung ihrer Eltern, und es darf nicht mehr als 2 Stunden am Tag sein.</span><span class="lang-en"><strong>🎯 Example:</strong> Carla (13) babysits the neighbors' children every Saturday and earns 10 euros per hour for 2 hours. That's 80 euros per month - her first own money! She needs her parents' consent for this, and it must not be more than 2 hours per day.</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Carla (13) garde les enfants des voisins chaque samedi et gagne 10 € de l'heure pendant 2 heures. Cela fait 80 € par mois - son premier argent à elle ! Elle a besoin de l'accord de ses parents, et cela ne doit pas dépasser 2 heures par jour.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 2: Steuern & Sozialversicherung -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🏛️ Steuern & Sozialversicherung</span><span class="lang-en">🏛️ Taxes & Social Insurance</span><span class="lang-fr">🏛️ Impôts & assurance sociale</span></h3>
+                <p><span class="lang-de">Steuern klingen erstmal langweilig und kompliziert - aber sie betreffen dich früher als du denkst! Sobald du Geld verdienst, stellt sich die Frage: Muss ich etwas davon an den Staat abgeben?</span><span class="lang-en">Taxes might sound boring and complicated at first - but they affect you sooner than you think! As soon as you earn money, the question arises: Do I have to give some of it to the government?</span><span class="lang-fr">Les impôts, ça peut sembler ennuyeux et compliqué - mais ça te concerne plus tôt que tu ne le penses ! Dès que tu gagnes de l'argent, la question se pose : dois-tu en donner une partie à l'État ?</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Die gute Nachricht:</strong> Als Schüler mit einem Minijob (bis 520 €/Monat) zahlst du in der Regel <strong>keine Steuern</strong>. Dein Arbeitgeber zahlt eine pauschale Abgabe von 2%, die du als Arbeitnehmer nicht bemerkst. Außerdem gibt es den <strong>Grundfreibetrag</strong>: Bis zu 11.604 € pro Jahr (Stand 2024) bleibt dein Einkommen steuerfrei.</span><span class="lang-en"><strong>💡 The good news:</strong> As a student with a Minijob (up to 520 euros/month), you generally pay <strong>no taxes</strong>. Your employer pays a flat rate of 2%, which you don't notice as an employee. Additionally, there is the <strong>basic tax-free allowance</strong>: Up to 11,604 euros per year (as of 2024), your income remains tax-free.</span><span class="lang-fr"><strong>💡 La bonne nouvelle :</strong> En tant qu'élève avec un Minijob (jusqu'à 520 €/mois), tu ne paies en général <strong>aucun impôt</strong>. Ton employeur paie un forfait de 2 %, que tu ne remarques pas en tant qu'employé(e). De plus, il existe l'<strong>abattement de base</strong> : jusqu'à 11 604 € par an (en 2024), ton revenu reste exonéré d'impôts.</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Was passiert beim Ferienjob?</span><span class="lang-en">What happens with a summer job?</span><span class="lang-fr">Que se passe-t-il avec un job d'été ?</span></h4>
+                <p><span class="lang-de">Bei einem Ferienjob, der kein Minijob ist, zieht dein Arbeitgeber automatisch <strong>Lohnsteuer</strong> von deinem Gehalt ab. Aber keine Sorge: Wenn du im ganzen Jahr unter dem Grundfreibetrag bleibst, bekommst du das Geld über die <strong>Steuererklärung</strong> komplett zurück!</span><span class="lang-en">With a summer job that is not a Minijob, your employer automatically deducts <strong>income tax</strong> from your salary. But don't worry: if you stay below the basic allowance for the whole year, you get the money back completely through your <strong>tax return</strong>!</span><span class="lang-fr">Avec un job d'été qui n'est pas un Minijob, ton employeur déduit automatiquement l'<strong>impôt sur le revenu</strong> de ton salaire. Mais pas de panique : si tu restes en dessous de l'abattement de base sur toute l'année, tu récupères tout l'argent grâce à ta <strong>déclaration d'impôts</strong> !</span></p>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa (17) arbeitet in den Sommerferien 4 Wochen im Supermarkt und verdient 2.000 €. Ihr Arbeitgeber zieht Lohnsteuer ab, und sie bekommt nur 1.750 € ausgezahlt. Aber weil Luisa im ganzen Jahr weniger als 11.604 € verdient, macht sie eine Steuererklärung und bekommt die 250 € Steuer komplett zurück!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa (17) works at the supermarket for 4 weeks during summer holidays and earns 2,000 euros. Her employer deducts income tax, and she only receives 1,750 euros. But because Luisa earns less than 11,604 euros for the whole year, she files a tax return and gets the 250 euros tax back completely!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa (17) travaille au supermarché pendant 4 semaines de vacances d'été et gagne 2 000 €. Son employeur déduit l'impôt sur le revenu, et elle ne reçoit que 1 750 €. Mais comme Luisa gagne moins de 11 604 € sur toute l'année, elle fait une déclaration d'impôts et récupère les 250 € d'impôt intégralement !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Tipp:</strong> Mache IMMER eine Steuererklärung, wenn dir Lohnsteuer abgezogen wurde! Als Schüler oder Student bekommst du das Geld fast immer zurück. Dafür kannst du das kostenlose Programm "ELSTER" nutzen oder deine Eltern um Hilfe bitten.</span><span class="lang-en"><strong>✅ Tip:</strong> ALWAYS file a tax return if income tax was deducted! As a student, you almost always get the money back. You can use the free program "ELSTER" or ask your parents for help.</span><span class="lang-fr"><strong>✅ Conseil :</strong> Fais TOUJOURS une déclaration d'impôts si l'impôt sur le revenu a été déduit ! En tant qu'élève ou étudiant(e), tu récupères presque toujours l'argent. Tu peux utiliser le programme gratuit « ELSTER » ou demander de l'aide à tes parents.</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Sozialversicherung auf einen Blick:</span><span class="lang-en">Social insurance at a glance:</span><span class="lang-fr">L'assurance sociale en un coup d'oeil :</span></h4>
+                <ul>
+                    <li><span class="lang-de"><strong>Minijob:</strong> Keine Sozialversicherungsbeiträge für dich (nur Rentenversicherung, Befreiung möglich)</span><span class="lang-en"><strong>Minijob:</strong> No social security contributions for you (only pension insurance, exemption possible)</span><span class="lang-fr"><strong>Minijob :</strong> Pas de cotisations sociales pour toi (seulement assurance retraite, exemption possible)</span></li>
+                    <li><span class="lang-de"><strong>Ferienjob (kurzfristig):</strong> Wenn unter 3 Monaten oder 70 Arbeitstage im Jahr - keine Sozialversicherung!</span><span class="lang-en"><strong>Summer job (short-term):</strong> If under 3 months or 70 working days per year - no social insurance!</span><span class="lang-fr"><strong>Job d'été (court terme) :</strong> Si moins de 3 mois ou 70 jours de travail par an - pas d'assurance sociale !</span></li>
+                    <li><span class="lang-de"><strong>Reguläre Beschäftigung:</strong> Ca. 20% deines Bruttogehalts gehen an Sozialversicherung (Renten-, Kranken-, Pflege-, Arbeitslosenversicherung)</span><span class="lang-en"><strong>Regular employment:</strong> About 20% of your gross salary goes to social insurance (pension, health, care, unemployment insurance)</span><span class="lang-fr"><strong>Emploi régulier :</strong> Environ 20 % de ton salaire brut va aux assurances sociales (retraite, maladie, dépendance, chômage)</span></li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Taschengeld-Management -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">💰 Taschengeld-Management</span><span class="lang-en">💰 Pocket Money Management</span><span class="lang-fr">💰 Gestion de l'argent de poche</span></h3>
+                <p><span class="lang-de">Ob Taschengeld von den Eltern oder selbst verdientes Geld - der richtige Umgang damit will gelernt sein. Wie viel Taschengeld ist in deinem Alter normal? Und wie teilst du es am besten ein?</span><span class="lang-en">Whether it's pocket money from your parents or self-earned money - handling it properly needs to be learned. How much pocket money is normal for your age? And how do you best divide it up?</span><span class="lang-fr">Que ce soit de l'argent de poche de tes parents ou de l'argent gagné toi-même - bien le gérer, ça s'apprend. Combien d'argent de poche est normal à ton âge ? Et comment le répartir au mieux ?</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Taschengeld-Empfehlung</strong> (Jugendamt):<br>
+                    13 Jahre: 23-26 € / Monat<br>
+                    14 Jahre: 26-31 € / Monat<br>
+                    15 Jahre: 31-39 € / Monat<br>
+                    16 Jahre: 39-47 € / Monat<br>
+                    17 Jahre: 47-63 € / Monat<br>
+                    18+ Jahre: 63-80 € / Monat<br>
+                    Das sind nur Richtwerte - jede Familie entscheidet selbst!</span><span class="lang-en"><strong>💡 Pocket money recommendations</strong> (German Youth Office):<br>
+                    13 years: 23-26 euros / month<br>
+                    14 years: 26-31 euros / month<br>
+                    15 years: 31-39 euros / month<br>
+                    16 years: 39-47 euros / month<br>
+                    17 years: 47-63 euros / month<br>
+                    18+ years: 63-80 euros / month<br>
+                    These are only guidelines - every family decides for themselves!</span><span class="lang-fr"><strong>💡 Recommandations d'argent de poche</strong> (Office allemand de la jeunesse) :<br>
+                    13 ans : 23-26 € / mois<br>
+                    14 ans : 26-31 € / mois<br>
+                    15 ans : 31-39 € / mois<br>
+                    16 ans : 39-47 € / mois<br>
+                    17 ans : 47-63 € / mois<br>
+                    18+ ans : 63-80 € / mois<br>
+                    Ce ne sont que des valeurs indicatives - chaque famille décide elle-même !</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Die 50/30/20-Regel für Teens:</span><span class="lang-en">The 50/30/20 rule for teens:</span><span class="lang-fr">La règle 50/30/20 pour ados :</span></h4>
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🍕</div>
+                        <h4 class="font-bold text-emerald-400 mb-2"><span class="lang-de">50% Spaß</span><span class="lang-en">50% Fun</span><span class="lang-fr">50% Plaisir</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Kino, Essen gehen, Hobbys, Kleidung - alles, was dir Freude macht und was du frei ausgeben kannst.</span><span class="lang-en">Cinema, eating out, hobbies, clothes - everything that brings you joy and that you can spend freely.</span><span class="lang-fr">Cinéma, sorties resto, loisirs, vêtements - tout ce qui te fait plaisir et que tu peux dépenser librement.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🎯</div>
+                        <h4 class="font-bold text-cyan-400 mb-2"><span class="lang-de">30% Sparziel</span><span class="lang-en">30% Savings Goal</span><span class="lang-fr">30% Objectif d'épargne</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Für größere Anschaffungen sparen: neues Handy, Führerschein, Reise - ein konkretes Ziel motiviert!</span><span class="lang-en">Save for bigger purchases: new phone, driver's license, trip - a concrete goal motivates!</span><span class="lang-fr">Épargner pour de plus gros achats : nouveau téléphone, permis de conduire, voyage - un objectif concret motive !</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🏦</div>
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">20% Langfristig</span><span class="lang-en">20% Long-term</span><span class="lang-fr">20% Long terme</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Auf ein Sparkonto oder Depot für die Zukunft: Studium, erste Wohnung, Notgroschen.</span><span class="lang-en">Into a savings account or investment for the future: studies, first apartment, emergency fund.</span><span class="lang-fr">Sur un compte épargne ou un placement pour l'avenir : études, premier appartement, fonds d'urgence.</span></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Marlene (15) bekommt 35 € Taschengeld und verdient 120 € mit Nachhilfe dazu - insgesamt 155 € pro Monat. Mit der 50/30/20-Regel teilt sie auf:<br>
+                    50% = 77,50 € für Freizeit, Kino, Snacks<br>
+                    30% = 46,50 € für ihr Sparziel (neues Tablet)<br>
+                    20% = 31 € auf ihr Sparkonto für später</span><span class="lang-en"><strong>🎯 Example:</strong> Marlene (15) gets 35 euros pocket money and earns an additional 120 euros from tutoring - a total of 155 euros per month. With the 50/30/20 rule she divides:<br>
+                    50% = 77.50 euros for leisure, cinema, snacks<br>
+                    30% = 46.50 euros for her savings goal (new tablet)<br>
+                    20% = 31 euros into her savings account for later</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Marlene (15) reçoit 35 € d'argent de poche et gagne en plus 120 € en donnant des cours particuliers - soit 155 € par mois au total. Avec la règle 50/30/20, elle répartit :<br>
+                    50 % = 77,50 € pour les loisirs, cinéma, snacks<br>
+                    30 % = 46,50 € pour son objectif d'épargne (nouvelle tablette)<br>
+                    20 % = 31 € sur son compte épargne pour plus tard</span></p>
+                </div>
+
+                <div class="exercise-box">
+                    <p><span class="lang-de"><strong>📋 Aufgabe:</strong> Rechne aus: Wie viel Geld hast du im Monat insgesamt zur Verfügung (Taschengeld + eventuell verdientes Geld)? Teile es nach der 50/30/20-Regel auf. Was ist dein aktuelles Sparziel? Wie lange brauchst du mit 30% deines Geldes, um es zu erreichen?</span><span class="lang-en"><strong>📋 Task:</strong> Calculate: How much money do you have in total per month (pocket money + any earned money)? Divide it according to the 50/30/20 rule. What is your current savings goal? How long will it take with 30% of your money to reach it?</span><span class="lang-fr"><strong>📋 Exercice :</strong> Calcule : combien d'argent as-tu au total par mois (argent de poche + argent éventuellement gagné) ? Répartis-le selon la règle 50/30/20. Quel est ton objectif d'épargne actuel ? Combien de temps te faudra-t-il avec 30 % de ton argent pour l'atteindre ?</span></p>
+                </div>
+            </div>
+
+            <!-- Section 4: Bewerbung & Arbeitsrecht -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📝 Bewerbung & Arbeitsrecht</span><span class="lang-en">📝 Job Applications & Work Rights</span><span class="lang-fr">📝 Candidature & droit du travail</span></h3>
+                <p><span class="lang-de">Bevor du deinen ersten Job antrittst, solltest du deine Rechte kennen. Das <strong>Jugendarbeitsschutzgesetz (JArbSchG)</strong> schützt dich als jungen Arbeitnehmer.</span><span class="lang-en">Before you start your first job, you should know your rights. The <strong>Youth Employment Protection Act (JArbSchG)</strong> protects you as a young worker.</span><span class="lang-fr">Avant de commencer ton premier emploi, tu devrais connaître tes droits. La <strong>loi sur la protection du travail des jeunes (JArbSchG)</strong> te protège en tant que jeune travailleur/travailleuse.</span></p>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Deine wichtigsten Rechte als junger Arbeitnehmer:</span><span class="lang-en">Your most important rights as a young worker:</span><span class="lang-fr">Tes droits les plus importants en tant que jeune travailleur/travailleuse :</span></h4>
+                <ul>
+                    <li><span class="lang-de"><strong>Arbeitszeit:</strong> Unter 18 maximal 8 Stunden/Tag und 40 Stunden/Woche. Keine Arbeit zwischen 20 Uhr und 6 Uhr.</span><span class="lang-en"><strong>Working hours:</strong> Under 18, maximum 8 hours/day and 40 hours/week. No work between 8 PM and 6 AM.</span><span class="lang-fr"><strong>Temps de travail :</strong> Moins de 18 ans, maximum 8 heures/jour et 40 heures/semaine. Pas de travail entre 20h et 6h.</span></li>
+                    <li><span class="lang-de"><strong>Pausen:</strong> Nach 4,5 Stunden mindestens 30 Minuten Pause, nach 6 Stunden mindestens 60 Minuten.</span><span class="lang-en"><strong>Breaks:</strong> After 4.5 hours at least 30 minutes break, after 6 hours at least 60 minutes.</span><span class="lang-fr"><strong>Pauses :</strong> Après 4,5 heures, au moins 30 minutes de pause, après 6 heures, au moins 60 minutes.</span></li>
+                    <li><span class="lang-de"><strong>Wochenende:</strong> Samstag und Sonntag sind in der Regel frei (Ausnahmen z.B. in der Gastronomie).</span><span class="lang-en"><strong>Weekends:</strong> Saturday and Sunday are generally free (exceptions e.g. in hospitality).</span><span class="lang-fr"><strong>Week-end :</strong> Samedi et dimanche sont en principe libres (exceptions p. ex. dans la restauration).</span></li>
+                    <li><span class="lang-de"><strong>Urlaub:</strong> Mindestens 25-30 Werktage pro Jahr (je nach Alter).</span><span class="lang-en"><strong>Vacation:</strong> At least 25-30 working days per year (depending on age).</span><span class="lang-fr"><strong>Congés :</strong> Au moins 25-30 jours ouvrables par an (selon l'âge).</span></li>
+                    <li><span class="lang-de"><strong>Mindestlohn:</strong> Gilt ab 18 Jahren - aktuell 12,41 € pro Stunde (Stand 2024). Unter 18 leider kein gesetzlicher Anspruch.</span><span class="lang-en"><strong>Minimum wage:</strong> Applies from age 18 - currently 12.41 euros per hour (as of 2024). Under 18 unfortunately no legal entitlement.</span><span class="lang-fr"><strong>Salaire minimum :</strong> S'applique dès 18 ans - actuellement 12,41 € de l'heure (en 2024). Moins de 18 ans, malheureusement pas de droit légal.</span></li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Darauf musst du achten!</strong> Lass dir IMMER einen schriftlichen Arbeitsvertrag geben - auch beim Minijob! Darin sollte stehen: deine Arbeitszeiten, dein Stundenlohn, deine Aufgaben und die Kündigungsfrist. Mündliche Absprachen sind schwer zu beweisen, wenn es Probleme gibt.</span><span class="lang-en"><strong>⚠️ Watch out for this!</strong> ALWAYS get a written employment contract - even for a Minijob! It should state: your working hours, your hourly wage, your tasks, and the notice period. Verbal agreements are hard to prove if problems arise.</span><span class="lang-fr"><strong>⚠️ Fais attention à cela !</strong> Demande TOUJOURS un contrat de travail écrit - même pour un Minijob ! Il doit mentionner : tes horaires de travail, ton salaire horaire, tes tâches et le délai de préavis. Les accords verbaux sont difficiles à prouver en cas de problème.</span></p>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa (17) hat einen Minijob in einem Café gefunden. Ihr Chef bittet sie, am Samstag bis 22 Uhr zu arbeiten. Luisa weiß: Als Unter-18-Jährige darf sie nach dem Jugendarbeitsschutzgesetz nur bis 20 Uhr arbeiten. Sie erklärt das ihrem Chef freundlich und er passt den Dienstplan an. Gut, dass Luisa ihre Rechte kennt!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa (17) found a Minijob at a café. Her boss asks her to work until 10 PM on Saturday. Luisa knows: As someone under 18, she is only allowed to work until 8 PM according to the Youth Employment Protection Act. She explains this to her boss politely and he adjusts the schedule. Good thing Luisa knows her rights!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa (17) a trouvé un Minijob dans un café. Son patron lui demande de travailler jusqu'à 22h le samedi. Luisa sait : en tant que mineure, elle ne peut travailler que jusqu'à 20h selon la loi sur la protection du travail des jeunes. Elle l'explique poliment à son patron et il adapte le planning. Heureusement que Luisa connaît ses droits !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Tipp für die Bewerbung:</strong> Auch für einen Minijob lohnt sich eine gute Bewerbung! Schreibe ein kurzes Anschreiben (warum dieser Job, was du mitbringst), füge deinen Lebenslauf bei und frage nach einem persönlichen Gespräch. Pünktlichkeit, Zuverlässigkeit und Freundlichkeit sind die wichtigsten Eigenschaften, die Arbeitgeber bei Jugendlichen suchen.</span><span class="lang-en"><strong>✅ Tip for applications:</strong> Even for a Minijob, a good application is worth it! Write a short cover letter (why this job, what you bring), attach your CV, and ask for a personal interview. Punctuality, reliability, and friendliness are the most important qualities employers look for in young people.</span><span class="lang-fr"><strong>✅ Conseil pour la candidature :</strong> Même pour un Minijob, une bonne candidature vaut la peine ! Écris une courte lettre de motivation (pourquoi ce job, ce que tu apportes), joins ton CV et demande un entretien personnel. La ponctualité, la fiabilité et l'amabilité sont les qualités les plus importantes que les employeurs recherchent chez les jeunes.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 5: Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Zusammenfassung</span><span class="lang-en">📋 Summary</span><span class="lang-fr">📋 Résumé</span></h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-emerald-400 mb-2"><span class="lang-de">Wichtige Begriffe</span><span class="lang-en">Key Terms</span><span class="lang-fr">Termes importants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Minijob:</strong> Job mit max. 520 €/Monat, steuerfrei</span><span class="lang-en"><strong>Minijob:</strong> Job with max. 520 euros/month, tax-free</span><span class="lang-fr"><strong>Minijob :</strong> Emploi à max. 520 €/mois, exonéré d'impôts</span></li>
+                            <li><span class="lang-de"><strong>Grundfreibetrag:</strong> 11.604 €/Jahr steuerfrei</span><span class="lang-en"><strong>Basic allowance:</strong> 11,604 euros/year tax-free</span><span class="lang-fr"><strong>Abattement de base :</strong> 11 604 €/an exonérés d'impôts</span></li>
+                            <li><span class="lang-de"><strong>JArbSchG:</strong> Jugendarbeitsschutzgesetz</span><span class="lang-en"><strong>JArbSchG:</strong> Youth Employment Protection Act</span><span class="lang-fr"><strong>JArbSchG :</strong> Loi sur la protection du travail des jeunes</span></li>
+                            <li><span class="lang-de"><strong>Lohnsteuer:</strong> Steuer auf Arbeitseinkommen</span><span class="lang-en"><strong>Income tax:</strong> Tax on employment income</span><span class="lang-fr"><strong>Impôt sur le revenu :</strong> Impôt sur les revenus du travail</span></li>
+                            <li><span class="lang-de"><strong>50/30/20-Regel:</strong> Budgetaufteilung für Teens</span><span class="lang-en"><strong>50/30/20 rule:</strong> Budget allocation for teens</span><span class="lang-fr"><strong>Règle 50/30/20 :</strong> Répartition du budget pour les ados</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Das Wichtigste</span><span class="lang-en">Key Takeaways</span><span class="lang-fr">L'essentiel</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Ab 13 Jahren kannst du leichte Jobs machen</span><span class="lang-en">From 13 you can do light jobs</span><span class="lang-fr">Dès 13 ans tu peux faire de petits travaux</span></li>
+                            <li><span class="lang-de">Im Minijob zahlst du keine Steuern</span><span class="lang-en">In a Minijob you pay no taxes</span><span class="lang-fr">Avec un Minijob tu ne paies pas d'impôts</span></li>
+                            <li><span class="lang-de">Kenne deine Rechte als junger Arbeitnehmer</span><span class="lang-en">Know your rights as a young worker</span><span class="lang-fr">Connais tes droits en tant que jeune travailleur</span></li>
+                            <li><span class="lang-de">Teile dein Geld clever auf (50/30/20)</span><span class="lang-en">Divide your money smartly (50/30/20)</span><span class="lang-fr">Répartis ton argent intelligemment (50/30/20)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center"><span class="lang-de">📝 Kapitel-Test</span><span class="lang-en">📝 Chapter Test</span><span class="lang-fr">📝 Test du chapitre</span></h2>
+                <p class="text-gray-400 text-center mb-8"><span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span><span class="lang-en">Test your knowledge! First choose your name and then answer all questions.</span><span class="lang-fr">Teste tes connaissances ! Choisis d'abord ton nom puis réponds à toutes les questions.</span></p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter11.html"><span class="lang-de">← Kapitel 11</span><span class="lang-en">← Chapter 11</span><span class="lang-fr">← Chapitre 11</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span><span class="lang-fr">Aperçu</span></a>
+                <a href="chapter13.html"><span class="lang-de">Kapitel 13 →</span><span class="lang-en">Chapter 13 →</span><span class="lang-fr">Chapitre 13 →</span></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        TestSystem.initTest(12, [
+            {
+                question: "Wie viel darfst du maximal im Monat mit einem Minijob verdienen?",
+                question_en: "How much can you earn maximum per month with a Minijob?",
+                question_fr: "Combien peux-tu gagner au maximum par mois avec un Minijob ?",
+                options: ["450 €", "520 €", "600 €", "1.000 €"],
+                options_en: ["450 euros", "520 euros", "600 euros", "1,000 euros"],
+                options_fr: ["450 €", "520 €", "600 €", "1 000 €"],
+                correct: 1,
+                explanation: "Die Minijob-Grenze liegt bei 520 € pro Monat. Bis zu diesem Betrag zahlst du keine Einkommensteuer.",
+                explanation_en: "The Minijob limit is 520 euros per month. Up to this amount, you pay no income tax.",
+                explanation_fr: "La limite du Minijob est de 520 € par mois. Jusqu'à ce montant, tu ne paies pas d'impôt sur le revenu."
+            },
+            {
+                question: "Ab welchem Alter darf man in Deutschland leichte Arbeiten mit Zustimmung der Eltern machen?",
+                question_en: "From what age can you do light work with parental consent in Germany?",
+                question_fr: "À partir de quel âge peut-on faire de petits travaux avec l'accord des parents en Allemagne ?",
+                options: ["Ab 10 Jahren", "Ab 12 Jahren", "Ab 13 Jahren", "Ab 15 Jahren"],
+                options_en: ["From age 10", "From age 12", "From age 13", "From age 15"],
+                options_fr: ["Dès 10 ans", "Dès 12 ans", "Dès 13 ans", "Dès 15 ans"],
+                correct: 2,
+                explanation: "Ab 13 Jahren dürfen Jugendliche mit Zustimmung der Eltern leichte Arbeiten verrichten, z.B. Babysitting oder Zeitungen austragen.",
+                explanation_en: "From age 13, teenagers may do light work with parental consent, such as babysitting or delivering newspapers.",
+                explanation_fr: "Dès 13 ans, les jeunes peuvent effectuer de petits travaux avec l'accord des parents, comme le babysitting ou la distribution de journaux."
+            },
+            {
+                question: "Wie hoch ist der steuerliche Grundfreibetrag pro Jahr (Stand 2024)?",
+                question_en: "What is the annual basic tax-free allowance (as of 2024)?",
+                question_fr: "Quel est l'abattement de base annuel (en 2024) ?",
+                options: ["5.000 €", "8.000 €", "11.604 €", "15.000 €"],
+                options_en: ["5,000 euros", "8,000 euros", "11,604 euros", "15,000 euros"],
+                options_fr: ["5 000 €", "8 000 €", "11 604 €", "15 000 €"],
+                correct: 2,
+                explanation: "Der Grundfreibetrag liegt bei 11.604 € pro Jahr. Bis zu diesem Betrag bleibt dein Einkommen steuerfrei.",
+                explanation_en: "The basic tax-free allowance is 11,604 euros per year. Up to this amount, your income remains tax-free.",
+                explanation_fr: "L'abattement de base est de 11 604 € par an. Jusqu'à ce montant, ton revenu reste exonéré d'impôts."
+            },
+            {
+                question: "Bis wann dürfen Unter-18-Jährige laut Jugendarbeitsschutzgesetz arbeiten?",
+                question_en: "Until what time may under-18s work according to the Youth Employment Protection Act?",
+                question_fr: "Jusqu'à quelle heure les moins de 18 ans peuvent-ils travailler selon la loi sur la protection du travail des jeunes ?",
+                options: ["Bis 18 Uhr", "Bis 20 Uhr", "Bis 22 Uhr", "Bis Mitternacht"],
+                options_en: ["Until 6 PM", "Until 8 PM", "Until 10 PM", "Until midnight"],
+                options_fr: ["Jusqu'à 18h", "Jusqu'à 20h", "Jusqu'à 22h", "Jusqu'à minuit"],
+                correct: 1,
+                explanation: "Nach dem Jugendarbeitsschutzgesetz dürfen Unter-18-Jährige nicht zwischen 20 Uhr abends und 6 Uhr morgens arbeiten.",
+                explanation_en: "According to the Youth Employment Protection Act, under-18s may not work between 8 PM and 6 AM.",
+                explanation_fr: "Selon la loi sur la protection du travail des jeunes, les moins de 18 ans ne peuvent pas travailler entre 20h et 6h."
+            },
+            {
+                question: "Wie viel Prozent sollte man laut der 50/30/20-Regel für Teens langfristig sparen?",
+                question_en: "According to the 50/30/20 rule for teens, what percentage should you save long-term?",
+                question_fr: "Selon la règle 50/30/20 pour ados, quel pourcentage devrait-on épargner à long terme ?",
+                options: ["10%", "20%", "30%", "50%"],
+                options_en: ["10%", "20%", "30%", "50%"],
+                options_fr: ["10 %", "20 %", "30 %", "50 %"],
+                correct: 1,
+                explanation: "Die 50/30/20-Regel teilt auf: 50% für Spaß/Freizeit, 30% für mittelfristige Sparziele, 20% für langfristiges Sparen.",
+                explanation_en: "The 50/30/20 rule divides: 50% for fun/leisure, 30% for medium-term savings goals, 20% for long-term savings.",
+                explanation_fr: "La règle 50/30/20 répartit : 50 % pour le plaisir/loisirs, 30 % pour les objectifs d'épargne à moyen terme, 20 % pour l'épargne à long terme."
+            },
+            {
+                question: "Was solltest du IMMER verlangen, wenn du einen Job anfängst?",
+                question_en: "What should you ALWAYS request when starting a job?",
+                question_fr: "Que devrais-tu TOUJOURS demander quand tu commences un emploi ?",
+                options: ["Einen Firmenwagen", "Einen schriftlichen Arbeitsvertrag", "Einen Parkplatz", "Eine Gehaltserhöhung"],
+                options_en: ["A company car", "A written employment contract", "A parking space", "A pay raise"],
+                options_fr: ["Une voiture de fonction", "Un contrat de travail écrit", "Une place de parking", "Une augmentation de salaire"],
+                correct: 1,
+                explanation: "Ein schriftlicher Arbeitsvertrag ist wichtig, damit Arbeitszeiten, Lohn und Aufgaben klar geregelt sind.",
+                explanation_en: "A written employment contract is important so that working hours, pay, and tasks are clearly defined.",
+                explanation_fr: "Un contrat de travail écrit est important pour que les horaires, le salaire et les tâches soient clairement définis."
+            },
+            {
+                question: "Was passiert, wenn dir beim Ferienjob Lohnsteuer abgezogen wird, du aber unter dem Grundfreibetrag bleibst?",
+                question_en: "What happens if income tax is deducted from your summer job, but you stay below the basic allowance?",
+                question_fr: "Que se passe-t-il si l'impôt sur le revenu est déduit de ton job d'été, mais que tu restes en dessous de l'abattement de base ?",
+                options: ["Das Geld ist weg", "Du bekommst es über die Steuererklärung zurück", "Du musst einen Anwalt einschalten", "Der Arbeitgeber zahlt es zurück"],
+                options_en: ["The money is gone", "You get it back through a tax return", "You need to hire a lawyer", "The employer pays it back"],
+                options_fr: ["L'argent est perdu", "Tu le récupères grâce à la déclaration d'impôts", "Tu dois faire appel à un avocat", "L'employeur te le rembourse"],
+                correct: 1,
+                explanation: "Über eine Steuererklärung (z.B. mit ELSTER) bekommst du die zu viel gezahlte Lohnsteuer komplett zurück.",
+                explanation_en: "Through a tax return (e.g. using ELSTER) you get the overpaid income tax back completely.",
+                explanation_fr: "Grâce à une déclaration d'impôts (p. ex. avec ELSTER), tu récupères intégralement l'impôt sur le revenu payé en trop."
+            },
+            {
+                question: "Wie lange darf ein Ferienjob maximal dauern, um sozialversicherungsfrei zu sein?",
+                question_en: "How long can a summer job last at most to be free of social insurance?",
+                question_fr: "Combien de temps un job d'été peut-il durer au maximum pour être exempté de cotisations sociales ?",
+                options: ["1 Monat oder 20 Arbeitstage", "2 Monate oder 50 Arbeitstage", "3 Monate oder 70 Arbeitstage", "6 Monate oder 120 Arbeitstage"],
+                options_en: ["1 month or 20 working days", "2 months or 50 working days", "3 months or 70 working days", "6 months or 120 working days"],
+                options_fr: ["1 mois ou 20 jours de travail", "2 mois ou 50 jours de travail", "3 mois ou 70 jours de travail", "6 mois ou 120 jours de travail"],
+                correct: 2,
+                explanation: "Eine kurzfristige Beschäftigung (max. 3 Monate oder 70 Arbeitstage im Jahr) ist sozialversicherungsfrei.",
+                explanation_en: "Short-term employment (max. 3 months or 70 working days per year) is free of social insurance contributions.",
+                explanation_fr: "Un emploi de courte durée (max. 3 mois ou 70 jours de travail par an) est exempté de cotisations sociales."
+            },
+            {
+                question: "Wie viel Pause steht dir nach 4,5 Stunden Arbeit mindestens zu?",
+                question_en: "How much break are you entitled to after 4.5 hours of work at minimum?",
+                question_fr: "À combien de pause as-tu droit au minimum après 4,5 heures de travail ?",
+                options: ["15 Minuten", "20 Minuten", "30 Minuten", "45 Minuten"],
+                options_en: ["15 minutes", "20 minutes", "30 minutes", "45 minutes"],
+                options_fr: ["15 minutes", "20 minutes", "30 minutes", "45 minutes"],
+                correct: 2,
+                explanation: "Nach dem Jugendarbeitsschutzgesetz stehen dir nach 4,5 Stunden Arbeit mindestens 30 Minuten Pause zu.",
+                explanation_en: "According to the Youth Employment Protection Act, you are entitled to at least 30 minutes break after 4.5 hours of work.",
+                explanation_fr: "Selon la loi sur la protection du travail des jeunes, tu as droit à au moins 30 minutes de pause après 4,5 heures de travail."
+            },
+            {
+                question: "Ab welchem Alter gilt in Deutschland der gesetzliche Mindestlohn?",
+                question_en: "From what age does the statutory minimum wage apply in Germany?",
+                question_fr: "À partir de quel âge le salaire minimum légal s'applique-t-il en Allemagne ?",
+                options: ["Ab 15 Jahren", "Ab 16 Jahren", "Ab 18 Jahren", "Für alle Altersgruppen"],
+                options_en: ["From age 15", "From age 16", "From age 18", "For all age groups"],
+                options_fr: ["Dès 15 ans", "Dès 16 ans", "Dès 18 ans", "Pour tous les groupes d'âge"],
+                correct: 2,
+                explanation: "Der gesetzliche Mindestlohn gilt erst ab 18 Jahren. Für Minderjährige gibt es leider keinen gesetzlichen Mindestlohn.",
+                explanation_en: "The statutory minimum wage only applies from age 18. Unfortunately, there is no statutory minimum wage for minors.",
+                explanation_fr: "Le salaire minimum légal ne s'applique qu'à partir de 18 ans. Malheureusement, il n'y a pas de salaire minimum légal pour les mineurs."
+            }
+        ]);
+    </script>
+</body>
+</html>

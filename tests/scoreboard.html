@@ -24,7 +24,8 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="../index.html" class="nav-link">Home</a>
-                    <a href="../chapters/chapter1.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
                     <a href="scoreboard.html" class="nav-link active"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
                     <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
                 </div>
@@ -67,9 +68,21 @@
                 <div id="progress-bars" class="space-y-4"></div>
             </div>
 
+            <!-- Badges Section -->
+            <div class="glass-card rounded-3xl p-6 mb-8 animate-on-scroll">
+                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">🏅 Badges & Achievements</span><span class="lang-en">🏅 Badges & Achievements</span><span class="lang-fr">🏅 Badges & Succès</span></h2>
+                <div id="badges-section" class="space-y-6"></div>
+            </div>
+
+            <!-- Streaks Section -->
+            <div class="glass-card rounded-3xl p-6 mb-8 animate-on-scroll">
+                <h2 class="text-2xl font-bold mb-6"><span class="lang-de">🔥 Lern-Streaks</span><span class="lang-en">🔥 Learning Streaks</span><span class="lang-fr">🔥 Séries d'apprentissage</span></h2>
+                <div id="streaks-section" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+            </div>
+
             <div class="flex flex-wrap gap-4 justify-center animate-on-scroll">
-                <a href="../chapters/chapter1.html" class="glass-button-primary px-6 py-3 rounded-xl inline-flex items-center space-x-2">
-                    <span>📚</span><span><span class="lang-de">Zum ersten Kapitel</span><span class="lang-en">Go to first chapter</span><span class="lang-fr">Aller au premier chapitre</span></span>
+                <a href="../chapters/index.html" class="glass-button-primary px-6 py-3 rounded-xl inline-flex items-center space-x-2">
+                    <span>📚</span><span><span class="lang-de">Kapitelübersicht</span><span class="lang-en">Chapter overview</span><span class="lang-fr">Aperçu des chapitres</span></span>
                 </a>
                 <button onclick="resetAll()" class="glass-button px-6 py-3 rounded-xl inline-flex items-center space-x-2 text-red-400">
                     <span>🗑️</span><span><span class="lang-de">Alle Ergebnisse löschen</span><span class="lang-en">Delete all results</span><span class="lang-fr">Supprimer tous les résultats</span></span>
@@ -79,6 +92,7 @@
     </main>
 
     <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
     <script>
         const chapters = [
             { num: 1, title_de: 'Was ist Geld?', title_en: 'What is Money?', title_fr: "Qu'est-ce que l'argent ?", icon: '💶' },
@@ -91,6 +105,12 @@
             { num: 8, title_de: 'Schulden & Kredite', title_en: 'Debt & Loans', title_fr: 'Dettes & Crédits', icon: '💳' },
             { num: 9, title_de: 'Steuern & Staat', title_en: 'Taxes & Government', title_fr: 'Impôts & État', icon: '🧾' },
             { num: 10, title_de: 'Dein Finanzplan', title_en: 'Your Financial Plan', title_fr: 'Ton plan financier', icon: '🚀' },
+            { num: 11, title_de: 'Abo-Fallen & digitale Ausgaben', title_en: 'Subscription Traps & Digital Spending', title_fr: "Pièges d'abonnement & dépenses numériques", icon: '📱' },
+            { num: 12, title_de: 'Erstes eigenes Einkommen', title_en: 'Your First Income', title_fr: 'Ton premier revenu', icon: '💼' },
+            { num: 13, title_de: 'Krypto & digitale Assets', title_en: 'Crypto & Digital Assets', title_fr: 'Crypto & actifs numériques', icon: '₿' },
+            { num: 14, title_de: 'Versicherungen Basics', title_en: 'Insurance Basics', title_fr: "Les bases de l'assurance", icon: '🛡️' },
+            { num: 15, title_de: 'Erste eigene Wohnung', title_en: 'Your First Apartment', title_fr: 'Ton premier appartement', icon: '🏠' },
+            { num: 16, title_de: 'Finanz-Scams & Social Media', title_en: 'Financial Scams & Social Media', title_fr: 'Arnaques financières & réseaux sociaux', icon: '🚨' },
         ];
 
         const kids = ['Luisa', 'Marlene', 'Carla'];
@@ -115,8 +135,8 @@
                         <div class="text-3xl mb-2">${emoji}</div>
                         <h3 class="font-bold text-${kidColors[ki]}-400 mb-1">${kid}</h3>
                         <div class="text-3xl font-bold mb-1">${totalQuestions > 0 ? avgPercent + '%' : '-'}</div>
-                        <p class="text-gray-500 text-xs">${completedChapters}/10 ${t('Kapitel', 'chapters', 'chapitres')}</p>
-                        <div class="progress-bar mt-3"><div class="progress-fill" style="width: ${completedChapters * 10}%"></div></div>
+                        <p class="text-gray-500 text-xs">${completedChapters}/${chapters.length} ${t('Kapitel', 'chapters', 'chapitres')}</p>
+                        <div class="progress-bar mt-3"><div class="progress-fill" style="width: ${Math.round(completedChapters / chapters.length * 100)}%"></div></div>
                     </div>
                 `;
             }).join('');
@@ -138,7 +158,32 @@
             progressEl.innerHTML = kids.map((kid, ki) => {
                 let completed = 0;
                 chapters.forEach(ch => { if (scores[`ch${ch.num}_kid${ki}`]) completed++; });
-                return `<div><div class="flex justify-between text-sm mb-1"><span class="text-${kidColors[ki]}-400 font-semibold">${kid}</span><span class="text-gray-400">${completed}/10 ${t('Kapitel', 'chapters', 'chapitres')}</span></div><div class="progress-bar"><div class="progress-fill" style="width: ${completed * 10}%"></div></div></div>`;
+                return `<div><div class="flex justify-between text-sm mb-1"><span class="text-${kidColors[ki]}-400 font-semibold">${kid}</span><span class="text-gray-400">${completed}/${chapters.length} ${t('Kapitel', 'chapters', 'chapitres')}</span></div><div class="progress-bar"><div class="progress-fill" style="width: ${Math.round(completed / chapters.length * 100)}%"></div></div></div>`;
+            }).join('');
+
+            // Badges
+            const badgesEl = document.getElementById('badges-section');
+            badgesEl.innerHTML = kids.map((kid, ki) => `
+                <div>
+                    <h3 class="font-semibold text-${kidColors[ki]}-400 mb-3">${kid}</h3>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                        ${Gamification.renderBadges(ki, false)}
+                    </div>
+                </div>
+            `).join('');
+
+            // Streaks
+            const streaksEl = document.getElementById('streaks-section');
+            streaksEl.innerHTML = kids.map((kid, ki) => {
+                const streak = Gamification.getStreak(ki);
+                return `
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <h3 class="font-bold text-${kidColors[ki]}-400 mb-2">${kid}</h3>
+                        <div class="text-3xl font-bold text-orange-400 mb-1">🔥 ${streak.current}</div>
+                        <div class="text-sm text-gray-400">${t('Aktuelle Serie', 'Current streak', 'Série actuelle')}</div>
+                        <div class="text-xs text-gray-500 mt-2">${t('Rekord', 'Best', 'Record')}: ${streak.best} ${t('Tage', 'days', 'jours')}</div>
+                    </div>
+                `;
             }).join('');
         }
 

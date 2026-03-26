@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 15: Erste eigene Wohnung - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🏠</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-rose-400 mb-4"><span class="lang-de">Kapitel 15 von 16</span><span class="lang-en">Chapter 15 of 16</span><span class="lang-fr">Chapitre 15 sur 16</span></div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Erste eigene Wohnung</span><span class="lang-en">Your First Apartment</span><span class="lang-fr">Ton premier appartement</span></h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                    <span>|</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span><span class="lang-fr">📝 10 questions de test</span></span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 93.75%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">93% des Kurses</span><span class="lang-en">93% of the course</span><span class="lang-fr">93% du cours</span></p>
+            </div>
+
+            <!-- Section 1: Was kostet Wohnen? -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">💸 Was kostet Wohnen?</span><span class="lang-en">💸 What Does Housing Cost?</span><span class="lang-fr">💸 Combien coûte un logement ?</span></h3>
+                <p><span class="lang-de">Die Miete wird dein größter monatlicher Kostenpunkt sein. Aber "Miete" ist nicht gleich "Miete" - es gibt wichtige Unterschiede, die du kennen musst, bevor du deinen ersten Mietvertrag unterschreibst.</span><span class="lang-en">Rent will be your biggest monthly expense. But "rent" is not just "rent" - there are important differences you need to know before you sign your first lease.</span><span class="lang-fr">Le loyer sera ta plus grande dépense mensuelle. Mais « loyer » ne veut pas dire la même chose partout - il y a des différences importantes à connaître avant de signer ton premier bail.</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Kaltmiete vs. Warmmiete:</strong> Die <strong>Kaltmiete</strong> (auch Nettomiete) ist der reine Mietpreis für die Wohnung - ohne Nebenkosten. Die <strong>Warmmiete</strong> (Bruttomiete) ist die Kaltmiete plus alle Nebenkosten. Wenn du in Anzeigen "500 € kalt" liest, zahlst du am Ende deutlich mehr!</span><span class="lang-en"><strong>💡 Cold Rent vs. Warm Rent:</strong> The <strong>cold rent</strong> (Kaltmiete/net rent) is the pure rental price for the apartment - without utilities. The <strong>warm rent</strong> (Warmmiete/gross rent) is the cold rent plus all utility costs. When you read "500 euros cold" in listings, you will actually pay significantly more!</span><span class="lang-fr"><strong>💡 Loyer froid vs. Loyer charges comprises :</strong> Le <strong>loyer froid</strong> (Kaltmiete) est le prix de location pur de l'appartement - sans les charges. Le <strong>loyer charges comprises</strong> (Warmmiete) est le loyer froid plus toutes les charges. Quand tu lis « 500 € froid » dans les annonces, tu paieras en fait bien plus !</span></p>
+                </div>
+
+                <p><span class="lang-de">Typische <strong>Nebenkosten</strong> (auch "zweite Miete" genannt) umfassen:</span><span class="lang-en">Typical <strong>utility costs</strong> (also called the "second rent") include:</span><span class="lang-fr">Les <strong>charges</strong> typiques (aussi appelées « deuxième loyer ») comprennent :</span></p>
+                <ul>
+                    <li><span class="lang-de"><strong>Heizung & Warmwasser:</strong> ca. 50-100 € / Monat</span><span class="lang-en"><strong>Heating & hot water:</strong> approx. 50-100 euros/month</span><span class="lang-fr"><strong>Chauffage & eau chaude :</strong> env. 50-100 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Wasser & Abwasser:</strong> ca. 20-30 € / Monat</span><span class="lang-en"><strong>Water & sewage:</strong> approx. 20-30 euros/month</span><span class="lang-fr"><strong>Eau & eaux usées :</strong> env. 20-30 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Müllabfuhr:</strong> ca. 15-25 € / Monat</span><span class="lang-en"><strong>Waste collection:</strong> approx. 15-25 euros/month</span><span class="lang-fr"><strong>Enlèvement des ordures :</strong> env. 15-25 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Hausmeister & Treppenhausreinigung:</strong> ca. 10-20 € / Monat</span><span class="lang-en"><strong>Caretaker & stairway cleaning:</strong> approx. 10-20 euros/month</span><span class="lang-fr"><strong>Gardien & nettoyage des parties communes :</strong> env. 10-20 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Grundsteuer:</strong> variiert je nach Stadt</span><span class="lang-en"><strong>Property tax:</strong> varies by city</span><span class="lang-fr"><strong>Taxe foncière :</strong> varie selon la ville</span></li>
+                </ul>
+
+                <p><span class="lang-de">Dazu kommen Kosten, die du <strong>selbst</strong> zahlen musst (nicht in der Warmmiete enthalten):</span><span class="lang-en">On top of that, there are costs you have to pay <strong>yourself</strong> (not included in the warm rent):</span><span class="lang-fr">En plus, il y a des coûts que tu dois payer <strong>toi-même</strong> (non inclus dans le loyer charges comprises) :</span></p>
+                <ul>
+                    <li><span class="lang-de"><strong>Strom:</strong> ca. 30-50 € / Monat</span><span class="lang-en"><strong>Electricity:</strong> approx. 30-50 euros/month</span><span class="lang-fr"><strong>Électricité :</strong> env. 30-50 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Internet & Telefon:</strong> ca. 25-40 € / Monat</span><span class="lang-en"><strong>Internet & phone:</strong> approx. 25-40 euros/month</span><span class="lang-fr"><strong>Internet & téléphone :</strong> env. 25-40 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Rundfunkbeitrag (GEZ):</strong> 18,36 € / Monat</span><span class="lang-en"><strong>Broadcasting fee (GEZ):</strong> 18.36 euros/month</span><span class="lang-fr"><strong>Redevance audiovisuelle (GEZ) :</strong> 18,36 €/mois</span></li>
+                    <li><span class="lang-de"><strong>Hausratversicherung:</strong> ca. 5-15 € / Monat</span><span class="lang-en"><strong>Household insurance:</strong> approx. 5-15 euros/month</span><span class="lang-fr"><strong>Assurance habitation :</strong> env. 5-15 €/mois</span></li>
+                </ul>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa (17) plant voraus und rechnet durch, was eine kleine 1-Zimmer-Wohnung in ihrer Stadt kosten würde: Kaltmiete 400 €, Nebenkosten 120 €, Strom 35 €, Internet 30 €, GEZ 18,36 €, Versicherung 8 €. <strong>Gesamtkosten: 611,36 € pro Monat</strong> - fast 50% mehr als die Kaltmiete allein!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa (17) plans ahead and calculates what a small 1-room apartment in her city would cost: cold rent 400 euros, utilities 120 euros, electricity 35 euros, internet 30 euros, broadcasting fee 18.36 euros, insurance 8 euros. <strong>Total cost: 611.36 euros per month</strong> - almost 50% more than the cold rent alone!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa (17 ans) anticipe et calcule ce que coûterait un petit studio dans sa ville : loyer froid 400 €, charges 120 €, électricité 35 €, internet 30 €, redevance audiovisuelle 18,36 €, assurance 8 €. <strong>Coût total : 611,36 € par mois</strong> - presque 50 % de plus que le loyer froid seul !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Die 30%-Regel:</strong> Deine Warmmiete sollte maximal 30% deines Nettoeinkommens betragen. Bei einem Nettoeinkommen von 1.800 € wären das höchstens 540 € Warmmiete. Rechnest du alle Wohnkosten zusammen, sagen Experten: maximal 40% des Nettoeinkommens.</span><span class="lang-en"><strong>✅ The 30% Rule:</strong> Your warm rent should be no more than 30% of your net income. With a net income of 1,800 euros, that would be a maximum of 540 euros warm rent. If you add up all housing costs, experts say: no more than 40% of net income.</span><span class="lang-fr"><strong>✅ La règle des 30 % :</strong> Ton loyer charges comprises ne devrait pas dépasser 30 % de ton revenu net. Avec un revenu net de 1 800 €, cela ferait au maximum 540 € de loyer charges comprises. Si tu additionnes tous les frais de logement, les experts disent : maximum 40 % du revenu net.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 2: Mietvertrag & Kaution -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📝 Mietvertrag & Kaution</span><span class="lang-en">📝 Rental Contract & Deposit</span><span class="lang-fr">📝 Contrat de bail & caution</span></h3>
+                <p><span class="lang-de">Der Mietvertrag ist ein rechtlich bindendes Dokument. Lies ihn <strong>immer komplett durch</strong>, bevor du unterschreibst! Hier sind die wichtigsten Punkte, auf die du achten musst:</span><span class="lang-en">The rental contract is a legally binding document. <strong>Always read it completely</strong> before you sign! Here are the most important points to watch out for:</span><span class="lang-fr">Le contrat de bail est un document juridiquement contraignant. <strong>Lis-le toujours en entier</strong> avant de signer ! Voici les points les plus importants à vérifier :</span></p>
+
+                <ul>
+                    <li><span class="lang-de"><strong>Mietdauer:</strong> Befristet oder unbefristet? Bei befristeten Verträgen: Wann läuft er aus?</span><span class="lang-en"><strong>Lease duration:</strong> Fixed-term or open-ended? For fixed-term contracts: When does it expire?</span><span class="lang-fr"><strong>Durée du bail :</strong> À durée déterminée ou indéterminée ? Pour les contrats à durée déterminée : quand expire-t-il ?</span></li>
+                    <li><span class="lang-de"><strong>Kündigungsfrist:</strong> In der Regel 3 Monate für Mieter</span><span class="lang-en"><strong>Notice period:</strong> Usually 3 months for tenants</span><span class="lang-fr"><strong>Préavis :</strong> En général 3 mois pour les locataires</span></li>
+                    <li><span class="lang-de"><strong>Kaltmiete & Nebenkosten:</strong> Sind sie klar aufgeschlüsselt?</span><span class="lang-en"><strong>Cold rent & utilities:</strong> Are they clearly itemized?</span><span class="lang-fr"><strong>Loyer froid & charges :</strong> Sont-ils clairement détaillés ?</span></li>
+                    <li><span class="lang-de"><strong>Schönheitsreparaturen:</strong> Musst du beim Auszug renovieren?</span><span class="lang-en"><strong>Cosmetic repairs:</strong> Do you have to renovate when moving out?</span><span class="lang-fr"><strong>Réparations esthétiques :</strong> Dois-tu rénover en quittant le logement ?</span></li>
+                    <li><span class="lang-de"><strong>Haustiere:</strong> Sind Tiere erlaubt?</span><span class="lang-en"><strong>Pets:</strong> Are animals allowed?</span><span class="lang-fr"><strong>Animaux :</strong> Les animaux sont-ils autorisés ?</span></li>
+                    <li><span class="lang-de"><strong>Untervermietung:</strong> Darfst du ein Zimmer untervermieten?</span><span class="lang-en"><strong>Subletting:</strong> Are you allowed to sublet a room?</span><span class="lang-fr"><strong>Sous-location :</strong> Peux-tu sous-louer une chambre ?</span></li>
+                </ul>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Die Kaution:</strong> Der Vermieter darf maximal <strong>3 Nettokaltmieten</strong> als Kaution verlangen. Bei 400 € Kaltmiete wären das 1.200 €. Du darfst die Kaution in 3 Monatsraten zahlen. Der Vermieter muss die Kaution getrennt von seinem eigenen Vermögen anlegen (z.B. auf einem Sparkonto). Nach dem Auszug hat der Vermieter bis zu 6 Monate Zeit, die Kaution zurückzuzahlen.</span><span class="lang-en"><strong>💡 The Deposit:</strong> The landlord may charge a maximum of <strong>3 months' cold rent</strong> as a deposit. For a cold rent of 400 euros, that would be 1,200 euros. You are allowed to pay the deposit in 3 monthly installments. The landlord must keep the deposit separate from their own assets (e.g., in a savings account). After moving out, the landlord has up to 6 months to return the deposit.</span><span class="lang-fr"><strong>💡 La caution :</strong> Le bailleur peut demander au maximum <strong>3 mois de loyer froid</strong> comme caution. Pour un loyer froid de 400 €, cela ferait 1 200 €. Tu peux payer la caution en 3 mensualités. Le bailleur doit placer la caution séparément de ses propres avoirs (p. ex. sur un compte épargne). Après le déménagement, le bailleur a jusqu'à 6 mois pour restituer la caution.</span></p>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa hat ihre Traumwohnung gefunden: 420 € kalt. Die Kaution beträgt 3 x 420 € = 1.260 €. Dazu kommen noch die erste Monatsmiete (ca. 550 € warm) und eventuell Maklergebühren. Luisa braucht also mindestens <strong>1.810 €</strong>, bevor sie einziehen kann - und das ohne Möbel!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa has found her dream apartment: 420 euros cold. The deposit is 3 x 420 euros = 1,260 euros. On top of that comes the first month's rent (approx. 550 euros warm) and possibly broker fees. Luisa needs at least <strong>1,810 euros</strong> before she can move in - and that's without furniture!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa a trouvé l'appartement de ses rêves : 420 € froid. La caution s'élève à 3 x 420 € = 1 260 €. S'ajoutent le premier mois de loyer (env. 550 € charges comprises) et éventuellement des frais d'agence. Luisa a besoin d'au moins <strong>1 810 €</strong> avant de pouvoir emménager - et c'est sans les meubles !</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Das Übergabeprotokoll:</strong> Bei Ein- und Auszug solltest du <strong>immer</strong> ein Übergabeprotokoll erstellen. Darin werden der Zustand der Wohnung, Kratzer, Flecken, Zählerstände und vorhandene Schlüssel dokumentiert. Mach zusätzlich Fotos mit Datum! Ohne Protokoll kann der Vermieter beim Auszug Schäden behaupten, die schon vorher da waren - und von deiner Kaution abziehen.</span><span class="lang-en"><strong>✅ The Handover Protocol:</strong> When moving in and out, you should <strong>always</strong> create a handover protocol. It documents the condition of the apartment, scratches, stains, meter readings, and existing keys. Also take dated photos! Without a protocol, the landlord can claim damages when you move out that were already there - and deduct them from your deposit.</span><span class="lang-fr"><strong>✅ Le procès-verbal de remise :</strong> Lors de l'emménagement et du déménagement, tu devrais <strong>toujours</strong> établir un procès-verbal de remise. Il documente l'état de l'appartement, les rayures, les taches, les relevés de compteurs et les clés existantes. Prends aussi des photos datées ! Sans procès-verbal, le bailleur peut prétendre des dommages lors de ton départ qui existaient déjà - et les déduire de ta caution.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 3: Erstausstattung -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🛋️ Erstausstattung - Was brauchst du wirklich?</span><span class="lang-en">🛋️ First-Time Furnishing - What Do You Really Need?</span><span class="lang-fr">🛋️ Premier équipement - De quoi as-tu vraiment besoin ?</span></h3>
+                <p><span class="lang-de">Die erste eigene Wohnung muss nicht perfekt eingerichtet sein. Konzentriere dich zuerst auf das Nötigste und baue nach und nach aus.</span><span class="lang-en">Your first apartment doesn't have to be perfectly furnished. Focus on the essentials first and build up gradually.</span><span class="lang-fr">Ton premier appartement n'a pas besoin d'être parfaitement meublé. Concentre-toi d'abord sur l'essentiel et complète petit à petit.</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-rose-400 mb-3"><span class="lang-de">🔴 Must-Have (sofort nötig)</span><span class="lang-en">🔴 Must-Have (needed immediately)</span><span class="lang-fr">🔴 Indispensable (nécessaire tout de suite)</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Bett + Matratze:</strong> 150-400 €</span><span class="lang-en"><strong>Bed + mattress:</strong> 150-400 euros</span><span class="lang-fr"><strong>Lit + matelas :</strong> 150-400 €</span></li>
+                            <li><span class="lang-de"><strong>Bettwäsche:</strong> 20-50 €</span><span class="lang-en"><strong>Bedding:</strong> 20-50 euros</span><span class="lang-fr"><strong>Linge de lit :</strong> 20-50 €</span></li>
+                            <li><span class="lang-de"><strong>Kühlschrank:</strong> 150-300 €</span><span class="lang-en"><strong>Fridge:</strong> 150-300 euros</span><span class="lang-fr"><strong>Réfrigérateur :</strong> 150-300 €</span></li>
+                            <li><span class="lang-de"><strong>Herd/Kochplatte:</strong> 50-200 €</span><span class="lang-en"><strong>Stove/hotplate:</strong> 50-200 euros</span><span class="lang-fr"><strong>Cuisinière/plaque :</strong> 50-200 €</span></li>
+                            <li><span class="lang-de"><strong>Topf, Pfanne, Besteck:</strong> 30-60 €</span><span class="lang-en"><strong>Pot, pan, cutlery:</strong> 30-60 euros</span><span class="lang-fr"><strong>Casserole, poêle, couverts :</strong> 30-60 €</span></li>
+                            <li><span class="lang-de"><strong>Handtücher & Putzzeug:</strong> 20-40 €</span><span class="lang-en"><strong>Towels & cleaning supplies:</strong> 20-40 euros</span><span class="lang-fr"><strong>Serviettes & produits ménagers :</strong> 20-40 €</span></li>
+                            <li><span class="lang-de"><strong>Lampe:</strong> 15-40 €</span><span class="lang-en"><strong>Lamp:</strong> 15-40 euros</span><span class="lang-fr"><strong>Lampe :</strong> 15-40 €</span></li>
+                        </ul>
+                        <p class="text-sm text-rose-300 mt-3 font-bold"><span class="lang-de">Summe: ca. 435-1.090 €</span><span class="lang-en">Total: approx. 435-1,090 euros</span><span class="lang-fr">Total : env. 435-1 090 €</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-cyan-400 mb-3"><span class="lang-de">🟢 Nice-to-Have (kann warten)</span><span class="lang-en">🟢 Nice-to-Have (can wait)</span><span class="lang-fr">🟢 Secondaire (peut attendre)</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Waschmaschine:</strong> 200-400 €</span><span class="lang-en"><strong>Washing machine:</strong> 200-400 euros</span><span class="lang-fr"><strong>Machine à laver :</strong> 200-400 €</span></li>
+                            <li><span class="lang-de"><strong>Sofa:</strong> 150-500 €</span><span class="lang-en"><strong>Sofa:</strong> 150-500 euros</span><span class="lang-fr"><strong>Canapé :</strong> 150-500 €</span></li>
+                            <li><span class="lang-de"><strong>Schreibtisch + Stuhl:</strong> 80-200 €</span><span class="lang-en"><strong>Desk + chair:</strong> 80-200 euros</span><span class="lang-fr"><strong>Bureau + chaise :</strong> 80-200 €</span></li>
+                            <li><span class="lang-de"><strong>Regal/Schrank:</strong> 50-200 €</span><span class="lang-en"><strong>Shelf/wardrobe:</strong> 50-200 euros</span><span class="lang-fr"><strong>Étagère/armoire :</strong> 50-200 €</span></li>
+                            <li><span class="lang-de"><strong>Staubsauger:</strong> 50-150 €</span><span class="lang-en"><strong>Vacuum cleaner:</strong> 50-150 euros</span><span class="lang-fr"><strong>Aspirateur :</strong> 50-150 €</span></li>
+                            <li><span class="lang-de"><strong>Deko & Gemütlichkeit:</strong> 30-100 €</span><span class="lang-en"><strong>Decor & comfort:</strong> 30-100 euros</span><span class="lang-fr"><strong>Déco & confort :</strong> 30-100 €</span></li>
+                        </ul>
+                        <p class="text-sm text-cyan-300 mt-3 font-bold"><span class="lang-de">Summe: ca. 560-1.550 €</span><span class="lang-en">Total: approx. 560-1,550 euros</span><span class="lang-fr">Total : env. 560-1 550 €</span></p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Spartipps für die Erstausstattung:</strong></span><span class="lang-en"><strong>✅ Money-saving tips for furnishing:</strong></span><span class="lang-fr"><strong>✅ Astuces pour économiser sur l'équipement :</strong></span></p>
+                    <ul>
+                        <li><span class="lang-de"><strong>Kleinanzeigen & Second-Hand:</strong> eBay Kleinanzeigen, Facebook Marketplace, Flohmärkte - hier findest du Möbel für einen Bruchteil des Neupreises</span><span class="lang-en"><strong>Classifieds & second-hand:</strong> eBay Kleinanzeigen, Facebook Marketplace, flea markets - you can find furniture at a fraction of the retail price</span><span class="lang-fr"><strong>Petites annonces & seconde main :</strong> eBay Kleinanzeigen, Facebook Marketplace, marchés aux puces - tu trouves des meubles à une fraction du prix neuf</span></li>
+                        <li><span class="lang-de"><strong>Familie & Freunde fragen:</strong> Oft haben Eltern oder Großeltern Dinge übrig, die sie nicht mehr brauchen</span><span class="lang-en"><strong>Ask family & friends:</strong> Often parents or grandparents have things left over that they no longer need</span><span class="lang-fr"><strong>Demander à la famille & aux amis :</strong> Souvent les parents ou grands-parents ont des choses dont ils n'ont plus besoin</span></li>
+                        <li><span class="lang-de"><strong>IKEA-Fundgrube:</strong> Ausstellungsstücke und Rückläufer mit großen Rabatten</span><span class="lang-en"><strong>IKEA As-Is section:</strong> Display models and returns with big discounts</span><span class="lang-fr"><strong>Coin des bonnes affaires IKEA :</strong> Modèles d'exposition et retours avec de grosses réductions</span></li>
+                        <li><span class="lang-de"><strong>Sozialkaufhäuser:</strong> Günstige Möbel und Haushaltsgeräte für kleines Budget</span><span class="lang-en"><strong>Social department stores:</strong> Affordable furniture and household appliances for small budgets</span><span class="lang-fr"><strong>Magasins sociaux :</strong> Meubles et appareils ménagers abordables pour petit budget</span></li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa stellt ihre Erstausstattung clever zusammen: Bett und Matratze von IKEA (zusammen 250 €), Kühlschrank von eBay Kleinanzeigen (80 €), Topfset und Besteck von den Großeltern (0 €), Schreibtisch vom Sperrmüll (0 €). Statt 1.000 € gibt sie nur <strong>ca. 450 €</strong> aus!</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa puts together her first furnishing cleverly: bed and mattress from IKEA (250 euros together), fridge from eBay Kleinanzeigen (80 euros), pot set and cutlery from grandparents (0 euros), desk from bulky waste pickup (0 euros). Instead of 1,000 euros she only spends <strong>about 450 euros</strong>!</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa compose son premier équipement intelligemment : lit et matelas d'IKEA (250 € ensemble), réfrigérateur sur eBay Kleinanzeigen (80 €), set de casseroles et couverts des grands-parents (0 €), bureau récupéré lors d'un encombrant (0 €). Au lieu de 1 000 €, elle ne dépense que <strong>environ 450 €</strong> !</span></p>
+                </div>
+            </div>
+
+            <!-- Section 4: WG vs. eigene Wohnung -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">👥 WG vs. eigene Wohnung</span><span class="lang-en">👥 Shared Flat vs. Own Apartment</span><span class="lang-fr">👥 Colocation vs. Appartement seul</span></h3>
+                <p><span class="lang-de">Eine der wichtigsten Entscheidungen: Ziehst du in eine <strong>Wohngemeinschaft (WG)</strong> oder eine eigene Wohnung? Beide Optionen haben Vor- und Nachteile.</span><span class="lang-en">One of the most important decisions: Do you move into a <strong>shared flat (WG)</strong> or your own apartment? Both options have pros and cons.</span><span class="lang-fr">L'une des décisions les plus importantes : emménages-tu dans une <strong>colocation (WG)</strong> ou un appartement seul ? Les deux options ont des avantages et des inconvénients.</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3"><span class="lang-de">👥 WG (Wohngemeinschaft)</span><span class="lang-en">👥 Shared Flat (WG)</span><span class="lang-fr">👥 Colocation (WG)</span></h4>
+                        <p class="text-sm text-gray-300 mb-2"><span class="lang-de"><strong>Vorteile:</strong></span><span class="lang-en"><strong>Pros:</strong></span><span class="lang-fr"><strong>Avantages :</strong></span></p>
+                        <ul>
+                            <li><span class="lang-de">Deutlich günstiger (Miete, Nebenkosten, Internet werden geteilt)</span><span class="lang-en">Much cheaper (rent, utilities, internet are shared)</span><span class="lang-fr">Nettement moins cher (loyer, charges, internet partagés)</span></li>
+                            <li><span class="lang-de">Nie allein - soziale Kontakte</span><span class="lang-en">Never alone - social contacts</span><span class="lang-fr">Jamais seul(e) - contacts sociaux</span></li>
+                            <li><span class="lang-de">Geteilte Küche und Geräte sparen Anschaffungskosten</span><span class="lang-en">Shared kitchen and appliances save on purchase costs</span><span class="lang-fr">Cuisine et appareils partagés économisent les frais d'achat</span></li>
+                            <li><span class="lang-de">Ideal zum Eingewöhnen in die Selbstständigkeit</span><span class="lang-en">Ideal for getting used to independence</span><span class="lang-fr">Idéal pour s'habituer à l'indépendance</span></li>
+                        </ul>
+                        <p class="text-sm text-gray-300 mb-2 mt-3"><span class="lang-de"><strong>Nachteile:</strong></span><span class="lang-en"><strong>Cons:</strong></span><span class="lang-fr"><strong>Inconvénients :</strong></span></p>
+                        <ul>
+                            <li><span class="lang-de">Weniger Privatsphäre</span><span class="lang-en">Less privacy</span><span class="lang-fr">Moins d'intimité</span></li>
+                            <li><span class="lang-de">Konflikte um Sauberkeit, Lautstärke, Geld</span><span class="lang-en">Conflicts about cleanliness, noise, money</span><span class="lang-fr">Conflits sur la propreté, le bruit, l'argent</span></li>
+                            <li><span class="lang-de">Kompromisse nötig</span><span class="lang-en">Compromises necessary</span><span class="lang-fr">Compromis nécessaires</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-purple-400 mb-3"><span class="lang-de">🏠 Eigene Wohnung</span><span class="lang-en">🏠 Own Apartment</span><span class="lang-fr">🏠 Appartement seul</span></h4>
+                        <p class="text-sm text-gray-300 mb-2"><span class="lang-de"><strong>Vorteile:</strong></span><span class="lang-en"><strong>Pros:</strong></span><span class="lang-fr"><strong>Avantages :</strong></span></p>
+                        <ul>
+                            <li><span class="lang-de">Volle Privatsphäre und Freiheit</span><span class="lang-en">Full privacy and freedom</span><span class="lang-fr">Intimité et liberté totales</span></li>
+                            <li><span class="lang-de">Du bestimmst die Regeln</span><span class="lang-en">You make the rules</span><span class="lang-fr">Tu fais les règles</span></li>
+                            <li><span class="lang-de">Keine Konflikte mit Mitbewohnern</span><span class="lang-en">No conflicts with roommates</span><span class="lang-fr">Pas de conflits avec les colocataires</span></li>
+                            <li><span class="lang-de">Eigene Einrichtung nach deinem Geschmack</span><span class="lang-en">Your own furnishing to your taste</span><span class="lang-fr">Ton propre aménagement à ton goût</span></li>
+                        </ul>
+                        <p class="text-sm text-gray-300 mb-2 mt-3"><span class="lang-de"><strong>Nachteile:</strong></span><span class="lang-en"><strong>Cons:</strong></span><span class="lang-fr"><strong>Inconvénients :</strong></span></p>
+                        <ul>
+                            <li><span class="lang-de">Deutlich teurer</span><span class="lang-en">Significantly more expensive</span><span class="lang-fr">Nettement plus cher</span></li>
+                            <li><span class="lang-de">Alle Kosten allein tragen</span><span class="lang-en">All costs borne alone</span><span class="lang-fr">Tous les frais à ta charge</span></li>
+                            <li><span class="lang-de">Kann einsam werden</span><span class="lang-en">Can get lonely</span><span class="lang-fr">Peut devenir solitaire</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Zwischenmiete (Untermiete auf Zeit):</strong> Eine tolle Option für den Einstieg! Jemand vermietet sein WG-Zimmer oder seine Wohnung vorübergehend (z.B. während eines Auslandssemesters). Vorteile: oft möbliert, kürzere Bindung, ideal zum Ausprobieren. Plattformen: WG-Gesucht, Studenten-WG, Kleinanzeigen.</span><span class="lang-en"><strong>💡 Temporary Sublet (Zwischenmiete):</strong> A great option for getting started! Someone rents out their room or apartment temporarily (e.g., during a semester abroad). Benefits: often furnished, shorter commitment, ideal for trying things out. Platforms: WG-Gesucht, Studenten-WG, Kleinanzeigen.</span><span class="lang-fr"><strong>💡 Sous-location temporaire (Zwischenmiete) :</strong> Une super option pour débuter ! Quelqu'un sous-loue sa chambre ou son appartement temporairement (p. ex. pendant un semestre à l'étranger). Avantages : souvent meublé, engagement plus court, idéal pour essayer. Plateformes : WG-Gesucht, Studenten-WG, Kleinanzeigen.</span></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Tipps für die Wohnungssuche:</strong></span><span class="lang-en"><strong>✅ Tips for apartment hunting:</strong></span><span class="lang-fr"><strong>✅ Conseils pour la recherche d'appartement :</strong></span></p>
+                    <ul>
+                        <li><span class="lang-de"><strong>Früh anfangen:</strong> Mindestens 2-3 Monate vor dem gewünschten Einzugsdatum suchen</span><span class="lang-en"><strong>Start early:</strong> Search at least 2-3 months before your desired move-in date</span><span class="lang-fr"><strong>Commencer tôt :</strong> Chercher au moins 2-3 mois avant la date d'emménagement souhaitée</span></li>
+                        <li><span class="lang-de"><strong>Unterlagen vorbereiten:</strong> Gehaltsnachweise, SCHUFA-Auskunft, Personalausweis, ggf. Bürgschaft der Eltern</span><span class="lang-en"><strong>Prepare documents:</strong> Salary statements, SCHUFA credit report, ID, parental guarantee if needed</span><span class="lang-fr"><strong>Préparer les documents :</strong> Fiches de paie, SCHUFA, carte d'identité, éventuellement garantie parentale</span></li>
+                        <li><span class="lang-de"><strong>Mehrere Besichtigungen:</strong> Vergleiche immer mehrere Wohnungen, bevor du dich entscheidest</span><span class="lang-en"><strong>Multiple viewings:</strong> Always compare several apartments before deciding</span><span class="lang-fr"><strong>Plusieurs visites :</strong> Compare toujours plusieurs appartements avant de te décider</span></li>
+                        <li><span class="lang-de"><strong>Lage checken:</strong> Anbindung an ÖPNV, Einkaufsmöglichkeiten, Entfernung zur Arbeit/Uni</span><span class="lang-en"><strong>Check the location:</strong> Public transport connections, shopping options, distance to work/university</span><span class="lang-fr"><strong>Vérifier l'emplacement :</strong> Transports en commun, commerces, distance au travail/à l'université</span></li>
+                        <li><span class="lang-de"><strong>Zu verschiedenen Zeiten besuchen:</strong> Ist die Straße nachts laut? Wie ist das Licht tagsüber?</span><span class="lang-en"><strong>Visit at different times:</strong> Is the street noisy at night? How is the daylight?</span><span class="lang-fr"><strong>Visiter à différents moments :</strong> La rue est-elle bruyante la nuit ? Comment est la lumière du jour ?</span></li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa vergleicht: Ein WG-Zimmer in ihrer Stadt kostet ca. 350 € warm (alles inklusive). Eine eigene 1-Zimmer-Wohnung kommt auf ca. 610 € (alle Kosten). Mit ihrem Ausbildungsgehalt von 1.050 € netto entscheidet sie sich erstmal für die WG - da bleiben ihr noch 700 € für Essen, Mobilität, Freizeit und Sparen. Bei der eigenen Wohnung wären es nur 440 €.</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa compares: A shared room in her city costs about 350 euros warm (all inclusive). Her own 1-room apartment comes to about 610 euros (all costs). With her apprenticeship salary of 1,050 euros net, she decides to go for the shared flat first - that leaves her 700 euros for food, transport, leisure, and saving. With her own apartment, it would be only 440 euros.</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa compare : une chambre en colocation dans sa ville coûte environ 350 € charges comprises (tout inclus). Son propre studio revient à environ 610 € (tous frais). Avec son salaire d'apprentissage de 1 050 € net, elle choisit d'abord la colocation - il lui reste 700 € pour la nourriture, les transports, les loisirs et l'épargne. Avec son propre appartement, ce ne serait que 440 €.</span></p>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Zusammenfassung</span><span class="lang-en">📋 Summary</span><span class="lang-fr">📋 Résumé</span></h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-rose-400 mb-2"><span class="lang-de">Wichtige Begriffe</span><span class="lang-en">Key Terms</span><span class="lang-fr">Termes importants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Kaltmiete:</strong> Reine Miete ohne Nebenkosten</span><span class="lang-en"><strong>Cold rent:</strong> Pure rent without utilities</span><span class="lang-fr"><strong>Loyer froid :</strong> Loyer pur sans charges</span></li>
+                            <li><span class="lang-de"><strong>Warmmiete:</strong> Miete inklusive Nebenkosten</span><span class="lang-en"><strong>Warm rent:</strong> Rent including utilities</span><span class="lang-fr"><strong>Loyer charges comprises :</strong> Loyer incluant les charges</span></li>
+                            <li><span class="lang-de"><strong>Kaution:</strong> Sicherheit, max. 3 Kaltmieten</span><span class="lang-en"><strong>Deposit:</strong> Security, max. 3 cold rents</span><span class="lang-fr"><strong>Caution :</strong> Garantie, max. 3 loyers froids</span></li>
+                            <li><span class="lang-de"><strong>Übergabeprotokoll:</strong> Zustandsdokumentation</span><span class="lang-en"><strong>Handover protocol:</strong> Condition documentation</span><span class="lang-fr"><strong>Procès-verbal :</strong> Documentation de l'état</span></li>
+                            <li><span class="lang-de"><strong>Nebenkosten:</strong> Zusatzkosten wie Heizung, Wasser</span><span class="lang-en"><strong>Utilities:</strong> Additional costs like heating, water</span><span class="lang-fr"><strong>Charges :</strong> Coûts supplémentaires comme chauffage, eau</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Das Wichtigste</span><span class="lang-en">Key Takeaways</span><span class="lang-fr">L'essentiel</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Warmmiete maximal 30% des Nettoeinkommens</span><span class="lang-en">Warm rent max 30% of net income</span><span class="lang-fr">Loyer charges comprises max 30% du revenu net</span></li>
+                            <li><span class="lang-de">Mietvertrag immer komplett lesen</span><span class="lang-en">Always read the full rental contract</span><span class="lang-fr">Toujours lire le bail en entier</span></li>
+                            <li><span class="lang-de">Übergabeprotokoll schützt deine Kaution</span><span class="lang-en">Handover protocol protects your deposit</span><span class="lang-fr">Le procès-verbal protège ta caution</span></li>
+                            <li><span class="lang-de">Second-Hand spart bei der Erstausstattung</span><span class="lang-en">Second-hand saves on furnishing</span><span class="lang-fr">La seconde main permet d'économiser</span></li>
+                            <li><span class="lang-de">WG ist günstiger und ideal für den Start</span><span class="lang-en">Shared flat is cheaper and ideal to start</span><span class="lang-fr">La colocation est moins chère et idéale pour débuter</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center"><span class="lang-de">📝 Kapitel-Test</span><span class="lang-en">📝 Chapter Test</span><span class="lang-fr">📝 Test du chapitre</span></h2>
+                <p class="text-gray-400 text-center mb-8"><span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span><span class="lang-en">Test your knowledge! First choose your name and then answer all questions.</span><span class="lang-fr">Teste tes connaissances ! Choisis d'abord ton nom puis réponds à toutes les questions.</span></p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter14.html"><span class="lang-de">← Kapitel 14</span><span class="lang-en">← Chapter 14</span><span class="lang-fr">← Chapitre 14</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span><span class="lang-fr">Aperçu</span></a>
+                <a href="chapter16.html"><span class="lang-de">Kapitel 16 →</span><span class="lang-en">Chapter 16 →</span><span class="lang-fr">Chapitre 16 →</span></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        TestSystem.initTest(15, [
+            {
+                question: "Was ist der Unterschied zwischen Kaltmiete und Warmmiete?",
+                question_en: "What is the difference between cold rent and warm rent?",
+                question_fr: "Quelle est la différence entre le loyer froid et le loyer charges comprises ?",
+                options: ["Kaltmiete ist im Winter, Warmmiete im Sommer", "Kaltmiete ist ohne Nebenkosten, Warmmiete ist mit Nebenkosten", "Kaltmiete ist günstiger, weil die Wohnung keine Heizung hat", "Es gibt keinen Unterschied"],
+                options_en: ["Cold rent is in winter, warm rent in summer", "Cold rent is without utilities, warm rent includes utilities", "Cold rent is cheaper because the apartment has no heating", "There is no difference"],
+                options_fr: ["Le loyer froid est en hiver, le loyer chaud en été", "Le loyer froid est sans charges, le loyer charges comprises inclut les charges", "Le loyer froid est moins cher car l'appartement n'a pas de chauffage", "Il n'y a pas de différence"],
+                correct: 1,
+                explanation: "Die Kaltmiete ist der reine Mietpreis ohne Nebenkosten. Die Warmmiete beinhaltet die Kaltmiete plus Nebenkosten wie Heizung, Wasser und Müllabfuhr.",
+                explanation_en: "The cold rent is the pure rental price without utilities. The warm rent includes the cold rent plus utility costs like heating, water, and waste collection.",
+                explanation_fr: "Le loyer froid est le prix de location pur sans charges. Le loyer charges comprises inclut le loyer froid plus les charges comme le chauffage, l'eau et l'enlèvement des ordures."
+            },
+            {
+                question: "Wie viel Prozent deines Nettoeinkommens sollte die Warmmiete maximal betragen?",
+                question_en: "What percentage of your net income should the warm rent be at most?",
+                question_fr: "Quel pourcentage maximum de ton revenu net le loyer charges comprises devrait-il représenter ?",
+                options: ["20%", "30%", "50%", "Es gibt keine Regel"],
+                options_en: ["20%", "30%", "50%", "There is no rule"],
+                options_fr: ["20 %", "30 %", "50 %", "Il n'y a pas de règle"],
+                correct: 1,
+                explanation: "Die 30%-Regel besagt, dass deine Warmmiete maximal 30% deines Nettoeinkommens betragen sollte, damit genug für andere Ausgaben und Sparen übrig bleibt.",
+                explanation_en: "The 30% rule states that your warm rent should be no more than 30% of your net income, so there is enough left for other expenses and saving.",
+                explanation_fr: "La règle des 30 % dit que ton loyer charges comprises ne devrait pas dépasser 30 % de ton revenu net, pour qu'il reste assez pour les autres dépenses et l'épargne."
+            },
+            {
+                question: "Wie hoch darf die Mietkaution maximal sein?",
+                question_en: "What is the maximum amount the rental deposit can be?",
+                question_fr: "Quel est le montant maximum de la caution de location ?",
+                options: ["1 Kaltmiete", "2 Kaltmieten", "3 Kaltmieten", "6 Kaltmieten"],
+                options_en: ["1 month's cold rent", "2 months' cold rent", "3 months' cold rent", "6 months' cold rent"],
+                options_fr: ["1 loyer froid", "2 loyers froids", "3 loyers froids", "6 loyers froids"],
+                correct: 2,
+                explanation: "Der Vermieter darf maximal 3 Nettokaltmieten als Kaution verlangen. Du darfst die Kaution in 3 Monatsraten zahlen.",
+                explanation_en: "The landlord may charge a maximum of 3 months' net cold rent as a deposit. You may pay the deposit in 3 monthly installments.",
+                explanation_fr: "Le bailleur peut demander au maximum 3 loyers froids nets comme caution. Tu peux payer la caution en 3 mensualités."
+            },
+            {
+                question: "Warum ist ein Übergabeprotokoll wichtig?",
+                question_en: "Why is a handover protocol important?",
+                question_fr: "Pourquoi un procès-verbal de remise est-il important ?",
+                options: ["Es ist gesetzlich vorgeschrieben", "Es dokumentiert den Zustand der Wohnung und schützt die Kaution", "Der Vermieter braucht es für die Steuererklärung", "Es ersetzt den Mietvertrag"],
+                options_en: ["It is required by law", "It documents the apartment's condition and protects the deposit", "The landlord needs it for tax returns", "It replaces the rental contract"],
+                options_fr: ["C'est obligatoire par la loi", "Il documente l'état de l'appartement et protège la caution", "Le bailleur en a besoin pour sa déclaration d'impôts", "Il remplace le contrat de bail"],
+                correct: 1,
+                explanation: "Das Übergabeprotokoll dokumentiert den Zustand der Wohnung beim Ein- und Auszug. Ohne Protokoll kann der Vermieter Schäden behaupten und von der Kaution abziehen.",
+                explanation_en: "The handover protocol documents the condition of the apartment when moving in and out. Without a protocol, the landlord can claim damages and deduct them from the deposit.",
+                explanation_fr: "Le procès-verbal de remise documente l'état de l'appartement à l'emménagement et au déménagement. Sans procès-verbal, le bailleur peut prétendre des dommages et les déduire de la caution."
+            },
+            {
+                question: "Welche Kosten sind normalerweise NICHT in der Warmmiete enthalten?",
+                question_en: "Which costs are usually NOT included in the warm rent?",
+                question_fr: "Quels coûts ne sont généralement PAS inclus dans le loyer charges comprises ?",
+                options: ["Heizung", "Wasser", "Strom", "Müllabfuhr"],
+                options_en: ["Heating", "Water", "Electricity", "Waste collection"],
+                options_fr: ["Chauffage", "Eau", "Électricité", "Enlèvement des ordures"],
+                correct: 2,
+                explanation: "Strom muss man in der Regel selbst beim Stromanbieter anmelden und separat bezahlen. Heizung, Wasser und Müllabfuhr sind üblicherweise in den Nebenkosten enthalten.",
+                explanation_en: "Electricity usually has to be registered with an electricity provider yourself and paid separately. Heating, water, and waste collection are usually included in the utility costs.",
+                explanation_fr: "L'électricité doit généralement être souscrite auprès d'un fournisseur et payée séparément. Le chauffage, l'eau et l'enlèvement des ordures sont habituellement inclus dans les charges."
+            },
+            {
+                question: "Was ist eine Zwischenmiete?",
+                question_en: "What is a temporary sublet (Zwischenmiete)?",
+                question_fr: "Qu'est-ce qu'une sous-location temporaire (Zwischenmiete) ?",
+                options: ["Eine Miete, die zwischen zwei Mietpreisen liegt", "Eine vorübergehende Untervermietung, z.B. während eines Auslandssemesters", "Eine Miete, die monatlich steigt", "Ein spezieller Vertrag für Studierende"],
+                options_en: ["A rent that is between two price levels", "A temporary sublet, e.g. during a semester abroad", "A rent that increases monthly", "A special contract for students"],
+                options_fr: ["Un loyer entre deux niveaux de prix", "Une sous-location temporaire, p. ex. pendant un semestre à l'étranger", "Un loyer qui augmente mensuellement", "Un contrat spécial pour étudiants"],
+                correct: 1,
+                explanation: "Zwischenmiete bedeutet, dass jemand seine Wohnung oder sein WG-Zimmer vorübergehend untervermietet - oft möbliert und mit kürzerer Bindung.",
+                explanation_en: "Zwischenmiete means someone temporarily sublets their apartment or room - often furnished and with a shorter commitment.",
+                explanation_fr: "La Zwischenmiete signifie que quelqu'un sous-loue temporairement son appartement ou sa chambre - souvent meublé et avec un engagement plus court."
+            },
+            {
+                question: "Was solltest du bei einer Wohnungsbesichtigung beachten?",
+                question_en: "What should you pay attention to during an apartment viewing?",
+                question_fr: "À quoi faut-il faire attention lors d'une visite d'appartement ?",
+                options: ["Nur auf den Preis achten", "Die Wohnung nur einmal und kurz ansehen", "Lage, ÖPNV-Anbindung und die Wohnung zu verschiedenen Tageszeiten besuchen", "Sofort den Vertrag unterschreiben"],
+                options_en: ["Only pay attention to the price", "Only look at the apartment once and briefly", "Check the location, public transport, and visit at different times of day", "Sign the contract immediately"],
+                options_fr: ["Ne regarder que le prix", "Ne voir l'appartement qu'une fois et brièvement", "Vérifier l'emplacement, les transports en commun et visiter à différentes heures", "Signer le contrat immédiatement"],
+                correct: 2,
+                explanation: "Bei einer Besichtigung solltest du auf Lage, ÖPNV-Anbindung, Einkaufsmöglichkeiten und den Zustand der Wohnung achten. Besuche die Gegend auch zu verschiedenen Tageszeiten.",
+                explanation_en: "During a viewing, you should pay attention to location, public transport, shopping options, and the condition of the apartment. Visit the area at different times of day too.",
+                explanation_fr: "Lors d'une visite, tu devrais vérifier l'emplacement, les transports en commun, les commerces et l'état de l'appartement. Visite aussi le quartier à différentes heures de la journée."
+            },
+            {
+                question: "Wie lange ist die übliche Kündigungsfrist für Mieter in Deutschland?",
+                question_en: "What is the usual notice period for tenants in Germany?",
+                question_fr: "Quel est le préavis habituel pour les locataires en Allemagne ?",
+                options: ["1 Monat", "2 Monate", "3 Monate", "6 Monate"],
+                options_en: ["1 month", "2 months", "3 months", "6 months"],
+                options_fr: ["1 mois", "2 mois", "3 mois", "6 mois"],
+                correct: 2,
+                explanation: "Die gesetzliche Kündigungsfrist für Mieter beträgt in der Regel 3 Monate zum Monatsende.",
+                explanation_en: "The legal notice period for tenants is usually 3 months to the end of the month.",
+                explanation_fr: "Le préavis légal pour les locataires est généralement de 3 mois pour la fin du mois."
+            },
+            {
+                question: "Welcher ist ein guter Spartipp für die Erstausstattung?",
+                question_en: "Which is a good money-saving tip for first-time furnishing?",
+                question_fr: "Quel est un bon conseil pour économiser sur le premier équipement ?",
+                options: ["Alles neu bei Designermöbel-Shops kaufen", "Möbel auf Kredit kaufen", "Second-Hand kaufen, Familie fragen, IKEA-Fundgrube nutzen", "Auf Möbel komplett verzichten"],
+                options_en: ["Buy everything new at designer furniture shops", "Buy furniture on credit", "Buy second-hand, ask family, use IKEA As-Is section", "Go without any furniture"],
+                options_fr: ["Tout acheter neuf dans les boutiques de design", "Acheter des meubles à crédit", "Acheter d'occasion, demander à la famille, utiliser le coin des bonnes affaires IKEA", "Se passer complètement de meubles"],
+                correct: 2,
+                explanation: "Second-Hand-Möbel, Geschenke von Familie und Freunden sowie die IKEA-Fundgrube sind die besten Wege, bei der Erstausstattung zu sparen.",
+                explanation_en: "Second-hand furniture, gifts from family and friends, and the IKEA As-Is section are the best ways to save on first-time furnishing.",
+                explanation_fr: "Les meubles d'occasion, les dons de la famille et des amis ainsi que le coin des bonnes affaires IKEA sont les meilleurs moyens d'économiser sur le premier équipement."
+            },
+            {
+                question: "Was ist der größte finanzielle Vorteil einer WG gegenüber einer eigenen Wohnung?",
+                question_en: "What is the biggest financial advantage of a shared flat over your own apartment?",
+                question_fr: "Quel est le plus grand avantage financier d'une colocation par rapport à un appartement seul ?",
+                options: ["Man muss keine Kaution zahlen", "Man braucht keinen Mietvertrag", "Miete, Nebenkosten und Internet werden geteilt", "Man bekommt Wohngeld"],
+                options_en: ["You don't have to pay a deposit", "You don't need a rental contract", "Rent, utilities, and internet are shared", "You receive housing allowance"],
+                options_fr: ["On n'a pas besoin de payer de caution", "On n'a pas besoin de contrat de bail", "Le loyer, les charges et internet sont partagés", "On reçoit une allocation logement"],
+                correct: 2,
+                explanation: "In einer WG werden Miete, Nebenkosten und Kosten wie Internet auf alle Bewohner aufgeteilt, was die monatlichen Kosten deutlich senkt.",
+                explanation_en: "In a shared flat, rent, utilities, and costs like internet are split among all residents, which significantly reduces monthly costs.",
+                explanation_fr: "Dans une colocation, le loyer, les charges et les coûts comme internet sont partagés entre tous les colocataires, ce qui réduit significativement les coûts mensuels."
+            }
+        ]);
+    </script>
+</body>
+</html>

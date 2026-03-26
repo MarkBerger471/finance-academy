@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinsrechner - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-slower': 'float 10s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+        <div class="absolute top-2/3 left-1/4 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Tools</span><span class="lang-en">Tools</span><span class="lang-fr">Outils</span></a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="../chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg bg-white/10 text-white"><span class="lang-de">Tools</span><span class="lang-en">Tools</span><span class="lang-fr">Outils</span></a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-28 pb-8 px-4">
+        <div class="max-w-5xl mx-auto text-center animate-fade-in">
+            <div class="inline-block mb-4 px-4 py-2 glass-card rounded-full text-sm text-cyan-300">
+                <span class="lang-de">🧮 Interaktiver Rechner</span>
+                <span class="lang-en">🧮 Interactive Calculator</span>
+                <span class="lang-fr">🧮 Calculateur interactif</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    <span class="lang-de">Zinseszins-Rechner</span>
+                    <span class="lang-en">Compound Interest Calculator</span>
+                    <span class="lang-fr">Calculateur d'intérêts composés</span>
+                </span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                <span class="lang-de">Sieh selbst, wie dein Geld mit der Zeit wächst. Probiere verschiedene Werte aus!</span>
+                <span class="lang-en">See for yourself how your money grows over time. Try different values!</span>
+                <span class="lang-fr">Découvre par toi-même comment ton argent grandit avec le temps. Essaie différentes valeurs !</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="relative z-10 px-4 pb-16">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+
+            <!-- Inputs Card -->
+            <div class="glass-card rounded-3xl p-6 md:p-8 space-y-6">
+                <h2 class="text-xl font-bold mb-2">
+                    <span class="lang-de">Eingaben</span>
+                    <span class="lang-en">Inputs</span>
+                    <span class="lang-fr">Paramètres</span>
+                </h2>
+
+                <!-- Startbetrag -->
+                <div>
+                    <label class="flex items-center justify-between mb-2 text-sm font-medium">
+                        <span>
+                            <span class="lang-de">Startbetrag</span>
+                            <span class="lang-en">Initial Amount</span>
+                            <span class="lang-fr">Montant initial</span>
+                        </span>
+                        <span class="text-cyan-400 font-bold"><span id="startVal">1.000</span> €</span>
+                    </label>
+                    <input type="range" id="startSlider" min="0" max="10000" step="100" value="1000"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer accent-cyan-400"
+                        style="background: linear-gradient(to right, rgba(34,211,238,0.6), rgba(168,85,247,0.6))">
+                    <div class="flex items-center gap-2 mt-2">
+                        <input type="number" id="startInput" min="0" max="10000" step="100" value="1000" class="calc-input text-sm w-full text-right" />
+                        <span class="text-gray-400 text-sm">€</span>
+                    </div>
+                </div>
+
+                <!-- Monatliche Sparrate -->
+                <div>
+                    <label class="flex items-center justify-between mb-2 text-sm font-medium">
+                        <span>
+                            <span class="lang-de">Monatliche Sparrate</span>
+                            <span class="lang-en">Monthly Savings</span>
+                            <span class="lang-fr">Épargne mensuelle</span>
+                        </span>
+                        <span class="text-purple-400 font-bold"><span id="monthlyVal">50</span> €</span>
+                    </label>
+                    <input type="range" id="monthlySlider" min="0" max="500" step="10" value="50"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer accent-purple-400"
+                        style="background: linear-gradient(to right, rgba(168,85,247,0.6), rgba(236,72,153,0.6))">
+                    <div class="flex items-center gap-2 mt-2">
+                        <input type="number" id="monthlyInput" min="0" max="500" step="10" value="50" class="calc-input text-sm w-full text-right" />
+                        <span class="text-gray-400 text-sm">€</span>
+                    </div>
+                </div>
+
+                <!-- Zinssatz -->
+                <div>
+                    <label class="flex items-center justify-between mb-2 text-sm font-medium">
+                        <span>
+                            <span class="lang-de">Zinssatz (jährlich)</span>
+                            <span class="lang-en">Interest Rate (annual)</span>
+                            <span class="lang-fr">Taux d'intérêt (annuel)</span>
+                        </span>
+                        <span class="text-pink-400 font-bold"><span id="rateVal">7,0</span> %</span>
+                    </label>
+                    <input type="range" id="rateSlider" min="0" max="15" step="0.5" value="7"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer accent-pink-400"
+                        style="background: linear-gradient(to right, rgba(236,72,153,0.6), rgba(244,114,182,0.6))">
+                    <div class="flex items-center gap-2 mt-2">
+                        <input type="number" id="rateInput" min="0" max="15" step="0.5" value="7" class="calc-input text-sm w-full text-right" />
+                        <span class="text-gray-400 text-sm">%</span>
+                    </div>
+                </div>
+
+                <!-- Laufzeit -->
+                <div>
+                    <label class="flex items-center justify-between mb-2 text-sm font-medium">
+                        <span>
+                            <span class="lang-de">Laufzeit</span>
+                            <span class="lang-en">Duration</span>
+                            <span class="lang-fr">Durée</span>
+                        </span>
+                        <span class="text-amber-400 font-bold"><span id="yearsVal">10</span>
+                            <span class="lang-de">Jahre</span>
+                            <span class="lang-en">years</span>
+                            <span class="lang-fr">ans</span>
+                        </span>
+                    </label>
+                    <input type="range" id="yearsSlider" min="1" max="50" step="1" value="10"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer accent-amber-400"
+                        style="background: linear-gradient(to right, rgba(245,158,11,0.6), rgba(251,191,36,0.6))">
+                    <div class="flex items-center gap-2 mt-2">
+                        <input type="number" id="yearsInput" min="1" max="50" step="1" value="10" class="calc-input text-sm w-full text-right" />
+                        <span class="text-gray-400 text-sm">
+                            <span class="lang-de">Jahre</span>
+                            <span class="lang-en">years</span>
+                            <span class="lang-fr">ans</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Card -->
+            <div class="space-y-6">
+                <!-- Result Numbers -->
+                <div class="glass-card rounded-3xl p-6 md:p-8">
+                    <h2 class="text-xl font-bold mb-6">
+                        <span class="lang-de">Ergebnis</span>
+                        <span class="lang-en">Result</span>
+                        <span class="lang-fr">Résultat</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <!-- Endbetrag -->
+                        <div class="calc-result">
+                            <p class="text-sm text-gray-400 mb-1">
+                                <span class="lang-de">Endbetrag</span>
+                                <span class="lang-en">Final Amount</span>
+                                <span class="lang-fr">Montant final</span>
+                            </p>
+                            <p id="resultTotal" class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">0 €</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Einzahlungen -->
+                            <div class="glass-card rounded-2xl p-4 text-center hover:transform-none">
+                                <p class="text-xs text-gray-400 mb-1">
+                                    <span class="lang-de">Einzahlungen</span>
+                                    <span class="lang-en">Total Deposits</span>
+                                    <span class="lang-fr">Dépôts totaux</span>
+                                </p>
+                                <p id="resultDeposits" class="text-lg font-bold text-blue-400">0 €</p>
+                            </div>
+                            <!-- Zinsgewinn -->
+                            <div class="glass-card rounded-2xl p-4 text-center hover:transform-none">
+                                <p class="text-xs text-gray-400 mb-1">
+                                    <span class="lang-de">Zinsgewinn</span>
+                                    <span class="lang-en">Interest Earned</span>
+                                    <span class="lang-fr">Intérêts gagnés</span>
+                                </p>
+                                <p id="resultInterest" class="text-lg font-bold text-green-400">0 €</p>
+                            </div>
+                        </div>
+
+                        <!-- Interest multiplier -->
+                        <div class="text-center pt-2">
+                            <span class="text-sm text-gray-500">
+                                <span class="lang-de">Dein Geld hat sich</span>
+                                <span class="lang-en">Your money multiplied</span>
+                                <span class="lang-fr">Ton argent a été multiplié par</span>
+                            </span>
+                            <span id="resultMultiplier" class="text-lg font-bold text-amber-400 ml-1">1,0x</span>
+                            <span class="text-sm text-gray-500">
+                                <span class="lang-de">vermehrt</span>
+                                <span class="lang-en"></span>
+                                <span class="lang-fr"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Card -->
+                <div class="glass-card rounded-3xl p-6 md:p-8">
+                    <h2 class="text-lg font-bold mb-4">
+                        <span class="lang-de">Wachstum über Zeit</span>
+                        <span class="lang-en">Growth Over Time</span>
+                        <span class="lang-fr">Croissance dans le temps</span>
+                    </h2>
+                    <div class="relative" style="aspect-ratio: 16/10;">
+                        <canvas id="growthChart" class="w-full h-full rounded-xl"></canvas>
+                    </div>
+                    <div class="flex items-center justify-center gap-6 mt-4 text-xs">
+                        <span class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full" style="background: linear-gradient(135deg, #22d3ee, #a855f7);"></span>
+                            <span class="lang-de">Gesamtwert</span>
+                            <span class="lang-en">Total Value</span>
+                            <span class="lang-fr">Valeur totale</span>
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full" style="background: rgba(96,165,250,0.6);"></span>
+                            <span class="lang-de">Einzahlungen</span>
+                            <span class="lang-en">Deposits</span>
+                            <span class="lang-fr">Dépôts</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung für die nächste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Éducation financière pour la prochaine génération</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script>
+    (function() {
+        // --- Element References ---
+        const ids = ['start', 'monthly', 'rate', 'years'];
+        const sliders = {}, inputs = {}, displays = {};
+        ids.forEach(id => {
+            sliders[id] = document.getElementById(id + 'Slider');
+            inputs[id] = document.getElementById(id + 'Input');
+            displays[id] = document.getElementById(id + 'Val');
+        });
+        const resultTotal = document.getElementById('resultTotal');
+        const resultDeposits = document.getElementById('resultDeposits');
+        const resultInterest = document.getElementById('resultInterest');
+        const resultMultiplier = document.getElementById('resultMultiplier');
+        const canvas = document.getElementById('growthChart');
+        const ctx = canvas.getContext('2d');
+
+        // --- Formatting ---
+        function fmtNum(n) {
+            return Math.round(n).toLocaleString('de-DE');
+        }
+        function fmtRate(n) {
+            return Number(n).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+        }
+
+        // --- Sync slider <-> input ---
+        ids.forEach(id => {
+            function sync(val) {
+                sliders[id].value = val;
+                inputs[id].value = val;
+                if (id === 'rate') {
+                    displays[id].textContent = fmtRate(val);
+                } else {
+                    displays[id].textContent = fmtNum(val);
+                }
+                calculate();
+            }
+            sliders[id].addEventListener('input', () => sync(sliders[id].value));
+            inputs[id].addEventListener('input', () => {
+                let v = parseFloat(inputs[id].value);
+                if (isNaN(v)) return;
+                v = Math.max(parseFloat(sliders[id].min), Math.min(parseFloat(sliders[id].max), v));
+                sync(v);
+            });
+        });
+
+        // --- Compound Interest Calculation ---
+        function getValues() {
+            return {
+                principal: parseFloat(sliders.start.value),
+                monthly: parseFloat(sliders.monthly.value),
+                rate: parseFloat(sliders.rate.value) / 100,
+                years: parseInt(sliders.years.value),
+            };
+        }
+
+        function computeGrowth(v) {
+            const { principal, monthly, rate, years } = v;
+            const monthlyRate = rate / 12;
+            const dataTotal = [principal];
+            const dataDeposits = [principal];
+            let balance = principal;
+            let deposits = principal;
+
+            for (let m = 1; m <= years * 12; m++) {
+                balance = balance * (1 + monthlyRate) + monthly;
+                deposits += monthly;
+                if (m % 12 === 0) {
+                    dataTotal.push(balance);
+                    dataDeposits.push(deposits);
+                }
+            }
+            return { dataTotal, dataDeposits, finalBalance: balance, totalDeposits: deposits };
+        }
+
+        // --- Chart Drawing ---
+        function drawChart(dataTotal, dataDeposits) {
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            const w = rect.width;
+            const h = rect.height;
+            const pad = { top: 20, right: 16, bottom: 36, left: 56 };
+            const cw = w - pad.left - pad.right;
+            const ch = h - pad.top - pad.bottom;
+
+            ctx.clearRect(0, 0, w, h);
+
+            const maxVal = Math.max(...dataTotal, 1);
+            const n = dataTotal.length;
+
+            function x(i) { return pad.left + (i / (n - 1)) * cw; }
+            function y(val) { return pad.top + ch - (val / maxVal) * ch; }
+
+            // Grid lines
+            const gridLines = 5;
+            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            for (let i = 0; i <= gridLines; i++) {
+                const gy = pad.top + (ch / gridLines) * i;
+                ctx.beginPath();
+                ctx.moveTo(pad.left, gy);
+                ctx.lineTo(w - pad.right, gy);
+                ctx.stroke();
+            }
+            ctx.setLineDash([]);
+
+            // Y-axis labels
+            ctx.fillStyle = 'rgba(255,255,255,0.35)';
+            ctx.font = '11px system-ui, sans-serif';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            for (let i = 0; i <= gridLines; i++) {
+                const val = maxVal - (maxVal / gridLines) * i;
+                const gy = pad.top + (ch / gridLines) * i;
+                let label;
+                if (val >= 1000000) label = (val / 1000000).toFixed(1) + 'M';
+                else if (val >= 1000) label = Math.round(val / 1000) + 'k';
+                else label = Math.round(val).toString();
+                ctx.fillText(label + ' €', pad.left - 8, gy);
+            }
+
+            // X-axis labels
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            const step = n <= 10 ? 1 : n <= 25 ? 5 : 10;
+            for (let i = 0; i < n; i++) {
+                if (i % step === 0 || i === n - 1) {
+                    ctx.fillText(i, x(i), h - pad.bottom + 8);
+                }
+            }
+            // X-axis title
+            ctx.fillStyle = 'rgba(255,255,255,0.25)';
+            ctx.font = '10px system-ui, sans-serif';
+            const lang = (localStorage.getItem('finance_academy_lang') || 'de');
+            const xLabel = lang === 'fr' ? 'Années' : lang === 'en' ? 'Years' : 'Jahre';
+            ctx.fillText(xLabel, pad.left + cw / 2, h - 4);
+
+            // Deposits area fill
+            ctx.beginPath();
+            ctx.moveTo(x(0), y(0));
+            for (let i = 0; i < n; i++) ctx.lineTo(x(i), y(dataDeposits[i]));
+            ctx.lineTo(x(n - 1), y(0));
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(96,165,250,0.12)';
+            ctx.fill();
+
+            // Deposits line
+            ctx.beginPath();
+            for (let i = 0; i < n; i++) {
+                if (i === 0) ctx.moveTo(x(i), y(dataDeposits[i]));
+                else ctx.lineTo(x(i), y(dataDeposits[i]));
+            }
+            ctx.strokeStyle = 'rgba(96,165,250,0.6)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Total area fill (gradient)
+            const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + ch);
+            grad.addColorStop(0, 'rgba(34,211,238,0.25)');
+            grad.addColorStop(1, 'rgba(168,85,247,0.05)');
+            ctx.beginPath();
+            ctx.moveTo(x(0), y(0));
+            for (let i = 0; i < n; i++) ctx.lineTo(x(i), y(dataTotal[i]));
+            ctx.lineTo(x(n - 1), y(0));
+            ctx.closePath();
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            // Total line (gradient stroke)
+            ctx.beginPath();
+            for (let i = 0; i < n; i++) {
+                if (i === 0) ctx.moveTo(x(i), y(dataTotal[i]));
+                else ctx.lineTo(x(i), y(dataTotal[i]));
+            }
+            const lineGrad = ctx.createLinearGradient(x(0), 0, x(n - 1), 0);
+            lineGrad.addColorStop(0, '#22d3ee');
+            lineGrad.addColorStop(1, '#a855f7');
+            ctx.strokeStyle = lineGrad;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Dots on total line
+            for (let i = 0; i < n; i++) {
+                if (n <= 15 || i % step === 0 || i === n - 1) {
+                    ctx.beginPath();
+                    ctx.arc(x(i), y(dataTotal[i]), 3, 0, Math.PI * 2);
+                    ctx.fillStyle = '#a855f7';
+                    ctx.fill();
+                    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // --- Main Calculate ---
+        function calculate() {
+            const v = getValues();
+            const { dataTotal, dataDeposits, finalBalance, totalDeposits } = computeGrowth(v);
+            const interest = finalBalance - totalDeposits;
+            const multiplier = totalDeposits > 0 ? finalBalance / totalDeposits : 1;
+
+            resultTotal.textContent = fmtNum(finalBalance) + ' €';
+            resultDeposits.textContent = fmtNum(totalDeposits) + ' €';
+            resultInterest.textContent = fmtNum(interest) + ' €';
+            resultMultiplier.textContent = multiplier.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'x';
+
+            drawChart(dataTotal, dataDeposits);
+        }
+
+        // --- Responsive canvas ---
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(calculate, 100);
+        });
+
+        // --- Slider track styling ---
+        const style = document.createElement('style');
+        style.textContent = `
+            input[type="range"] {
+                -webkit-appearance: none;
+                appearance: none;
+                height: 8px;
+                border-radius: 9999px;
+                outline: none;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 3px rgba(99,102,241,0.3);
+                cursor: pointer;
+                transition: box-shadow 0.2s;
+            }
+            input[type="range"]::-webkit-slider-thumb:hover {
+                box-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 0 0 5px rgba(99,102,241,0.4);
+            }
+            input[type="range"]::-moz-range-thumb {
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 3px rgba(99,102,241,0.3);
+                cursor: pointer;
+                border: none;
+            }
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initial calculation
+        calculate();
+    })();
+    </script>
+</body>
+</html>

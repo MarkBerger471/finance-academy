@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 13: Krypto & digitale Assets - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="../tools/index.html" class="nav-link">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">₿</span>
+                <div class="inline-block px-4 py-1 glass-badge rounded-full text-sm text-amber-400 mb-4"><span class="lang-de">Kapitel 13 von 16</span><span class="lang-en">Chapter 13 of 16</span><span class="lang-fr">Chapitre 13 sur 16</span></div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="lang-de">Krypto & digitale Assets</span><span class="lang-en">Crypto & Digital Assets</span><span class="lang-fr">Crypto & actifs numériques</span></h1>
+                <div class="flex items-center justify-center gap-4 text-gray-400 text-sm">
+                    <span><span class="lang-de">⏱ 1-1,5 Stunden</span><span class="lang-en">⏱ 1-1.5 hours</span><span class="lang-fr">⏱ 1-1,5 heures</span></span>
+                    <span>|</span>
+                    <span><span class="lang-de">📝 10 Testfragen</span><span class="lang-en">📝 10 test questions</span><span class="lang-fr">📝 10 questions de test</span></span>
+                </div>
+                <div class="progress-bar max-w-md mx-auto mt-6">
+                    <div class="progress-fill" style="width: 81.25%"></div>
+                </div>
+                <p class="text-gray-500 text-xs mt-2"><span class="lang-de">81% des Kurses</span><span class="lang-en">81% of the course</span><span class="lang-fr">81% du cours</span></p>
+            </div>
+
+            <!-- Section 1: Was ist Kryptowährung? -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🔗 Was ist Kryptowährung?</span><span class="lang-en">🔗 What is Cryptocurrency?</span><span class="lang-fr">🔗 Qu'est-ce qu'une cryptomonnaie ?</span></h3>
+                <p><span class="lang-de">Du hast sicher schon von <strong>Bitcoin</strong> gehört - vielleicht in den Nachrichten, auf Social Media oder von Freunden. Aber was steckt eigentlich dahinter? Eine <strong>Kryptowährung</strong> ist digitales Geld, das nicht von einer Bank oder Regierung kontrolliert wird. Stattdessen basiert es auf einer Technologie namens <strong>Blockchain</strong>.</span><span class="lang-en">You've surely heard of <strong>Bitcoin</strong> before - maybe in the news, on social media, or from friends. But what's actually behind it? A <strong>cryptocurrency</strong> is digital money that is not controlled by a bank or government. Instead, it is based on a technology called <strong>blockchain</strong>.</span><span class="lang-fr">Tu as sûrement déjà entendu parler du <strong>Bitcoin</strong> - peut-être aux informations, sur les réseaux sociaux ou par des amis. Mais qu'est-ce qui se cache derrière ? Une <strong>cryptomonnaie</strong> est de l'argent numérique qui n'est contrôlé ni par une banque ni par un gouvernement. Elle repose sur une technologie appelée <strong>blockchain</strong>.</span></p>
+
+                <div class="info-box">
+                    <p><span class="lang-de"><strong>💡 Blockchain einfach erklärt:</strong> Stell dir ein großes Notizbuch vor, in das jede Transaktion geschrieben wird. Aber dieses Notizbuch liegt nicht bei einer Bank - es wird von tausenden Computern gleichzeitig geführt. Jeder kann es lesen, aber niemand kann nachträglich etwas ändern. Jede Seite (= "Block") ist mit der vorherigen Seite verkettet (= "Chain"). Deshalb heißt es <strong>Blockchain</strong>.</span><span class="lang-en"><strong>💡 Blockchain explained simply:</strong> Imagine a large notebook where every transaction is written down. But this notebook doesn't sit at a bank - it is maintained by thousands of computers simultaneously. Anyone can read it, but nobody can change anything retroactively. Each page (= "block") is linked to the previous page (= "chain"). That's why it's called <strong>blockchain</strong>.</span><span class="lang-fr"><strong>💡 La blockchain expliquée simplement :</strong> Imagine un grand cahier dans lequel chaque transaction est inscrite. Mais ce cahier ne se trouve pas dans une banque - il est tenu par des milliers d'ordinateurs simultanément. Tout le monde peut le lire, mais personne ne peut modifier quoi que ce soit rétroactivement. Chaque page (= « bloc ») est liée à la précédente (= « chaîne »). C'est pourquoi on appelle ça la <strong>blockchain</strong>.</span></p>
+                </div>
+
+                <p><span class="lang-de">Das Konzept hinter Kryptowährungen ist die <strong>Dezentralisierung</strong>: Es gibt keine zentrale Stelle (wie eine Bank oder Zentralbank), die das System kontrolliert. Stattdessen überprüfen viele Computer im Netzwerk gemeinsam, ob eine Transaktion gültig ist.</span><span class="lang-en">The concept behind cryptocurrencies is <strong>decentralization</strong>: there is no central authority (like a bank or central bank) that controls the system. Instead, many computers in the network collectively verify whether a transaction is valid.</span><span class="lang-fr">Le concept derrière les cryptomonnaies est la <strong>décentralisation</strong> : il n'y a pas d'autorité centrale (comme une banque ou une banque centrale) qui contrôle le système. Au lieu de cela, de nombreux ordinateurs du réseau vérifient ensemble si une transaction est valide.</span></p>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa möchte verstehen, wie Bitcoin funktioniert. Sie stellt es sich so vor: Wenn sie ihrer Freundin Marlene 10 € über eine Bank überweist, prüft die Bank die Transaktion. Bei Bitcoin gibt es keine Bank - stattdessen prüfen tausende Computer weltweit gleichzeitig, ob Luisa das Geld wirklich hat und ob die Überweisung korrekt ist.</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa wants to understand how Bitcoin works. She imagines it like this: When she transfers 10 euros to her friend Marlene through a bank, the bank verifies the transaction. With Bitcoin, there is no bank - instead, thousands of computers worldwide simultaneously check whether Luisa really has the money and whether the transfer is correct.</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa veut comprendre comment fonctionne le Bitcoin. Elle l'imagine ainsi : quand elle transfère 10 € à son amie Marlene via une banque, la banque vérifie la transaction. Avec le Bitcoin, il n'y a pas de banque - ce sont des milliers d'ordinateurs dans le monde qui vérifient simultanément si Luisa a vraiment l'argent et si le transfert est correct.</span></p>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Wichtig:</strong> Auch wenn die Technologie interessant ist, bedeutet das nicht, dass Kryptowährungen eine gute Geldanlage sind! "Spannende Technologie" und "gutes Investment" sind zwei völlig verschiedene Dinge. In diesem Kapitel lernst du, warum du besonders vorsichtig sein solltest.</span><span class="lang-en"><strong>⚠️ Important:</strong> Even though the technology is interesting, that doesn't mean cryptocurrencies are a good investment! "Exciting technology" and "good investment" are two completely different things. In this chapter, you'll learn why you should be especially cautious.</span><span class="lang-fr"><strong>⚠️ Important :</strong> Même si la technologie est intéressante, cela ne signifie pas que les cryptomonnaies sont un bon investissement ! « Technologie fascinante » et « bon investissement » sont deux choses complètement différentes. Dans ce chapitre, tu apprendras pourquoi tu dois être particulièrement prudent(e).</span></p>
+                </div>
+            </div>
+
+            <!-- Section 2: Verschiedene Kryptos -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🪙 Verschiedene Kryptos und digitale Assets</span><span class="lang-en">🪙 Different Cryptos and Digital Assets</span><span class="lang-fr">🪙 Différentes cryptos et actifs numériques</span></h3>
+                <p><span class="lang-de">Es gibt mittlerweile tausende verschiedene Kryptowährungen. Die bekanntesten sind:</span><span class="lang-en">There are now thousands of different cryptocurrencies. The most well-known are:</span><span class="lang-fr">Il existe désormais des milliers de cryptomonnaies différentes. Les plus connues sont :</span></p>
+
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">₿</div>
+                        <h4 class="font-bold text-amber-400 mb-2">Bitcoin (BTC)</h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Die erste und bekannteste Kryptowährung, erfunden 2009 von einer anonymen Person oder Gruppe unter dem Pseudonym "Satoshi Nakamoto". Begrenzt auf 21 Millionen Einheiten.</span><span class="lang-en">The first and most well-known cryptocurrency, invented in 2009 by an anonymous person or group under the pseudonym "Satoshi Nakamoto." Limited to 21 million units.</span><span class="lang-fr">La première et la plus connue des cryptomonnaies, inventée en 2009 par une personne ou un groupe anonyme sous le pseudonyme « Satoshi Nakamoto ». Limitée à 21 millions d'unités.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">⟠</div>
+                        <h4 class="font-bold text-purple-400 mb-2">Ethereum (ETH)</h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Die zweitgrößte Kryptowährung. Ermöglicht "Smart Contracts" - Programme, die automatisch ablaufen, wenn bestimmte Bedingungen erfüllt sind.</span><span class="lang-en">The second largest cryptocurrency. Enables "smart contracts" - programs that run automatically when certain conditions are met.</span><span class="lang-fr">La deuxième plus grande cryptomonnaie. Permet les « smart contracts » - des programmes qui s'exécutent automatiquement quand certaines conditions sont remplies.</span></p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-center">
+                        <div class="text-3xl mb-3">🪙</div>
+                        <h4 class="font-bold text-gray-400 mb-2"><span class="lang-de">Tausende andere</span><span class="lang-en">Thousands of others</span><span class="lang-fr">Des milliers d'autres</span></h4>
+                        <p class="text-sm text-gray-400"><span class="lang-de">Von seriösen Projekten bis hin zu reinen Spaß-Coins ("Memecoins") und Betrug. Die allermeisten haben keinen echten Nutzen und werden wertlos.</span><span class="lang-en">From serious projects to pure joke coins ("memecoins") and outright scams. The vast majority have no real use and become worthless.</span><span class="lang-fr">De projets sérieux à des jetons de plaisanterie (« memecoins ») et des arnaques pures. La grande majorité n'a aucune utilité réelle et perd toute valeur.</span></p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Was sind Tokens und NFTs?</span><span class="lang-en">What are Tokens and NFTs?</span><span class="lang-fr">Que sont les tokens et les NFT ?</span></h4>
+                <p><span class="lang-de"><strong>Tokens</strong> sind digitale Wertmarken, die auf einer bestehenden Blockchain (oft Ethereum) erstellt werden. Sie können verschiedene Dinge repräsentieren - von Stimmrechten in einem Projekt bis hin zu... gar nichts.</span><span class="lang-en"><strong>Tokens</strong> are digital markers created on an existing blockchain (often Ethereum). They can represent different things - from voting rights in a project to... nothing at all.</span><span class="lang-fr">Les <strong>tokens</strong> sont des jetons numériques créés sur une blockchain existante (souvent Ethereum). Ils peuvent représenter différentes choses - des droits de vote dans un projet jusqu'à... rien du tout.</span></p>
+
+                <p><span class="lang-de"><strong>NFTs</strong> (Non-Fungible Tokens) sind einzigartige digitale Zertifikate. Sie wurden als "digitale Kunst" gehypt, aber der Markt ist massiv eingebrochen. Viele Menschen haben sehr viel Geld verloren.</span><span class="lang-en"><strong>NFTs</strong> (Non-Fungible Tokens) are unique digital certificates. They were hyped as "digital art," but the market has crashed massively. Many people lost a lot of money.</span><span class="lang-fr">Les <strong>NFT</strong> (Non-Fungible Tokens) sont des certificats numériques uniques. Ils ont été présentés comme de l'« art numérique », mais le marché s'est effondré massivement. Beaucoup de gens ont perdu énormément d'argent.</span></p>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Achtung bei NFTs:</strong> Carla hat online gesehen, dass jemand ein NFT-Bild für tausende Euro verkauft hat. Das klingt verlockend! Aber die Wahrheit ist: Der NFT-Markt hat über 95% seines Wertes verloren. Die meisten NFTs sind heute praktisch wertlos. Ein Bild herunterzuladen und ein NFT zu "besitzen" sind zudem zwei verschiedene Dinge - das NFT ist nur ein Eintrag in der Blockchain, nicht das Bild selbst.</span><span class="lang-en"><strong>⚠️ Caution with NFTs:</strong> Carla saw online that someone sold an NFT image for thousands of euros. Sounds tempting! But the truth is: The NFT market has lost over 95% of its value. Most NFTs are practically worthless today. Downloading an image and "owning" an NFT are also two different things - the NFT is just an entry in the blockchain, not the image itself.</span><span class="lang-fr"><strong>⚠️ Attention aux NFT :</strong> Carla a vu en ligne que quelqu'un avait vendu une image NFT pour des milliers d'euros. Ça semble tentant ! Mais la vérité est : le marché des NFT a perdu plus de 95 % de sa valeur. La plupart des NFT ne valent pratiquement plus rien aujourd'hui. Télécharger une image et « posséder » un NFT sont d'ailleurs deux choses différentes - le NFT n'est qu'une entrée dans la blockchain, pas l'image elle-même.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 3: Risiken & Probleme -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🚨 Risiken & Probleme</span><span class="lang-en">🚨 Risks & Problems</span><span class="lang-fr">🚨 Risques & problèmes</span></h3>
+                <p><span class="lang-de">Kryptowährungen haben erhebliche Risiken, die du kennen musst:</span><span class="lang-en">Cryptocurrencies have significant risks that you need to know about:</span><span class="lang-fr">Les cryptomonnaies présentent des risques importants que tu dois connaître :</span></p>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3"><span class="lang-de">📉 Extreme Volatilität</span><span class="lang-en">📉 Extreme Volatility</span><span class="lang-fr">📉 Volatilité extrême</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Bitcoin hat mehrfach über 50% seines Wertes in wenigen Wochen verloren</span><span class="lang-en">Bitcoin has lost over 50% of its value multiple times within a few weeks</span><span class="lang-fr">Le Bitcoin a perdu plus de 50 % de sa valeur à plusieurs reprises en quelques semaines</span></li>
+                            <li><span class="lang-de">Kleinere Coins können über Nacht wertlos werden</span><span class="lang-en">Smaller coins can become worthless overnight</span><span class="lang-fr">Les petites cryptos peuvent perdre toute valeur du jour au lendemain</span></li>
+                            <li><span class="lang-de">Preise schwanken oft um 10-20% an einem einzigen Tag</span><span class="lang-en">Prices often fluctuate 10-20% in a single day</span><span class="lang-fr">Les prix varient souvent de 10 à 20 % en une seule journée</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-orange-400 mb-3"><span class="lang-de">🛡️ Kein Verbraucherschutz</span><span class="lang-en">🛡️ No Consumer Protection</span><span class="lang-fr">🛡️ Aucune protection des consommateurs</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Keine Einlagensicherung wie bei Bankkonten</span><span class="lang-en">No deposit protection like with bank accounts</span><span class="lang-fr">Aucune garantie des dépôts comme pour les comptes bancaires</span></li>
+                            <li><span class="lang-de">Wenn eine Krypto-Börse pleitegeht, ist dein Geld weg</span><span class="lang-en">If a crypto exchange goes bankrupt, your money is gone</span><span class="lang-fr">Si une plateforme d'échange fait faillite, ton argent est perdu</span></li>
+                            <li><span class="lang-de">Passwort verloren? Zugang für immer weg!</span><span class="lang-en">Lost your password? Access gone forever!</span><span class="lang-fr">Mot de passe perdu ? Accès perdu pour toujours !</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-yellow-400 mb-3"><span class="lang-de">🌍 Umweltprobleme</span><span class="lang-en">🌍 Environmental Concerns</span><span class="lang-fr">🌍 Problèmes environnementaux</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Bitcoin-Mining verbraucht so viel Strom wie manche Länder</span><span class="lang-en">Bitcoin mining uses as much electricity as some countries</span><span class="lang-fr">Le minage de Bitcoin consomme autant d'électricité que certains pays</span></li>
+                            <li><span class="lang-de">Riesiger CO₂-Fußabdruck durch Rechenleistung</span><span class="lang-en">Huge carbon footprint from computing power</span><span class="lang-fr">Énorme empreinte carbone due à la puissance de calcul</span></li>
+                            <li><span class="lang-de">Ethereum hat umgestellt, aber Bitcoin nicht</span><span class="lang-en">Ethereum has switched, but Bitcoin has not</span><span class="lang-fr">Ethereum a changé de méthode, mais pas le Bitcoin</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-pink-400 mb-3"><span class="lang-de">🕵️ Betrug & Scams</span><span class="lang-en">🕵️ Fraud & Scams</span><span class="lang-fr">🕵️ Fraudes & arnaques</span></h4>
+                        <ul>
+                            <li><span class="lang-de">"Pump and Dump": Preise werden künstlich hochgetrieben</span><span class="lang-en">"Pump and dump": prices are artificially inflated</span><span class="lang-fr">« Pump and dump » : les prix sont gonflés artificiellement</span></li>
+                            <li><span class="lang-de">Falsche Versprechen: "Garantierte Rendite" gibt es nicht</span><span class="lang-en">False promises: "Guaranteed returns" don't exist</span><span class="lang-fr">Fausses promesses : les « rendements garantis » n'existent pas</span></li>
+                            <li><span class="lang-de">Influencer werden bezahlt, um Coins zu bewerben</span><span class="lang-en">Influencers are paid to promote coins</span><span class="lang-fr">Les influenceurs sont payés pour promouvoir des cryptos</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Marlene sieht auf TikTok einen Influencer, der einen neuen Coin empfiehlt: "Dieser Coin wird 1000x steigen!" Was Marlene nicht weiß: Der Influencer wurde bezahlt und hat den Coin schon vorher günstig gekauft. Wenn genug Leute kaufen und der Preis steigt, verkauft er seine Coins mit Gewinn - und die Follower bleiben auf den Verlusten sitzen. Das ist ein klassischer <strong>"Pump and Dump"</strong>-Betrug.</span><span class="lang-en"><strong>🎯 Example:</strong> Marlene sees an influencer on TikTok recommending a new coin: "This coin will go up 1000x!" What Marlene doesn't know: the influencer was paid and had already bought the coin cheaply beforehand. When enough people buy and the price rises, he sells his coins at a profit - and the followers are stuck with the losses. This is a classic <strong>"pump and dump"</strong> scam.</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Marlene voit un influenceur sur TikTok recommander une nouvelle crypto : « Cette crypto va monter de 1000x ! » Ce que Marlene ne sait pas : l'influenceur a été payé et avait déjà acheté la crypto à bas prix. Quand suffisamment de gens achètent et que le prix monte, il revend ses cryptos avec profit - et les abonnés se retrouvent avec les pertes. C'est une arnaque classique de type <strong>« pump and dump »</strong>.</span></p>
+                </div>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Vorsicht vor diesen Warnsignalen:</strong></span><span class="lang-en"><strong>⚠️ Watch out for these red flags:</strong></span><span class="lang-fr"><strong>⚠️ Attention à ces signaux d'alerte :</strong></span></p>
+                    <ul>
+                        <li><span class="lang-de">"Garantierte Gewinne" - es gibt keine Garantie bei Investments!</span><span class="lang-en">"Guaranteed profits" - there are no guarantees with investments!</span><span class="lang-fr">« Gains garantis » - il n'y a aucune garantie en investissement !</span></li>
+                        <li><span class="lang-de">"Jetzt schnell einsteigen, bevor es zu spät ist!" - Zeitdruck ist ein Warnsignal</span><span class="lang-en">"Get in quickly before it's too late!" - time pressure is a warning sign</span><span class="lang-fr">« Investis vite avant qu'il ne soit trop tard ! » - la pression du temps est un signal d'alarme</span></li>
+                        <li><span class="lang-de">"Schick mir erst Krypto, dann bekommst du das Doppelte zurück" - immer Betrug!</span><span class="lang-en">"Send me crypto first, then you'll get double back" - always a scam!</span><span class="lang-fr">« Envoie-moi d'abord des cryptos, tu recevras le double » - toujours une arnaque !</span></li>
+                        <li><span class="lang-de">Prominente oder Influencer werben dafür - oft bezahlte Werbung oder Fake-Accounts</span><span class="lang-en">Celebrities or influencers promote it - often paid advertising or fake accounts</span><span class="lang-fr">Des célébrités ou influenceurs en font la promotion - souvent de la publicité payée ou des faux comptes</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 4: Kritische Einordnung -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">🧠 Kritische Einordnung</span><span class="lang-en">🧠 Critical Assessment</span><span class="lang-fr">🧠 Analyse critique</span></h3>
+
+                <div class="warning-box">
+                    <p><span class="lang-de"><strong>⚠️ Dieses Kapitel ist KEINE Finanzberatung und keine Aufforderung, Kryptowährungen zu kaufen!</strong> Wir erklären hier, wie diese Technologie funktioniert, damit du informierte Entscheidungen treffen kannst.</span><span class="lang-en"><strong>⚠️ This chapter is NOT financial advice and NOT an invitation to buy cryptocurrencies!</strong> We explain here how this technology works so you can make informed decisions.</span><span class="lang-fr"><strong>⚠️ Ce chapitre n'est PAS un conseil financier et PAS une invitation à acheter des cryptomonnaies !</strong> Nous expliquons ici comment fonctionne cette technologie pour que tu puisses prendre des décisions éclairées.</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Spekulation vs. Investieren - ein wichtiger Unterschied</span><span class="lang-en">Speculation vs. Investing - an Important Difference</span><span class="lang-fr">Spéculation vs. investissement - une différence importante</span></h4>
+
+                <div class="grid md:grid-cols-2 gap-4 my-6">
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-green-400 mb-3"><span class="lang-de">📊 Investieren</span><span class="lang-en">📊 Investing</span><span class="lang-fr">📊 Investir</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Basiert auf Analyse und Fundamentaldaten</span><span class="lang-en">Based on analysis and fundamentals</span><span class="lang-fr">Basé sur l'analyse et les données fondamentales</span></li>
+                            <li><span class="lang-de">Langfristiger Horizont (Jahre bis Jahrzehnte)</span><span class="lang-en">Long-term horizon (years to decades)</span><span class="lang-fr">Horizon à long terme (années à décennies)</span></li>
+                            <li><span class="lang-de">Man investiert in produktive Werte (Unternehmen, Immobilien)</span><span class="lang-en">You invest in productive assets (companies, real estate)</span><span class="lang-fr">On investit dans des actifs productifs (entreprises, immobilier)</span></li>
+                            <li><span class="lang-de">Risiko kann durch Streuung reduziert werden</span><span class="lang-en">Risk can be reduced through diversification</span><span class="lang-fr">Le risque peut être réduit par la diversification</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5">
+                        <h4 class="font-bold text-red-400 mb-3"><span class="lang-de">🎰 Spekulation</span><span class="lang-en">🎰 Speculation</span><span class="lang-fr">🎰 Spéculation</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Basiert oft auf Hype und Hoffnung</span><span class="lang-en">Often based on hype and hope</span><span class="lang-fr">Souvent basée sur le battage médiatique et l'espoir</span></li>
+                            <li><span class="lang-de">Kurzfristiges Denken ("schnell reich werden")</span><span class="lang-en">Short-term thinking ("get rich quick")</span><span class="lang-fr">Pensée à court terme (« devenir riche rapidement »)</span></li>
+                            <li><span class="lang-de">Man hofft, dass jemand anderes mehr bezahlt</span><span class="lang-en">You hope someone else will pay more</span><span class="lang-fr">On espère que quelqu'un d'autre paiera plus</span></li>
+                            <li><span class="lang-de">Ähnlich wie Glücksspiel</span><span class="lang-en">Similar to gambling</span><span class="lang-fr">Similaire aux jeux de hasard</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <p><span class="lang-de"><strong>🎯 Beispiel:</strong> Luisa kauft Aktien eines Unternehmens, weil es gute Produkte macht, Gewinn erzielt und wächst - das ist <strong>Investieren</strong>. Carla kauft einen unbekannten Coin, weil sie auf TikTok gehört hat, dass er "zum Mond fliegen" wird - das ist <strong>Spekulation</strong>. Der Unterschied? Luisas Aktie hat einen echten Wert hinter sich (das Unternehmen), Carlas Coin hat nur die Hoffnung, dass jemand anderes noch mehr dafür bezahlt.</span><span class="lang-en"><strong>🎯 Example:</strong> Luisa buys shares of a company because it makes good products, earns profit, and is growing - that's <strong>investing</strong>. Carla buys an unknown coin because she heard on TikTok that it will "go to the moon" - that's <strong>speculation</strong>. The difference? Luisa's stock has real value behind it (the company), Carla's coin only has the hope that someone else will pay even more for it.</span><span class="lang-fr"><strong>🎯 Exemple :</strong> Luisa achète des actions d'une entreprise parce qu'elle fabrique de bons produits, fait des bénéfices et est en croissance - c'est <strong>investir</strong>. Carla achète une crypto inconnue parce qu'elle a entendu sur TikTok qu'elle allait « aller sur la lune » - c'est de la <strong>spéculation</strong>. La différence ? L'action de Luisa a une vraie valeur derrière elle (l'entreprise), la crypto de Carla n'a que l'espoir que quelqu'un d'autre paiera encore plus.</span></p>
+                </div>
+
+                <h4 class="font-bold mt-6 mb-3"><span class="lang-de">Rechtliche Situation für Jugendliche</span><span class="lang-en">Legal Situation for Teens</span><span class="lang-fr">Situation juridique pour les jeunes</span></h4>
+                <p><span class="lang-de">In Deutschland bist du unter 18 Jahren <strong>beschränkt geschäftsfähig</strong>. Das bedeutet:</span><span class="lang-en">In Germany, if you are under 18, you have <strong>limited legal capacity</strong>. This means:</span><span class="lang-fr">En Allemagne, si tu as moins de 18 ans, tu as une <strong>capacité juridique limitée</strong>. Cela signifie :</span></p>
+                <ul>
+                    <li><span class="lang-de">Du kannst nicht eigenständig ein Konto bei einer Krypto-Börse eröffnen</span><span class="lang-en">You cannot independently open an account at a crypto exchange</span><span class="lang-fr">Tu ne peux pas ouvrir seul(e) un compte sur une plateforme d'échange crypto</span></li>
+                    <li><span class="lang-de">Deine Eltern müssten zustimmen - und die meisten Börsen erlauben Minderjährige gar nicht</span><span class="lang-en">Your parents would need to consent - and most exchanges don't allow minors at all</span><span class="lang-fr">Tes parents devraient donner leur accord - et la plupart des plateformes n'acceptent pas les mineurs</span></li>
+                    <li><span class="lang-de">Krypto-Gewinne müssen in Deutschland versteuert werden (komplizierte Steuerregeln!)</span><span class="lang-en">Crypto profits must be taxed in Germany (complicated tax rules!)</span><span class="lang-fr">Les gains en crypto doivent être déclarés aux impôts en Allemagne (règles fiscales compliquées !)</span></li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><span class="lang-de"><strong>✅ Unser Rat:</strong> Nutze deine Zeit als Teenager, um Finanzwissen aufzubauen, statt in hochriskante Spekulationen einzusteigen. Lerne zuerst die Grundlagen: Sparen, Budgetieren, breit gestreut Investieren (z.B. ETFs). Wenn du irgendwann als Erwachsener einen kleinen Teil deines Geldes in Krypto investieren möchtest - und es dir leisten kannst, dieses Geld komplett zu verlieren - ist das deine Entscheidung. Aber jetzt ist die Zeit zum Lernen, nicht zum Spekulieren.</span><span class="lang-en"><strong>✅ Our advice:</strong> Use your time as a teenager to build financial knowledge instead of jumping into high-risk speculation. First learn the basics: saving, budgeting, diversified investing (e.g., ETFs). If at some point as an adult you want to invest a small portion of your money in crypto - and you can afford to lose that money completely - that's your decision. But now is the time for learning, not speculating.</span><span class="lang-fr"><strong>✅ Notre conseil :</strong> Utilise ton temps d'adolescent(e) pour acquérir des connaissances financières plutôt que de te lancer dans des spéculations à haut risque. Apprends d'abord les bases : épargner, budgétiser, investir de manière diversifiée (p. ex. les ETF). Si un jour, en tant qu'adulte, tu souhaites investir une petite partie de ton argent dans les cryptos - et que tu peux te permettre de perdre cet argent complètement - c'est ta décision. Mais maintenant, c'est le moment d'apprendre, pas de spéculer.</span></p>
+                </div>
+            </div>
+
+            <!-- Section 5: Zusammenfassung -->
+            <div class="content-section animate-on-scroll">
+                <h3><span class="lang-de">📋 Zusammenfassung</span><span class="lang-en">📋 Summary</span><span class="lang-fr">📋 Résumé</span></h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-amber-400 mb-2"><span class="lang-de">Wichtige Begriffe</span><span class="lang-en">Key Terms</span><span class="lang-fr">Termes importants</span></h4>
+                        <ul>
+                            <li><span class="lang-de"><strong>Blockchain:</strong> Dezentrale, verkettete Datenbank</span><span class="lang-en"><strong>Blockchain:</strong> Decentralized, linked database</span><span class="lang-fr"><strong>Blockchain :</strong> Base de données décentralisée et chaînée</span></li>
+                            <li><span class="lang-de"><strong>Kryptowährung:</strong> Digitales Geld ohne zentrale Kontrolle</span><span class="lang-en"><strong>Cryptocurrency:</strong> Digital money without central control</span><span class="lang-fr"><strong>Cryptomonnaie :</strong> Argent numérique sans contrôle central</span></li>
+                            <li><span class="lang-de"><strong>Volatilität:</strong> Starke Preisschwankungen</span><span class="lang-en"><strong>Volatility:</strong> Strong price fluctuations</span><span class="lang-fr"><strong>Volatilité :</strong> Fortes fluctuations de prix</span></li>
+                            <li><span class="lang-de"><strong>NFT:</strong> Non-Fungible Token, einzigartiges Digitalzertifikat</span><span class="lang-en"><strong>NFT:</strong> Non-Fungible Token, unique digital certificate</span><span class="lang-fr"><strong>NFT :</strong> Non-Fungible Token, certificat numérique unique</span></li>
+                            <li><span class="lang-de"><strong>Pump and Dump:</strong> Betrugsmasche mit künstlicher Preissteigerung</span><span class="lang-en"><strong>Pump and Dump:</strong> Scam involving artificial price inflation</span><span class="lang-fr"><strong>Pump and Dump :</strong> Arnaque par gonflement artificiel des prix</span></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-xl p-4">
+                        <h4 class="font-bold text-purple-400 mb-2"><span class="lang-de">Das Wichtigste</span><span class="lang-en">Key Takeaways</span><span class="lang-fr">L'essentiel</span></h4>
+                        <ul>
+                            <li><span class="lang-de">Blockchain ist eine interessante Technologie, aber das macht Krypto nicht automatisch zu einem guten Investment</span><span class="lang-en">Blockchain is an interesting technology, but that doesn't automatically make crypto a good investment</span><span class="lang-fr">La blockchain est une technologie intéressante, mais cela ne fait pas automatiquement des cryptos un bon investissement</span></li>
+                            <li><span class="lang-de">Kryptowährungen sind extrem volatil und riskant</span><span class="lang-en">Cryptocurrencies are extremely volatile and risky</span><span class="lang-fr">Les cryptomonnaies sont extrêmement volatiles et risquées</span></li>
+                            <li><span class="lang-de">Es gibt keinen Verbraucherschutz - Geld kann komplett verloren gehen</span><span class="lang-en">There is no consumer protection - money can be completely lost</span><span class="lang-fr">Il n'y a aucune protection des consommateurs - l'argent peut être totalement perdu</span></li>
+                            <li><span class="lang-de">Vorsicht vor Betrug, Hype und falschen Versprechen</span><span class="lang-en">Beware of fraud, hype, and false promises</span><span class="lang-fr">Méfie-toi des arnaques, du battage médiatique et des fausses promesses</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Section -->
+            <div class="content-section mt-12" id="test-section">
+                <h2 class="text-3xl font-bold mb-2 text-center"><span class="lang-de">📝 Kapitel-Test</span><span class="lang-en">📝 Chapter Test</span><span class="lang-fr">📝 Test du chapitre</span></h2>
+                <p class="text-gray-400 text-center mb-8"><span class="lang-de">Teste dein Wissen! Wähle zuerst deinen Namen und beantworte dann alle Fragen.</span><span class="lang-en">Test your knowledge! First choose your name and then answer all questions.</span><span class="lang-fr">Teste tes connaissances ! Choisis d'abord ton nom puis réponds à toutes les questions.</span></p>
+                <div id="test-container"></div>
+            </div>
+
+            <!-- Chapter Navigation -->
+            <div class="chapter-nav">
+                <a href="chapter12.html"><span class="lang-de">← Kapitel 12</span><span class="lang-en">← Chapter 12</span><span class="lang-fr">← Chapitre 12</span></a>
+                <a href="../index.html"><span class="lang-de">Übersicht</span><span class="lang-en">Overview</span><span class="lang-fr">Aperçu</span></a>
+                <a href="chapter14.html"><span class="lang-de">Kapitel 14 →</span><span class="lang-en">Chapter 14 →</span><span class="lang-fr">Chapitre 14 →</span></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/advanced.js"></script>
+    <script>
+        TestSystem.initTest(13, [
+            {
+                question: "Was ist eine Blockchain?",
+                question_en: "What is a blockchain?",
+                question_fr: "Qu'est-ce qu'une blockchain ?",
+                options: ["Ein spezieller Computer", "Eine dezentrale, verkettete Datenbank, die von vielen Computern gleichzeitig geführt wird", "Eine App zum Krypto-Kaufen", "Ein digitales Bankkonto"],
+                options_en: ["A special computer", "A decentralized, linked database maintained by many computers simultaneously", "An app for buying crypto", "A digital bank account"],
+                options_fr: ["Un ordinateur spécial", "Une base de données décentralisée et chaînée, tenue par de nombreux ordinateurs simultanément", "Une application pour acheter des cryptos", "Un compte bancaire numérique"],
+                correct: 1,
+                explanation: "Eine Blockchain ist eine dezentrale Datenbank, bei der jeder Block mit dem vorherigen verkettet ist und von vielen Computern gleichzeitig verwaltet wird.",
+                explanation_en: "A blockchain is a decentralized database where each block is linked to the previous one and is managed by many computers simultaneously.",
+                explanation_fr: "Une blockchain est une base de données décentralisée où chaque bloc est lié au précédent et est gérée par de nombreux ordinateurs simultanément."
+            },
+            {
+                question: "Was bedeutet 'Dezentralisierung' bei Kryptowährungen?",
+                question_en: "What does 'decentralization' mean for cryptocurrencies?",
+                question_fr: "Que signifie la « décentralisation » pour les cryptomonnaies ?",
+                options: ["Es gibt nur ein großes Rechenzentrum", "Keine zentrale Stelle wie eine Bank kontrolliert das System", "Die Regierung überwacht alles", "Nur bestimmte Banken dürfen mitmachen"],
+                options_en: ["There is only one large data center", "No central authority like a bank controls the system", "The government monitors everything", "Only certain banks are allowed to participate"],
+                options_fr: ["Il n'y a qu'un seul grand centre de données", "Aucune autorité centrale comme une banque ne contrôle le système", "Le gouvernement surveille tout", "Seules certaines banques peuvent participer"],
+                correct: 1,
+                explanation: "Dezentralisierung bedeutet, dass kein einzelner Akteur (wie eine Bank oder Regierung) das System kontrolliert, sondern viele Teilnehmer gemeinsam.",
+                explanation_en: "Decentralization means that no single actor (like a bank or government) controls the system, but rather many participants together.",
+                explanation_fr: "La décentralisation signifie qu'aucun acteur unique (comme une banque ou un gouvernement) ne contrôle le système, mais plutôt de nombreux participants ensemble."
+            },
+            {
+                question: "Warum ist extreme Volatilität bei Kryptowährungen ein Problem?",
+                question_en: "Why is extreme volatility a problem with cryptocurrencies?",
+                question_fr: "Pourquoi la volatilité extrême des cryptomonnaies est-elle un problème ?",
+                options: ["Weil die Apps langsam werden", "Weil der Wert innerhalb kurzer Zeit massiv fallen kann und man viel Geld verlieren kann", "Weil man zu viel Gewinn machen könnte", "Weil die Transaktionen teurer werden"],
+                options_en: ["Because the apps become slow", "Because the value can drop massively in a short time and you can lose a lot of money", "Because you could make too much profit", "Because transactions become more expensive"],
+                options_fr: ["Parce que les applications deviennent lentes", "Parce que la valeur peut chuter massivement en peu de temps et on peut perdre beaucoup d'argent", "Parce qu'on pourrait faire trop de bénéfices", "Parce que les transactions deviennent plus chères"],
+                correct: 1,
+                explanation: "Extreme Volatilität bedeutet, dass der Wert einer Kryptowährung in sehr kurzer Zeit um 50% oder mehr fallen kann - ein enormes Verlustrisiko.",
+                explanation_en: "Extreme volatility means that the value of a cryptocurrency can drop by 50% or more in a very short time - an enormous risk of loss.",
+                explanation_fr: "La volatilité extrême signifie que la valeur d'une cryptomonnaie peut chuter de 50 % ou plus en très peu de temps - un risque de perte énorme."
+            },
+            {
+                question: "Was passiert, wenn eine Krypto-Börse pleitegeht?",
+                question_en: "What happens if a crypto exchange goes bankrupt?",
+                question_fr: "Que se passe-t-il si une plateforme d'échange crypto fait faillite ?",
+                options: ["Die Regierung erstattet alles", "Die Einlagensicherung greift wie bei einer Bank", "Das Geld ist in der Regel verloren - es gibt keine Einlagensicherung", "Andere Börsen übernehmen das Guthaben automatisch"],
+                options_en: ["The government refunds everything", "Deposit insurance kicks in like with a bank", "The money is usually lost - there is no deposit insurance", "Other exchanges automatically take over the balance"],
+                options_fr: ["Le gouvernement rembourse tout", "La garantie des dépôts s'applique comme pour une banque", "L'argent est généralement perdu - il n'y a pas de garantie des dépôts", "D'autres plateformes reprennent automatiquement le solde"],
+                correct: 2,
+                explanation: "Anders als bei Bankkonten gibt es bei Krypto-Börsen keine Einlagensicherung. Wenn die Börse pleitegeht, ist das Geld in der Regel weg.",
+                explanation_en: "Unlike bank accounts, there is no deposit insurance for crypto exchanges. If the exchange goes bankrupt, the money is usually gone.",
+                explanation_fr: "Contrairement aux comptes bancaires, il n'y a pas de garantie des dépôts pour les plateformes crypto. Si la plateforme fait faillite, l'argent est généralement perdu."
+            },
+            {
+                question: "Was ist ein 'Pump and Dump'-Betrug?",
+                question_en: "What is a 'pump and dump' scam?",
+                question_fr: "Qu'est-ce qu'une arnaque « pump and dump » ?",
+                options: ["Ein technischer Fehler in der Blockchain", "Jemand treibt den Preis künstlich hoch und verkauft dann, während andere Verluste machen", "Ein legaler Handelsalgorithmus", "Eine neue Art von Kryptowährung"],
+                options_en: ["A technical error in the blockchain", "Someone artificially inflates the price and then sells while others suffer losses", "A legal trading algorithm", "A new type of cryptocurrency"],
+                options_fr: ["Une erreur technique dans la blockchain", "Quelqu'un gonfle artificiellement le prix puis vend tandis que les autres subissent des pertes", "Un algorithme de trading légal", "Un nouveau type de cryptomonnaie"],
+                correct: 1,
+                explanation: "Bei einem 'Pump and Dump' wird ein Coin billig gekauft, dann durch Hype hochgetrieben ('pump'), und wenn genug Leute einsteigen, verkauft der Betrüger mit Gewinn ('dump').",
+                explanation_en: "In a 'pump and dump,' a coin is bought cheaply, then driven up through hype ('pump'), and when enough people buy in, the scammer sells at a profit ('dump').",
+                explanation_fr: "Dans un « pump and dump », une crypto est achetée à bas prix, puis son cours est gonflé par le battage médiatique (« pump »), et quand suffisamment de gens investissent, l'arnaqueur vend avec profit (« dump »)."
+            },
+            {
+                question: "Welches Warnsignal deutet fast sicher auf einen Krypto-Betrug hin?",
+                question_en: "Which warning sign almost certainly indicates a crypto scam?",
+                question_fr: "Quel signal d'alarme indique presque certainement une arnaque crypto ?",
+                options: ["Der Coin ist auf einer bekannten Börse gelistet", "Jemand verspricht 'garantierte Rendite' bei einem Krypto-Investment", "Der Coin nutzt die Blockchain-Technologie", "Die Transaktionsgebühren sind niedrig"],
+                options_en: ["The coin is listed on a well-known exchange", "Someone promises 'guaranteed returns' on a crypto investment", "The coin uses blockchain technology", "Transaction fees are low"],
+                options_fr: ["La crypto est listée sur une plateforme connue", "Quelqu'un promet des « rendements garantis » sur un investissement crypto", "La crypto utilise la technologie blockchain", "Les frais de transaction sont bas"],
+                correct: 1,
+                explanation: "Es gibt keine 'garantierten Renditen' bei Investments. Wer das verspricht, versucht zu betrügen. Das gilt nicht nur für Krypto, sondern für alle Anlageformen.",
+                explanation_en: "There are no 'guaranteed returns' on investments. Anyone who promises that is trying to deceive you. This applies not just to crypto, but to all forms of investment.",
+                explanation_fr: "Il n'y a pas de « rendements garantis » en investissement. Quiconque promet cela essaie de tromper. Cela s'applique non seulement aux cryptos, mais à toutes les formes d'investissement."
+            },
+            {
+                question: "Was ist der Unterschied zwischen Spekulation und Investieren?",
+                question_en: "What is the difference between speculation and investing?",
+                question_fr: "Quelle est la différence entre spéculation et investissement ?",
+                options: ["Es gibt keinen Unterschied", "Spekulation basiert auf Analyse, Investieren auf Hoffnung", "Investieren basiert auf Fundamentaldaten und langfristigem Denken, Spekulation auf Hype und Hoffnung", "Spekulation ist immer besser"],
+                options_en: ["There is no difference", "Speculation is based on analysis, investing on hope", "Investing is based on fundamentals and long-term thinking, speculation on hype and hope", "Speculation is always better"],
+                options_fr: ["Il n'y a aucune différence", "La spéculation se base sur l'analyse, l'investissement sur l'espoir", "L'investissement se base sur les fondamentaux et la pensée à long terme, la spéculation sur le battage et l'espoir", "La spéculation est toujours meilleure"],
+                correct: 2,
+                explanation: "Investieren basiert auf Analyse und langfristigem Denken. Spekulation hofft auf schnelle Gewinne, oft ohne echte Grundlage - ähnlich wie Glücksspiel.",
+                explanation_en: "Investing is based on analysis and long-term thinking. Speculation hopes for quick gains, often without real basis - similar to gambling.",
+                explanation_fr: "L'investissement se base sur l'analyse et la pensée à long terme. La spéculation espère des gains rapides, souvent sans base réelle - similaire aux jeux de hasard."
+            },
+            {
+                question: "Warum ist Bitcoin-Mining ein Umweltproblem?",
+                question_en: "Why is Bitcoin mining an environmental problem?",
+                question_fr: "Pourquoi le minage de Bitcoin est-il un problème environnemental ?",
+                options: ["Weil es Wasser verschmutzt", "Weil es extrem viel Strom verbraucht - so viel wie manche Länder", "Weil dabei giftige Gase entstehen", "Weil dafür Wälder gerodet werden"],
+                options_en: ["Because it pollutes water", "Because it uses an extreme amount of electricity - as much as some countries", "Because it produces toxic gases", "Because forests are cleared for it"],
+                options_fr: ["Parce que ça pollue l'eau", "Parce que ça consomme énormément d'électricité - autant que certains pays", "Parce que ça produit des gaz toxiques", "Parce que des forêts sont défrichées pour ça"],
+                correct: 1,
+                explanation: "Das Bitcoin-Mining benötigt enorme Rechenleistung und damit sehr viel Strom. Der Stromverbrauch des Bitcoin-Netzwerks ist vergleichbar mit dem ganzer Länder.",
+                explanation_en: "Bitcoin mining requires enormous computing power and therefore a lot of electricity. The Bitcoin network's electricity consumption is comparable to that of entire countries.",
+                explanation_fr: "Le minage de Bitcoin nécessite une puissance de calcul énorme et donc beaucoup d'électricité. La consommation d'électricité du réseau Bitcoin est comparable à celle de pays entiers."
+            },
+            {
+                question: "Was stimmt über NFTs?",
+                question_en: "What is true about NFTs?",
+                question_fr: "Qu'est-ce qui est vrai concernant les NFT ?",
+                options: ["NFTs sind eine sichere Geldanlage", "Der NFT-Markt wächst ständig", "Die meisten NFTs haben massiv an Wert verloren und sind praktisch wertlos", "NFTs sind das gleiche wie Kryptowährungen"],
+                options_en: ["NFTs are a safe investment", "The NFT market is constantly growing", "Most NFTs have lost massive value and are practically worthless", "NFTs are the same as cryptocurrencies"],
+                options_fr: ["Les NFT sont un investissement sûr", "Le marché des NFT est en croissance constante", "La plupart des NFT ont massivement perdu de la valeur et sont pratiquement sans valeur", "Les NFT sont la même chose que les cryptomonnaies"],
+                correct: 2,
+                explanation: "Der NFT-Markt hat über 95% seines Wertes verloren. Die allermeisten NFTs sind heute praktisch wertlos.",
+                explanation_en: "The NFT market has lost over 95% of its value. The vast majority of NFTs are practically worthless today.",
+                explanation_fr: "Le marché des NFT a perdu plus de 95 % de sa valeur. La grande majorité des NFT ne valent pratiquement plus rien aujourd'hui."
+            },
+            {
+                question: "Was ist der beste Rat für Jugendliche zum Thema Krypto?",
+                question_en: "What is the best advice for teenagers regarding crypto?",
+                question_fr: "Quel est le meilleur conseil pour les jeunes concernant les cryptos ?",
+                options: ["Sofort mit dem Taschengeld Krypto kaufen", "Einem Influencer folgen und seine Empfehlungen kopieren", "Zuerst Finanzwissen aufbauen, Grundlagen lernen, und nur als Erwachsener mit Geld investieren, das man verlieren kann", "Alles Ersparte in Bitcoin stecken"],
+                options_en: ["Immediately buy crypto with pocket money", "Follow an influencer and copy their recommendations", "First build financial knowledge, learn the basics, and only invest as an adult with money you can afford to lose", "Put all savings into Bitcoin"],
+                options_fr: ["Acheter immédiatement des cryptos avec l'argent de poche", "Suivre un influenceur et copier ses recommandations", "D'abord acquérir des connaissances financières, apprendre les bases, et n'investir qu'en tant qu'adulte avec de l'argent qu'on peut se permettre de perdre", "Mettre toutes ses économies dans le Bitcoin"],
+                correct: 2,
+                explanation: "Die Teenagerzeit ist zum Lernen da. Erst Finanzwissen aufbauen, die Grundlagen verstehen - und vielleicht später als Erwachsener, mit Geld das man verlieren kann, eigene Entscheidungen treffen.",
+                explanation_en: "The teenage years are for learning. First build financial knowledge, understand the basics - and perhaps later as an adult, with money you can afford to lose, make your own decisions.",
+                explanation_fr: "L'adolescence est faite pour apprendre. D'abord acquérir des connaissances financières, comprendre les bases - et peut-être plus tard en tant qu'adulte, avec de l'argent qu'on peut se permettre de perdre, prendre ses propres décisions."
+            }
+        ]);
+    </script>
+</body>
+</html>

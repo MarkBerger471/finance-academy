@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflationsrechner - Finance Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-slower': 'float 10s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>document.documentElement.setAttribute("data-lang",localStorage.getItem("finance_academy_lang")||"de")</script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-float-slower"></div>
+        <div class="absolute top-2/3 left-1/4 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl">💰</span>
+                    <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Finance Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../chapters/index.html" class="nav-link"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+                    <a href="index.html" class="nav-link active">Tools</a>
+                    <a href="../tests/scoreboard.html" class="nav-link"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+                    <button id="lang-toggle" onclick="Lang.toggle()" class="nav-link font-semibold cursor-pointer">🇬🇧 EN</button>
+                </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button onclick="Lang.toggle()" id="lang-toggle-mobile" class="p-2 rounded-lg glass-card text-sm font-semibold">🇬🇧 EN</button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg glass-card">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card mx-4 mb-4 rounded-2xl p-4">
+            <a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition">Home</a>
+            <a href="../chapters/index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Kapitel</span><span class="lang-en">Chapters</span><span class="lang-fr">Chapitres</span></a>
+            <a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition font-semibold text-purple-300">Tools</a>
+            <a href="../tests/scoreboard.html" class="block py-2 px-4 rounded-lg hover:bg-white/10 transition"><span class="lang-de">Ergebnisse</span><span class="lang-en">Results</span><span class="lang-fr">Résultats</span></a>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-4 relative z-10">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-10 animate-fade-in">
+                <span class="inline-block text-6xl mb-4">🌶️</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">
+                    <span class="lang-de">Inflationsrechner</span>
+                    <span class="lang-en">Inflation Calculator</span>
+                    <span class="lang-fr">Calculateur d'inflation</span>
+                </h1>
+                <p class="text-lg text-gray-300">
+                    <span class="lang-de">Was kostet dein Döner in 10 Jahren? Finde es heraus!</span>
+                    <span class="lang-en">What will your Döner cost in 10 years? Find out!</span>
+                    <span class="lang-fr">Combien coûtera ton Döner dans 10 ans ? Découvre-le !</span>
+                </p>
+            </div>
+
+            <!-- Item Selection -->
+            <div class="glass-card rounded-3xl p-6 md:p-8 mb-6">
+                <h2 class="text-xl font-bold mb-4">
+                    <span class="lang-de">🛒 Wähle einen Artikel</span>
+                    <span class="lang-en">🛒 Pick an item</span>
+                    <span class="lang-fr">🛒 Choisis un article</span>
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4" id="preset-grid">
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" data-name-de="Döner" data-name-en="Döner" data-name-fr="Döner" data-price="6" data-emoji="🌯">
+                        <span class="text-2xl block mb-1">🌯</span>
+                        <span class="text-sm font-semibold">Döner</span>
+                        <span class="block text-xs text-gray-400">6 €</span>
+                    </button>
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" data-name-de="Kino-Ticket" data-name-en="Movie Ticket" data-name-fr="Ticket ciné" data-price="12" data-emoji="🎬">
+                        <span class="text-2xl block mb-1">🎬</span>
+                        <span class="text-sm font-semibold"><span class="lang-de">Kino-Ticket</span><span class="lang-en">Movie Ticket</span><span class="lang-fr">Ticket ciné</span></span>
+                        <span class="block text-xs text-gray-400">12 €</span>
+                    </button>
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" data-name-de="Sneakers" data-name-en="Sneakers" data-name-fr="Sneakers" data-price="120" data-emoji="👟">
+                        <span class="text-2xl block mb-1">👟</span>
+                        <span class="text-sm font-semibold">Sneakers</span>
+                        <span class="block text-xs text-gray-400">120 €</span>
+                    </button>
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" data-name-de="iPhone" data-name-en="iPhone" data-name-fr="iPhone" data-price="1200" data-emoji="📱">
+                        <span class="text-2xl block mb-1">📱</span>
+                        <span class="text-sm font-semibold">iPhone</span>
+                        <span class="block text-xs text-gray-400">1.200 €</span>
+                    </button>
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" data-name-de="Spotify Abo" data-name-en="Spotify Sub" data-name-fr="Abo Spotify" data-price="10" data-emoji="🎵">
+                        <span class="text-2xl block mb-1">🎵</span>
+                        <span class="text-sm font-semibold"><span class="lang-de">Spotify Abo</span><span class="lang-en">Spotify Sub</span><span class="lang-fr">Abo Spotify</span></span>
+                        <span class="block text-xs text-gray-400">10 €/
+                            <span class="lang-de">Monat</span><span class="lang-en">month</span><span class="lang-fr">mois</span>
+                        </span>
+                    </button>
+                    <button class="preset-btn glass-button rounded-xl p-3 text-center transition-all" id="custom-toggle" data-name-de="Eigener Artikel" data-name-en="Custom Item" data-name-fr="Article perso" data-price="0" data-emoji="✏️">
+                        <span class="text-2xl block mb-1">✏️</span>
+                        <span class="text-sm font-semibold"><span class="lang-de">Eigener</span><span class="lang-en">Custom</span><span class="lang-fr">Perso</span></span>
+                        <span class="block text-xs text-gray-400">??? €</span>
+                    </button>
+                </div>
+
+                <!-- Custom item inputs (hidden by default) -->
+                <div id="custom-inputs" class="hidden space-y-3 mt-4 p-4 rounded-2xl" style="background: rgba(255,255,255,0.04);">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Artikelname</span>
+                            <span class="lang-en">Item name</span>
+                            <span class="lang-fr">Nom de l'article</span>
+                        </label>
+                        <input type="text" id="custom-name" class="calc-input" placeholder="z.B. Pizza, Konzert-Ticket...">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">
+                            <span class="lang-de">Aktueller Preis (€)</span>
+                            <span class="lang-en">Current price (€)</span>
+                            <span class="lang-fr">Prix actuel (€)</span>
+                        </label>
+                        <input type="number" id="custom-price" class="calc-input" min="0.01" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sliders -->
+            <div class="glass-card rounded-3xl p-6 md:p-8 mb-6">
+                <h2 class="text-xl font-bold mb-6">
+                    <span class="lang-de">⚙️ Einstellungen</span>
+                    <span class="lang-en">⚙️ Settings</span>
+                    <span class="lang-fr">⚙️ Paramètres</span>
+                </h2>
+
+                <!-- Inflation rate slider -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold">
+                            <span class="lang-de">Inflationsrate</span>
+                            <span class="lang-en">Inflation rate</span>
+                            <span class="lang-fr">Taux d'inflation</span>
+                        </label>
+                        <span id="rate-display" class="text-lg font-bold text-purple-400">3.0%</span>
+                    </div>
+                    <input type="range" id="rate-slider" min="1" max="10" step="0.5" value="3"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer"
+                        style="background: linear-gradient(90deg, rgba(99,102,241,0.6), rgba(168,85,247,0.6)); accent-color: #a855f7;">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>1%</span>
+                        <span>
+                            <span class="lang-de">Historisch ~2-3%</span>
+                            <span class="lang-en">Historical ~2-3%</span>
+                            <span class="lang-fr">Historique ~2-3%</span>
+                        </span>
+                        <span>10%</span>
+                    </div>
+                </div>
+
+                <!-- Years slider -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold">
+                            <span class="lang-de">Jahre in die Zukunft</span>
+                            <span class="lang-en">Years into the future</span>
+                            <span class="lang-fr">Années dans le futur</span>
+                        </label>
+                        <span id="years-display" class="text-lg font-bold text-cyan-400">10</span>
+                    </div>
+                    <input type="range" id="years-slider" min="1" max="50" step="1" value="10"
+                        class="w-full h-2 rounded-full appearance-none cursor-pointer"
+                        style="background: linear-gradient(90deg, rgba(34,211,238,0.5), rgba(99,102,241,0.6)); accent-color: #22d3ee;">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>1</span>
+                        <span>25</span>
+                        <span>50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="results-section" class="hidden">
+                <!-- Main result -->
+                <div class="calc-result rounded-3xl p-6 md:p-8 mb-6 text-center">
+                    <p class="text-gray-300 mb-2">
+                        <span id="result-emoji" class="text-3xl"></span>
+                    </p>
+                    <p class="text-gray-300 text-sm mb-1">
+                        <span id="result-item-name" class="font-semibold"></span>
+                        <span class="lang-de">kostet dann</span>
+                        <span class="lang-en">will cost</span>
+                        <span class="lang-fr">coûtera</span>
+                    </p>
+                    <p class="text-5xl md:text-6xl font-extrabold my-3 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent" id="result-price">
+                    </p>
+                    <p class="text-gray-400 text-sm mb-4">
+                        <span class="lang-de">statt heute</span>
+                        <span class="lang-en">instead of today's</span>
+                        <span class="lang-fr">au lieu de</span>
+                        <span id="result-original" class="font-semibold text-white"></span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                        <div class="glass-card rounded-2xl px-5 py-3">
+                            <p class="text-xs text-gray-400 mb-1">
+                                <span class="lang-de">Preisanstieg</span>
+                                <span class="lang-en">Price increase</span>
+                                <span class="lang-fr">Hausse du prix</span>
+                            </p>
+                            <p class="text-2xl font-bold text-red-400" id="result-increase"></p>
+                        </div>
+                        <div class="glass-card rounded-2xl px-5 py-3">
+                            <p class="text-xs text-gray-400 mb-1">
+                                <span class="lang-de">Kaufkraftverlust</span>
+                                <span class="lang-en">Purchasing power loss</span>
+                                <span class="lang-fr">Perte de pouvoir d'achat</span>
+                            </p>
+                            <p class="text-2xl font-bold text-amber-400" id="result-power"></p>
+                        </div>
+                    </div>
+
+                    <!-- Purchasing power explanation -->
+                    <div class="mt-5 p-4 rounded-xl text-left text-sm text-gray-300" style="background: rgba(255,255,255,0.05);">
+                        <p class="lang-de">
+                            <strong>Was bedeutet das?</strong> Wenn du heute 100 € unter dein Kopfkissen legst, kannst du dir in <span class="result-years"></span> Jahren damit nur noch Sachen im Wert von <span id="power-example-de" class="text-amber-400 font-semibold"></span> kaufen. Dein Geld verliert leise an Wert!
+                        </p>
+                        <p class="lang-en">
+                            <strong>What does this mean?</strong> If you put 100 € under your pillow today, in <span class="result-years"></span> years you could only buy things worth <span id="power-example-en" class="text-amber-400 font-semibold"></span>. Your money quietly loses value!
+                        </p>
+                        <p class="lang-fr">
+                            <strong>Qu'est-ce que ça veut dire ?</strong> Si tu mets 100 € sous ton oreiller aujourd'hui, dans <span class="result-years"></span> ans, tu ne pourras acheter que pour <span id="power-example-fr" class="text-amber-400 font-semibold"></span>. Ton argent perd de la valeur en silence !
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="glass-card rounded-3xl p-6 md:p-8 mb-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <span class="lang-de">📈 Preisentwicklung</span>
+                        <span class="lang-en">📈 Price Timeline</span>
+                        <span class="lang-fr">📈 Évolution du prix</span>
+                    </h2>
+                    <div id="timeline" class="space-y-3"></div>
+                </div>
+
+                <!-- Fun fact -->
+                <div class="tip-box rounded-2xl p-5 mb-6">
+                    <h3 class="font-bold mb-2">
+                        <span class="lang-de">💡 Wusstest du?</span>
+                        <span class="lang-en">💡 Did you know?</span>
+                        <span class="lang-fr">💡 Le savais-tu ?</span>
+                    </h3>
+                    <div id="fun-fact">
+                        <p class="lang-de text-sm text-gray-300">
+                            In Deutschland lag die Inflation 2022 bei über 7 % - die höchste seit der Wiedervereinigung! Ein Döner kostete in den 2000ern noch 2,50 € - heute oft mehr als 6 €. Die Europäische Zentralbank versucht, die Inflation bei etwa 2 % zu halten. Bei einer Inflation von nur 3 % verdoppeln sich die Preise in etwa 24 Jahren!
+                        </p>
+                        <p class="lang-en text-sm text-gray-300">
+                            In Germany, inflation hit over 7% in 2022 - the highest since reunification! A Döner cost about 2.50 € in the 2000s - today it's often over 6 €. The European Central Bank tries to keep inflation around 2%. With just 3% inflation, prices double in roughly 24 years!
+                        </p>
+                        <p class="lang-fr text-sm text-gray-300">
+                            En Allemagne, l'inflation a dépassé 7 % en 2022 - la plus élevée depuis la réunification ! Un Döner coûtait environ 2,50 € dans les années 2000 - aujourd'hui souvent plus de 6 €. La Banque centrale européenne essaie de maintenir l'inflation autour de 2 %. Avec seulement 3 % d'inflation, les prix doublent en environ 24 ans !
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip -->
+                <div class="info-box rounded-2xl p-5 mb-6">
+                    <h3 class="font-bold mb-2">
+                        <span class="lang-de">🛡️ Was kannst du tun?</span>
+                        <span class="lang-en">🛡️ What can you do?</span>
+                        <span class="lang-fr">🛡️ Que peux-tu faire ?</span>
+                    </h3>
+                    <p class="lang-de text-sm text-gray-300">
+                        Geld auf dem Sparkonto bringt oft weniger Zinsen als die Inflation. Um dein Geld vor Inflation zu schützen, kannst du es investieren - z.B. in ETFs oder Aktien. Historisch gesehen bringen Aktienmärkte im Durchschnitt 7-8 % pro Jahr. Mehr dazu lernst du in <a href="../chapters/chapter7.html" class="text-purple-400 underline">Kapitel 7</a>!
+                    </p>
+                    <p class="lang-en text-sm text-gray-300">
+                        A savings account often earns less interest than inflation takes away. To protect your money from inflation, you can invest it - e.g. in ETFs or stocks. Historically, stock markets return about 7-8% per year on average. Learn more in <a href="../chapters/chapter7.html" class="text-purple-400 underline">Chapter 7</a>!
+                    </p>
+                    <p class="lang-fr text-sm text-gray-300">
+                        Un compte d'épargne rapporte souvent moins d'intérêts que l'inflation n'en enlève. Pour protéger ton argent de l'inflation, tu peux l'investir - par exemple dans des ETF ou des actions. Historiquement, les marchés boursiers rapportent en moyenne 7-8 % par an. Plus d'infos dans le <a href="../chapters/chapter7.html" class="text-purple-400 underline">Chapitre 7</a> !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-8 text-center">
+            <p class="text-gray-400">💰 Finance Academy &copy; 2026 - Berger Family</p>
+            <p class="text-gray-500 text-sm mt-2">
+                <span class="lang-de">Finanzbildung für die nächste Generation</span>
+                <span class="lang-en">Financial education for the next generation</span>
+                <span class="lang-fr">Éducation financière pour la prochaine génération</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script>
+        // ---- Inflation Calculator Logic ----
+        const presets = [
+            { de: 'Döner', en: 'Döner', fr: 'Döner', price: 6, emoji: '🌯' },
+            { de: 'Kino-Ticket', en: 'Movie Ticket', fr: 'Ticket ciné', price: 12, emoji: '🎬' },
+            { de: 'Sneakers', en: 'Sneakers', fr: 'Sneakers', price: 120, emoji: '👟' },
+            { de: 'iPhone', en: 'iPhone', fr: 'iPhone', price: 1200, emoji: '📱' },
+            { de: 'Spotify Abo', en: 'Spotify Sub', fr: 'Abo Spotify', price: 10, emoji: '🎵' },
+        ];
+
+        let selectedPreset = 0; // Döner by default
+        let isCustom = false;
+
+        const rateSlider = document.getElementById('rate-slider');
+        const yearsSlider = document.getElementById('years-slider');
+        const rateDisplay = document.getElementById('rate-display');
+        const yearsDisplay = document.getElementById('years-display');
+        const resultsSection = document.getElementById('results-section');
+        const customInputs = document.getElementById('custom-inputs');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+
+        function t(de, en, fr) {
+            const l = Lang.get();
+            return l === 'fr' ? fr : l === 'en' ? en : de;
+        }
+
+        function formatCurrency(val) {
+            return val.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        }
+
+        function getItemName() {
+            if (isCustom) {
+                return document.getElementById('custom-name').value || t('Eigener Artikel', 'Custom Item', 'Article perso');
+            }
+            const p = presets[selectedPreset];
+            return t(p.de, p.en, p.fr);
+        }
+
+        function getItemPrice() {
+            if (isCustom) {
+                return parseFloat(document.getElementById('custom-price').value) || 0;
+            }
+            return presets[selectedPreset].price;
+        }
+
+        function getItemEmoji() {
+            if (isCustom) return '✏️';
+            return presets[selectedPreset].emoji;
+        }
+
+        function selectPreset(index) {
+            presetBtns.forEach((btn, i) => {
+                btn.classList.remove('ring-2', 'ring-purple-400', 'bg-white/20');
+                btn.classList.add('glass-button');
+            });
+            presetBtns[index].classList.add('ring-2', 'ring-purple-400', 'bg-white/20');
+
+            if (index === presetBtns.length - 1) {
+                isCustom = true;
+                selectedPreset = 0;
+                customInputs.classList.remove('hidden');
+            } else {
+                isCustom = false;
+                selectedPreset = index;
+                customInputs.classList.add('hidden');
+            }
+            calculate();
+        }
+
+        function calculate() {
+            const price = getItemPrice();
+            if (price <= 0) {
+                resultsSection.classList.add('hidden');
+                return;
+            }
+
+            const rate = parseFloat(rateSlider.value) / 100;
+            const years = parseInt(yearsSlider.value);
+            const futurePrice = price * Math.pow(1 + rate, years);
+            const percentIncrease = ((futurePrice - price) / price) * 100;
+            const purchasingPower = 100 / Math.pow(1 + rate, years);
+            const purchasingPowerLoss = 100 - purchasingPower;
+
+            // Update displays
+            rateDisplay.textContent = parseFloat(rateSlider.value).toFixed(1) + '%';
+            yearsDisplay.textContent = years;
+
+            // Show results
+            resultsSection.classList.remove('hidden');
+
+            document.getElementById('result-emoji').textContent = getItemEmoji();
+            document.getElementById('result-item-name').textContent = getItemName();
+            document.getElementById('result-price').textContent = formatCurrency(futurePrice);
+            document.getElementById('result-original').textContent = formatCurrency(price);
+            document.getElementById('result-increase').textContent = '+' + percentIncrease.toFixed(1) + '%';
+            document.getElementById('result-power').textContent = '-' + purchasingPowerLoss.toFixed(1) + '%';
+
+            // Update years spans
+            document.querySelectorAll('.result-years').forEach(el => el.textContent = years);
+
+            // Purchasing power example (100€ today)
+            const powerVal = formatCurrency(purchasingPower);
+            document.getElementById('power-example-de').textContent = powerVal;
+            document.getElementById('power-example-en').textContent = powerVal;
+            document.getElementById('power-example-fr').textContent = powerVal;
+
+            // Build timeline at 5-year intervals
+            const timeline = document.getElementById('timeline');
+            const currentYear = new Date().getFullYear();
+            let timelineHTML = '';
+
+            // Always show year 0
+            timelineHTML += buildTimelineRow(0, currentYear, price, price);
+
+            // 5-year intervals
+            for (let y = 5; y <= years; y += 5) {
+                const fp = price * Math.pow(1 + rate, y);
+                timelineHTML += buildTimelineRow(y, currentYear + y, fp, price);
+            }
+
+            // Always show final year if not already shown
+            if (years % 5 !== 0) {
+                timelineHTML += buildTimelineRow(years, currentYear + years, futurePrice, price);
+            }
+
+            timeline.innerHTML = timelineHTML;
+
+            // Animate result
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function buildTimelineRow(yearOffset, absoluteYear, futurePrice, basePrice) {
+            const barPct = Math.min((futurePrice / basePrice / 5) * 100, 100);
+            const isNow = yearOffset === 0;
+            const labelDe = isNow ? 'Heute' : `In ${yearOffset} Jahren`;
+            const labelEn = isNow ? 'Today' : `In ${yearOffset} years`;
+            const labelFr = isNow ? "Aujourd'hui" : `Dans ${yearOffset} ans`;
+            const highlight = isNow ? '' : 'from-purple-500/30 to-pink-500/30';
+            const barBg = isNow ? 'bg-cyan-500/50' : 'bg-gradient-to-r from-purple-500/60 to-pink-500/60';
+
+            return `
+                <div class="flex items-center gap-3 ${isNow ? 'opacity-70' : ''}">
+                    <div class="w-20 text-right text-xs font-mono text-gray-400 shrink-0">${absoluteYear}</div>
+                    <div class="flex-1">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>
+                                <span class="lang-de">${labelDe}</span>
+                                <span class="lang-en">${labelEn}</span>
+                                <span class="lang-fr">${labelFr}</span>
+                            </span>
+                            <span class="font-bold ${isNow ? 'text-gray-300' : 'text-white'}">${formatCurrency(futurePrice)}</span>
+                        </div>
+                        <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full rounded-full ${barBg} transition-all duration-500" style="width: ${barPct}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event listeners
+        presetBtns.forEach((btn, i) => {
+            btn.addEventListener('click', () => selectPreset(i));
+        });
+
+        rateSlider.addEventListener('input', () => {
+            rateDisplay.textContent = parseFloat(rateSlider.value).toFixed(1) + '%';
+            calculate();
+        });
+
+        yearsSlider.addEventListener('input', () => {
+            yearsDisplay.textContent = yearsSlider.value;
+            calculate();
+        });
+
+        document.getElementById('custom-name').addEventListener('input', calculate);
+        document.getElementById('custom-price').addEventListener('input', calculate);
+
+        // Initial selection: Döner
+        selectPreset(0);
+    </script>
+</body>
+</html>
