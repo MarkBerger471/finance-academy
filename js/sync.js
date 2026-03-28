@@ -1,6 +1,13 @@
 // Firebase Realtime Sync Layer
 // Replaces localStorage for shared data — syncs across all devices in real-time
 
+// Store original localStorage methods BEFORE patching
+const _origLS = {
+    getItem: localStorage.getItem.bind(localStorage),
+    setItem: localStorage.setItem.bind(localStorage),
+    removeItem: localStorage.removeItem.bind(localStorage),
+};
+
 const Sync = {
     _db: null,
     _ready: false,
@@ -18,9 +25,9 @@ const Sync = {
     ],
 
     // Initialize Firebase
-    init(firebaseConfig) {
+    init: function(firebaseConfig) {
         if (typeof firebase === 'undefined') {
-            console.warn('Firebase SDK not loaded — falling back to localStorage only');
+            console.warn('Firebase SDK not loaded');
             return;
         }
 
@@ -30,62 +37,68 @@ const Sync = {
         this._db = firebase.database();
         this._ready = true;
 
-        // Set up real-time listeners for all synced keys
-        this.SYNCED_KEYS.forEach(key => {
-            const ref = this._db.ref('data/' + key);
-            ref.on('value', snapshot => {
-                const val = snapshot.val();
-                if (val !== null && val !== undefined) {
-                    // Update local cache and localStorage
-                    const json = typeof val === 'string' ? val : JSON.stringify(val);
-                    this._cache[key] = json;
-                    localStorage.setItem(key, json);
+        // Push any existing local data to Firebase first
+        var self = this;
+        this.SYNCED_KEYS.forEach(function(key) {
+            var local = _origLS.getItem(key);
+            if (local) {
+                self._db.ref('data/' + key).set(local);
+            }
+        });
 
-                    // Notify listeners
-                    if (this._listeners[key]) {
-                        this._listeners[key].forEach(fn => fn(json));
+        // Set up real-time listeners for all synced keys
+        this.SYNCED_KEYS.forEach(function(key) {
+            var ref = self._db.ref('data/' + key);
+            ref.on('value', function(snapshot) {
+                var val = snapshot.val();
+                if (val !== null && val !== undefined) {
+                    var json = typeof val === 'string' ? val : JSON.stringify(val);
+                    self._cache[key] = json;
+                    _origLS.setItem(key, json);
+
+                    if (self._listeners[key]) {
+                        self._listeners[key].forEach(function(fn) { fn(json); });
                     }
                 }
             });
         });
 
-        // Show sync indicator
         this._showSyncStatus('connected');
     },
 
-    // Get data — from cache, then localStorage as fallback
-    get(key) {
-        return this._cache[key] || localStorage.getItem(key);
+    // Get data
+    get: function(key) {
+        return this._cache[key] || _origLS.getItem(key);
     },
 
-    // Set data — write to localStorage + Firebase
-    set(key, value) {
-        localStorage.setItem(key, value);
+    // Set data — write to real localStorage + Firebase
+    set: function(key, value) {
+        _origLS.setItem(key, value);
         this._cache[key] = value;
 
-        if (this._ready && this.SYNCED_KEYS.includes(key)) {
-            // Write to Firebase
+        if (this._ready && this.SYNCED_KEYS.indexOf(key) !== -1) {
+            var self = this;
             this._db.ref('data/' + key).set(value)
-                .then(() => this._showSyncStatus('synced'))
-                .catch(err => {
+                .then(function() { self._showSyncStatus('synced'); })
+                .catch(function(err) {
                     console.error('Sync error:', err);
-                    this._showSyncStatus('error');
+                    self._showSyncStatus('error');
                 });
         }
     },
 
     // Remove data
-    remove(key) {
-        localStorage.removeItem(key);
+    remove: function(key) {
+        _origLS.removeItem(key);
         delete this._cache[key];
 
-        if (this._ready && this.SYNCED_KEYS.includes(key)) {
+        if (this._ready && this.SYNCED_KEYS.indexOf(key) !== -1) {
             this._db.ref('data/' + key).remove();
         }
     },
 
     // Register a listener for data changes
-    onChange(key, fn) {
+    onChange: function(key, fn) {
         if (!this._listeners[key]) this._listeners[key] = [];
         this._listeners[key].push(fn);
     },
@@ -93,13 +106,14 @@ const Sync = {
     // Sync status indicator
     _syncEl: null,
     _hideTimeout: null,
-    _showSyncStatus(status) {
+    _showSyncStatus: function(status) {
+        if (!document.body) return;
         if (!this._syncEl) {
             this._syncEl = document.createElement('div');
             this._syncEl.style.cssText = 'position:fixed;bottom:1rem;right:1rem;z-index:9999;padding:0.4rem 0.8rem;border-radius:9999px;font-size:0.75rem;font-weight:600;transition:opacity 0.3s;pointer-events:none;backdrop-filter:blur(10px);';
             document.body.appendChild(this._syncEl);
         }
-        const el = this._syncEl;
+        var el = this._syncEl;
         clearTimeout(this._hideTimeout);
 
         if (status === 'connected') {
@@ -119,16 +133,17 @@ const Sync = {
             el.style.border = '1px solid rgba(239,68,68,0.3)';
         }
         el.style.opacity = '1';
-        this._hideTimeout = setTimeout(() => { el.style.opacity = '0'; }, 2500);
+        this._hideTimeout = setTimeout(function() { el.style.opacity = '0'; }, 2500);
     },
 
-    // Push all local data to Firebase (first-time setup)
-    pushLocalToFirebase() {
+    // Push all local data to Firebase (manual trigger)
+    pushLocalToFirebase: function() {
         if (!this._ready) return;
-        this.SYNCED_KEYS.forEach(key => {
-            const local = localStorage.getItem(key);
+        var self = this;
+        this.SYNCED_KEYS.forEach(function(key) {
+            var local = _origLS.getItem(key);
             if (local) {
-                this._db.ref('data/' + key).set(local);
+                self._db.ref('data/' + key).set(local);
             }
         });
     }
@@ -136,27 +151,23 @@ const Sync = {
 
 // Monkey-patch localStorage for synced keys so existing code works without changes
 (function() {
-    const origGetItem = localStorage.getItem.bind(localStorage);
-    const origSetItem = localStorage.setItem.bind(localStorage);
-    const origRemoveItem = localStorage.removeItem.bind(localStorage);
-
     localStorage.getItem = function(key) {
-        if (Sync.SYNCED_KEYS.includes(key)) {
+        if (Sync.SYNCED_KEYS.indexOf(key) !== -1) {
             return Sync.get(key);
         }
-        return origGetItem(key);
+        return _origLS.getItem(key);
     };
 
     localStorage.setItem = function(key, value) {
-        origSetItem(key, value);
-        if (Sync.SYNCED_KEYS.includes(key)) {
+        _origLS.setItem(key, value);
+        if (Sync.SYNCED_KEYS.indexOf(key) !== -1) {
             Sync.set(key, value);
         }
     };
 
     localStorage.removeItem = function(key) {
-        origRemoveItem(key);
-        if (Sync.SYNCED_KEYS.includes(key)) {
+        _origLS.removeItem(key);
+        if (Sync.SYNCED_KEYS.indexOf(key) !== -1) {
             Sync.remove(key);
         }
     };
