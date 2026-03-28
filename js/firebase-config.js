@@ -4,7 +4,7 @@
 const FIREBASE_CONFIG = {
     apiKey: "AIzaSyA_4AHENg65AX7VyeSd9yRp6puv5akv_jg",
     authDomain: "finance-academy-5670a.firebaseapp.com",
-    databaseURL: "https://finance-academy-5670a-default-rtdb.europe-west1.firebasedatabase.app",
+    databaseURL: "https://finance-academy-5670a-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "finance-academy-5670a",
     storageBucket: "finance-academy-5670a.firebasestorage.app",
     messagingSenderId: "809992763267",
