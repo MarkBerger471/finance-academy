@@ -12,16 +12,19 @@ const FIREBASE_CONFIG = {
 };
 
 // Initialize sync after page loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     if (FIREBASE_CONFIG.apiKey !== 'YOUR_API_KEY') {
         Sync.init(FIREBASE_CONFIG);
 
         // Re-render current page when synced data changes
-        Sync.SYNCED_KEYS.forEach(key => {
-            Sync.onChange(key, () => {
-                // Trigger re-render if available
-                if (typeof render === 'function') render();
-                if (TestSystem && TestSystem._render) TestSystem._render();
+        Sync.SYNCED_KEYS.forEach(function(key) {
+            Sync.onChange(key, function() {
+                try {
+                    if (typeof window.render === 'function') window.render();
+                } catch(e) {}
+                try {
+                    if (typeof TestSystem !== 'undefined' && TestSystem._render) TestSystem._render();
+                } catch(e) {}
             });
         });
     }
