@@ -193,12 +193,73 @@
 
             <!-- Results Card -->
             <div class="space-y-6">
+                <!-- Brutto/Netto Toggle -->
+                <div class="glass-card rounded-2xl p-4">
+                    <div class="flex items-center justify-center gap-3">
+                        <button id="btnBrutto" class="difficulty-tab basis active px-5 py-2" onclick="setTaxMode('brutto')">
+                            <span class="lang-de">Brutto</span><span class="lang-en">Gross</span><span class="lang-fr">Brut</span>
+                        </button>
+                        <button id="btnNetto" class="difficulty-tab advanced px-5 py-2" onclick="setTaxMode('netto')">
+                            <span class="lang-de">Netto (nach Steuern)</span><span class="lang-en">Net (after tax)</span><span class="lang-fr">Net (après impôts)</span>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 text-center mt-2" id="taxModeInfo">
+                        <span class="lang-de">Brutto = vor Steuern. Umschalten für realistische Netto-Berechnung.</span>
+                        <span class="lang-en">Gross = before taxes. Switch for realistic net calculation.</span>
+                        <span class="lang-fr">Brut = avant impôts. Basculer pour un calcul net réaliste.</span>
+                    </p>
+                </div>
+
+                <!-- Tax settings (visible in Netto mode) -->
+                <div id="taxSettings" class="glass-card rounded-2xl p-5 hidden" style="border:1px solid rgba(168,85,247,0.3);">
+                    <h3 class="text-sm font-bold text-purple-400 mb-3">
+                        <span class="lang-de">🧾 Steuereinstellungen (DE)</span>
+                        <span class="lang-en">🧾 Tax Settings (DE)</span>
+                        <span class="lang-fr">🧾 Paramètres fiscaux (DE)</span>
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">
+                                <span class="lang-de">Sparerpauschbetrag</span>
+                                <span class="lang-en">Tax-free allowance</span>
+                                <span class="lang-fr">Abattement fiscal</span>
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="taxFreibetrag" value="1000" min="0" max="10000" step="100" class="calc-input text-sm w-24 text-right" />
+                                <span class="text-gray-500">€</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">
+                                <span class="lang-de">Teilfreistellung (Aktienfonds)</span>
+                                <span class="lang-en">Partial exemption (equity funds)</span>
+                                <span class="lang-fr">Exonération partielle (fonds actions)</span>
+                            </span>
+                            <span class="text-purple-400 font-semibold">30%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">
+                                <span class="lang-de">Abgeltungssteuer + Soli</span>
+                                <span class="lang-en">Capital gains tax + surcharge</span>
+                                <span class="lang-fr">Impôt sur les gains + surcharge</span>
+                            </span>
+                            <span class="text-purple-400 font-semibold">26,375%</span>
+                        </div>
+                        <div class="text-xs text-gray-600 mt-1">
+                            <span class="lang-de">→ Effektiver Steuersatz auf Aktien-ETF-Gewinne: ~18,46% (nach Teilfreistellung)</span>
+                            <span class="lang-en">→ Effective tax rate on equity ETF gains: ~18.46% (after partial exemption)</span>
+                            <span class="lang-fr">→ Taux effectif sur gains ETF actions : ~18,46% (après exonération partielle)</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Result Numbers -->
                 <div class="glass-card rounded-3xl p-6 md:p-8">
                     <h2 class="text-xl font-bold mb-6">
                         <span class="lang-de">Ergebnis</span>
                         <span class="lang-en">Result</span>
                         <span class="lang-fr">Résultat</span>
+                        <span id="resultLabel" class="text-sm font-normal text-gray-500 ml-2"></span>
                     </h2>
 
                     <div class="space-y-4">
@@ -225,11 +286,23 @@
                             <!-- Zinsgewinn -->
                             <div class="glass-card rounded-2xl p-4 text-center hover:transform-none">
                                 <p class="text-xs text-gray-400 mb-1">
-                                    <span class="lang-de">Zinsgewinn</span>
+                                    <span id="interestLabel" class="lang-de">Zinsgewinn</span>
                                     <span class="lang-en">Interest Earned</span>
                                     <span class="lang-fr">Intérêts gagnés</span>
                                 </p>
                                 <p id="resultInterest" class="text-lg font-bold text-green-400">0 €</p>
+                            </div>
+                        </div>
+
+                        <!-- Tax amount (visible in Netto mode) -->
+                        <div id="taxRow" class="hidden">
+                            <div class="glass-card rounded-2xl p-4 text-center hover:transform-none" style="border:1px solid rgba(239,68,68,0.2);">
+                                <p class="text-xs text-gray-400 mb-1">
+                                    <span class="lang-de">Steuern (geschätzt)</span>
+                                    <span class="lang-en">Taxes (estimated)</span>
+                                    <span class="lang-fr">Impôts (estimés)</span>
+                                </p>
+                                <p id="resultTax" class="text-lg font-bold text-red-400">0 €</p>
                             </div>
                         </div>
 
@@ -260,18 +333,24 @@
                     <div class="relative" style="aspect-ratio: 16/10;">
                         <canvas id="growthChart" class="w-full h-full rounded-xl"></canvas>
                     </div>
-                    <div class="flex items-center justify-center gap-6 mt-4 text-xs">
+                    <div class="flex items-center justify-center gap-4 flex-wrap mt-4 text-xs">
                         <span class="flex items-center gap-1.5">
                             <span class="w-3 h-3 rounded-full" style="background: linear-gradient(135deg, #22d3ee, #a855f7);"></span>
-                            <span class="lang-de">Gesamtwert</span>
-                            <span class="lang-en">Total Value</span>
-                            <span class="lang-fr">Valeur totale</span>
+                            <span class="lang-de">Brutto-Gesamtwert</span>
+                            <span class="lang-en">Gross Total</span>
+                            <span class="lang-fr">Valeur brute</span>
                         </span>
                         <span class="flex items-center gap-1.5">
                             <span class="w-3 h-3 rounded-full" style="background: rgba(96,165,250,0.6);"></span>
                             <span class="lang-de">Einzahlungen</span>
                             <span class="lang-en">Deposits</span>
                             <span class="lang-fr">Dépôts</span>
+                        </span>
+                        <span id="legendNet" class="flex items-center gap-1.5 hidden">
+                            <span class="w-3 h-3 rounded-full" style="background: #4ade80;"></span>
+                            <span class="lang-de">Netto (nach Steuern)</span>
+                            <span class="lang-en">Net (after tax)</span>
+                            <span class="lang-fr">Net (après impôts)</span>
                         </span>
                     </div>
                 </div>
@@ -294,6 +373,23 @@
     <script src="../js/main.js"></script>
     <script src="../js/gamification.js"></script>
     <script>
+    // Tax mode global
+    var taxMode = 'brutto';
+    function setTaxMode(mode) {
+        taxMode = mode;
+        document.getElementById('btnBrutto').className = 'difficulty-tab basis px-5 py-2' + (mode === 'brutto' ? ' active' : '');
+        document.getElementById('btnNetto').className = 'difficulty-tab advanced px-5 py-2' + (mode === 'netto' ? ' active' : '');
+        document.getElementById('taxSettings').classList.toggle('hidden', mode === 'brutto');
+        document.getElementById('taxRow').classList.toggle('hidden', mode === 'brutto');
+        document.getElementById('legendNet').classList.toggle('hidden', mode === 'brutto');
+        var l = (localStorage.getItem('finance_academy_lang') || 'de');
+        document.getElementById('resultLabel').textContent = mode === 'netto'
+            ? (l === 'fr' ? '(net)' : l === 'en' ? '(net)' : '(netto)')
+            : (l === 'fr' ? '(brut)' : l === 'en' ? '(gross)' : '(brutto)');
+        if (typeof _recalc === 'function') _recalc();
+    }
+
+    var _recalc;
     (function() {
         // --- Element References ---
         const ids = ['start', 'monthly', 'rate', 'years'];
@@ -307,6 +403,7 @@
         const resultDeposits = document.getElementById('resultDeposits');
         const resultInterest = document.getElementById('resultInterest');
         const resultMultiplier = document.getElementById('resultMultiplier');
+        const resultTax = document.getElementById('resultTax');
         const canvas = document.getElementById('growthChart');
         const ctx = canvas.getContext('2d');
 
@@ -369,7 +466,7 @@
         }
 
         // --- Chart Drawing ---
-        function drawChart(dataTotal, dataDeposits) {
+        function drawChart(dataTotal, dataDeposits, dataNet) {
             const dpr = window.devicePixelRatio || 1;
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width * dpr;
@@ -491,22 +588,84 @@
                     ctx.stroke();
                 }
             }
+
+            // Net line (after tax) — dashed green
+            if (dataNet && dataNet.length === n) {
+                ctx.beginPath();
+                for (let i = 0; i < n; i++) {
+                    if (i === 0) ctx.moveTo(x(i), y(dataNet[i]));
+                    else ctx.lineTo(x(i), y(dataNet[i]));
+                }
+                ctx.strokeStyle = '#4ade80';
+                ctx.lineWidth = 2.5;
+                ctx.setLineDash([6, 4]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Dots on net line
+                for (let i = 0; i < n; i++) {
+                    if (n <= 15 || i % step === 0 || i === n - 1) {
+                        ctx.beginPath();
+                        ctx.arc(x(i), y(dataNet[i]), 3, 0, Math.PI * 2);
+                        ctx.fillStyle = '#4ade80';
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+
+        // --- German Tax Calculation ---
+        // Teilfreistellung 30% for equity funds → only 70% of gains taxed
+        // Abgeltungssteuer 26.375% (25% + 5.5% Soli)
+        // Effective rate: 0.70 × 0.26375 = 0.184625 (~18.46%)
+        // Sparerpauschbetrag: deducted from taxable gains
+        function calcTax(grossGain) {
+            const freibetrag = parseFloat(document.getElementById('taxFreibetrag').value) || 0;
+            const teilfreistellung = 0.30; // 30% for Aktienfonds
+            const abgeltungssteuer = 0.26375; // 25% + 5.5% Soli
+
+            const taxableGain = grossGain * (1 - teilfreistellung); // only 70% taxable
+            const afterFreibetrag = Math.max(0, taxableGain - freibetrag);
+            const tax = afterFreibetrag * abgeltungssteuer;
+            return tax;
         }
 
         // --- Main Calculate ---
         function calculate() {
             const v = getValues();
             const { dataTotal, dataDeposits, finalBalance, totalDeposits } = computeGrowth(v);
-            const interest = finalBalance - totalDeposits;
-            const multiplier = totalDeposits > 0 ? finalBalance / totalDeposits : 1;
+            const grossInterest = finalBalance - totalDeposits;
 
-            resultTotal.textContent = fmtNum(finalBalance) + ' €';
-            resultDeposits.textContent = fmtNum(totalDeposits) + ' €';
-            resultInterest.textContent = fmtNum(interest) + ' €';
-            resultMultiplier.textContent = multiplier.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'x';
+            if (taxMode === 'netto') {
+                const tax = calcTax(grossInterest);
+                const netInterest = grossInterest - tax;
+                const netTotal = totalDeposits + netInterest;
+                const multiplier = totalDeposits > 0 ? netTotal / totalDeposits : 1;
 
-            drawChart(dataTotal, dataDeposits);
+                resultTotal.textContent = fmtNum(netTotal) + ' €';
+                resultDeposits.textContent = fmtNum(totalDeposits) + ' €';
+                resultInterest.textContent = fmtNum(netInterest) + ' €';
+                resultTax.textContent = '−' + fmtNum(tax) + ' €';
+                resultMultiplier.textContent = multiplier.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'x';
+
+                // Adjust chart: show net line too
+                const netData = dataTotal.map((val, i) => {
+                    const dep = dataDeposits[i];
+                    const gain = val - dep;
+                    const t = calcTax(gain);
+                    return dep + gain - t;
+                });
+                drawChart(dataTotal, dataDeposits, netData);
+            } else {
+                const multiplier = totalDeposits > 0 ? finalBalance / totalDeposits : 1;
+                resultTotal.textContent = fmtNum(finalBalance) + ' €';
+                resultDeposits.textContent = fmtNum(totalDeposits) + ' €';
+                resultInterest.textContent = fmtNum(grossInterest) + ' €';
+                resultMultiplier.textContent = multiplier.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + 'x';
+                drawChart(dataTotal, dataDeposits);
+            }
         }
+        _recalc = calculate;
 
         // --- Responsive canvas ---
         let resizeTimeout;
@@ -555,7 +714,11 @@
         `;
         document.head.appendChild(style);
 
+        // Freibetrag input triggers recalculation
+        document.getElementById('taxFreibetrag').addEventListener('input', calculate);
+
         // Initial calculation
+        setTaxMode('brutto');
         calculate();
     })();
     </script>
