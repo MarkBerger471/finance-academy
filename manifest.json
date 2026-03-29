@@ -4,7 +4,7 @@
   "description": "Finanzbildung für junge Menschen / Financial education for young people",
   "start_url": "/finance-academy/",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#221937",
   "theme_color": "#7c3aed",
   "orientation": "portrait-primary",
   "icons": [
